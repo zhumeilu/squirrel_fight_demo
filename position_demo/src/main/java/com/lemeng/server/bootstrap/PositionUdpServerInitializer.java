@@ -3,6 +3,8 @@ package com.lemeng.server.bootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.nio.NioDatagramChannel;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 
 /**
  * Created by zhumeilu on 17/9/10.
@@ -20,6 +22,7 @@ public class PositionUdpServerInitializer extends ChannelInitializer<NioDatagram
 //         new DatagramPacketEncoder<BaseCommand>(new ProtobufEncoder()));
 
         pipeline.addLast("handler", new PositionUdpServerHandler());//消息处理器
+        pipeline.addLast("logging",new LoggingHandler(LogLevel.INFO));
 //        pipeline.addLast("ackHandler", new UdpAckServerHandler());//ack处理器
 
 //        pipeline.addLast("timeout", new IdleStateHandler(180, 0, 0,

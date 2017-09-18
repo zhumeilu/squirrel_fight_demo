@@ -49,7 +49,7 @@ public class PostionUdpServer {
 
 
     public static void main(String[] args) throws Exception {
-        int port = 8081;
+        int port = 6666;
         if(args!=null&&args.length>0){
             try{
                 port = Integer.valueOf(args[0]);

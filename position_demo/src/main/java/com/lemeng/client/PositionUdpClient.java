@@ -1,6 +1,8 @@
 package com.lemeng.client;
 
+import com.lemeng.Const;
 import com.lemeng.proto.BaseCommand;
+import com.lemeng.util.ConvertUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
@@ -17,7 +19,7 @@ import java.net.InetSocketAddress;
  * Created by zhumeilu on 17/9/7.
  */
 public class PositionUdpClient {
-    public void bind(int port) throws Exception{
+    public void bind(String hostname,int port) throws Exception{
 
 
         //配置服务端的NIO线程组
@@ -34,14 +36,22 @@ public class PositionUdpClient {
             ChannelFuture f= b.bind(0).sync();
             Channel channel = f.channel();
 
-            for (int i = 0; i < 10; i++) {
+            //登录
+            byte[] loginCommand = ConvertUtil.getBytes((short) Const.LoginCommand);
+            channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(loginCommand),new InetSocketAddress(hostname,port)));
+            Thread.sleep(1000);
+            //获取所有位置
+            byte[] positionListCommand = ConvertUtil.getBytes((short) Const.GameStartCommand);
+            channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(positionListCommand),new InetSocketAddress(hostname,port)));
+            for (int i = 0; i < 3; i++) {
                 BaseCommand.PositionCommand.Builder builder = BaseCommand.PositionCommand.newBuilder();
                 builder.setId(i);
                 builder.setPositionX(i);
                 builder.setPositionY(i);
                 builder.setPositionZ(i);
-                byte[] bytes = builder.build().toByteArray();
-                channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(bytes),new InetSocketAddress("127.0.0.1",port)));
+                byte[] positionBytes = builder.build().toByteArray();
+                byte[] positionCommand = ConvertUtil.getBytes((short) Const.PositionCommand);
+                channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(positionCommand,positionBytes),new InetSocketAddress(hostname,port)));
                 Thread.sleep(1000);
 
             }
@@ -59,7 +69,7 @@ public class PositionUdpClient {
     }
 
     public static void main(String[] args) throws Exception {
-        int port = 8081;
+        int port = 6666;
         if(args!=null&&args.length>0){
             try{
                 port = Integer.valueOf(args[0]);
@@ -67,7 +77,12 @@ public class PositionUdpClient {
 
             }
         }
-        new PositionUdpClient().bind(port);
+//        String hostname = "192.168.1.93";
+        String hostname = "47.92.114.52";
+//        String hostname = "127.0.0.1";
+
+        new PositionUdpClient().bind(hostname,port);
+
 
     }
 }

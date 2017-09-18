@@ -1,6 +1,10 @@
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.lemeng.proto.BaseCommand;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.junit.Test;
+
+import java.util.List;
 
 /**
  * Description:
@@ -28,6 +32,33 @@ public class ProtobufTest {
 //        System.out.println((char) temp[0]);
 //        System.out.println((char)temp[1]);
 //        System.out.println(b2);
+
+
+
     }
 
+    @Test
+    public void test2() throws InvalidProtocolBufferException {
+
+        BaseCommand.GameStartCommand.Builder builder = BaseCommand.GameStartCommand.newBuilder();
+        BaseCommand.PositionCommand.Builder builder1 = BaseCommand.PositionCommand.newBuilder();
+        builder1.setPositionZ(1f);
+        builder1.setPositionY(1f);
+        builder1.setPositionX(1f);
+        builder1.setId(1);
+        builder.addPositionList(builder1.build());
+
+        BaseCommand.GameStartCommand build = builder.build();
+        ByteBuf byteBuf = Unpooled.copiedBuffer(build.toByteArray());
+
+        byte[] commandByte = new byte[byteBuf.readableBytes()];
+        byteBuf.readBytes(commandByte);
+        BaseCommand.GameStartCommand gameStartCommand = BaseCommand.GameStartCommand.parseFrom(commandByte);
+        List<BaseCommand.PositionCommand> positionListList = gameStartCommand.getPositionListList();
+        for (BaseCommand.PositionCommand positionCommand:positionListList) {
+            System.out.println(positionCommand.getId());
+            System.out.println(positionCommand.getPositionX());
+
+        }
+    }
 }
