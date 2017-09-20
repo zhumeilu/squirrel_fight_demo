@@ -41,5 +41,6 @@ public class Player extends BaseDomain{
     private Float gunRoll;   //坐标
 
 
+    private Integer userId;     //所属用户id
 
 }

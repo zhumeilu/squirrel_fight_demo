@@ -1,0 +1,160 @@
+syntax = "proto2";
+package message;
+option java_package = "com.zml.command";
+option java_outer_classname = "UserCommand";
+
+
+//cmd：login
+message LoginCommand {
+
+    required string usename = 1;
+    required string password = 2;
+
+}
+
+//手机号注册验证码
+//cmd:sendVerifyCode
+message SendVerifyCodeCommand {
+
+    required string mobile = 1;
+}
+//cmd:regist
+message RegistCommand {
+
+    required string usename = 1;
+    required string password = 2;
+    required string verifyCode = 3;
+
+}
+
+//cmd:loginResult,registResult
+//操作结果
+message LoginResultCommand {
+
+    required int32 code = 1;    //1 success 2 fail
+    required string msg = 2;
+    optional UserInfoCommand userInfo = 3;    //为空则需要初始化玩家
+}
+//初始化玩家
+message InitPlayerCommand {
+    required string nickname = 1;
+}
+
+//操作结果
+message OperationResultCommand{
+    required string operation = 1;    //操作
+    required int32 code = 2;    //1 success 2 fail 3 第一次登录
+    optional string msg = 3;
+    optional bytes data = 4;    //数据
+}
+
+//用户基本信息
+//cmd:userInfo
+message UserInfoCommand{
+    required string usename = 1;
+    required string password = 2;
+    optional string nickname = 3;
+
+}
+
+
+//player基本信息
+//cmd: playerInfo
+message PlayerInfoCommand{
+
+    optional int32 id = 2;
+    optional string nickname = 3;
+    optional int32 hp = 4;
+    optional int32 attack = 5;
+    optional float position_x = 6;
+    optional float position_y = 7;
+    optional float position_z  = 8;
+    optional float rot_x = 9;
+    optional float rot_y = 10;
+    optional float rot_z = 11;
+    optional float gun_rot = 12;
+    optional float gun_roll = 13;
+
+}
+//寻找对局
+//cmd:readyGame
+message ReadyGameCommand{
+    optional int32 id = 1;
+    optional string ids = 2;
+}
+
+//邀请加入游戏
+//cmd:inviteGame
+message InviteGameCommand{
+    optional int32 id = 1;
+    optional int32 invitedId = 2;
+}
+//已找到对局（倒计时）
+//cmd:findGame
+message FindGameCommand{
+
+}
+//拒绝对局
+//cmd:refuseGame
+message RefuseGameCommand{
+    optional int32 id = 1;
+}
+//开始游戏
+//cmd:startGame
+message StartGameCommand{
+    optional int32 id = 1;
+    repeated PlayerInfoCommand playerInfoList = 2;
+}
+//移动
+//cmd:move
+message MoveCommand{
+    optional int32 id = 2;
+    optional string nickname = 3;
+    optional int32 hp = 4;
+    optional int32 attack = 5;
+    optional float position_x = 6;
+    optional float position_y = 7;
+    optional float position_z  = 8;
+    optional float rot_x = 9;
+    optional float rot_y = 10;
+    optional float rot_z = 11;
+    optional float gun_rot = 12;
+    optional float gun_roll = 13;
+}
+//跳
+//cmd:jump
+message JumpCommand{
+
+    optional int32 id = 1;
+    required float position_x = 2;
+    required float position_y = 3;
+    required float position_z  = 4;
+    required float rot_x = 5;
+    required float rot_y = 6;
+    required float rot_z = 7;
+
+}
+//吃
+//cmd：eat
+message EatCommand{
+    optional int32 id = 1;
+}
+//扔箱子
+//cmd:throwBox
+message ThrowBoxCommand{
+    optional int32 id = 1;
+    required float position_x = 2;
+    required float position_y = 3;
+    required float position_z  = 4;
+    required float rot_x = 5;
+    required float rot_y = 6;
+    required float rot_z = 7;
+}
+//被击中
+//cmd：hit
+message HitCommand{
+    required int32 enemy_id = 2;
+    required int32 damage = 3;
+    optional int32 id = 4;
+}
+

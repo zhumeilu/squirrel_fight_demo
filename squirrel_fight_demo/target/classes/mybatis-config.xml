@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <configuration>
+  <settings>
+  <!-- 打开延迟加载 默认为false -->
+  	<setting name="lazyLoadingEnabled" value="true"/>
+  	<!-- 加载全部,默认为true,只要访问一个对象,该对象所关联的所有的对象都会被查询出来,如果设置为false,则按需发送查询语句 -->
+  	<setting name="aggressiveLazyLoading" value="false"/>
+  	<!-- 指定哪些方法触发一次延迟加载,默认为equals,clone,hashCode,toString  -->
+  	<setting name="lazyLoadTriggerMethods" value="clone"/>
+  </settings>
+  
+   <!--取别名,可以在domain上打注解@alias-->
+ <!--  <typeAliases>
+  	<typeAlias type="com.xmg.mybatis.domain.User" alias="User"/>
+  </typeAliases> --> 
+  
+  
+  </configuration>
