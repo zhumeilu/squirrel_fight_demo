@@ -16,4 +16,6 @@ import lombok.Setter;
 public abstract class AbstractService implements Runnable{
     protected Channel channel;
     protected SquirrelFightUdpMessage message;
+
+
 }

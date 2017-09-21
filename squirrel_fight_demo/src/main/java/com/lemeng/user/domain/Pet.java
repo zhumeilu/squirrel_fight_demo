@@ -14,5 +14,6 @@ import lombok.Setter;
 public class Pet {
 
     private String name;
-
+    private String type;
+    private Integer price;
 }

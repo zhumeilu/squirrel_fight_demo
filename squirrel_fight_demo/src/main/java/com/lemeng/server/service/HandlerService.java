@@ -34,7 +34,7 @@ public class HandlerService {
 
         short cmd = message.getCmd();
         //根据cmd获取服务名
-        String serviceName = SystemManager.getInstance().getOrderHandlerMap().get(cmd);
+        String serviceName = SystemManager.getInstance().getUserOrderHandlerMap().get(cmd);
         AbstractService service = (AbstractService) context.getBean(serviceName);
         System.out.println("-------handlerService:"+cmd+"--根据命令获取serviceName:"+serviceName+"---获取的service实例："+service);
         if(service instanceof UserLoginService){

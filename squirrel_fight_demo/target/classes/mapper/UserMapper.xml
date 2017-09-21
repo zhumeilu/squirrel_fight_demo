@@ -2,4 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lemeng.user.mapper.UserMapper" >
 
+    <select id="getPetByUserId" resultType="Pet">
+
+        SELECT * FROM user_pet up
+        LEFT JOIN pet p on up.petId = p.id
+        WHERE up.userId = #{userId}
+    </select>
+    <select id="getSkillByUserId" resultType="Skill">
+
+        SELECT * FROM user_skill us
+        LEFT JOIN skill s on us.petId = s.id
+        WHERE us.userId = #{userId}
+    </select>
+    <select id="getFootPrintByUserId" resultType="FootPrint">
+
+        SELECT * FROM user_foot_print ufp
+        LEFT JOIN foot_print fp on ufp.petId = fp.id
+        WHERE ufp.userId = #{userId}
+    </select>
+
 </mapper>

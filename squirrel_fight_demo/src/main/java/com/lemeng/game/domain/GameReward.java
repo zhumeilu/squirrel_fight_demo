@@ -4,19 +4,18 @@ import com.lemeng.common.domain.BaseDomain;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 /**
  * Description:
  * User: zhumeilu
- * Date: 2017/9/19
- * Time: 15:10
+ * Date: 2017/9/21
+ * Time: 11:50
  */
-@Getter
 @Setter
-public class Room extends BaseDomain{
+@Getter
+public class GameReward extends BaseDomain{
 
-    private List<Player> playerList;
+    private Integer gameId; //所属游戏
+
 
 
 }

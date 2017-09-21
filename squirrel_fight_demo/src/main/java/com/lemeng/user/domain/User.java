@@ -18,15 +18,15 @@ import java.util.List;
 @ToString
 public class User extends BaseDomain {
 
-    private String username;    //用户名
+    private String mobile;    //手机号
+    private String nickname;    //昵称
     private String password;    //密码
-//    private Integer level;      //等级
-//    private Integer statue ;        //用户状态，在线，游戏中，离线
-//    private Integer gemstone; //宝石
-//    private Integer goldCoins;  //金币
-//    private Integer footPrintsId; //脚印id
-//    private List<Integer> skillList;        //用户拥有的技能
-//    private List<Integer> petList;  //用户拥有的宠物
+
+    private Integer level;      //等级
+    private Integer statue ;        //用户状态，在线，游戏中，离线
+    private Integer gemstone; //宝石
+    private Integer goldCoin;  //金币
+    private Integer footPrintId; //脚印id
 
 
 }

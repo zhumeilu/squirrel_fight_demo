@@ -46,7 +46,7 @@
 			</list>
 		</property>
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
-		<property name="typeAliasesPackage" value="com.lemeng.param.model" />
+		<property name="typeAliasesPackage" value="com.lemeng.*.domain" />
 		<property name="plugins">
 			<list>
 				<!-- 分页插件配置 -->
@@ -78,7 +78,7 @@
 	<!-- MyBatis 动态实现 -->
 	<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 对Dao 接口动态实现，需要知道接口在哪 -->
-		<property name="basePackage" value="com.lemeng.param.mapper" />
+		<property name="basePackage" value="com.lemeng.*.mapper" />
 	</bean>
 
 	<!-- 事务管理 -->

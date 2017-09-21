@@ -42,5 +42,7 @@ public class Player extends BaseDomain{
 
 
     private Integer userId;     //所属用户id
+    private Integer gameId;     //所属游戏
+    private Integer teamId;        //所属组队
 
 }
