@@ -1,7 +1,7 @@
 package com.lemeng.user.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.lemeng.user.domain.Pet;
+import com.lemeng.user.domain.Skill;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
  * Time: 10:42
  */
 @Repository
-public interface PetMapper extends BaseMapper<Pet> {
+public interface SkillMapper extends BaseMapper<Skill> {
 
-    void buyPet(@Param("userId") Integer userId, @Param("petId") Integer petId);
+    void buySkill(@Param("userId") Integer userId,@Param("skillId") Integer skillId);
 }

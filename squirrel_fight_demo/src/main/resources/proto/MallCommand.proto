@@ -7,33 +7,45 @@ option java_outer_classname = "MallCommand";
 
 //宝石充值
 message RechargeGemstoneCommand{
-    optional int32 id = 1;      //用户id
+    optional int32 userId = 1;      //用户id
     optional int32 count = 2;   //购买数量
 }
 
 message OperationResultCommand{
     required string operation = 1;    //操作
-    required int32 code = 2;    //1 success 2 fail 3 第一次登录
+    required int32 code = 2;    //1 success 2 fail
     optional string msg = 3;
     optional bytes data = 4;    //数据
 }
-message RechargeGemstoneCommand{
-    optional int32 id = 1;      //用户id
-    optional int32 count = 2;   //购买数量
+message RechargeGemstoneResultCommand{
+    required string operation = 1;    //操作
+    required int32 code = 2;    //1 success 2 fail
+    optional string msg = 3;
 }
 message BuySkillCommand{
-    required int32 id = 1;      //用户id
-    required string skill_name = 2;     //技能名称
+    required int32 userId = 1;      //用户id
+    required string skillName = 2;     //技能名称
 }
-message BuySkillCommand{
-    required int32 id = 1;      //用户id
-    required string skill_name = 2;     //技能名称
+message BuySkillResultCommand{
+    required string operation = 1;    //操作
+    required int32 code = 2;    //1 success 2 fail
+    optional string msg = 3;
 }
 message BuyPetCommand{
-    required int32 id = 1;      //用户id
-    required string pet_name = 2;     //宠物名称
+    required int32 userId = 1;      //用户id
+    required string petName = 2;     //宠物名称
+}
+message BuyPetResultCommand{
+    required string operation = 1;    //操作
+    required int32 code = 2;    //1 success 2 fail
+    optional string msg = 3;
 }
 message BuyFootPrintCommand{
-    required int32 id = 1;      //用户id
-    required string pet_name = 2;     //脚印名称
+    required int32 userId = 1;      //用户id
+    required string footPrintName = 2;     //脚印名称
+}
+message BuyFootPrintResultCommand{
+    required string operation = 1;    //操作
+    required int32 code = 2;    //1 success 2 fail
+    optional string msg = 3;
 }

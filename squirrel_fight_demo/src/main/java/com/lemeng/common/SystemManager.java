@@ -1,5 +1,6 @@
 package com.lemeng.common;
 
+import com.lemeng.server.session.NettyTcpSession;
 import io.netty.channel.EventLoopGroup;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Description:
@@ -27,6 +29,7 @@ public class SystemManager {
     @Setter
     private EventLoopGroup tcpWorkerGroup;
 
+    private ConcurrentHashMap tcpSessionMap = new ConcurrentHashMap<Long,NettyTcpSession>();       //存储session
     @Getter
     private HashMap<Short,String> userOrderHandlerMap;           //存储命令和服务对应map
     private SystemManager(){
@@ -34,15 +37,7 @@ public class SystemManager {
         userOrderHandlerMap = new HashMap<Short, String>();
         userOrderHandlerMap.put(Const.HeartBreakCommand,"HeartBreak");  //心跳
         userOrderHandlerMap.put(Const.LoginCommand,"UserLoginService");  //登录
-        userOrderHandlerMap.put((short)2,"Quit");  //退出
 
-        userOrderHandlerMap.put((short)100,"UpdateRole");  //更新角色信息
-        userOrderHandlerMap.put((short)101,"GetRoleList");  //获取所有角色信息
-
-        userOrderHandlerMap.put((short)201,"Move");  //移动
-        userOrderHandlerMap.put((short)202,"Turn");  //转向
-        userOrderHandlerMap.put((short)203,"Fire");  //开火
-        userOrderHandlerMap.put((short)204,"Hit");  //击中
 
     }
 
@@ -60,4 +55,10 @@ public class SystemManager {
 
     }
 
+    public void addTcpSession(NettyTcpSession nettyTcpSession){
+        tcpSessionMap.put(nettyTcpSession.getSessionId(),nettyTcpSession);
+    }
+    public void removeTcpSession(Long sessionId){
+        tcpSessionMap.remove(sessionId);
+    }
 }

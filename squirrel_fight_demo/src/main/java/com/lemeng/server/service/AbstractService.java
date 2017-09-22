@@ -1,5 +1,6 @@
 package com.lemeng.server.service;
 
+import com.lemeng.server.message.IMessage;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
 import io.netty.channel.Channel;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Setter
 public abstract class AbstractService implements Runnable{
     protected Channel channel;
-    protected SquirrelFightUdpMessage message;
+    protected IMessage message;
 
 
 }

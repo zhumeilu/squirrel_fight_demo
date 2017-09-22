@@ -8,11 +8,12 @@ import lombok.Setter;
  * User: zhumeilu
  * Date: 2017/9/20
  * Time: 10:18
+ * head+length+cmd+version+body 2+4+2+1
  */
 @Getter
 @Setter
-public class SquirrelFightTcpMessage {
-
+public class SquirrelFightTcpMessage implements IMessage{
+    public static final short MESSAGE_HEADER_FLAG = 0x2425;
     private short head;
     private int length;
     private short cmd;
@@ -20,13 +21,10 @@ public class SquirrelFightTcpMessage {
     private byte[] body;
 
 
-    public SquirrelFightTcpMessage(short cmd, byte[] body){
-        this.body = body;
-        this.cmd = cmd;
-    }
-
 
     public SquirrelFightTcpMessage(){
 
+        this.head = MESSAGE_HEADER_FLAG;
+        this.version = 0x01;
     }
 }

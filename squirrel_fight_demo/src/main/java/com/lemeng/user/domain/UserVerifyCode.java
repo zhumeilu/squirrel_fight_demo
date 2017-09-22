@@ -1,5 +1,6 @@
 package com.lemeng.user.domain;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.lemeng.common.domain.BaseDomain;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
+@TableName("user_verify_code")
 public class UserVerifyCode extends BaseDomain{
 
     private String mobile;

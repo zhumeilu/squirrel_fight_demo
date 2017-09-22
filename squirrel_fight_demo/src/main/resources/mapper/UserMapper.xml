@@ -11,13 +11,13 @@
     <select id="getSkillByUserId" resultType="Skill">
 
         SELECT * FROM user_skill us
-        LEFT JOIN skill s on us.petId = s.id
+        LEFT JOIN skill s on us.skillId = s.id
         WHERE us.userId = #{userId}
     </select>
     <select id="getFootPrintByUserId" resultType="FootPrint">
 
         SELECT * FROM user_foot_print ufp
-        LEFT JOIN foot_print fp on ufp.petId = fp.id
+        LEFT JOIN foot_print fp on ufp.footPrintId = fp.id
         WHERE ufp.userId = #{userId}
     </select>
 

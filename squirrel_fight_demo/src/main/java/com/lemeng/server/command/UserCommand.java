@@ -3648,6 +3648,15 @@ public final class UserCommand {
      */
     com.google.protobuf.ByteString
         getNicknameBytes();
+
+    /**
+     * <code>required int32 userId = 2;</code>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required int32 userId = 2;</code>
+     */
+    int getUserId();
   }
   /**
    * <pre>
@@ -3666,6 +3675,7 @@ public final class UserCommand {
     }
     private InitPlayerCommand() {
       nickname_ = "";
+      userId_ = 0;
     }
 
     @Override
@@ -3700,6 +3710,11 @@ public final class UserCommand {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               nickname_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              userId_ = input.readInt32();
               break;
             }
           }
@@ -3769,6 +3784,21 @@ public final class UserCommand {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private int userId_;
+    /**
+     * <code>required int32 userId = 2;</code>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 userId = 2;</code>
+     */
+    public int getUserId() {
+      return userId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3776,6 +3806,10 @@ public final class UserCommand {
       if (isInitialized == 0) return false;
 
       if (!hasNickname()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3788,6 +3822,9 @@ public final class UserCommand {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nickname_);
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, userId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3798,6 +3835,10 @@ public final class UserCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nickname_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, userId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3821,6 +3862,11 @@ public final class UserCommand {
         result = result && getNickname()
             .equals(other.getNickname());
       }
+      result = result && (hasUserId() == other.hasUserId());
+      if (hasUserId()) {
+        result = result && (getUserId()
+            == other.getUserId());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3835,6 +3881,10 @@ public final class UserCommand {
       if (hasNickname()) {
         hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
         hash = (53 * hash) + getNickname().hashCode();
+      }
+      if (hasUserId()) {
+        hash = (37 * hash) + USERID_FIELD_NUMBER;
+        hash = (53 * hash) + getUserId();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3971,6 +4021,8 @@ public final class UserCommand {
         super.clear();
         nickname_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3999,6 +4051,10 @@ public final class UserCommand {
           to_bitField0_ |= 0x00000001;
         }
         result.nickname_ = nickname_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4046,6 +4102,9 @@ public final class UserCommand {
           nickname_ = other.nickname_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          setUserId(other.getUserId());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4053,6 +4112,9 @@ public final class UserCommand {
 
       public final boolean isInitialized() {
         if (!hasNickname()) {
+          return false;
+        }
+        if (!hasUserId()) {
           return false;
         }
         return true;
@@ -4149,6 +4211,38 @@ public final class UserCommand {
   }
   bitField0_ |= 0x00000001;
         nickname_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int userId_ ;
+      /**
+       * <code>required int32 userId = 2;</code>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 userId = 2;</code>
+       */
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>required int32 userId = 2;</code>
+       */
+      public Builder setUserId(int value) {
+        bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 userId = 2;</code>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = 0;
         onChanged();
         return this;
       }
@@ -6943,16 +7037,16 @@ public final class UserCommand {
       "\016\n\006mobile\030\001 \002(\t\022\020\n\010password\030\002 \002(\t\022\022\n\nver" +
       "ifyCode\030\003 \002(\t\"S\n\022LoginResultCommand\022\014\n\004c" +
       "ode\030\001 \002(\005\022\013\n\003msg\030\002 \002(\t\022\"\n\010userInfo\030\003 \001(\013" +
-      "2\020.UserInfoCommand\"%\n\021InitPlayerCommand\022" +
-      "\020\n\010nickname\030\001 \002(\t\"X\n\027InitPlayerResultCom" +
-      "mand\022\014\n\004code\030\002 \002(\005\022\013\n\003msg\030\003 \001(\t\022\"\n\010userI",
-      "nfo\030\004 \001(\0132\020.UserInfoCommand\"\261\001\n\017UserInfo" +
-      "Command\022\016\n\006mobile\030\001 \002(\t\022\020\n\010nickname\030\003 \002(" +
-      "\t\022\r\n\005level\030\004 \002(\005\022\016\n\006statue\030\005 \002(\005\022\020\n\010gems" +
-      "tone\030\006 \002(\005\022\020\n\010goldCoin\030\007 \002(\005\022\017\n\007petList\030" +
-      "\013 \003(\t\022\021\n\tskillList\030\014 \003(\t\022\025\n\rfootPrintLis" +
-      "t\030\r \003(\tB(\n\031com.lemeng.server.commandB\013Us" +
-      "erCommand"
+      "2\020.UserInfoCommand\"5\n\021InitPlayerCommand\022" +
+      "\020\n\010nickname\030\001 \002(\t\022\016\n\006userId\030\002 \002(\005\"X\n\027Ini" +
+      "tPlayerResultCommand\022\014\n\004code\030\002 \002(\005\022\013\n\003ms",
+      "g\030\003 \001(\t\022\"\n\010userInfo\030\004 \001(\0132\020.UserInfoComm" +
+      "and\"\261\001\n\017UserInfoCommand\022\016\n\006mobile\030\001 \002(\t\022" +
+      "\020\n\010nickname\030\003 \002(\t\022\r\n\005level\030\004 \002(\005\022\016\n\006stat" +
+      "ue\030\005 \002(\005\022\020\n\010gemstone\030\006 \002(\005\022\020\n\010goldCoin\030\007" +
+      " \002(\005\022\017\n\007petList\030\013 \003(\t\022\021\n\tskillList\030\014 \003(\t" +
+      "\022\025\n\rfootPrintList\030\r \003(\tB(\n\031com.lemeng.se" +
+      "rver.commandB\013UserCommand"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6995,7 +7089,7 @@ public final class UserCommand {
     internal_static_InitPlayerCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InitPlayerCommand_descriptor,
-        new String[] { "Nickname", });
+        new String[] { "Nickname", "UserId", });
     internal_static_InitPlayerResultCommand_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_InitPlayerResultCommand_fieldAccessorTable = new

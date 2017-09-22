@@ -1,5 +1,6 @@
 package com.lemeng.user.domain;
 
+import com.lemeng.common.domain.BaseDomain;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-public class Skill {
+public class Skill extends BaseDomain{
 
     private String name;
     private String type;

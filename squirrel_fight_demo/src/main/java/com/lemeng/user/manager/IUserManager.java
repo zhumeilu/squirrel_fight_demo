@@ -14,7 +14,9 @@ import java.util.List;
  * Time: 10:55
  */
 public interface IUserManager {
-    User login(String username,String password);
+    User login(String mobile,String password);
+    User regist(String mobile,String password,String verifyCode);
+    boolean initUser(Integer userId,String nickname);
     List<Pet> getPetListByUserId(Integer userId);
     List<Skill> getSkillListByUserId(Integer userId);
     List<FootPrint> getFootPrintListByUserId(Integer userId);

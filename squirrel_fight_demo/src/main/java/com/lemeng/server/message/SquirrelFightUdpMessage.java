@@ -13,7 +13,7 @@ import java.net.InetSocketAddress;
  */
 @Getter
 @Setter
-public class SquirrelFightUdpMessage {
+public class SquirrelFightUdpMessage implements IMessage{
 
     private InetSocketAddress sender;
     private short cmd;

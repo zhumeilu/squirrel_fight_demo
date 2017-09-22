@@ -3,10 +3,22 @@ package message;
 option java_package = "com.lemeng.server.command";
 option java_outer_classname = "SystemCommand";
 
-import "/proto/UserCommand.proto";
 //游戏命令
 
+//用户基本信息
+//cmd:userInfo
+message UserInfoCommand{
+    required string mobile = 1;
+    required string nickname = 3;
+    required int32 level = 4;
+    required int32 statue = 5;
+    required int32 gemstone = 6;
+    required int32 goldCoin = 7;
 
+    repeated string petList = 11;
+    repeated string skillList = 12;
+    repeated string footPrintList = 13;
+}
 
 
 //创建队伍

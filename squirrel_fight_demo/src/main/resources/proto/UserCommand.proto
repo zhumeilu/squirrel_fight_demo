@@ -38,6 +38,7 @@ message LoginResultCommand {
 //初始化玩家
 message InitPlayerCommand {
     required string nickname = 1;
+    required int32 userId = 2;
 }
 
 //操作结果

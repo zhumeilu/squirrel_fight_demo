@@ -19,11 +19,19 @@ public class TcpMessageDecoder extends MessageToMessageDecoder<ByteBuf> {
     }
 
     private SquirrelFightTcpMessage parseByteBuf(ByteBuf byteBuf) {
+        System.out.println("-------decoder_length:"+byteBuf.readableBytes());
+        //head
         short head = byteBuf.readShort();
+        //length
         int length = byteBuf.readInt();
+        //cmd
         short cmd = byteBuf.readShort();
+        short version = byteBuf.readByte();
+        System.out.println("---------解析的head："+head+"------head:"+length+"--cmd:"+cmd+"---version:"+version);
         byte[] body = new byte[byteBuf.readableBytes()];
-
+        byteBuf.getBytes(byteBuf.readerIndex(), body);
+//        byteBuf.readBytes(body);
+        System.out.println("---body:"+body.length);
         SquirrelFightTcpMessage message = new SquirrelFightTcpMessage();
         message.setHead(head);
         message.setLength(length);

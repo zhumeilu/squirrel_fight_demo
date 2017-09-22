@@ -1,7 +1,7 @@
 package com.lemeng.common;
 
 /**
- * Description:
+ * Description:命令常量
  * User: zhumeilu
  * Date: 2017/9/21
  * Time: 15:39
@@ -24,7 +24,7 @@ public class Const {
     public static final short UserInfoCommand = 107;
 
 
-    /**********************GameCommand*****500-1000*********************/
+    /**********************GameCommand*****501-1000*********************/
 
     public static final short CreateTeamCommand = 501;
     public static final short InviteGameCommand = 502;
@@ -44,5 +44,16 @@ public class Const {
     public static final short QuitGameCommand = 516;
     public static final short GameOverCommand = 517;
     public static final short GameMessageCommand = 518;
+
+    /****************************MallCommand********1001-1200**************************/
+    public static final short RechargeGemstoneCommand = 501;
+    public static final short RechargeGemstoneResultCommand = 502;
+    public static final short BuySkillCommand = 503;
+    public static final short BuySkillResultCommand = 504;
+    public static final short BuyPetCommand = 505;
+    public static final short BuyPetResultCommand = 506;
+    public static final short BuyFootPrintCommand = 507;
+    public static final short BuyFootPrintResultCommand = 508;
+
 
 }

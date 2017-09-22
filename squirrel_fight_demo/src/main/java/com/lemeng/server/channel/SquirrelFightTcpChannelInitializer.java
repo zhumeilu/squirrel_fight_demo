@@ -24,7 +24,7 @@ public class SquirrelFightTcpChannelInitializer extends ChannelInitializer<NioSo
     protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
         ChannelPipeline pipeline = nioSocketChannel.pipeline();
         int maxLength = Integer.MAX_VALUE;
-        pipeline.addLast("frame", new LengthFieldBasedFrameDecoder(maxLength, 2, 4, 0, 0));
+        pipeline.addLast("frame", new LengthFieldBasedFrameDecoder(maxLength, 2, 4, 3, 0));
         nioSocketChannel.pipeline().addLast(new TcpMessageDecoder());
         nioSocketChannel.pipeline().addLast(new TcpMessageEncoder());
         nioSocketChannel.pipeline().addLast(new SquirrelFightTcpChannelrHandler());

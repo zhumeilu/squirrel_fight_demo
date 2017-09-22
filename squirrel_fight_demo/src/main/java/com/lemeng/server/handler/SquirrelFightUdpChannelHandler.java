@@ -3,15 +3,13 @@ package com.lemeng.server.handler;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.util.ConvertUtil;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
-import com.lemeng.server.service.HandlerService;
+import com.lemeng.server.service.UdpHandlerService;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.socket.DatagramPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 
 /**
@@ -40,7 +38,7 @@ public class SquirrelFightUdpChannelHandler extends SimpleChannelInboundHandler<
         data.readBytes(bodyByte);
         SquirrelFightUdpMessage message = new SquirrelFightUdpMessage(order,bodyByte,datagramPacket.sender());
         System.out.println("---------封装message-------------");
-        HandlerService handlerService = (HandlerService) SystemManager.getInstance().getContext().getBean("HandlerService");
+        UdpHandlerService handlerService = (UdpHandlerService) SystemManager.getInstance().getContext().getBean("UdpHandlerService");
         System.out.println("-----handlerService:"+ handlerService);
         handlerService.submit(channelHandlerContext,message);
 

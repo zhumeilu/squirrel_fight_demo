@@ -1,7 +1,10 @@
 package com.lemeng.user.service;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.lemeng.common.util.LCSendVerifycode;
 import com.lemeng.common.util.RandomUtil;
+import com.lemeng.server.command.UserCommand;
+import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.service.AbstractService;
 import com.lemeng.user.domain.UserVerifyCode;
 import com.lemeng.user.manager.IUserManager;
@@ -24,9 +27,17 @@ public class SendVerifyCodeService extends AbstractService{
     IUserVerifyCodeManager userVerifyCodeManager;
     public void run() {
 
-        byte[] bodyBytes = message.getBody();
+        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         String mobile ="";
+        try {
+            UserCommand.SendVerifyCodeCommand sendVerifyCodeCommand = UserCommand.SendVerifyCodeCommand.parseFrom(bodyBytes);
+            mobile = sendVerifyCodeCommand.getMobile();
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+        }
+
 
         String randomNumber = RandomUtil.getRandomNumber(6);
         UserVerifyCode userVerifyCode = new UserVerifyCode();
