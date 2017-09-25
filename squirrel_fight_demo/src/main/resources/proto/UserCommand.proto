@@ -4,7 +4,8 @@ option java_outer_classname = "UserCommand";
 
 
 //cmd：login
-message LoginCommand {
+//登录请求
+message LoginRequestCommand {
 
     optional string mobile = 1;     //手机号
     optional string password = 2;   //密码
@@ -14,12 +15,12 @@ message LoginCommand {
 
 //手机号注册验证码
 //cmd:sendVerifyCode
-message SendVerifyCodeCommand {
+message SendVerifyCodeRequestCommand {
 
     required string mobile = 1;
 }
 //cmd:regist
-message RegistCommand {
+message RegistRequestCommand {
 
     required string mobile = 1;
     required string password = 2;
@@ -28,21 +29,21 @@ message RegistCommand {
 }
 
 //cmd:loginResult,registResult
-//操作结果
-message LoginResultCommand {
+//登录响应
+message LoginResponseCommand {
 
     required int32 code = 1;    //1 success 2 fail
     required string msg = 2;
     optional UserInfoCommand userInfo = 3;    //为空则需要初始化玩家
 }
-//初始化玩家
-message InitPlayerCommand {
+//初始化玩家请求
+message InitPlayerRequestCommand {
     required string nickname = 1;
     required int32 userId = 2;
 }
 
-//操作结果
-message InitPlayerResultCommand{
+//初始化玩家响应
+message InitPlayerResponseCommand{
     required int32 code = 2;    //1 success 2 fail
     optional string msg = 3;    //例：用户名重复
     optional UserInfoCommand userInfo = 4;    //数据

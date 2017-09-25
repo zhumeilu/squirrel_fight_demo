@@ -32,7 +32,7 @@ public class SendVerifyCodeService extends AbstractService{
         //解析数据，获取moible
         String mobile ="";
         try {
-            UserCommand.SendVerifyCodeCommand sendVerifyCodeCommand = UserCommand.SendVerifyCodeCommand.parseFrom(bodyBytes);
+            UserCommand.SendVerifyCodeRequestCommand sendVerifyCodeCommand = UserCommand.SendVerifyCodeRequestCommand.parseFrom(bodyBytes);
             mobile = sendVerifyCodeCommand.getMobile();
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();

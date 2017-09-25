@@ -2,6 +2,7 @@ package com.lemeng.user.service;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.lemeng.common.Const;
+import com.lemeng.common.SystemManager;
 import com.lemeng.server.command.UserCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.service.AbstractService;
@@ -34,7 +35,7 @@ public class UserLoginService extends AbstractService{
         SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         try {
-            UserCommand.LoginCommand loginCommand = UserCommand.LoginCommand.parseFrom(bodyBytes);
+            UserCommand.LoginRequestCommand loginCommand = UserCommand.LoginRequestCommand.parseFrom(bodyBytes);
 
             String mobile=loginCommand.getMobile();
             String password=loginCommand.getPassword();
@@ -49,7 +50,7 @@ public class UserLoginService extends AbstractService{
             if(login!=null){
                 System.out.println("------构建返回消息----------");
                 //返回登录信息
-                UserCommand.LoginResultCommand.Builder builder = UserCommand.LoginResultCommand.newBuilder();
+                UserCommand.LoginResponseCommand.Builder builder = UserCommand.LoginResponseCommand.newBuilder();
                 builder.setCode(1);
                 builder.setMsg("登录成功");
                 UserCommand.UserInfoCommand.Builder userBuilder = UserCommand.UserInfoCommand.newBuilder();
@@ -75,15 +76,17 @@ public class UserLoginService extends AbstractService{
                     userBuilder.setSkillList(i,skillList.get(i).getType());
                 }
 
+
                 builder.setUserInfo(userBuilder);
 
                 SquirrelFightTcpMessage returnMessage = new SquirrelFightTcpMessage();
                 returnMessage.setBody(builder.build().toByteArray());
-                returnMessage.setCmd(Const.LoginResultCommand);
+                returnMessage.setCmd(Const.LoginResponseCommand);
                 returnMessage.setLength(returnMessage.getBody().length);
                 channel.writeAndFlush(returnMessage);
                 System.out.println("---------登录成功--------");
-
+                //保存user_channel
+                SystemManager.getInstance().getUserChannelMap().put(login.getId(),channel);
             }else{
                 //返回登录失败
                 System.out.println("---------登录失败--------");

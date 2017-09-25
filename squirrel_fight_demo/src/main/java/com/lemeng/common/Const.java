@@ -15,45 +15,49 @@ public class Const {
 
     /************UserCommand******101-500*********/
 
-    public static final short LoginCommand = 101;
-    public static final short LoginResultCommand = 102;
-    public static final short RegistCommand = 103;
-    public static final short SendVerifyCodeCommand = 104;
-    public static final short InitPlayerCommand = 105;
-    public static final short InitPlayerResultCommand = 106;
+    public static final short LoginRequestCommand = 101;
+    public static final short LoginResponseCommand = 102;
+    public static final short RegistRequestCommand = 103;
+    public static final short SendVerifyCodeRequestCommand = 104;
+    public static final short InitPlayerRequestCommand = 105;
+    public static final short InitPlayerResponseCommand = 106;
     public static final short UserInfoCommand = 107;
 
 
     /**********************GameCommand*****501-1000*********************/
 
-    public static final short CreateTeamCommand = 501;
-    public static final short InviteGameCommand = 502;
-    public static final short InvitedGameCommand = 503;
-    public static final short RefuseInviteGameCommand = 504;
-    public static final short AcceptInviteGameCommand = 505;
-    public static final short TeamCommand = 506;
-    public static final short RefuseGameCommand = 507;
-    public static final short FindGameCommand = 508;
-    public static final short FindedGameCommand = 509;
-    public static final short PlayerInfoCommand = 510;
-    public static final short JumpCommand = 511;
-    public static final short EatCommand = 512;
-    public static final short ThrowBoxCommand = 513;
-    public static final short HideBoxCommand = 514;
-    public static final short HitCommand = 515;
-    public static final short QuitGameCommand = 516;
-    public static final short GameOverCommand = 517;
-    public static final short GameMessageCommand = 518;
+    public static final short CreateTeamRequestCommand = 501;
+    public static final short CreateTeamResponseCommand = 502;
+    public static final short InviteJoinGameRequestCommand = 503;
+    public static final short InviteJoinGameResponseCommand = 504;
+    public static final short BeInvitedJoinGameRequestCommand = 505;
+    public static final short BeInvitedJoinGameResponseCommand = 506;
+    public static final short TeamCommand = 507;
+    public static final short RefuseGameRequestCommand = 508;
+    public static final short RefuseGameResponseCommand = 509;
+    public static final short FindGameRequestCommand = 510;
+    public static final short FindedGameRequestCommand = 511;
+    public static final short NewPlayerJoinGameRequestCommand = 512;
+    public static final short PlayerInfoCommand = 513;
+
+    public static final short JumpCommand = 514;
+    public static final short EatCommand = 515;
+    public static final short ThrowBoxCommand = 516;
+    public static final short HideBoxCommand = 517;
+    public static final short HitCommand = 518;
+    public static final short QuitGameCommand = 519;
+    public static final short GameOverCommand = 520;
+    public static final short GameMessageCommand = 521;
 
     /****************************MallCommand********1001-1200**************************/
-    public static final short RechargeGemstoneCommand = 501;
-    public static final short RechargeGemstoneResultCommand = 502;
-    public static final short BuySkillCommand = 503;
-    public static final short BuySkillResultCommand = 504;
-    public static final short BuyPetCommand = 505;
-    public static final short BuyPetResultCommand = 506;
-    public static final short BuyFootPrintCommand = 507;
-    public static final short BuyFootPrintResultCommand = 508;
 
+    public static final short RechargeGemstoneRequestCommand = 501;
+    public static final short RechargeGemstoneResponseCommand = 502;
+    public static final short BuySkillRequestCommand = 503;
+    public static final short BuySkillResponseCommand = 504;
+    public static final short BuyPetRequestCommand = 505;
+    public static final short BuyPetResponseCommand = 506;
+    public static final short BuyFootPrintRequestCommand = 507;
+    public static final short BuyFootPrintResponseCommand = 508;
 
 }

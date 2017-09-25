@@ -1,4 +1,7 @@
+import com.lemeng.common.Const;
 import com.lemeng.common.util.ConvertUtil;
+import com.lemeng.server.command.GameCommand;
+import com.lemeng.server.command.UserCommand;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
@@ -33,19 +36,29 @@ public class UdpClientTest {
                     .option(ChannelOption.SO_BROADCAST, true)   //支持广播
                     .option(ChannelOption.SO_RCVBUF, 1024 * 1024)// 设置UDP读缓冲区为1M
                     .option(ChannelOption.SO_SNDBUF, 1024 * 1024)// 设置UDP写缓冲区为1M
-                    .handler(new LoggingHandler(LogLevel.INFO));
+                    .handler(new LoggingHandler(LogLevel.INFO))
+                    .handler(new UdpClientChannelTest());
             //绑定端口，同步等待成功
             ChannelFuture f= b.bind(0).sync();
 
             Channel channel = f.channel();
 
+            UserCommand.RegistRequestCommand.Builder builder = UserCommand.RegistRequestCommand.newBuilder();
+            builder.setMobile("18679654496");
+            builder.setPassword("123456");
+            builder.setVerifyCode("1234");
             //登录
-            for (int i = 0;i<3;i++){
-                System.out.println("----------第一次发送登录命令---------");
-                byte[] loginCommand = ConvertUtil.getBytes((short) 1);
-                channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(loginCommand),new InetSocketAddress(hostname,port)));
-                Thread.sleep(1000);
-            }
+            byte[] loginCommand = ConvertUtil.getBytes((Const.RegistRequestCommand));
+            channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(loginCommand,builder.build().toByteArray()),new InetSocketAddress(hostname,port)));
+            Thread.sleep(1000);
+
+            GameCommand.PlayerInfoCommand.Builder builder1 = GameCommand.PlayerInfoCommand.newBuilder();
+            builder1.setId(1);
+            builder1.setPositionX(10f);
+            builder1.setPositionY(11f);
+            builder1.setPositionZ(12f);
+            byte[] playInfoCommand = ConvertUtil.getBytes((Const.PlayerInfoCommand));
+          channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(playInfoCommand,builder1.build().toByteArray()),new InetSocketAddress(hostname,port)));
             //等待服务器监听端口关闭
             channel.closeFuture().await();
         }catch (Exception e){

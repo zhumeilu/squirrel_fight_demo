@@ -1,7 +1,7 @@
 syntax = "proto2";
 package message;
 option java_package = "com.lemeng.server.command";
-option java_outer_classname = "SystemCommand";
+option java_outer_classname = "GameCommand";
 
 //游戏命令
 
@@ -21,68 +21,111 @@ message UserInfoCommand{
 }
 
 
-//创建队伍
-message CreateTeamCommand{
+//创建队伍请求
+message CreateTeamRequestCommand{
+
+    required int32 userId = 1;
+}
+//创建队伍响应
+message CreateTeamResponseCommand{
+    required int32 userId = 1;
+    required int32 teamId = 2;
+    required int32 statue = 3;      //创建成功
+    required string msg = 4;        //返回信息
+
 
 }
 
-//返回一个OperationResultCommand
 
-//邀请加入游戏
-message InviteGameCommand{
-    required int32 team_id = 1;      //队伍id
-    required int32 user_id = 2;
-    required int32 invited_id = 3;  //被邀请人的id
-
-}
-//返回一个OperationResultCommand
-
-
-//被邀请加入游戏
-message InvitedGameCommand{
-
-    required int32 team_id = 1;      //队伍id
-    required UserInfoCommand header = 2;      //队长
-}
-//接受邀请，加入游戏
-message AcceptInviteGameCommand{
-    required int32 user_id = 1;          //玩家id
-    required int32 team_id = 2;      //队伍id
+//邀请玩家加入游戏请求
+message InviteJoinGameRequestCommand{
+    required int32 teamId = 1;      //队伍id
+    required int32 userId = 2;
+    required int32 invitedId = 3;  //被邀请人的id
 
 }
-//拒绝邀请
-message RefuseInviteGameCommand{
-    required int32 user_id = 1;          //玩家id
-    required int32 team_id = 2;      //队伍id
-    optional string msg = 3;        //回复信息
+//邀请玩家加入游戏响应
+message InviteJoinGameResponseCommand{
+    required int32 statue = 1;      //状态
+    required string msg = 2;      //信息
+    required UserInfoCommand userInfo = 3;  //玩家信息
+
 }
-//返回一个OperationResultCommand
+
+
+//被邀请加入游戏(转发给玩家)
+message BeInvitedJoinGameRequestCommand{
+
+    required int32 teamId = 1;      //队伍id
+    required int32 inviterId = 2;   //邀请人id    invitee被邀请人      （改）
+    required string inviterName = 3; //邀请人名称                         （改）
+
+}
+//被邀请加入游戏(玩家发给服务器)
+message BeInvitedJoinGameResponseCommand{
+
+    required int32 statue = 1;      //状态
+    required string msg = 2;      //信息
+    required int32 userId = 3;      //用户id      （新加）
+    required int32 teamId = 4;      //队伍id      （新加）
+}
+
+
+
 message TeamCommand{
 
-    required int32 team_id = 1;      //队伍id
-    required bytes game_type = 2;   //游戏类型
+    required int32 teamId = 1;      //队伍id
+    required bytes gameType = 2;   //游戏类型
     repeated UserInfoCommand userInfoList = 3;
     required UserInfoCommand hader = 4;   //房主
 
 }
-
-//拒绝开始游戏
-message RefuseGameCommand{
-    required int32 team_id = 1;      //队伍id
-    required int32 user_id = 2;     //用户id
-
-}
-
 //寻找队列
-message FindGameCommand{
-    required int32 team_id = 1;      //队伍id
-    required int32 header_id = 2;     //房主id
+message FindGameRequestCommand{
+    required int32 teamId = 1;      //队伍id
+    required int32 headerId = 2;     //房主id
+
+}
+//退出组队请求
+message QuitTeamRequestCommand{
+    required int32 userId = 1;
+    required int32 teamId = 2;
+}
+//退出组队响应
+message QuitTeamResponseCommand{
+    required int32 userId = 1;
+    required int32 teamId = 2;
+}
+
+//拒绝开始游戏请求
+message RefuseGameRequestCommand{
+    required int32 teamId = 1;      //队伍id
+    required int32 userId = 2;     //用户id
+
+}
+//拒绝开始游戏响应
+message RefuseGameResponseCommand{
+    required int32 teamId = 1;      //队伍id
+    required int32 userId = 2;     //用户id
 
 }
 
-//对局已找到
-message FindedGameCommand{
 
+//对局已找到(服务器向客户端请求)
+message FindedGameRequestCommand{
+
+    repeated PlayerInfoCommand playerInfoList = 1;
+
+}
+//新玩家加入（服务器向客户端请求）
+message NewPlayerJoinGameRequestCommand{
+    required PlayerInfoCommand newPlayer = 1;
+}
+
+//战斗中主动离开游戏
+//cmd:qutiGame
+message QuitGameCommand{
+    required int32 id = 4;
 }
 
 //player基本信息    每帧同步
@@ -93,14 +136,15 @@ message PlayerInfoCommand{
     optional string nickname = 3;
     optional int32 hp = 4;
     optional int32 attack = 5;
-    optional float position_x = 6;
-    optional float position_y = 7;
-    optional float position_z  = 8;
-    optional float rot_x = 9;
-    optional float rot_y = 10;
-    optional float rot_z = 11;
-    optional float gun_rot = 12;
-    optional float gun_roll = 13;
+    optional float positionX = 6;
+    optional float positionY = 7;
+    optional float positionZ  = 8;
+    optional float rotX = 9;
+    optional float rotY = 10;
+    optional float rotZ = 11;
+    optional float gunRot = 12;
+    optional float gunRoll = 13;
+    optional int32 teamId = 14;     //所属队伍
 }
 
 //跳
@@ -108,12 +152,12 @@ message PlayerInfoCommand{
 message JumpCommand{
 
     optional int32 id = 1;
-    required float position_x = 2;
-    required float position_y = 3;
-    required float position_z  = 4;
-    required float rot_x = 5;
-    required float rot_y = 6;
-    required float rot_z = 7;
+    required float positionX = 2;
+    required float positionY = 3;
+    required float positionZ  = 4;
+    required float rotX = 5;
+    required float rotY = 6;
+    required float rotZ = 7;
 
 }
 //吃
@@ -127,33 +171,29 @@ message EatCommand{
 //cmd:throwBox
 message ThrowBoxCommand{
     required int32 id = 1;
-    required float position_x = 2;
-    required float position_y = 3;
-    required float position_z  = 4;
-    required float rot_x = 5;
-    required float rot_y = 6;
-    required float rot_z = 7;
+    required float positionX = 2;
+    required float positionY = 3;
+    required float positionZ  = 4;
+    required float rotX = 5;
+    required float rotY = 6;
+    required float rotZ = 7;
 }
 //躲箱子
 //cmd:hideBox
 message HideBoxCommand{
     required int32 id = 1;
-    required float position_x = 2;
-    required float position_y = 3;
-    required float position_z  = 4;
+    required float positionX = 2;
+    required float positionY = 3;
+    required float positionZ  = 4;
 }
 //被击中
 //cmd：hit
 message HitCommand{
-    required int32 enemy_id = 2;
+    required int32 enemyId = 2;
     required int32 damage = 3;
     required int32 id = 4;
 }
-//战斗中主动离开游戏
-//cmd:qutiGame
-message QuitGameCommand{
-    required int32 id = 4;
-}
+
 //游戏结束
 message GameOverCommand{
 }

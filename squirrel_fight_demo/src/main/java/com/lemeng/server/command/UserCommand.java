@@ -14,8 +14,8 @@ public final class UserCommand {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface LoginCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:LoginCommand)
+  public interface LoginRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:LoginRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -33,7 +33,7 @@ public final class UserCommand {
      *
      * <code>optional string mobile = 1;</code>
      */
-    String getMobile();
+    java.lang.String getMobile();
     /**
      * <pre>
      *手机号
@@ -59,7 +59,7 @@ public final class UserCommand {
      *
      * <code>optional string password = 2;</code>
      */
-    String getPassword();
+    java.lang.String getPassword();
     /**
      * <pre>
      *密码
@@ -102,7 +102,7 @@ public final class UserCommand {
      *
      * <code>optional string userCode = 4;</code>
      */
-    String getUserCode();
+    java.lang.String getUserCode();
     /**
      * <pre>
      *用户编码
@@ -116,31 +116,32 @@ public final class UserCommand {
   /**
    * <pre>
    *cmd：login
+   *登录请求
    * </pre>
    *
-   * Protobuf type {@code LoginCommand}
+   * Protobuf type {@code LoginRequestCommand}
    */
-  public  static final class LoginCommand extends
+  public  static final class LoginRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:LoginCommand)
-      LoginCommandOrBuilder {
-    // Use LoginCommand.newBuilder() to construct.
-    private LoginCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:LoginRequestCommand)
+      LoginRequestCommandOrBuilder {
+    // Use LoginRequestCommand.newBuilder() to construct.
+    private LoginRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private LoginCommand() {
+    private LoginRequestCommand() {
       mobile_ = "";
       password_ = "";
       type_ = 0;
       userCode_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LoginCommand(
+    private LoginRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -200,19 +201,19 @@ public final class UserCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserCommand.internal_static_LoginCommand_descriptor;
+      return com.lemeng.server.command.UserCommand.internal_static_LoginRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserCommand.internal_static_LoginCommand_fieldAccessorTable
+      return com.lemeng.server.command.UserCommand.internal_static_LoginRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginCommand.class, Builder.class);
+              com.lemeng.server.command.UserCommand.LoginRequestCommand.class, com.lemeng.server.command.UserCommand.LoginRequestCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int MOBILE_FIELD_NUMBER = 1;
-    private volatile Object mobile_;
+    private volatile java.lang.Object mobile_;
     /**
      * <pre>
      *手机号
@@ -230,14 +231,14 @@ public final class UserCommand {
      *
      * <code>optional string mobile = 1;</code>
      */
-    public String getMobile() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMobile() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           mobile_ = s;
         }
@@ -253,11 +254,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getMobileBytes() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         mobile_ = b;
         return b;
       } else {
@@ -266,7 +267,7 @@ public final class UserCommand {
     }
 
     public static final int PASSWORD_FIELD_NUMBER = 2;
-    private volatile Object password_;
+    private volatile java.lang.Object password_;
     /**
      * <pre>
      *密码
@@ -284,14 +285,14 @@ public final class UserCommand {
      *
      * <code>optional string password = 2;</code>
      */
-    public String getPassword() {
-      Object ref = password_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           password_ = s;
         }
@@ -307,11 +308,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getPasswordBytes() {
-      Object ref = password_;
-      if (ref instanceof String) {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         password_ = b;
         return b;
       } else {
@@ -343,7 +344,7 @@ public final class UserCommand {
     }
 
     public static final int USERCODE_FIELD_NUMBER = 4;
-    private volatile Object userCode_;
+    private volatile java.lang.Object userCode_;
     /**
      * <pre>
      *用户编码
@@ -361,14 +362,14 @@ public final class UserCommand {
      *
      * <code>optional string userCode = 4;</code>
      */
-    public String getUserCode() {
-      Object ref = userCode_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getUserCode() {
+      java.lang.Object ref = userCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           userCode_ = s;
         }
@@ -384,11 +385,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getUserCodeBytes() {
-      Object ref = userCode_;
-      if (ref instanceof String) {
+      java.lang.Object ref = userCode_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         userCode_ = b;
         return b;
       } else {
@@ -451,15 +452,15 @@ public final class UserCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof LoginCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.UserCommand.LoginRequestCommand)) {
         return super.equals(obj);
       }
-      LoginCommand other = (LoginCommand) obj;
+      com.lemeng.server.command.UserCommand.LoginRequestCommand other = (com.lemeng.server.command.UserCommand.LoginRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasMobile() == other.hasMobile());
@@ -486,7 +487,7 @@ public final class UserCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -514,69 +515,69 @@ public final class UserCommand {
       return hash;
     }
 
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LoginCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -588,7 +589,7 @@ public final class UserCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LoginCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.UserCommand.LoginRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -596,42 +597,43 @@ public final class UserCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
      * <pre>
      *cmd：login
+     *登录请求
      * </pre>
      *
-     * Protobuf type {@code LoginCommand}
+     * Protobuf type {@code LoginRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:LoginCommand)
-        LoginCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:LoginRequestCommand)
+        com.lemeng.server.command.UserCommand.LoginRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserCommand.internal_static_LoginCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_LoginRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserCommand.internal_static_LoginCommand_fieldAccessorTable
+        return com.lemeng.server.command.UserCommand.internal_static_LoginRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LoginCommand.class, Builder.class);
+                com.lemeng.server.command.UserCommand.LoginRequestCommand.class, com.lemeng.server.command.UserCommand.LoginRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.UserCommand.LoginCommand.newBuilder()
+      // Construct using com.lemeng.server.command.UserCommand.LoginRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -655,23 +657,23 @@ public final class UserCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserCommand.internal_static_LoginCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_LoginRequestCommand_descriptor;
       }
 
-      public LoginCommand getDefaultInstanceForType() {
-        return LoginCommand.getDefaultInstance();
+      public com.lemeng.server.command.UserCommand.LoginRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.UserCommand.LoginRequestCommand.getDefaultInstance();
       }
 
-      public LoginCommand build() {
-        LoginCommand result = buildPartial();
+      public com.lemeng.server.command.UserCommand.LoginRequestCommand build() {
+        com.lemeng.server.command.UserCommand.LoginRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public LoginCommand buildPartial() {
-        LoginCommand result = new LoginCommand(this);
+      public com.lemeng.server.command.UserCommand.LoginRequestCommand buildPartial() {
+        com.lemeng.server.command.UserCommand.LoginRequestCommand result = new com.lemeng.server.command.UserCommand.LoginRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -722,16 +724,16 @@ public final class UserCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginCommand) {
-          return mergeFrom((LoginCommand)other);
+        if (other instanceof com.lemeng.server.command.UserCommand.LoginRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.UserCommand.LoginRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LoginCommand other) {
-        if (other == LoginCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.UserCommand.LoginRequestCommand other) {
+        if (other == com.lemeng.server.command.UserCommand.LoginRequestCommand.getDefaultInstance()) return this;
         if (other.hasMobile()) {
           bitField0_ |= 0x00000001;
           mobile_ = other.mobile_;
@@ -766,11 +768,11 @@ public final class UserCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        LoginCommand parsedMessage = null;
+        com.lemeng.server.command.UserCommand.LoginRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.UserCommand.LoginRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -781,7 +783,7 @@ public final class UserCommand {
       }
       private int bitField0_;
 
-      private Object mobile_ = "";
+      private java.lang.Object mobile_ = "";
       /**
        * <pre>
        *手机号
@@ -799,18 +801,18 @@ public final class UserCommand {
        *
        * <code>optional string mobile = 1;</code>
        */
-      public String getMobile() {
-        Object ref = mobile_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMobile() {
+        java.lang.Object ref = mobile_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             mobile_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -822,11 +824,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getMobileBytes() {
-        Object ref = mobile_;
+        java.lang.Object ref = mobile_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           mobile_ = b;
           return b;
         } else {
@@ -841,7 +843,7 @@ public final class UserCommand {
        * <code>optional string mobile = 1;</code>
        */
       public Builder setMobile(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -881,7 +883,7 @@ public final class UserCommand {
         return this;
       }
 
-      private Object password_ = "";
+      private java.lang.Object password_ = "";
       /**
        * <pre>
        *密码
@@ -899,18 +901,18 @@ public final class UserCommand {
        *
        * <code>optional string password = 2;</code>
        */
-      public String getPassword() {
-        Object ref = password_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             password_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -922,11 +924,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getPasswordBytes() {
-        Object ref = password_;
+        java.lang.Object ref = password_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           password_ = b;
           return b;
         } else {
@@ -941,7 +943,7 @@ public final class UserCommand {
        * <code>optional string password = 2;</code>
        */
       public Builder setPassword(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1029,7 +1031,7 @@ public final class UserCommand {
         return this;
       }
 
-      private Object userCode_ = "";
+      private java.lang.Object userCode_ = "";
       /**
        * <pre>
        *用户编码
@@ -1047,18 +1049,18 @@ public final class UserCommand {
        *
        * <code>optional string userCode = 4;</code>
        */
-      public String getUserCode() {
-        Object ref = userCode_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getUserCode() {
+        java.lang.Object ref = userCode_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             userCode_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1070,11 +1072,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getUserCodeBytes() {
-        Object ref = userCode_;
+        java.lang.Object ref = userCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           userCode_ = b;
           return b;
         } else {
@@ -1089,7 +1091,7 @@ public final class UserCommand {
        * <code>optional string userCode = 4;</code>
        */
       public Builder setUserCode(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1139,46 +1141,46 @@ public final class UserCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:LoginCommand)
+      // @@protoc_insertion_point(builder_scope:LoginRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:LoginCommand)
-    private static final LoginCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:LoginRequestCommand)
+    private static final com.lemeng.server.command.UserCommand.LoginRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LoginCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.UserCommand.LoginRequestCommand();
     }
 
-    public static LoginCommand getDefaultInstance() {
+    public static com.lemeng.server.command.UserCommand.LoginRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<LoginCommand>
-        PARSER = new com.google.protobuf.AbstractParser<LoginCommand>() {
-      public LoginCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<LoginRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<LoginRequestCommand>() {
+      public LoginRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LoginCommand(input, extensionRegistry);
+          return new LoginRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<LoginCommand> parser() {
+    public static com.google.protobuf.Parser<LoginRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<LoginCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<LoginRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public LoginCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.UserCommand.LoginRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface SendVerifyCodeCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SendVerifyCodeCommand)
+  public interface SendVerifyCodeRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SendVerifyCodeRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1188,7 +1190,7 @@ public final class UserCommand {
     /**
      * <code>required string mobile = 1;</code>
      */
-    String getMobile();
+    java.lang.String getMobile();
     /**
      * <code>required string mobile = 1;</code>
      */
@@ -1201,26 +1203,26 @@ public final class UserCommand {
    *cmd:sendVerifyCode
    * </pre>
    *
-   * Protobuf type {@code SendVerifyCodeCommand}
+   * Protobuf type {@code SendVerifyCodeRequestCommand}
    */
-  public  static final class SendVerifyCodeCommand extends
+  public  static final class SendVerifyCodeRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SendVerifyCodeCommand)
-      SendVerifyCodeCommandOrBuilder {
-    // Use SendVerifyCodeCommand.newBuilder() to construct.
-    private SendVerifyCodeCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:SendVerifyCodeRequestCommand)
+      SendVerifyCodeRequestCommandOrBuilder {
+    // Use SendVerifyCodeRequestCommand.newBuilder() to construct.
+    private SendVerifyCodeRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SendVerifyCodeCommand() {
+    private SendVerifyCodeRequestCommand() {
       mobile_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SendVerifyCodeCommand(
+    private SendVerifyCodeRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1263,19 +1265,19 @@ public final class UserCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserCommand.internal_static_SendVerifyCodeCommand_descriptor;
+      return com.lemeng.server.command.UserCommand.internal_static_SendVerifyCodeRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserCommand.internal_static_SendVerifyCodeCommand_fieldAccessorTable
+      return com.lemeng.server.command.UserCommand.internal_static_SendVerifyCodeRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SendVerifyCodeCommand.class, Builder.class);
+              com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand.class, com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int MOBILE_FIELD_NUMBER = 1;
-    private volatile Object mobile_;
+    private volatile java.lang.Object mobile_;
     /**
      * <code>required string mobile = 1;</code>
      */
@@ -1285,14 +1287,14 @@ public final class UserCommand {
     /**
      * <code>required string mobile = 1;</code>
      */
-    public String getMobile() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMobile() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           mobile_ = s;
         }
@@ -1304,11 +1306,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getMobileBytes() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         mobile_ = b;
         return b;
       } else {
@@ -1352,15 +1354,15 @@ public final class UserCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SendVerifyCodeCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand)) {
         return super.equals(obj);
       }
-      SendVerifyCodeCommand other = (SendVerifyCodeCommand) obj;
+      com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand other = (com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasMobile() == other.hasMobile());
@@ -1372,7 +1374,7 @@ public final class UserCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1388,69 +1390,69 @@ public final class UserCommand {
       return hash;
     }
 
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendVerifyCodeCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendVerifyCodeCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendVerifyCodeCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SendVerifyCodeCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SendVerifyCodeCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1462,7 +1464,7 @@ public final class UserCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SendVerifyCodeCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1470,9 +1472,9 @@ public final class UserCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1482,31 +1484,31 @@ public final class UserCommand {
      *cmd:sendVerifyCode
      * </pre>
      *
-     * Protobuf type {@code SendVerifyCodeCommand}
+     * Protobuf type {@code SendVerifyCodeRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SendVerifyCodeCommand)
-        SendVerifyCodeCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:SendVerifyCodeRequestCommand)
+        com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserCommand.internal_static_SendVerifyCodeCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_SendVerifyCodeRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserCommand.internal_static_SendVerifyCodeCommand_fieldAccessorTable
+        return com.lemeng.server.command.UserCommand.internal_static_SendVerifyCodeRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SendVerifyCodeCommand.class, Builder.class);
+                com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand.class, com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.UserCommand.SendVerifyCodeCommand.newBuilder()
+      // Construct using com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1524,23 +1526,23 @@ public final class UserCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserCommand.internal_static_SendVerifyCodeCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_SendVerifyCodeRequestCommand_descriptor;
       }
 
-      public SendVerifyCodeCommand getDefaultInstanceForType() {
-        return SendVerifyCodeCommand.getDefaultInstance();
+      public com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand.getDefaultInstance();
       }
 
-      public SendVerifyCodeCommand build() {
-        SendVerifyCodeCommand result = buildPartial();
+      public com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand build() {
+        com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SendVerifyCodeCommand buildPartial() {
-        SendVerifyCodeCommand result = new SendVerifyCodeCommand(this);
+      public com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand buildPartial() {
+        com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand result = new com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1579,16 +1581,16 @@ public final class UserCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SendVerifyCodeCommand) {
-          return mergeFrom((SendVerifyCodeCommand)other);
+        if (other instanceof com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SendVerifyCodeCommand other) {
-        if (other == SendVerifyCodeCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand other) {
+        if (other == com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand.getDefaultInstance()) return this;
         if (other.hasMobile()) {
           bitField0_ |= 0x00000001;
           mobile_ = other.mobile_;
@@ -1610,11 +1612,11 @@ public final class UserCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SendVerifyCodeCommand parsedMessage = null;
+        com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SendVerifyCodeCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1625,7 +1627,7 @@ public final class UserCommand {
       }
       private int bitField0_;
 
-      private Object mobile_ = "";
+      private java.lang.Object mobile_ = "";
       /**
        * <code>required string mobile = 1;</code>
        */
@@ -1635,18 +1637,18 @@ public final class UserCommand {
       /**
        * <code>required string mobile = 1;</code>
        */
-      public String getMobile() {
-        Object ref = mobile_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMobile() {
+        java.lang.Object ref = mobile_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             mobile_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1654,11 +1656,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getMobileBytes() {
-        Object ref = mobile_;
+        java.lang.Object ref = mobile_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           mobile_ = b;
           return b;
         } else {
@@ -1669,7 +1671,7 @@ public final class UserCommand {
        * <code>required string mobile = 1;</code>
        */
       public Builder setMobile(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1711,46 +1713,46 @@ public final class UserCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SendVerifyCodeCommand)
+      // @@protoc_insertion_point(builder_scope:SendVerifyCodeRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:SendVerifyCodeCommand)
-    private static final SendVerifyCodeCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:SendVerifyCodeRequestCommand)
+    private static final com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SendVerifyCodeCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand();
     }
 
-    public static SendVerifyCodeCommand getDefaultInstance() {
+    public static com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<SendVerifyCodeCommand>
-        PARSER = new com.google.protobuf.AbstractParser<SendVerifyCodeCommand>() {
-      public SendVerifyCodeCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<SendVerifyCodeRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<SendVerifyCodeRequestCommand>() {
+      public SendVerifyCodeRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SendVerifyCodeCommand(input, extensionRegistry);
+          return new SendVerifyCodeRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SendVerifyCodeCommand> parser() {
+    public static com.google.protobuf.Parser<SendVerifyCodeRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<SendVerifyCodeCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<SendVerifyCodeRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public SendVerifyCodeCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.UserCommand.SendVerifyCodeRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface RegistCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:RegistCommand)
+  public interface RegistRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RegistRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1760,7 +1762,7 @@ public final class UserCommand {
     /**
      * <code>required string mobile = 1;</code>
      */
-    String getMobile();
+    java.lang.String getMobile();
     /**
      * <code>required string mobile = 1;</code>
      */
@@ -1774,7 +1776,7 @@ public final class UserCommand {
     /**
      * <code>required string password = 2;</code>
      */
-    String getPassword();
+    java.lang.String getPassword();
     /**
      * <code>required string password = 2;</code>
      */
@@ -1788,7 +1790,7 @@ public final class UserCommand {
     /**
      * <code>required string verifyCode = 3;</code>
      */
-    String getVerifyCode();
+    java.lang.String getVerifyCode();
     /**
      * <code>required string verifyCode = 3;</code>
      */
@@ -1800,28 +1802,28 @@ public final class UserCommand {
    *cmd:regist
    * </pre>
    *
-   * Protobuf type {@code RegistCommand}
+   * Protobuf type {@code RegistRequestCommand}
    */
-  public  static final class RegistCommand extends
+  public  static final class RegistRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:RegistCommand)
-      RegistCommandOrBuilder {
-    // Use RegistCommand.newBuilder() to construct.
-    private RegistCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:RegistRequestCommand)
+      RegistRequestCommandOrBuilder {
+    // Use RegistRequestCommand.newBuilder() to construct.
+    private RegistRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private RegistCommand() {
+    private RegistRequestCommand() {
       mobile_ = "";
       password_ = "";
       verifyCode_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RegistCommand(
+    private RegistRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1876,19 +1878,19 @@ public final class UserCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserCommand.internal_static_RegistCommand_descriptor;
+      return com.lemeng.server.command.UserCommand.internal_static_RegistRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserCommand.internal_static_RegistCommand_fieldAccessorTable
+      return com.lemeng.server.command.UserCommand.internal_static_RegistRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              RegistCommand.class, Builder.class);
+              com.lemeng.server.command.UserCommand.RegistRequestCommand.class, com.lemeng.server.command.UserCommand.RegistRequestCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int MOBILE_FIELD_NUMBER = 1;
-    private volatile Object mobile_;
+    private volatile java.lang.Object mobile_;
     /**
      * <code>required string mobile = 1;</code>
      */
@@ -1898,14 +1900,14 @@ public final class UserCommand {
     /**
      * <code>required string mobile = 1;</code>
      */
-    public String getMobile() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMobile() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           mobile_ = s;
         }
@@ -1917,11 +1919,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getMobileBytes() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         mobile_ = b;
         return b;
       } else {
@@ -1930,7 +1932,7 @@ public final class UserCommand {
     }
 
     public static final int PASSWORD_FIELD_NUMBER = 2;
-    private volatile Object password_;
+    private volatile java.lang.Object password_;
     /**
      * <code>required string password = 2;</code>
      */
@@ -1940,14 +1942,14 @@ public final class UserCommand {
     /**
      * <code>required string password = 2;</code>
      */
-    public String getPassword() {
-      Object ref = password_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           password_ = s;
         }
@@ -1959,11 +1961,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getPasswordBytes() {
-      Object ref = password_;
-      if (ref instanceof String) {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         password_ = b;
         return b;
       } else {
@@ -1972,7 +1974,7 @@ public final class UserCommand {
     }
 
     public static final int VERIFYCODE_FIELD_NUMBER = 3;
-    private volatile Object verifyCode_;
+    private volatile java.lang.Object verifyCode_;
     /**
      * <code>required string verifyCode = 3;</code>
      */
@@ -1982,14 +1984,14 @@ public final class UserCommand {
     /**
      * <code>required string verifyCode = 3;</code>
      */
-    public String getVerifyCode() {
-      Object ref = verifyCode_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getVerifyCode() {
+      java.lang.Object ref = verifyCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           verifyCode_ = s;
         }
@@ -2001,11 +2003,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getVerifyCodeBytes() {
-      Object ref = verifyCode_;
-      if (ref instanceof String) {
+      java.lang.Object ref = verifyCode_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         verifyCode_ = b;
         return b;
       } else {
@@ -2069,15 +2071,15 @@ public final class UserCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof RegistCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.UserCommand.RegistRequestCommand)) {
         return super.equals(obj);
       }
-      RegistCommand other = (RegistCommand) obj;
+      com.lemeng.server.command.UserCommand.RegistRequestCommand other = (com.lemeng.server.command.UserCommand.RegistRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasMobile() == other.hasMobile());
@@ -2099,7 +2101,7 @@ public final class UserCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2123,69 +2125,69 @@ public final class UserCommand {
       return hash;
     }
 
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RegistCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RegistCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RegistCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static RegistCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RegistCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2197,7 +2199,7 @@ public final class UserCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(RegistCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.UserCommand.RegistRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2205,9 +2207,9 @@ public final class UserCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2216,31 +2218,31 @@ public final class UserCommand {
      *cmd:regist
      * </pre>
      *
-     * Protobuf type {@code RegistCommand}
+     * Protobuf type {@code RegistRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RegistCommand)
-        RegistCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:RegistRequestCommand)
+        com.lemeng.server.command.UserCommand.RegistRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserCommand.internal_static_RegistCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_RegistRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserCommand.internal_static_RegistCommand_fieldAccessorTable
+        return com.lemeng.server.command.UserCommand.internal_static_RegistRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                RegistCommand.class, Builder.class);
+                com.lemeng.server.command.UserCommand.RegistRequestCommand.class, com.lemeng.server.command.UserCommand.RegistRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.UserCommand.RegistCommand.newBuilder()
+      // Construct using com.lemeng.server.command.UserCommand.RegistRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2262,23 +2264,23 @@ public final class UserCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserCommand.internal_static_RegistCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_RegistRequestCommand_descriptor;
       }
 
-      public RegistCommand getDefaultInstanceForType() {
-        return RegistCommand.getDefaultInstance();
+      public com.lemeng.server.command.UserCommand.RegistRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.UserCommand.RegistRequestCommand.getDefaultInstance();
       }
 
-      public RegistCommand build() {
-        RegistCommand result = buildPartial();
+      public com.lemeng.server.command.UserCommand.RegistRequestCommand build() {
+        com.lemeng.server.command.UserCommand.RegistRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public RegistCommand buildPartial() {
-        RegistCommand result = new RegistCommand(this);
+      public com.lemeng.server.command.UserCommand.RegistRequestCommand buildPartial() {
+        com.lemeng.server.command.UserCommand.RegistRequestCommand result = new com.lemeng.server.command.UserCommand.RegistRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2325,16 +2327,16 @@ public final class UserCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RegistCommand) {
-          return mergeFrom((RegistCommand)other);
+        if (other instanceof com.lemeng.server.command.UserCommand.RegistRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.UserCommand.RegistRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(RegistCommand other) {
-        if (other == RegistCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.UserCommand.RegistRequestCommand other) {
+        if (other == com.lemeng.server.command.UserCommand.RegistRequestCommand.getDefaultInstance()) return this;
         if (other.hasMobile()) {
           bitField0_ |= 0x00000001;
           mobile_ = other.mobile_;
@@ -2372,11 +2374,11 @@ public final class UserCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        RegistCommand parsedMessage = null;
+        com.lemeng.server.command.UserCommand.RegistRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RegistCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.UserCommand.RegistRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2387,7 +2389,7 @@ public final class UserCommand {
       }
       private int bitField0_;
 
-      private Object mobile_ = "";
+      private java.lang.Object mobile_ = "";
       /**
        * <code>required string mobile = 1;</code>
        */
@@ -2397,18 +2399,18 @@ public final class UserCommand {
       /**
        * <code>required string mobile = 1;</code>
        */
-      public String getMobile() {
-        Object ref = mobile_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMobile() {
+        java.lang.Object ref = mobile_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             mobile_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2416,11 +2418,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getMobileBytes() {
-        Object ref = mobile_;
+        java.lang.Object ref = mobile_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           mobile_ = b;
           return b;
         } else {
@@ -2431,7 +2433,7 @@ public final class UserCommand {
        * <code>required string mobile = 1;</code>
        */
       public Builder setMobile(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2463,7 +2465,7 @@ public final class UserCommand {
         return this;
       }
 
-      private Object password_ = "";
+      private java.lang.Object password_ = "";
       /**
        * <code>required string password = 2;</code>
        */
@@ -2473,18 +2475,18 @@ public final class UserCommand {
       /**
        * <code>required string password = 2;</code>
        */
-      public String getPassword() {
-        Object ref = password_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             password_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2492,11 +2494,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getPasswordBytes() {
-        Object ref = password_;
+        java.lang.Object ref = password_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           password_ = b;
           return b;
         } else {
@@ -2507,7 +2509,7 @@ public final class UserCommand {
        * <code>required string password = 2;</code>
        */
       public Builder setPassword(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2539,7 +2541,7 @@ public final class UserCommand {
         return this;
       }
 
-      private Object verifyCode_ = "";
+      private java.lang.Object verifyCode_ = "";
       /**
        * <code>required string verifyCode = 3;</code>
        */
@@ -2549,18 +2551,18 @@ public final class UserCommand {
       /**
        * <code>required string verifyCode = 3;</code>
        */
-      public String getVerifyCode() {
-        Object ref = verifyCode_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getVerifyCode() {
+        java.lang.Object ref = verifyCode_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             verifyCode_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2568,11 +2570,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getVerifyCodeBytes() {
-        Object ref = verifyCode_;
+        java.lang.Object ref = verifyCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           verifyCode_ = b;
           return b;
         } else {
@@ -2583,7 +2585,7 @@ public final class UserCommand {
        * <code>required string verifyCode = 3;</code>
        */
       public Builder setVerifyCode(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2625,46 +2627,46 @@ public final class UserCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:RegistCommand)
+      // @@protoc_insertion_point(builder_scope:RegistRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:RegistCommand)
-    private static final RegistCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:RegistRequestCommand)
+    private static final com.lemeng.server.command.UserCommand.RegistRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new RegistCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.UserCommand.RegistRequestCommand();
     }
 
-    public static RegistCommand getDefaultInstance() {
+    public static com.lemeng.server.command.UserCommand.RegistRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<RegistCommand>
-        PARSER = new com.google.protobuf.AbstractParser<RegistCommand>() {
-      public RegistCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RegistRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<RegistRequestCommand>() {
+      public RegistRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RegistCommand(input, extensionRegistry);
+          return new RegistRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RegistCommand> parser() {
+    public static com.google.protobuf.Parser<RegistRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<RegistCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<RegistRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public RegistCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.UserCommand.RegistRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface LoginResultCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:LoginResultCommand)
+  public interface LoginResponseCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:LoginResponseCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2691,7 +2693,7 @@ public final class UserCommand {
     /**
      * <code>required string msg = 2;</code>
      */
-    String getMsg();
+    java.lang.String getMsg();
     /**
      * <code>required string msg = 2;</code>
      */
@@ -2713,7 +2715,7 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 3;</code>
      */
-    UserInfoCommand getUserInfo();
+    com.lemeng.server.command.UserCommand.UserInfoCommand getUserInfo();
     /**
      * <pre>
      *为空则需要初始化玩家
@@ -2721,35 +2723,35 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 3;</code>
      */
-    UserInfoCommandOrBuilder getUserInfoOrBuilder();
+    com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder getUserInfoOrBuilder();
   }
   /**
    * <pre>
    *cmd:loginResult,registResult
-   *操作结果
+   *登录响应
    * </pre>
    *
-   * Protobuf type {@code LoginResultCommand}
+   * Protobuf type {@code LoginResponseCommand}
    */
-  public  static final class LoginResultCommand extends
+  public  static final class LoginResponseCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:LoginResultCommand)
-      LoginResultCommandOrBuilder {
-    // Use LoginResultCommand.newBuilder() to construct.
-    private LoginResultCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:LoginResponseCommand)
+      LoginResponseCommandOrBuilder {
+    // Use LoginResponseCommand.newBuilder() to construct.
+    private LoginResponseCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private LoginResultCommand() {
+    private LoginResponseCommand() {
       code_ = 0;
       msg_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LoginResultCommand(
+    private LoginResponseCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2784,11 +2786,11 @@ public final class UserCommand {
               break;
             }
             case 26: {
-              UserInfoCommand.Builder subBuilder = null;
+              com.lemeng.server.command.UserCommand.UserInfoCommand.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = userInfo_.toBuilder();
               }
-              userInfo_ = input.readMessage(UserInfoCommand.PARSER, extensionRegistry);
+              userInfo_ = input.readMessage(com.lemeng.server.command.UserCommand.UserInfoCommand.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(userInfo_);
                 userInfo_ = subBuilder.buildPartial();
@@ -2810,14 +2812,14 @@ public final class UserCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserCommand.internal_static_LoginResultCommand_descriptor;
+      return com.lemeng.server.command.UserCommand.internal_static_LoginResponseCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserCommand.internal_static_LoginResultCommand_fieldAccessorTable
+      return com.lemeng.server.command.UserCommand.internal_static_LoginResponseCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginResultCommand.class, Builder.class);
+              com.lemeng.server.command.UserCommand.LoginResponseCommand.class, com.lemeng.server.command.UserCommand.LoginResponseCommand.Builder.class);
     }
 
     private int bitField0_;
@@ -2845,7 +2847,7 @@ public final class UserCommand {
     }
 
     public static final int MSG_FIELD_NUMBER = 2;
-    private volatile Object msg_;
+    private volatile java.lang.Object msg_;
     /**
      * <code>required string msg = 2;</code>
      */
@@ -2855,14 +2857,14 @@ public final class UserCommand {
     /**
      * <code>required string msg = 2;</code>
      */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           msg_ = s;
         }
@@ -2874,11 +2876,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msg_ = b;
         return b;
       } else {
@@ -2887,7 +2889,7 @@ public final class UserCommand {
     }
 
     public static final int USERINFO_FIELD_NUMBER = 3;
-    private UserInfoCommand userInfo_;
+    private com.lemeng.server.command.UserCommand.UserInfoCommand userInfo_;
     /**
      * <pre>
      *为空则需要初始化玩家
@@ -2905,8 +2907,8 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 3;</code>
      */
-    public UserInfoCommand getUserInfo() {
-      return userInfo_ == null ? UserInfoCommand.getDefaultInstance() : userInfo_;
+    public com.lemeng.server.command.UserCommand.UserInfoCommand getUserInfo() {
+      return userInfo_ == null ? com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
     }
     /**
      * <pre>
@@ -2915,8 +2917,8 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 3;</code>
      */
-    public UserInfoCommandOrBuilder getUserInfoOrBuilder() {
-      return userInfo_ == null ? UserInfoCommand.getDefaultInstance() : userInfo_;
+    public com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder getUserInfoOrBuilder() {
+      return userInfo_ == null ? com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2979,15 +2981,15 @@ public final class UserCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof LoginResultCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.UserCommand.LoginResponseCommand)) {
         return super.equals(obj);
       }
-      LoginResultCommand other = (LoginResultCommand) obj;
+      com.lemeng.server.command.UserCommand.LoginResponseCommand other = (com.lemeng.server.command.UserCommand.LoginResponseCommand) obj;
 
       boolean result = true;
       result = result && (hasCode() == other.hasCode());
@@ -3009,7 +3011,7 @@ public final class UserCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3033,69 +3035,69 @@ public final class UserCommand {
       return hash;
     }
 
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginResultCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginResultCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginResultCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LoginResultCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static LoginResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3107,7 +3109,7 @@ public final class UserCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LoginResultCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.UserCommand.LoginResponseCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3115,43 +3117,43 @@ public final class UserCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
      * <pre>
      *cmd:loginResult,registResult
-     *操作结果
+     *登录响应
      * </pre>
      *
-     * Protobuf type {@code LoginResultCommand}
+     * Protobuf type {@code LoginResponseCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:LoginResultCommand)
-        LoginResultCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:LoginResponseCommand)
+        com.lemeng.server.command.UserCommand.LoginResponseCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserCommand.internal_static_LoginResultCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_LoginResponseCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserCommand.internal_static_LoginResultCommand_fieldAccessorTable
+        return com.lemeng.server.command.UserCommand.internal_static_LoginResponseCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LoginResultCommand.class, Builder.class);
+                com.lemeng.server.command.UserCommand.LoginResponseCommand.class, com.lemeng.server.command.UserCommand.LoginResponseCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.UserCommand.LoginResultCommand.newBuilder()
+      // Construct using com.lemeng.server.command.UserCommand.LoginResponseCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3178,23 +3180,23 @@ public final class UserCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserCommand.internal_static_LoginResultCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_LoginResponseCommand_descriptor;
       }
 
-      public LoginResultCommand getDefaultInstanceForType() {
-        return LoginResultCommand.getDefaultInstance();
+      public com.lemeng.server.command.UserCommand.LoginResponseCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.UserCommand.LoginResponseCommand.getDefaultInstance();
       }
 
-      public LoginResultCommand build() {
-        LoginResultCommand result = buildPartial();
+      public com.lemeng.server.command.UserCommand.LoginResponseCommand build() {
+        com.lemeng.server.command.UserCommand.LoginResponseCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public LoginResultCommand buildPartial() {
-        LoginResultCommand result = new LoginResultCommand(this);
+      public com.lemeng.server.command.UserCommand.LoginResponseCommand buildPartial() {
+        com.lemeng.server.command.UserCommand.LoginResponseCommand result = new com.lemeng.server.command.UserCommand.LoginResponseCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3245,16 +3247,16 @@ public final class UserCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginResultCommand) {
-          return mergeFrom((LoginResultCommand)other);
+        if (other instanceof com.lemeng.server.command.UserCommand.LoginResponseCommand) {
+          return mergeFrom((com.lemeng.server.command.UserCommand.LoginResponseCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LoginResultCommand other) {
-        if (other == LoginResultCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.UserCommand.LoginResponseCommand other) {
+        if (other == com.lemeng.server.command.UserCommand.LoginResponseCommand.getDefaultInstance()) return this;
         if (other.hasCode()) {
           setCode(other.getCode());
         }
@@ -3290,11 +3292,11 @@ public final class UserCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        LoginResultCommand parsedMessage = null;
+        com.lemeng.server.command.UserCommand.LoginResponseCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginResultCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.UserCommand.LoginResponseCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3353,7 +3355,7 @@ public final class UserCommand {
         return this;
       }
 
-      private Object msg_ = "";
+      private java.lang.Object msg_ = "";
       /**
        * <code>required string msg = 2;</code>
        */
@@ -3363,18 +3365,18 @@ public final class UserCommand {
       /**
        * <code>required string msg = 2;</code>
        */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             msg_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3382,11 +3384,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
-        Object ref = msg_;
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msg_ = b;
           return b;
         } else {
@@ -3397,7 +3399,7 @@ public final class UserCommand {
        * <code>required string msg = 2;</code>
        */
       public Builder setMsg(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3429,9 +3431,9 @@ public final class UserCommand {
         return this;
       }
 
-      private UserInfoCommand userInfo_ = null;
+      private com.lemeng.server.command.UserCommand.UserInfoCommand userInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          UserInfoCommand, UserInfoCommand.Builder, UserInfoCommandOrBuilder> userInfoBuilder_;
+          com.lemeng.server.command.UserCommand.UserInfoCommand, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder, com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder> userInfoBuilder_;
       /**
        * <pre>
        *为空则需要初始化玩家
@@ -3449,9 +3451,9 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 3;</code>
        */
-      public UserInfoCommand getUserInfo() {
+      public com.lemeng.server.command.UserCommand.UserInfoCommand getUserInfo() {
         if (userInfoBuilder_ == null) {
-          return userInfo_ == null ? UserInfoCommand.getDefaultInstance() : userInfo_;
+          return userInfo_ == null ? com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
         } else {
           return userInfoBuilder_.getMessage();
         }
@@ -3463,7 +3465,7 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 3;</code>
        */
-      public Builder setUserInfo(UserInfoCommand value) {
+      public Builder setUserInfo(com.lemeng.server.command.UserCommand.UserInfoCommand value) {
         if (userInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3484,7 +3486,7 @@ public final class UserCommand {
        * <code>optional .UserInfoCommand userInfo = 3;</code>
        */
       public Builder setUserInfo(
-          UserInfoCommand.Builder builderForValue) {
+          com.lemeng.server.command.UserCommand.UserInfoCommand.Builder builderForValue) {
         if (userInfoBuilder_ == null) {
           userInfo_ = builderForValue.build();
           onChanged();
@@ -3501,13 +3503,13 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 3;</code>
        */
-      public Builder mergeUserInfo(UserInfoCommand value) {
+      public Builder mergeUserInfo(com.lemeng.server.command.UserCommand.UserInfoCommand value) {
         if (userInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
               userInfo_ != null &&
-              userInfo_ != UserInfoCommand.getDefaultInstance()) {
+              userInfo_ != com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance()) {
             userInfo_ =
-              UserInfoCommand.newBuilder(userInfo_).mergeFrom(value).buildPartial();
+              com.lemeng.server.command.UserCommand.UserInfoCommand.newBuilder(userInfo_).mergeFrom(value).buildPartial();
           } else {
             userInfo_ = value;
           }
@@ -3542,7 +3544,7 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 3;</code>
        */
-      public UserInfoCommand.Builder getUserInfoBuilder() {
+      public com.lemeng.server.command.UserCommand.UserInfoCommand.Builder getUserInfoBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getUserInfoFieldBuilder().getBuilder();
@@ -3554,12 +3556,12 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 3;</code>
        */
-      public UserInfoCommandOrBuilder getUserInfoOrBuilder() {
+      public com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder getUserInfoOrBuilder() {
         if (userInfoBuilder_ != null) {
           return userInfoBuilder_.getMessageOrBuilder();
         } else {
           return userInfo_ == null ?
-              UserInfoCommand.getDefaultInstance() : userInfo_;
+              com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
         }
       }
       /**
@@ -3570,11 +3572,11 @@ public final class UserCommand {
        * <code>optional .UserInfoCommand userInfo = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          UserInfoCommand, UserInfoCommand.Builder, UserInfoCommandOrBuilder>
+          com.lemeng.server.command.UserCommand.UserInfoCommand, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder, com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder> 
           getUserInfoFieldBuilder() {
         if (userInfoBuilder_ == null) {
           userInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              UserInfoCommand, UserInfoCommand.Builder, UserInfoCommandOrBuilder>(
+              com.lemeng.server.command.UserCommand.UserInfoCommand, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder, com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder>(
                   getUserInfo(),
                   getParentForChildren(),
                   isClean());
@@ -3593,46 +3595,46 @@ public final class UserCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:LoginResultCommand)
+      // @@protoc_insertion_point(builder_scope:LoginResponseCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:LoginResultCommand)
-    private static final LoginResultCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:LoginResponseCommand)
+    private static final com.lemeng.server.command.UserCommand.LoginResponseCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LoginResultCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.UserCommand.LoginResponseCommand();
     }
 
-    public static LoginResultCommand getDefaultInstance() {
+    public static com.lemeng.server.command.UserCommand.LoginResponseCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<LoginResultCommand>
-        PARSER = new com.google.protobuf.AbstractParser<LoginResultCommand>() {
-      public LoginResultCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<LoginResponseCommand>
+        PARSER = new com.google.protobuf.AbstractParser<LoginResponseCommand>() {
+      public LoginResponseCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LoginResultCommand(input, extensionRegistry);
+          return new LoginResponseCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<LoginResultCommand> parser() {
+    public static com.google.protobuf.Parser<LoginResponseCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<LoginResultCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<LoginResponseCommand> getParserForType() {
       return PARSER;
     }
 
-    public LoginResultCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.UserCommand.LoginResponseCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface InitPlayerCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:InitPlayerCommand)
+  public interface InitPlayerRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:InitPlayerRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3642,7 +3644,7 @@ public final class UserCommand {
     /**
      * <code>required string nickname = 1;</code>
      */
-    String getNickname();
+    java.lang.String getNickname();
     /**
      * <code>required string nickname = 1;</code>
      */
@@ -3660,30 +3662,30 @@ public final class UserCommand {
   }
   /**
    * <pre>
-   *初始化玩家
+   *初始化玩家请求
    * </pre>
    *
-   * Protobuf type {@code InitPlayerCommand}
+   * Protobuf type {@code InitPlayerRequestCommand}
    */
-  public  static final class InitPlayerCommand extends
+  public  static final class InitPlayerRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:InitPlayerCommand)
-      InitPlayerCommandOrBuilder {
-    // Use InitPlayerCommand.newBuilder() to construct.
-    private InitPlayerCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:InitPlayerRequestCommand)
+      InitPlayerRequestCommandOrBuilder {
+    // Use InitPlayerRequestCommand.newBuilder() to construct.
+    private InitPlayerRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private InitPlayerCommand() {
+    private InitPlayerRequestCommand() {
       nickname_ = "";
       userId_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InitPlayerCommand(
+    private InitPlayerRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3731,19 +3733,19 @@ public final class UserCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserCommand.internal_static_InitPlayerCommand_descriptor;
+      return com.lemeng.server.command.UserCommand.internal_static_InitPlayerRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserCommand.internal_static_InitPlayerCommand_fieldAccessorTable
+      return com.lemeng.server.command.UserCommand.internal_static_InitPlayerRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              InitPlayerCommand.class, Builder.class);
+              com.lemeng.server.command.UserCommand.InitPlayerRequestCommand.class, com.lemeng.server.command.UserCommand.InitPlayerRequestCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int NICKNAME_FIELD_NUMBER = 1;
-    private volatile Object nickname_;
+    private volatile java.lang.Object nickname_;
     /**
      * <code>required string nickname = 1;</code>
      */
@@ -3753,14 +3755,14 @@ public final class UserCommand {
     /**
      * <code>required string nickname = 1;</code>
      */
-    public String getNickname() {
-      Object ref = nickname_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           nickname_ = s;
         }
@@ -3772,11 +3774,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getNicknameBytes() {
-      Object ref = nickname_;
-      if (ref instanceof String) {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         nickname_ = b;
         return b;
       } else {
@@ -3846,15 +3848,15 @@ public final class UserCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof InitPlayerCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.UserCommand.InitPlayerRequestCommand)) {
         return super.equals(obj);
       }
-      InitPlayerCommand other = (InitPlayerCommand) obj;
+      com.lemeng.server.command.UserCommand.InitPlayerRequestCommand other = (com.lemeng.server.command.UserCommand.InitPlayerRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasNickname() == other.hasNickname());
@@ -3871,7 +3873,7 @@ public final class UserCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3891,69 +3893,69 @@ public final class UserCommand {
       return hash;
     }
 
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InitPlayerCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InitPlayerCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InitPlayerCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static InitPlayerCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InitPlayerCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3965,7 +3967,7 @@ public final class UserCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(InitPlayerCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.UserCommand.InitPlayerRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3973,42 +3975,42 @@ public final class UserCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
      * <pre>
-     *初始化玩家
+     *初始化玩家请求
      * </pre>
      *
-     * Protobuf type {@code InitPlayerCommand}
+     * Protobuf type {@code InitPlayerRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:InitPlayerCommand)
-        InitPlayerCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:InitPlayerRequestCommand)
+        com.lemeng.server.command.UserCommand.InitPlayerRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserCommand.internal_static_InitPlayerCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_InitPlayerRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserCommand.internal_static_InitPlayerCommand_fieldAccessorTable
+        return com.lemeng.server.command.UserCommand.internal_static_InitPlayerRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                InitPlayerCommand.class, Builder.class);
+                com.lemeng.server.command.UserCommand.InitPlayerRequestCommand.class, com.lemeng.server.command.UserCommand.InitPlayerRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.UserCommand.InitPlayerCommand.newBuilder()
+      // Construct using com.lemeng.server.command.UserCommand.InitPlayerRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4028,23 +4030,23 @@ public final class UserCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserCommand.internal_static_InitPlayerCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_InitPlayerRequestCommand_descriptor;
       }
 
-      public InitPlayerCommand getDefaultInstanceForType() {
-        return InitPlayerCommand.getDefaultInstance();
+      public com.lemeng.server.command.UserCommand.InitPlayerRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.UserCommand.InitPlayerRequestCommand.getDefaultInstance();
       }
 
-      public InitPlayerCommand build() {
-        InitPlayerCommand result = buildPartial();
+      public com.lemeng.server.command.UserCommand.InitPlayerRequestCommand build() {
+        com.lemeng.server.command.UserCommand.InitPlayerRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public InitPlayerCommand buildPartial() {
-        InitPlayerCommand result = new InitPlayerCommand(this);
+      public com.lemeng.server.command.UserCommand.InitPlayerRequestCommand buildPartial() {
+        com.lemeng.server.command.UserCommand.InitPlayerRequestCommand result = new com.lemeng.server.command.UserCommand.InitPlayerRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4087,16 +4089,16 @@ public final class UserCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof InitPlayerCommand) {
-          return mergeFrom((InitPlayerCommand)other);
+        if (other instanceof com.lemeng.server.command.UserCommand.InitPlayerRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.UserCommand.InitPlayerRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(InitPlayerCommand other) {
-        if (other == InitPlayerCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.UserCommand.InitPlayerRequestCommand other) {
+        if (other == com.lemeng.server.command.UserCommand.InitPlayerRequestCommand.getDefaultInstance()) return this;
         if (other.hasNickname()) {
           bitField0_ |= 0x00000001;
           nickname_ = other.nickname_;
@@ -4124,11 +4126,11 @@ public final class UserCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        InitPlayerCommand parsedMessage = null;
+        com.lemeng.server.command.UserCommand.InitPlayerRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (InitPlayerCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.UserCommand.InitPlayerRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4139,7 +4141,7 @@ public final class UserCommand {
       }
       private int bitField0_;
 
-      private Object nickname_ = "";
+      private java.lang.Object nickname_ = "";
       /**
        * <code>required string nickname = 1;</code>
        */
@@ -4149,18 +4151,18 @@ public final class UserCommand {
       /**
        * <code>required string nickname = 1;</code>
        */
-      public String getNickname() {
-        Object ref = nickname_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             nickname_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4168,11 +4170,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getNicknameBytes() {
-        Object ref = nickname_;
+        java.lang.Object ref = nickname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           nickname_ = b;
           return b;
         } else {
@@ -4183,7 +4185,7 @@ public final class UserCommand {
        * <code>required string nickname = 1;</code>
        */
       public Builder setNickname(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4257,46 +4259,46 @@ public final class UserCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:InitPlayerCommand)
+      // @@protoc_insertion_point(builder_scope:InitPlayerRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:InitPlayerCommand)
-    private static final InitPlayerCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:InitPlayerRequestCommand)
+    private static final com.lemeng.server.command.UserCommand.InitPlayerRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new InitPlayerCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.UserCommand.InitPlayerRequestCommand();
     }
 
-    public static InitPlayerCommand getDefaultInstance() {
+    public static com.lemeng.server.command.UserCommand.InitPlayerRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<InitPlayerCommand>
-        PARSER = new com.google.protobuf.AbstractParser<InitPlayerCommand>() {
-      public InitPlayerCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<InitPlayerRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<InitPlayerRequestCommand>() {
+      public InitPlayerRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InitPlayerCommand(input, extensionRegistry);
+          return new InitPlayerRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<InitPlayerCommand> parser() {
+    public static com.google.protobuf.Parser<InitPlayerRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<InitPlayerCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<InitPlayerRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public InitPlayerCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.UserCommand.InitPlayerRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface InitPlayerResultCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:InitPlayerResultCommand)
+  public interface InitPlayerResponseCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:InitPlayerResponseCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4331,7 +4333,7 @@ public final class UserCommand {
      *
      * <code>optional string msg = 3;</code>
      */
-    String getMsg();
+    java.lang.String getMsg();
     /**
      * <pre>
      *例：用户名重复
@@ -4357,7 +4359,7 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 4;</code>
      */
-    UserInfoCommand getUserInfo();
+    com.lemeng.server.command.UserCommand.UserInfoCommand getUserInfo();
     /**
      * <pre>
      *数据
@@ -4365,34 +4367,34 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 4;</code>
      */
-    UserInfoCommandOrBuilder getUserInfoOrBuilder();
+    com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder getUserInfoOrBuilder();
   }
   /**
    * <pre>
-   *操作结果
+   *初始化玩家响应
    * </pre>
    *
-   * Protobuf type {@code InitPlayerResultCommand}
+   * Protobuf type {@code InitPlayerResponseCommand}
    */
-  public  static final class InitPlayerResultCommand extends
+  public  static final class InitPlayerResponseCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:InitPlayerResultCommand)
-      InitPlayerResultCommandOrBuilder {
-    // Use InitPlayerResultCommand.newBuilder() to construct.
-    private InitPlayerResultCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:InitPlayerResponseCommand)
+      InitPlayerResponseCommandOrBuilder {
+    // Use InitPlayerResponseCommand.newBuilder() to construct.
+    private InitPlayerResponseCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private InitPlayerResultCommand() {
+    private InitPlayerResponseCommand() {
       code_ = 0;
       msg_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InitPlayerResultCommand(
+    private InitPlayerResponseCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4427,11 +4429,11 @@ public final class UserCommand {
               break;
             }
             case 34: {
-              UserInfoCommand.Builder subBuilder = null;
+              com.lemeng.server.command.UserCommand.UserInfoCommand.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = userInfo_.toBuilder();
               }
-              userInfo_ = input.readMessage(UserInfoCommand.PARSER, extensionRegistry);
+              userInfo_ = input.readMessage(com.lemeng.server.command.UserCommand.UserInfoCommand.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(userInfo_);
                 userInfo_ = subBuilder.buildPartial();
@@ -4453,14 +4455,14 @@ public final class UserCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserCommand.internal_static_InitPlayerResultCommand_descriptor;
+      return com.lemeng.server.command.UserCommand.internal_static_InitPlayerResponseCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserCommand.internal_static_InitPlayerResultCommand_fieldAccessorTable
+      return com.lemeng.server.command.UserCommand.internal_static_InitPlayerResponseCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              InitPlayerResultCommand.class, Builder.class);
+              com.lemeng.server.command.UserCommand.InitPlayerResponseCommand.class, com.lemeng.server.command.UserCommand.InitPlayerResponseCommand.Builder.class);
     }
 
     private int bitField0_;
@@ -4488,7 +4490,7 @@ public final class UserCommand {
     }
 
     public static final int MSG_FIELD_NUMBER = 3;
-    private volatile Object msg_;
+    private volatile java.lang.Object msg_;
     /**
      * <pre>
      *例：用户名重复
@@ -4506,14 +4508,14 @@ public final class UserCommand {
      *
      * <code>optional string msg = 3;</code>
      */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           msg_ = s;
         }
@@ -4529,11 +4531,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msg_ = b;
         return b;
       } else {
@@ -4542,7 +4544,7 @@ public final class UserCommand {
     }
 
     public static final int USERINFO_FIELD_NUMBER = 4;
-    private UserInfoCommand userInfo_;
+    private com.lemeng.server.command.UserCommand.UserInfoCommand userInfo_;
     /**
      * <pre>
      *数据
@@ -4560,8 +4562,8 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 4;</code>
      */
-    public UserInfoCommand getUserInfo() {
-      return userInfo_ == null ? UserInfoCommand.getDefaultInstance() : userInfo_;
+    public com.lemeng.server.command.UserCommand.UserInfoCommand getUserInfo() {
+      return userInfo_ == null ? com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
     }
     /**
      * <pre>
@@ -4570,8 +4572,8 @@ public final class UserCommand {
      *
      * <code>optional .UserInfoCommand userInfo = 4;</code>
      */
-    public UserInfoCommandOrBuilder getUserInfoOrBuilder() {
-      return userInfo_ == null ? UserInfoCommand.getDefaultInstance() : userInfo_;
+    public com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder getUserInfoOrBuilder() {
+      return userInfo_ == null ? com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4630,15 +4632,15 @@ public final class UserCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof InitPlayerResultCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.UserCommand.InitPlayerResponseCommand)) {
         return super.equals(obj);
       }
-      InitPlayerResultCommand other = (InitPlayerResultCommand) obj;
+      com.lemeng.server.command.UserCommand.InitPlayerResponseCommand other = (com.lemeng.server.command.UserCommand.InitPlayerResponseCommand) obj;
 
       boolean result = true;
       result = result && (hasCode() == other.hasCode());
@@ -4660,7 +4662,7 @@ public final class UserCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -4684,69 +4686,69 @@ public final class UserCommand {
       return hash;
     }
 
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InitPlayerResultCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static InitPlayerResultCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InitPlayerResultCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static InitPlayerResultCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static InitPlayerResultCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4758,7 +4760,7 @@ public final class UserCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(InitPlayerResultCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.UserCommand.InitPlayerResponseCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4766,42 +4768,42 @@ public final class UserCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
      * <pre>
-     *操作结果
+     *初始化玩家响应
      * </pre>
      *
-     * Protobuf type {@code InitPlayerResultCommand}
+     * Protobuf type {@code InitPlayerResponseCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:InitPlayerResultCommand)
-        InitPlayerResultCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:InitPlayerResponseCommand)
+        com.lemeng.server.command.UserCommand.InitPlayerResponseCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserCommand.internal_static_InitPlayerResultCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_InitPlayerResponseCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserCommand.internal_static_InitPlayerResultCommand_fieldAccessorTable
+        return com.lemeng.server.command.UserCommand.internal_static_InitPlayerResponseCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                InitPlayerResultCommand.class, Builder.class);
+                com.lemeng.server.command.UserCommand.InitPlayerResponseCommand.class, com.lemeng.server.command.UserCommand.InitPlayerResponseCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.UserCommand.InitPlayerResultCommand.newBuilder()
+      // Construct using com.lemeng.server.command.UserCommand.InitPlayerResponseCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4828,23 +4830,23 @@ public final class UserCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserCommand.internal_static_InitPlayerResultCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_InitPlayerResponseCommand_descriptor;
       }
 
-      public InitPlayerResultCommand getDefaultInstanceForType() {
-        return InitPlayerResultCommand.getDefaultInstance();
+      public com.lemeng.server.command.UserCommand.InitPlayerResponseCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.UserCommand.InitPlayerResponseCommand.getDefaultInstance();
       }
 
-      public InitPlayerResultCommand build() {
-        InitPlayerResultCommand result = buildPartial();
+      public com.lemeng.server.command.UserCommand.InitPlayerResponseCommand build() {
+        com.lemeng.server.command.UserCommand.InitPlayerResponseCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public InitPlayerResultCommand buildPartial() {
-        InitPlayerResultCommand result = new InitPlayerResultCommand(this);
+      public com.lemeng.server.command.UserCommand.InitPlayerResponseCommand buildPartial() {
+        com.lemeng.server.command.UserCommand.InitPlayerResponseCommand result = new com.lemeng.server.command.UserCommand.InitPlayerResponseCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4895,16 +4897,16 @@ public final class UserCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof InitPlayerResultCommand) {
-          return mergeFrom((InitPlayerResultCommand)other);
+        if (other instanceof com.lemeng.server.command.UserCommand.InitPlayerResponseCommand) {
+          return mergeFrom((com.lemeng.server.command.UserCommand.InitPlayerResponseCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(InitPlayerResultCommand other) {
-        if (other == InitPlayerResultCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.UserCommand.InitPlayerResponseCommand other) {
+        if (other == com.lemeng.server.command.UserCommand.InitPlayerResponseCommand.getDefaultInstance()) return this;
         if (other.hasCode()) {
           setCode(other.getCode());
         }
@@ -4937,11 +4939,11 @@ public final class UserCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        InitPlayerResultCommand parsedMessage = null;
+        com.lemeng.server.command.UserCommand.InitPlayerResponseCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (InitPlayerResultCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.UserCommand.InitPlayerResponseCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5000,7 +5002,7 @@ public final class UserCommand {
         return this;
       }
 
-      private Object msg_ = "";
+      private java.lang.Object msg_ = "";
       /**
        * <pre>
        *例：用户名重复
@@ -5018,18 +5020,18 @@ public final class UserCommand {
        *
        * <code>optional string msg = 3;</code>
        */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             msg_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -5041,11 +5043,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
-        Object ref = msg_;
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msg_ = b;
           return b;
         } else {
@@ -5060,7 +5062,7 @@ public final class UserCommand {
        * <code>optional string msg = 3;</code>
        */
       public Builder setMsg(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5100,9 +5102,9 @@ public final class UserCommand {
         return this;
       }
 
-      private UserInfoCommand userInfo_ = null;
+      private com.lemeng.server.command.UserCommand.UserInfoCommand userInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          UserInfoCommand, UserInfoCommand.Builder, UserInfoCommandOrBuilder> userInfoBuilder_;
+          com.lemeng.server.command.UserCommand.UserInfoCommand, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder, com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder> userInfoBuilder_;
       /**
        * <pre>
        *数据
@@ -5120,9 +5122,9 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 4;</code>
        */
-      public UserInfoCommand getUserInfo() {
+      public com.lemeng.server.command.UserCommand.UserInfoCommand getUserInfo() {
         if (userInfoBuilder_ == null) {
-          return userInfo_ == null ? UserInfoCommand.getDefaultInstance() : userInfo_;
+          return userInfo_ == null ? com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
         } else {
           return userInfoBuilder_.getMessage();
         }
@@ -5134,7 +5136,7 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 4;</code>
        */
-      public Builder setUserInfo(UserInfoCommand value) {
+      public Builder setUserInfo(com.lemeng.server.command.UserCommand.UserInfoCommand value) {
         if (userInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5155,7 +5157,7 @@ public final class UserCommand {
        * <code>optional .UserInfoCommand userInfo = 4;</code>
        */
       public Builder setUserInfo(
-          UserInfoCommand.Builder builderForValue) {
+          com.lemeng.server.command.UserCommand.UserInfoCommand.Builder builderForValue) {
         if (userInfoBuilder_ == null) {
           userInfo_ = builderForValue.build();
           onChanged();
@@ -5172,13 +5174,13 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 4;</code>
        */
-      public Builder mergeUserInfo(UserInfoCommand value) {
+      public Builder mergeUserInfo(com.lemeng.server.command.UserCommand.UserInfoCommand value) {
         if (userInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
               userInfo_ != null &&
-              userInfo_ != UserInfoCommand.getDefaultInstance()) {
+              userInfo_ != com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance()) {
             userInfo_ =
-              UserInfoCommand.newBuilder(userInfo_).mergeFrom(value).buildPartial();
+              com.lemeng.server.command.UserCommand.UserInfoCommand.newBuilder(userInfo_).mergeFrom(value).buildPartial();
           } else {
             userInfo_ = value;
           }
@@ -5213,7 +5215,7 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 4;</code>
        */
-      public UserInfoCommand.Builder getUserInfoBuilder() {
+      public com.lemeng.server.command.UserCommand.UserInfoCommand.Builder getUserInfoBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getUserInfoFieldBuilder().getBuilder();
@@ -5225,12 +5227,12 @@ public final class UserCommand {
        *
        * <code>optional .UserInfoCommand userInfo = 4;</code>
        */
-      public UserInfoCommandOrBuilder getUserInfoOrBuilder() {
+      public com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder getUserInfoOrBuilder() {
         if (userInfoBuilder_ != null) {
           return userInfoBuilder_.getMessageOrBuilder();
         } else {
           return userInfo_ == null ?
-              UserInfoCommand.getDefaultInstance() : userInfo_;
+              com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance() : userInfo_;
         }
       }
       /**
@@ -5241,11 +5243,11 @@ public final class UserCommand {
        * <code>optional .UserInfoCommand userInfo = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          UserInfoCommand, UserInfoCommand.Builder, UserInfoCommandOrBuilder>
+          com.lemeng.server.command.UserCommand.UserInfoCommand, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder, com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder> 
           getUserInfoFieldBuilder() {
         if (userInfoBuilder_ == null) {
           userInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              UserInfoCommand, UserInfoCommand.Builder, UserInfoCommandOrBuilder>(
+              com.lemeng.server.command.UserCommand.UserInfoCommand, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder, com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder>(
                   getUserInfo(),
                   getParentForChildren(),
                   isClean());
@@ -5264,39 +5266,39 @@ public final class UserCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:InitPlayerResultCommand)
+      // @@protoc_insertion_point(builder_scope:InitPlayerResponseCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:InitPlayerResultCommand)
-    private static final InitPlayerResultCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:InitPlayerResponseCommand)
+    private static final com.lemeng.server.command.UserCommand.InitPlayerResponseCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new InitPlayerResultCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.UserCommand.InitPlayerResponseCommand();
     }
 
-    public static InitPlayerResultCommand getDefaultInstance() {
+    public static com.lemeng.server.command.UserCommand.InitPlayerResponseCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<InitPlayerResultCommand>
-        PARSER = new com.google.protobuf.AbstractParser<InitPlayerResultCommand>() {
-      public InitPlayerResultCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<InitPlayerResponseCommand>
+        PARSER = new com.google.protobuf.AbstractParser<InitPlayerResponseCommand>() {
+      public InitPlayerResponseCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InitPlayerResultCommand(input, extensionRegistry);
+          return new InitPlayerResponseCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<InitPlayerResultCommand> parser() {
+    public static com.google.protobuf.Parser<InitPlayerResponseCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<InitPlayerResultCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<InitPlayerResponseCommand> getParserForType() {
       return PARSER;
     }
 
-    public InitPlayerResultCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.UserCommand.InitPlayerResponseCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5313,7 +5315,7 @@ public final class UserCommand {
     /**
      * <code>required string mobile = 1;</code>
      */
-    String getMobile();
+    java.lang.String getMobile();
     /**
      * <code>required string mobile = 1;</code>
      */
@@ -5327,7 +5329,7 @@ public final class UserCommand {
     /**
      * <code>required string nickname = 3;</code>
      */
-    String getNickname();
+    java.lang.String getNickname();
     /**
      * <code>required string nickname = 3;</code>
      */
@@ -5373,7 +5375,7 @@ public final class UserCommand {
     /**
      * <code>repeated string petList = 11;</code>
      */
-    java.util.List<String>
+    java.util.List<java.lang.String>
         getPetListList();
     /**
      * <code>repeated string petList = 11;</code>
@@ -5382,7 +5384,7 @@ public final class UserCommand {
     /**
      * <code>repeated string petList = 11;</code>
      */
-    String getPetList(int index);
+    java.lang.String getPetList(int index);
     /**
      * <code>repeated string petList = 11;</code>
      */
@@ -5392,7 +5394,7 @@ public final class UserCommand {
     /**
      * <code>repeated string skillList = 12;</code>
      */
-    java.util.List<String>
+    java.util.List<java.lang.String>
         getSkillListList();
     /**
      * <code>repeated string skillList = 12;</code>
@@ -5401,7 +5403,7 @@ public final class UserCommand {
     /**
      * <code>repeated string skillList = 12;</code>
      */
-    String getSkillList(int index);
+    java.lang.String getSkillList(int index);
     /**
      * <code>repeated string skillList = 12;</code>
      */
@@ -5411,7 +5413,7 @@ public final class UserCommand {
     /**
      * <code>repeated string footPrintList = 13;</code>
      */
-    java.util.List<String>
+    java.util.List<java.lang.String>
         getFootPrintListList();
     /**
      * <code>repeated string footPrintList = 13;</code>
@@ -5420,7 +5422,7 @@ public final class UserCommand {
     /**
      * <code>repeated string footPrintList = 13;</code>
      */
-    String getFootPrintList(int index);
+    java.lang.String getFootPrintList(int index);
     /**
      * <code>repeated string footPrintList = 13;</code>
      */
@@ -5455,7 +5457,7 @@ public final class UserCommand {
       footPrintList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -5565,19 +5567,19 @@ public final class UserCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserCommand.internal_static_UserInfoCommand_descriptor;
+      return com.lemeng.server.command.UserCommand.internal_static_UserInfoCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserCommand.internal_static_UserInfoCommand_fieldAccessorTable
+      return com.lemeng.server.command.UserCommand.internal_static_UserInfoCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              UserInfoCommand.class, Builder.class);
+              com.lemeng.server.command.UserCommand.UserInfoCommand.class, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int MOBILE_FIELD_NUMBER = 1;
-    private volatile Object mobile_;
+    private volatile java.lang.Object mobile_;
     /**
      * <code>required string mobile = 1;</code>
      */
@@ -5587,14 +5589,14 @@ public final class UserCommand {
     /**
      * <code>required string mobile = 1;</code>
      */
-    public String getMobile() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMobile() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           mobile_ = s;
         }
@@ -5606,11 +5608,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getMobileBytes() {
-      Object ref = mobile_;
-      if (ref instanceof String) {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         mobile_ = b;
         return b;
       } else {
@@ -5619,7 +5621,7 @@ public final class UserCommand {
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 3;
-    private volatile Object nickname_;
+    private volatile java.lang.Object nickname_;
     /**
      * <code>required string nickname = 3;</code>
      */
@@ -5629,14 +5631,14 @@ public final class UserCommand {
     /**
      * <code>required string nickname = 3;</code>
      */
-    public String getNickname() {
-      Object ref = nickname_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           nickname_ = s;
         }
@@ -5648,11 +5650,11 @@ public final class UserCommand {
      */
     public com.google.protobuf.ByteString
         getNicknameBytes() {
-      Object ref = nickname_;
-      if (ref instanceof String) {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         nickname_ = b;
         return b;
       } else {
@@ -5738,7 +5740,7 @@ public final class UserCommand {
     /**
      * <code>repeated string petList = 11;</code>
      */
-    public String getPetList(int index) {
+    public java.lang.String getPetList(int index) {
       return petList_.get(index);
     }
     /**
@@ -5767,7 +5769,7 @@ public final class UserCommand {
     /**
      * <code>repeated string skillList = 12;</code>
      */
-    public String getSkillList(int index) {
+    public java.lang.String getSkillList(int index) {
       return skillList_.get(index);
     }
     /**
@@ -5796,7 +5798,7 @@ public final class UserCommand {
     /**
      * <code>repeated string footPrintList = 13;</code>
      */
-    public String getFootPrintList(int index) {
+    public java.lang.String getFootPrintList(int index) {
       return footPrintList_.get(index);
     }
     /**
@@ -5930,15 +5932,15 @@ public final class UserCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof UserInfoCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.UserCommand.UserInfoCommand)) {
         return super.equals(obj);
       }
-      UserInfoCommand other = (UserInfoCommand) obj;
+      com.lemeng.server.command.UserCommand.UserInfoCommand other = (com.lemeng.server.command.UserCommand.UserInfoCommand) obj;
 
       boolean result = true;
       result = result && (hasMobile() == other.hasMobile());
@@ -5981,7 +5983,7 @@ public final class UserCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -6029,69 +6031,69 @@ public final class UserCommand {
       return hash;
     }
 
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static UserInfoCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static UserInfoCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static UserInfoCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static UserInfoCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static UserInfoCommand parseFrom(
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6103,7 +6105,7 @@ public final class UserCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(UserInfoCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.UserCommand.UserInfoCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6111,9 +6113,9 @@ public final class UserCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6128,17 +6130,17 @@ public final class UserCommand {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:UserInfoCommand)
-        UserInfoCommandOrBuilder {
+        com.lemeng.server.command.UserCommand.UserInfoCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return UserCommand.internal_static_UserInfoCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_UserInfoCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return UserCommand.internal_static_UserInfoCommand_fieldAccessorTable
+        return com.lemeng.server.command.UserCommand.internal_static_UserInfoCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                UserInfoCommand.class, Builder.class);
+                com.lemeng.server.command.UserCommand.UserInfoCommand.class, com.lemeng.server.command.UserCommand.UserInfoCommand.Builder.class);
       }
 
       // Construct using com.lemeng.server.command.UserCommand.UserInfoCommand.newBuilder()
@@ -6147,7 +6149,7 @@ public final class UserCommand {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6181,23 +6183,23 @@ public final class UserCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return UserCommand.internal_static_UserInfoCommand_descriptor;
+        return com.lemeng.server.command.UserCommand.internal_static_UserInfoCommand_descriptor;
       }
 
-      public UserInfoCommand getDefaultInstanceForType() {
-        return UserInfoCommand.getDefaultInstance();
+      public com.lemeng.server.command.UserCommand.UserInfoCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance();
       }
 
-      public UserInfoCommand build() {
-        UserInfoCommand result = buildPartial();
+      public com.lemeng.server.command.UserCommand.UserInfoCommand build() {
+        com.lemeng.server.command.UserCommand.UserInfoCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public UserInfoCommand buildPartial() {
-        UserInfoCommand result = new UserInfoCommand(this);
+      public com.lemeng.server.command.UserCommand.UserInfoCommand buildPartial() {
+        com.lemeng.server.command.UserCommand.UserInfoCommand result = new com.lemeng.server.command.UserCommand.UserInfoCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6271,16 +6273,16 @@ public final class UserCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof UserInfoCommand) {
-          return mergeFrom((UserInfoCommand)other);
+        if (other instanceof com.lemeng.server.command.UserCommand.UserInfoCommand) {
+          return mergeFrom((com.lemeng.server.command.UserCommand.UserInfoCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(UserInfoCommand other) {
-        if (other == UserInfoCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.UserCommand.UserInfoCommand other) {
+        if (other == com.lemeng.server.command.UserCommand.UserInfoCommand.getDefaultInstance()) return this;
         if (other.hasMobile()) {
           bitField0_ |= 0x00000001;
           mobile_ = other.mobile_;
@@ -6364,11 +6366,11 @@ public final class UserCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        UserInfoCommand parsedMessage = null;
+        com.lemeng.server.command.UserCommand.UserInfoCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (UserInfoCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.UserCommand.UserInfoCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6379,7 +6381,7 @@ public final class UserCommand {
       }
       private int bitField0_;
 
-      private Object mobile_ = "";
+      private java.lang.Object mobile_ = "";
       /**
        * <code>required string mobile = 1;</code>
        */
@@ -6389,18 +6391,18 @@ public final class UserCommand {
       /**
        * <code>required string mobile = 1;</code>
        */
-      public String getMobile() {
-        Object ref = mobile_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMobile() {
+        java.lang.Object ref = mobile_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             mobile_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6408,11 +6410,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getMobileBytes() {
-        Object ref = mobile_;
+        java.lang.Object ref = mobile_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           mobile_ = b;
           return b;
         } else {
@@ -6423,7 +6425,7 @@ public final class UserCommand {
        * <code>required string mobile = 1;</code>
        */
       public Builder setMobile(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6455,7 +6457,7 @@ public final class UserCommand {
         return this;
       }
 
-      private Object nickname_ = "";
+      private java.lang.Object nickname_ = "";
       /**
        * <code>required string nickname = 3;</code>
        */
@@ -6465,18 +6467,18 @@ public final class UserCommand {
       /**
        * <code>required string nickname = 3;</code>
        */
-      public String getNickname() {
-        Object ref = nickname_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             nickname_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6484,11 +6486,11 @@ public final class UserCommand {
        */
       public com.google.protobuf.ByteString
           getNicknameBytes() {
-        Object ref = nickname_;
+        java.lang.Object ref = nickname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           nickname_ = b;
           return b;
         } else {
@@ -6499,7 +6501,7 @@ public final class UserCommand {
        * <code>required string nickname = 3;</code>
        */
       public Builder setNickname(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6682,7 +6684,7 @@ public final class UserCommand {
       /**
        * <code>repeated string petList = 11;</code>
        */
-      public String getPetList(int index) {
+      public java.lang.String getPetList(int index) {
         return petList_.get(index);
       }
       /**
@@ -6696,7 +6698,7 @@ public final class UserCommand {
        * <code>repeated string petList = 11;</code>
        */
       public Builder setPetList(
-          int index, String value) {
+          int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6709,7 +6711,7 @@ public final class UserCommand {
        * <code>repeated string petList = 11;</code>
        */
       public Builder addPetList(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6722,7 +6724,7 @@ public final class UserCommand {
        * <code>repeated string petList = 11;</code>
        */
       public Builder addAllPetList(
-          Iterable<String> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensurePetListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, petList_);
@@ -6775,7 +6777,7 @@ public final class UserCommand {
       /**
        * <code>repeated string skillList = 12;</code>
        */
-      public String getSkillList(int index) {
+      public java.lang.String getSkillList(int index) {
         return skillList_.get(index);
       }
       /**
@@ -6789,7 +6791,7 @@ public final class UserCommand {
        * <code>repeated string skillList = 12;</code>
        */
       public Builder setSkillList(
-          int index, String value) {
+          int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6802,7 +6804,7 @@ public final class UserCommand {
        * <code>repeated string skillList = 12;</code>
        */
       public Builder addSkillList(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6815,7 +6817,7 @@ public final class UserCommand {
        * <code>repeated string skillList = 12;</code>
        */
       public Builder addAllSkillList(
-          Iterable<String> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureSkillListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, skillList_);
@@ -6868,7 +6870,7 @@ public final class UserCommand {
       /**
        * <code>repeated string footPrintList = 13;</code>
        */
-      public String getFootPrintList(int index) {
+      public java.lang.String getFootPrintList(int index) {
         return footPrintList_.get(index);
       }
       /**
@@ -6882,7 +6884,7 @@ public final class UserCommand {
        * <code>repeated string footPrintList = 13;</code>
        */
       public Builder setFootPrintList(
-          int index, String value) {
+          int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6895,7 +6897,7 @@ public final class UserCommand {
        * <code>repeated string footPrintList = 13;</code>
        */
       public Builder addFootPrintList(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6908,7 +6910,7 @@ public final class UserCommand {
        * <code>repeated string footPrintList = 13;</code>
        */
       public Builder addAllFootPrintList(
-          Iterable<String> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureFootPrintListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, footPrintList_);
@@ -6952,16 +6954,16 @@ public final class UserCommand {
     }
 
     // @@protoc_insertion_point(class_scope:UserInfoCommand)
-    private static final UserInfoCommand DEFAULT_INSTANCE;
+    private static final com.lemeng.server.command.UserCommand.UserInfoCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserInfoCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.UserCommand.UserInfoCommand();
     }
 
-    public static UserInfoCommand getDefaultInstance() {
+    public static com.lemeng.server.command.UserCommand.UserInfoCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<UserInfoCommand>
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<UserInfoCommand>
         PARSER = new com.google.protobuf.AbstractParser<UserInfoCommand>() {
       public UserInfoCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -6975,47 +6977,47 @@ public final class UserCommand {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<UserInfoCommand> getParserForType() {
       return PARSER;
     }
 
-    public UserInfoCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.UserCommand.UserInfoCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_LoginCommand_descriptor;
+    internal_static_LoginRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LoginCommand_fieldAccessorTable;
+      internal_static_LoginRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SendVerifyCodeCommand_descriptor;
+    internal_static_SendVerifyCodeRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SendVerifyCodeCommand_fieldAccessorTable;
+      internal_static_SendVerifyCodeRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RegistCommand_descriptor;
+    internal_static_RegistRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RegistCommand_fieldAccessorTable;
+      internal_static_RegistRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_LoginResultCommand_descriptor;
+    internal_static_LoginResponseCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LoginResultCommand_fieldAccessorTable;
+      internal_static_LoginResponseCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_InitPlayerCommand_descriptor;
+    internal_static_InitPlayerRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_InitPlayerCommand_fieldAccessorTable;
+      internal_static_InitPlayerRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_InitPlayerResultCommand_descriptor;
+    internal_static_InitPlayerResponseCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_InitPlayerResultCommand_fieldAccessorTable;
+      internal_static_InitPlayerResponseCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_UserInfoCommand_descriptor;
   private static final 
@@ -7029,24 +7031,25 @@ public final class UserCommand {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
-      "\n\021UserCommand.proto\"P\n\014LoginCommand\022\016\n\006m" +
-      "obile\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\014\n\004type\030\003 " +
-      "\002(\005\022\020\n\010userCode\030\004 \001(\t\"\'\n\025SendVerifyCodeC" +
-      "ommand\022\016\n\006mobile\030\001 \002(\t\"E\n\rRegistCommand\022" +
-      "\016\n\006mobile\030\001 \002(\t\022\020\n\010password\030\002 \002(\t\022\022\n\nver" +
-      "ifyCode\030\003 \002(\t\"S\n\022LoginResultCommand\022\014\n\004c" +
-      "ode\030\001 \002(\005\022\013\n\003msg\030\002 \002(\t\022\"\n\010userInfo\030\003 \001(\013" +
-      "2\020.UserInfoCommand\"5\n\021InitPlayerCommand\022" +
-      "\020\n\010nickname\030\001 \002(\t\022\016\n\006userId\030\002 \002(\005\"X\n\027Ini" +
-      "tPlayerResultCommand\022\014\n\004code\030\002 \002(\005\022\013\n\003ms",
-      "g\030\003 \001(\t\022\"\n\010userInfo\030\004 \001(\0132\020.UserInfoComm" +
-      "and\"\261\001\n\017UserInfoCommand\022\016\n\006mobile\030\001 \002(\t\022" +
-      "\020\n\010nickname\030\003 \002(\t\022\r\n\005level\030\004 \002(\005\022\016\n\006stat" +
-      "ue\030\005 \002(\005\022\020\n\010gemstone\030\006 \002(\005\022\020\n\010goldCoin\030\007" +
-      " \002(\005\022\017\n\007petList\030\013 \003(\t\022\021\n\tskillList\030\014 \003(\t" +
-      "\022\025\n\rfootPrintList\030\r \003(\tB(\n\031com.lemeng.se" +
-      "rver.commandB\013UserCommand"
+    java.lang.String[] descriptorData = {
+      "\n\021UserCommand.proto\"W\n\023LoginRequestComma" +
+      "nd\022\016\n\006mobile\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\014\n\004" +
+      "type\030\003 \002(\005\022\020\n\010userCode\030\004 \001(\t\".\n\034SendVeri" +
+      "fyCodeRequestCommand\022\016\n\006mobile\030\001 \002(\t\"L\n\024" +
+      "RegistRequestCommand\022\016\n\006mobile\030\001 \002(\t\022\020\n\010" +
+      "password\030\002 \002(\t\022\022\n\nverifyCode\030\003 \002(\t\"U\n\024Lo" +
+      "ginResponseCommand\022\014\n\004code\030\001 \002(\005\022\013\n\003msg\030" +
+      "\002 \002(\t\022\"\n\010userInfo\030\003 \001(\0132\020.UserInfoComman" +
+      "d\"<\n\030InitPlayerRequestCommand\022\020\n\010nicknam" +
+      "e\030\001 \002(\t\022\016\n\006userId\030\002 \002(\005\"Z\n\031InitPlayerRes",
+      "ponseCommand\022\014\n\004code\030\002 \002(\005\022\013\n\003msg\030\003 \001(\t\022" +
+      "\"\n\010userInfo\030\004 \001(\0132\020.UserInfoCommand\"\261\001\n\017" +
+      "UserInfoCommand\022\016\n\006mobile\030\001 \002(\t\022\020\n\010nickn" +
+      "ame\030\003 \002(\t\022\r\n\005level\030\004 \002(\005\022\016\n\006statue\030\005 \002(\005" +
+      "\022\020\n\010gemstone\030\006 \002(\005\022\020\n\010goldCoin\030\007 \002(\005\022\017\n\007" +
+      "petList\030\013 \003(\t\022\021\n\tskillList\030\014 \003(\t\022\025\n\rfoot" +
+      "PrintList\030\r \003(\tB(\n\031com.lemeng.server.com" +
+      "mandB\013UserCommand"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7060,48 +7063,48 @@ public final class UserCommand {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_LoginCommand_descriptor =
+    internal_static_LoginRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_LoginCommand_fieldAccessorTable = new
+    internal_static_LoginRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LoginCommand_descriptor,
-        new String[] { "Mobile", "Password", "Type", "UserCode", });
-    internal_static_SendVerifyCodeCommand_descriptor =
+        internal_static_LoginRequestCommand_descriptor,
+        new java.lang.String[] { "Mobile", "Password", "Type", "UserCode", });
+    internal_static_SendVerifyCodeRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_SendVerifyCodeCommand_fieldAccessorTable = new
+    internal_static_SendVerifyCodeRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SendVerifyCodeCommand_descriptor,
-        new String[] { "Mobile", });
-    internal_static_RegistCommand_descriptor =
+        internal_static_SendVerifyCodeRequestCommand_descriptor,
+        new java.lang.String[] { "Mobile", });
+    internal_static_RegistRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_RegistCommand_fieldAccessorTable = new
+    internal_static_RegistRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RegistCommand_descriptor,
-        new String[] { "Mobile", "Password", "VerifyCode", });
-    internal_static_LoginResultCommand_descriptor =
+        internal_static_RegistRequestCommand_descriptor,
+        new java.lang.String[] { "Mobile", "Password", "VerifyCode", });
+    internal_static_LoginResponseCommand_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_LoginResultCommand_fieldAccessorTable = new
+    internal_static_LoginResponseCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LoginResultCommand_descriptor,
-        new String[] { "Code", "Msg", "UserInfo", });
-    internal_static_InitPlayerCommand_descriptor =
+        internal_static_LoginResponseCommand_descriptor,
+        new java.lang.String[] { "Code", "Msg", "UserInfo", });
+    internal_static_InitPlayerRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_InitPlayerCommand_fieldAccessorTable = new
+    internal_static_InitPlayerRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_InitPlayerCommand_descriptor,
-        new String[] { "Nickname", "UserId", });
-    internal_static_InitPlayerResultCommand_descriptor =
+        internal_static_InitPlayerRequestCommand_descriptor,
+        new java.lang.String[] { "Nickname", "UserId", });
+    internal_static_InitPlayerResponseCommand_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_InitPlayerResultCommand_fieldAccessorTable = new
+    internal_static_InitPlayerResponseCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_InitPlayerResultCommand_descriptor,
-        new String[] { "Code", "Msg", "UserInfo", });
+        internal_static_InitPlayerResponseCommand_descriptor,
+        new java.lang.String[] { "Code", "Msg", "UserInfo", });
     internal_static_UserInfoCommand_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_UserInfoCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserInfoCommand_descriptor,
-        new String[] { "Mobile", "Nickname", "Level", "Statue", "Gemstone", "GoldCoin", "PetList", "SkillList", "FootPrintList", });
+        new java.lang.String[] { "Mobile", "Nickname", "Level", "Statue", "Gemstone", "GoldCoin", "PetList", "SkillList", "FootPrintList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

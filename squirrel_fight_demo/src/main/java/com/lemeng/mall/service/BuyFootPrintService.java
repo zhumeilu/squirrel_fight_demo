@@ -27,13 +27,13 @@ public class BuyFootPrintService extends AbstractService{
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         try {
-            MallCommand.BuyFootPrintCommand buyFootPrintCommand = MallCommand.BuyFootPrintCommand.parseFrom(bodyBytes);
+            MallCommand.BuyFootPrintRequestCommand buyFootPrintCommand = MallCommand.BuyFootPrintRequestCommand.parseFrom(bodyBytes);
             int userId = buyFootPrintCommand.getUserId();
             String footPrintName = buyFootPrintCommand.getFootPrintName();
             boolean b = footPrintManager.buyFootPrint(userId, footPrintName);
-            MallCommand.BuyFootPrintResultCommand.Builder builder = MallCommand.BuyFootPrintResultCommand.newBuilder();
+            MallCommand.BuyFootPrintResponseCommand.Builder builder = MallCommand.BuyFootPrintResponseCommand.newBuilder();
             SquirrelFightTcpMessage returnTcpMessage = new SquirrelFightTcpMessage();
-            returnTcpMessage.setCmd(Const.BuyFootPrintResultCommand);
+            returnTcpMessage.setCmd(Const.BuyFootPrintResponseCommand);
             if(b){
                 builder.setCode(1);
                 builder.setMsg("购买成功");

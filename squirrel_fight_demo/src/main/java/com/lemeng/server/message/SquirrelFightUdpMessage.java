@@ -1,5 +1,7 @@
 package com.lemeng.server.message;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,10 +16,14 @@ import java.net.InetSocketAddress;
 @Getter
 @Setter
 public class SquirrelFightUdpMessage implements IMessage{
+    public static final short MESSAGE_HEADER_FLAG = 0x2425;
+    private short head;
+    private int length;
+    private short cmd;
+    private byte version;
+    private byte[] body;
 
     private InetSocketAddress sender;
-    private short cmd;
-    private byte[] body;
 
 
     public SquirrelFightUdpMessage(short cmd,byte[] body,InetSocketAddress sender){
@@ -30,4 +36,18 @@ public class SquirrelFightUdpMessage implements IMessage{
     public SquirrelFightUdpMessage(){
 
     }
+
+    public ByteBuf getByteBuf(){
+
+        ByteBuf byteBuf = Unpooled.buffer(256);
+
+        byteBuf.writeShort(head);
+        byteBuf.writeInt(length);
+        byteBuf.writeShort(cmd);   //cmd
+        byteBuf.writeShort(version);    //version
+        byteBuf.writeBytes(body);
+
+        return byteBuf;
+    }
+
 }

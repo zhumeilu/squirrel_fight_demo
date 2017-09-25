@@ -3,6 +3,7 @@ package com.lemeng.game.domain;
 import com.lemeng.common.domain.BaseDomain;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Description:玩家
@@ -12,6 +13,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
+@ToString
 public class Player extends BaseDomain{
 
     private String nickname;    //昵称（唯一，特殊字符限制）

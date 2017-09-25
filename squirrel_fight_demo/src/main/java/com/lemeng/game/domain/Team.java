@@ -5,6 +5,7 @@ import com.lemeng.user.domain.User;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,5 +19,5 @@ import java.util.List;
 public class Team extends BaseDomain{
 
     private User header;    //队长
-    private List<User> userList;    //队员
+    private List<User> userList = new ArrayList<User>();    //队员
 }

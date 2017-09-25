@@ -14,8 +14,8 @@ public final class MallCommand {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface RechargeGemstoneCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.RechargeGemstoneCommand)
+  public interface RechargeGemstoneRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.RechargeGemstoneRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -54,30 +54,30 @@ public final class MallCommand {
   }
   /**
    * <pre>
-   *宝石充值
+   *宝石充值请求
    * </pre>
    *
-   * Protobuf type {@code message.RechargeGemstoneCommand}
+   * Protobuf type {@code message.RechargeGemstoneRequestCommand}
    */
-  public  static final class RechargeGemstoneCommand extends
+  public  static final class RechargeGemstoneRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.RechargeGemstoneCommand)
-      RechargeGemstoneCommandOrBuilder {
-    // Use RechargeGemstoneCommand.newBuilder() to construct.
-    private RechargeGemstoneCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.RechargeGemstoneRequestCommand)
+      RechargeGemstoneRequestCommandOrBuilder {
+    // Use RechargeGemstoneRequestCommand.newBuilder() to construct.
+    private RechargeGemstoneRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private RechargeGemstoneCommand() {
+    private RechargeGemstoneRequestCommand() {
       userId_ = 0;
       count_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RechargeGemstoneCommand(
+    private RechargeGemstoneRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -124,14 +124,14 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_RechargeGemstoneCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_RechargeGemstoneCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              RechargeGemstoneCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand.class, com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand.Builder.class);
     }
 
     private int bitField0_;
@@ -221,15 +221,15 @@ public final class MallCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof RechargeGemstoneCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand)) {
         return super.equals(obj);
       }
-      RechargeGemstoneCommand other = (RechargeGemstoneCommand) obj;
+      com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand other = (com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasUserId() == other.hasUserId());
@@ -246,7 +246,7 @@ public final class MallCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -266,69 +266,69 @@ public final class MallCommand {
       return hash;
     }
 
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RechargeGemstoneCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RechargeGemstoneCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RechargeGemstoneCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static RechargeGemstoneCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RechargeGemstoneCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -340,7 +340,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(RechargeGemstoneCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -348,42 +348,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
      * <pre>
-     *宝石充值
+     *宝石充值请求
      * </pre>
      *
-     * Protobuf type {@code message.RechargeGemstoneCommand}
+     * Protobuf type {@code message.RechargeGemstoneRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.RechargeGemstoneCommand)
-        RechargeGemstoneCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.RechargeGemstoneRequestCommand)
+        com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_RechargeGemstoneCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_RechargeGemstoneCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                RechargeGemstoneCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand.class, com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.RechargeGemstoneCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -403,23 +403,23 @@ public final class MallCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_RechargeGemstoneCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneRequestCommand_descriptor;
       }
 
-      public RechargeGemstoneCommand getDefaultInstanceForType() {
-        return RechargeGemstoneCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand.getDefaultInstance();
       }
 
-      public RechargeGemstoneCommand build() {
-        RechargeGemstoneCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand build() {
+        com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public RechargeGemstoneCommand buildPartial() {
-        RechargeGemstoneCommand result = new RechargeGemstoneCommand(this);
+      public com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand result = new com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -462,16 +462,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RechargeGemstoneCommand) {
-          return mergeFrom((RechargeGemstoneCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(RechargeGemstoneCommand other) {
-        if (other == RechargeGemstoneCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -491,11 +491,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        RechargeGemstoneCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RechargeGemstoneCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -612,46 +612,46 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.RechargeGemstoneCommand)
+      // @@protoc_insertion_point(builder_scope:message.RechargeGemstoneRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.RechargeGemstoneCommand)
-    private static final RechargeGemstoneCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.RechargeGemstoneRequestCommand)
+    private static final com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new RechargeGemstoneCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand();
     }
 
-    public static RechargeGemstoneCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<RechargeGemstoneCommand>
-        PARSER = new com.google.protobuf.AbstractParser<RechargeGemstoneCommand>() {
-      public RechargeGemstoneCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RechargeGemstoneRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<RechargeGemstoneRequestCommand>() {
+      public RechargeGemstoneRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RechargeGemstoneCommand(input, extensionRegistry);
+          return new RechargeGemstoneRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RechargeGemstoneCommand> parser() {
+    public static com.google.protobuf.Parser<RechargeGemstoneRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<RechargeGemstoneCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<RechargeGemstoneRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public RechargeGemstoneCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.RechargeGemstoneRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface OperationResultCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.OperationResultCommand)
+  public interface RechargeGemstoneResponseCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.RechargeGemstoneResponseCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -669,7 +669,7 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    String getOperation();
+    java.lang.String getOperation();
     /**
      * <pre>
      *操作
@@ -704,54 +704,40 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    String getMsg();
+    java.lang.String getMsg();
     /**
      * <code>optional string msg = 3;</code>
      */
     com.google.protobuf.ByteString
         getMsgBytes();
-
-    /**
-     * <pre>
-     *数据
-     * </pre>
-     *
-     * <code>optional bytes data = 4;</code>
-     */
-    boolean hasData();
-    /**
-     * <pre>
-     *数据
-     * </pre>
-     *
-     * <code>optional bytes data = 4;</code>
-     */
-    com.google.protobuf.ByteString getData();
   }
   /**
-   * Protobuf type {@code message.OperationResultCommand}
+   * <pre>
+   *购买宝石响应
+   * </pre>
+   *
+   * Protobuf type {@code message.RechargeGemstoneResponseCommand}
    */
-  public  static final class OperationResultCommand extends
+  public  static final class RechargeGemstoneResponseCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.OperationResultCommand)
-      OperationResultCommandOrBuilder {
-    // Use OperationResultCommand.newBuilder() to construct.
-    private OperationResultCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.RechargeGemstoneResponseCommand)
+      RechargeGemstoneResponseCommandOrBuilder {
+    // Use RechargeGemstoneResponseCommand.newBuilder() to construct.
+    private RechargeGemstoneResponseCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private OperationResultCommand() {
+    private RechargeGemstoneResponseCommand() {
       operation_ = "";
       code_ = 0;
       msg_ = "";
-      data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OperationResultCommand(
+    private RechargeGemstoneResponseCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -791,11 +777,6 @@ public final class MallCommand {
               msg_ = bs;
               break;
             }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              data_ = input.readBytes();
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -810,19 +791,19 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_OperationResultCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneResponseCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_OperationResultCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneResponseCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              OperationResultCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand.class, com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int OPERATION_FIELD_NUMBER = 1;
-    private volatile Object operation_;
+    private volatile java.lang.Object operation_;
     /**
      * <pre>
      *操作
@@ -840,14 +821,14 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    public String getOperation() {
-      Object ref = operation_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getOperation() {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           operation_ = s;
         }
@@ -863,11 +844,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getOperationBytes() {
-      Object ref = operation_;
-      if (ref instanceof String) {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         operation_ = b;
         return b;
       } else {
@@ -899,7 +880,7 @@ public final class MallCommand {
     }
 
     public static final int MSG_FIELD_NUMBER = 3;
-    private volatile Object msg_;
+    private volatile java.lang.Object msg_;
     /**
      * <code>optional string msg = 3;</code>
      */
@@ -909,14 +890,14 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           msg_ = s;
         }
@@ -928,39 +909,16 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int DATA_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString data_;
-    /**
-     * <pre>
-     *数据
-     * </pre>
-     *
-     * <code>optional bytes data = 4;</code>
-     */
-    public boolean hasData() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <pre>
-     *数据
-     * </pre>
-     *
-     * <code>optional bytes data = 4;</code>
-     */
-    public com.google.protobuf.ByteString getData() {
-      return data_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -992,9 +950,6 @@ public final class MallCommand {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, msg_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, data_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1013,25 +968,21 @@ public final class MallCommand {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, msg_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, data_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof OperationResultCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand)) {
         return super.equals(obj);
       }
-      OperationResultCommand other = (OperationResultCommand) obj;
+      com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand other = (com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand) obj;
 
       boolean result = true;
       result = result && (hasOperation() == other.hasOperation());
@@ -1049,16 +1000,11 @@ public final class MallCommand {
         result = result && getMsg()
             .equals(other.getMsg());
       }
-      result = result && (hasData() == other.hasData());
-      if (hasData()) {
-        result = result && getData()
-            .equals(other.getData());
-      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1077,78 +1023,74 @@ public final class MallCommand {
         hash = (37 * hash) + MSG_FIELD_NUMBER;
         hash = (53 * hash) + getMsg().hashCode();
       }
-      if (hasData()) {
-        hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getData().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static OperationResultCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static OperationResultCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static OperationResultCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static OperationResultCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static OperationResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1160,7 +1102,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(OperationResultCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1168,38 +1110,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code message.OperationResultCommand}
+     * <pre>
+     *购买宝石响应
+     * </pre>
+     *
+     * Protobuf type {@code message.RechargeGemstoneResponseCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.OperationResultCommand)
-        OperationResultCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.RechargeGemstoneResponseCommand)
+        com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_OperationResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneResponseCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_OperationResultCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneResponseCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                OperationResultCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand.class, com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.OperationResultCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1216,30 +1162,28 @@ public final class MallCommand {
         bitField0_ = (bitField0_ & ~0x00000002);
         msg_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        data_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_OperationResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_RechargeGemstoneResponseCommand_descriptor;
       }
 
-      public OperationResultCommand getDefaultInstanceForType() {
-        return OperationResultCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand.getDefaultInstance();
       }
 
-      public OperationResultCommand build() {
-        OperationResultCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand build() {
+        com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public OperationResultCommand buildPartial() {
-        OperationResultCommand result = new OperationResultCommand(this);
+      public com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand result = new com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1254,10 +1198,6 @@ public final class MallCommand {
           to_bitField0_ |= 0x00000004;
         }
         result.msg_ = msg_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.data_ = data_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1290,16 +1230,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof OperationResultCommand) {
-          return mergeFrom((OperationResultCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(OperationResultCommand other) {
-        if (other == OperationResultCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand.getDefaultInstance()) return this;
         if (other.hasOperation()) {
           bitField0_ |= 0x00000001;
           operation_ = other.operation_;
@@ -1312,9 +1252,6 @@ public final class MallCommand {
           bitField0_ |= 0x00000004;
           msg_ = other.msg_;
           onChanged();
-        }
-        if (other.hasData()) {
-          setData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1335,11 +1272,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        OperationResultCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (OperationResultCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1350,7 +1287,7 @@ public final class MallCommand {
       }
       private int bitField0_;
 
-      private Object operation_ = "";
+      private java.lang.Object operation_ = "";
       /**
        * <pre>
        *操作
@@ -1368,18 +1305,18 @@ public final class MallCommand {
        *
        * <code>required string operation = 1;</code>
        */
-      public String getOperation() {
-        Object ref = operation_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getOperation() {
+        java.lang.Object ref = operation_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             operation_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1391,11 +1328,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getOperationBytes() {
-        Object ref = operation_;
+        java.lang.Object ref = operation_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           operation_ = b;
           return b;
         } else {
@@ -1410,7 +1347,7 @@ public final class MallCommand {
        * <code>required string operation = 1;</code>
        */
       public Builder setOperation(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1498,7 +1435,7 @@ public final class MallCommand {
         return this;
       }
 
-      private Object msg_ = "";
+      private java.lang.Object msg_ = "";
       /**
        * <code>optional string msg = 3;</code>
        */
@@ -1508,18 +1445,18 @@ public final class MallCommand {
       /**
        * <code>optional string msg = 3;</code>
        */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             msg_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1527,11 +1464,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
-        Object ref = msg_;
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msg_ = b;
           return b;
         } else {
@@ -1542,959 +1479,7 @@ public final class MallCommand {
        * <code>optional string msg = 3;</code>
        */
       public Builder setMsg(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        msg_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string msg = 3;</code>
-       */
-      public Builder clearMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        msg_ = getDefaultInstance().getMsg();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string msg = 3;</code>
-       */
-      public Builder setMsgBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        msg_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       *数据
-       * </pre>
-       *
-       * <code>optional bytes data = 4;</code>
-       */
-      public boolean hasData() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <pre>
-       *数据
-       * </pre>
-       *
-       * <code>optional bytes data = 4;</code>
-       */
-      public com.google.protobuf.ByteString getData() {
-        return data_;
-      }
-      /**
-       * <pre>
-       *数据
-       * </pre>
-       *
-       * <code>optional bytes data = 4;</code>
-       */
-      public Builder setData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        data_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *数据
-       * </pre>
-       *
-       * <code>optional bytes data = 4;</code>
-       */
-      public Builder clearData() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        data_ = getDefaultInstance().getData();
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:message.OperationResultCommand)
-    }
-
-    // @@protoc_insertion_point(class_scope:message.OperationResultCommand)
-    private static final OperationResultCommand DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new OperationResultCommand();
-    }
-
-    public static OperationResultCommand getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @Deprecated public static final com.google.protobuf.Parser<OperationResultCommand>
-        PARSER = new com.google.protobuf.AbstractParser<OperationResultCommand>() {
-      public OperationResultCommand parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new OperationResultCommand(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<OperationResultCommand> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<OperationResultCommand> getParserForType() {
-      return PARSER;
-    }
-
-    public OperationResultCommand getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface RechargeGemstoneResultCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.RechargeGemstoneResultCommand)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *操作
-     * </pre>
-     *
-     * <code>required string operation = 1;</code>
-     */
-    boolean hasOperation();
-    /**
-     * <pre>
-     *操作
-     * </pre>
-     *
-     * <code>required string operation = 1;</code>
-     */
-    String getOperation();
-    /**
-     * <pre>
-     *操作
-     * </pre>
-     *
-     * <code>required string operation = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getOperationBytes();
-
-    /**
-     * <pre>
-     *1 success 2 fail
-     * </pre>
-     *
-     * <code>required int32 code = 2;</code>
-     */
-    boolean hasCode();
-    /**
-     * <pre>
-     *1 success 2 fail
-     * </pre>
-     *
-     * <code>required int32 code = 2;</code>
-     */
-    int getCode();
-
-    /**
-     * <code>optional string msg = 3;</code>
-     */
-    boolean hasMsg();
-    /**
-     * <code>optional string msg = 3;</code>
-     */
-    String getMsg();
-    /**
-     * <code>optional string msg = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getMsgBytes();
-  }
-  /**
-   * Protobuf type {@code message.RechargeGemstoneResultCommand}
-   */
-  public  static final class RechargeGemstoneResultCommand extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.RechargeGemstoneResultCommand)
-      RechargeGemstoneResultCommandOrBuilder {
-    // Use RechargeGemstoneResultCommand.newBuilder() to construct.
-    private RechargeGemstoneResultCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RechargeGemstoneResultCommand() {
-      operation_ = "";
-      code_ = 0;
-      msg_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private RechargeGemstoneResultCommand(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              operation_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              code_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              msg_ = bs;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return MallCommand.internal_static_message_RechargeGemstoneResultCommand_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_RechargeGemstoneResultCommand_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RechargeGemstoneResultCommand.class, Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int OPERATION_FIELD_NUMBER = 1;
-    private volatile Object operation_;
-    /**
-     * <pre>
-     *操作
-     * </pre>
-     *
-     * <code>required string operation = 1;</code>
-     */
-    public boolean hasOperation() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <pre>
-     *操作
-     * </pre>
-     *
-     * <code>required string operation = 1;</code>
-     */
-    public String getOperation() {
-      Object ref = operation_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          operation_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *操作
-     * </pre>
-     *
-     * <code>required string operation = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getOperationBytes() {
-      Object ref = operation_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        operation_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CODE_FIELD_NUMBER = 2;
-    private int code_;
-    /**
-     * <pre>
-     *1 success 2 fail
-     * </pre>
-     *
-     * <code>required int32 code = 2;</code>
-     */
-    public boolean hasCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <pre>
-     *1 success 2 fail
-     * </pre>
-     *
-     * <code>required int32 code = 2;</code>
-     */
-    public int getCode() {
-      return code_;
-    }
-
-    public static final int MSG_FIELD_NUMBER = 3;
-    private volatile Object msg_;
-    /**
-     * <code>optional string msg = 3;</code>
-     */
-    public boolean hasMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string msg = 3;</code>
-     */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          msg_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string msg = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        msg_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasOperation()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasCode()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, operation_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, code_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, msg_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, operation_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, code_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, msg_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof RechargeGemstoneResultCommand)) {
-        return super.equals(obj);
-      }
-      RechargeGemstoneResultCommand other = (RechargeGemstoneResultCommand) obj;
-
-      boolean result = true;
-      result = result && (hasOperation() == other.hasOperation());
-      if (hasOperation()) {
-        result = result && getOperation()
-            .equals(other.getOperation());
-      }
-      result = result && (hasCode() == other.hasCode());
-      if (hasCode()) {
-        result = result && (getCode()
-            == other.getCode());
-      }
-      result = result && (hasMsg() == other.hasMsg());
-      if (hasMsg()) {
-        result = result && getMsg()
-            .equals(other.getMsg());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasOperation()) {
-        hash = (37 * hash) + OPERATION_FIELD_NUMBER;
-        hash = (53 * hash) + getOperation().hashCode();
-      }
-      if (hasCode()) {
-        hash = (37 * hash) + CODE_FIELD_NUMBER;
-        hash = (53 * hash) + getCode();
-      }
-      if (hasMsg()) {
-        hash = (37 * hash) + MSG_FIELD_NUMBER;
-        hash = (53 * hash) + getMsg().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static RechargeGemstoneResultCommand parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RechargeGemstoneResultCommand parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static RechargeGemstoneResultCommand parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RechargeGemstoneResultCommand parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(RechargeGemstoneResultCommand prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code message.RechargeGemstoneResultCommand}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.RechargeGemstoneResultCommand)
-        RechargeGemstoneResultCommandOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return MallCommand.internal_static_message_RechargeGemstoneResultCommand_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_RechargeGemstoneResultCommand_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RechargeGemstoneResultCommand.class, Builder.class);
-      }
-
-      // Construct using com.lemeng.server.command.MallCommand.RechargeGemstoneResultCommand.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        operation_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        code_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        msg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return MallCommand.internal_static_message_RechargeGemstoneResultCommand_descriptor;
-      }
-
-      public RechargeGemstoneResultCommand getDefaultInstanceForType() {
-        return RechargeGemstoneResultCommand.getDefaultInstance();
-      }
-
-      public RechargeGemstoneResultCommand build() {
-        RechargeGemstoneResultCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public RechargeGemstoneResultCommand buildPartial() {
-        RechargeGemstoneResultCommand result = new RechargeGemstoneResultCommand(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.operation_ = operation_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.code_ = code_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.msg_ = msg_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RechargeGemstoneResultCommand) {
-          return mergeFrom((RechargeGemstoneResultCommand)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(RechargeGemstoneResultCommand other) {
-        if (other == RechargeGemstoneResultCommand.getDefaultInstance()) return this;
-        if (other.hasOperation()) {
-          bitField0_ |= 0x00000001;
-          operation_ = other.operation_;
-          onChanged();
-        }
-        if (other.hasCode()) {
-          setCode(other.getCode());
-        }
-        if (other.hasMsg()) {
-          bitField0_ |= 0x00000004;
-          msg_ = other.msg_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasOperation()) {
-          return false;
-        }
-        if (!hasCode()) {
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        RechargeGemstoneResultCommand parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RechargeGemstoneResultCommand) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private Object operation_ = "";
-      /**
-       * <pre>
-       *操作
-       * </pre>
-       *
-       * <code>required string operation = 1;</code>
-       */
-      public boolean hasOperation() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <pre>
-       *操作
-       * </pre>
-       *
-       * <code>required string operation = 1;</code>
-       */
-      public String getOperation() {
-        Object ref = operation_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            operation_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *操作
-       * </pre>
-       *
-       * <code>required string operation = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getOperationBytes() {
-        Object ref = operation_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          operation_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *操作
-       * </pre>
-       *
-       * <code>required string operation = 1;</code>
-       */
-      public Builder setOperation(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        operation_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *操作
-       * </pre>
-       *
-       * <code>required string operation = 1;</code>
-       */
-      public Builder clearOperation() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        operation_ = getDefaultInstance().getOperation();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *操作
-       * </pre>
-       *
-       * <code>required string operation = 1;</code>
-       */
-      public Builder setOperationBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        operation_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int code_ ;
-      /**
-       * <pre>
-       *1 success 2 fail
-       * </pre>
-       *
-       * <code>required int32 code = 2;</code>
-       */
-      public boolean hasCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <pre>
-       *1 success 2 fail
-       * </pre>
-       *
-       * <code>required int32 code = 2;</code>
-       */
-      public int getCode() {
-        return code_;
-      }
-      /**
-       * <pre>
-       *1 success 2 fail
-       * </pre>
-       *
-       * <code>required int32 code = 2;</code>
-       */
-      public Builder setCode(int value) {
-        bitField0_ |= 0x00000002;
-        code_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *1 success 2 fail
-       * </pre>
-       *
-       * <code>required int32 code = 2;</code>
-       */
-      public Builder clearCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        code_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private Object msg_ = "";
-      /**
-       * <code>optional string msg = 3;</code>
-       */
-      public boolean hasMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string msg = 3;</code>
-       */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            msg_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>optional string msg = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMsgBytes() {
-        Object ref = msg_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          msg_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string msg = 3;</code>
-       */
-      public Builder setMsg(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2536,46 +1521,46 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.RechargeGemstoneResultCommand)
+      // @@protoc_insertion_point(builder_scope:message.RechargeGemstoneResponseCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.RechargeGemstoneResultCommand)
-    private static final RechargeGemstoneResultCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.RechargeGemstoneResponseCommand)
+    private static final com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new RechargeGemstoneResultCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand();
     }
 
-    public static RechargeGemstoneResultCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<RechargeGemstoneResultCommand>
-        PARSER = new com.google.protobuf.AbstractParser<RechargeGemstoneResultCommand>() {
-      public RechargeGemstoneResultCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RechargeGemstoneResponseCommand>
+        PARSER = new com.google.protobuf.AbstractParser<RechargeGemstoneResponseCommand>() {
+      public RechargeGemstoneResponseCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RechargeGemstoneResultCommand(input, extensionRegistry);
+          return new RechargeGemstoneResponseCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RechargeGemstoneResultCommand> parser() {
+    public static com.google.protobuf.Parser<RechargeGemstoneResponseCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<RechargeGemstoneResultCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<RechargeGemstoneResponseCommand> getParserForType() {
       return PARSER;
     }
 
-    public RechargeGemstoneResultCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.RechargeGemstoneResponseCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BuySkillCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.BuySkillCommand)
+  public interface BuySkillRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.BuySkillRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2610,7 +1595,7 @@ public final class MallCommand {
      *
      * <code>required string skillName = 2;</code>
      */
-    String getSkillName();
+    java.lang.String getSkillName();
     /**
      * <pre>
      *技能名称
@@ -2622,27 +1607,31 @@ public final class MallCommand {
         getSkillNameBytes();
   }
   /**
-   * Protobuf type {@code message.BuySkillCommand}
+   * <pre>
+   *购买技能请求
+   * </pre>
+   *
+   * Protobuf type {@code message.BuySkillRequestCommand}
    */
-  public  static final class BuySkillCommand extends
+  public  static final class BuySkillRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.BuySkillCommand)
-      BuySkillCommandOrBuilder {
-    // Use BuySkillCommand.newBuilder() to construct.
-    private BuySkillCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.BuySkillRequestCommand)
+      BuySkillRequestCommandOrBuilder {
+    // Use BuySkillRequestCommand.newBuilder() to construct.
+    private BuySkillRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BuySkillCommand() {
+    private BuySkillRequestCommand() {
       userId_ = 0;
       skillName_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuySkillCommand(
+    private BuySkillRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2690,14 +1679,14 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_BuySkillCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_BuySkillCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              BuySkillCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.BuySkillRequestCommand.class, com.lemeng.server.command.MallCommand.BuySkillRequestCommand.Builder.class);
     }
 
     private int bitField0_;
@@ -2725,7 +1714,7 @@ public final class MallCommand {
     }
 
     public static final int SKILLNAME_FIELD_NUMBER = 2;
-    private volatile Object skillName_;
+    private volatile java.lang.Object skillName_;
     /**
      * <pre>
      *技能名称
@@ -2743,14 +1732,14 @@ public final class MallCommand {
      *
      * <code>required string skillName = 2;</code>
      */
-    public String getSkillName() {
-      Object ref = skillName_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getSkillName() {
+      java.lang.Object ref = skillName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           skillName_ = s;
         }
@@ -2766,11 +1755,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getSkillNameBytes() {
-      Object ref = skillName_;
-      if (ref instanceof String) {
+      java.lang.Object ref = skillName_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         skillName_ = b;
         return b;
       } else {
@@ -2825,15 +1814,15 @@ public final class MallCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof BuySkillCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.BuySkillRequestCommand)) {
         return super.equals(obj);
       }
-      BuySkillCommand other = (BuySkillCommand) obj;
+      com.lemeng.server.command.MallCommand.BuySkillRequestCommand other = (com.lemeng.server.command.MallCommand.BuySkillRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasUserId() == other.hasUserId());
@@ -2850,7 +1839,7 @@ public final class MallCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2870,69 +1859,69 @@ public final class MallCommand {
       return hash;
     }
 
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuySkillCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuySkillCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuySkillCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static BuySkillCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuySkillCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2944,7 +1933,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(BuySkillCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.BuySkillRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2952,38 +1941,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code message.BuySkillCommand}
+     * <pre>
+     *购买技能请求
+     * </pre>
+     *
+     * Protobuf type {@code message.BuySkillRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.BuySkillCommand)
-        BuySkillCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.BuySkillRequestCommand)
+        com.lemeng.server.command.MallCommand.BuySkillRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_BuySkillCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_BuySkillCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                BuySkillCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.BuySkillRequestCommand.class, com.lemeng.server.command.MallCommand.BuySkillRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.BuySkillCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.BuySkillRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3003,23 +1996,23 @@ public final class MallCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_BuySkillCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillRequestCommand_descriptor;
       }
 
-      public BuySkillCommand getDefaultInstanceForType() {
-        return BuySkillCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.BuySkillRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.BuySkillRequestCommand.getDefaultInstance();
       }
 
-      public BuySkillCommand build() {
-        BuySkillCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.BuySkillRequestCommand build() {
+        com.lemeng.server.command.MallCommand.BuySkillRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public BuySkillCommand buildPartial() {
-        BuySkillCommand result = new BuySkillCommand(this);
+      public com.lemeng.server.command.MallCommand.BuySkillRequestCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.BuySkillRequestCommand result = new com.lemeng.server.command.MallCommand.BuySkillRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3062,16 +2055,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof BuySkillCommand) {
-          return mergeFrom((BuySkillCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.BuySkillRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.BuySkillRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(BuySkillCommand other) {
-        if (other == BuySkillCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.BuySkillRequestCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.BuySkillRequestCommand.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -3099,11 +2092,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        BuySkillCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.BuySkillRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BuySkillCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.BuySkillRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3162,7 +2155,7 @@ public final class MallCommand {
         return this;
       }
 
-      private Object skillName_ = "";
+      private java.lang.Object skillName_ = "";
       /**
        * <pre>
        *技能名称
@@ -3180,18 +2173,18 @@ public final class MallCommand {
        *
        * <code>required string skillName = 2;</code>
        */
-      public String getSkillName() {
-        Object ref = skillName_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSkillName() {
+        java.lang.Object ref = skillName_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             skillName_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3203,11 +2196,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getSkillNameBytes() {
-        Object ref = skillName_;
+        java.lang.Object ref = skillName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           skillName_ = b;
           return b;
         } else {
@@ -3222,7 +2215,7 @@ public final class MallCommand {
        * <code>required string skillName = 2;</code>
        */
       public Builder setSkillName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3272,46 +2265,46 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.BuySkillCommand)
+      // @@protoc_insertion_point(builder_scope:message.BuySkillRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.BuySkillCommand)
-    private static final BuySkillCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.BuySkillRequestCommand)
+    private static final com.lemeng.server.command.MallCommand.BuySkillRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BuySkillCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.BuySkillRequestCommand();
     }
 
-    public static BuySkillCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.BuySkillRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<BuySkillCommand>
-        PARSER = new com.google.protobuf.AbstractParser<BuySkillCommand>() {
-      public BuySkillCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<BuySkillRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<BuySkillRequestCommand>() {
+      public BuySkillRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuySkillCommand(input, extensionRegistry);
+          return new BuySkillRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BuySkillCommand> parser() {
+    public static com.google.protobuf.Parser<BuySkillRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<BuySkillCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuySkillRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public BuySkillCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.BuySkillRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BuySkillResultCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.BuySkillResultCommand)
+  public interface BuySkillResponseCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.BuySkillResponseCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3329,7 +2322,7 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    String getOperation();
+    java.lang.String getOperation();
     /**
      * <pre>
      *操作
@@ -3364,7 +2357,7 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    String getMsg();
+    java.lang.String getMsg();
     /**
      * <code>optional string msg = 3;</code>
      */
@@ -3372,28 +2365,32 @@ public final class MallCommand {
         getMsgBytes();
   }
   /**
-   * Protobuf type {@code message.BuySkillResultCommand}
+   * <pre>
+   *购买技能响应
+   * </pre>
+   *
+   * Protobuf type {@code message.BuySkillResponseCommand}
    */
-  public  static final class BuySkillResultCommand extends
+  public  static final class BuySkillResponseCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.BuySkillResultCommand)
-      BuySkillResultCommandOrBuilder {
-    // Use BuySkillResultCommand.newBuilder() to construct.
-    private BuySkillResultCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.BuySkillResponseCommand)
+      BuySkillResponseCommandOrBuilder {
+    // Use BuySkillResponseCommand.newBuilder() to construct.
+    private BuySkillResponseCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BuySkillResultCommand() {
+    private BuySkillResponseCommand() {
       operation_ = "";
       code_ = 0;
       msg_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuySkillResultCommand(
+    private BuySkillResponseCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3447,19 +2444,19 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_BuySkillResultCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillResponseCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_BuySkillResultCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillResponseCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              BuySkillResultCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.BuySkillResponseCommand.class, com.lemeng.server.command.MallCommand.BuySkillResponseCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int OPERATION_FIELD_NUMBER = 1;
-    private volatile Object operation_;
+    private volatile java.lang.Object operation_;
     /**
      * <pre>
      *操作
@@ -3477,14 +2474,14 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    public String getOperation() {
-      Object ref = operation_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getOperation() {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           operation_ = s;
         }
@@ -3500,11 +2497,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getOperationBytes() {
-      Object ref = operation_;
-      if (ref instanceof String) {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         operation_ = b;
         return b;
       } else {
@@ -3536,7 +2533,7 @@ public final class MallCommand {
     }
 
     public static final int MSG_FIELD_NUMBER = 3;
-    private volatile Object msg_;
+    private volatile java.lang.Object msg_;
     /**
      * <code>optional string msg = 3;</code>
      */
@@ -3546,14 +2543,14 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           msg_ = s;
         }
@@ -3565,11 +2562,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msg_ = b;
         return b;
       } else {
@@ -3630,15 +2627,15 @@ public final class MallCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof BuySkillResultCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.BuySkillResponseCommand)) {
         return super.equals(obj);
       }
-      BuySkillResultCommand other = (BuySkillResultCommand) obj;
+      com.lemeng.server.command.MallCommand.BuySkillResponseCommand other = (com.lemeng.server.command.MallCommand.BuySkillResponseCommand) obj;
 
       boolean result = true;
       result = result && (hasOperation() == other.hasOperation());
@@ -3660,7 +2657,7 @@ public final class MallCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3684,69 +2681,69 @@ public final class MallCommand {
       return hash;
     }
 
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuySkillResultCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuySkillResultCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuySkillResultCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static BuySkillResultCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuySkillResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3758,7 +2755,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(BuySkillResultCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.BuySkillResponseCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3766,38 +2763,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code message.BuySkillResultCommand}
+     * <pre>
+     *购买技能响应
+     * </pre>
+     *
+     * Protobuf type {@code message.BuySkillResponseCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.BuySkillResultCommand)
-        BuySkillResultCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.BuySkillResponseCommand)
+        com.lemeng.server.command.MallCommand.BuySkillResponseCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_BuySkillResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillResponseCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_BuySkillResultCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillResponseCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                BuySkillResultCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.BuySkillResponseCommand.class, com.lemeng.server.command.MallCommand.BuySkillResponseCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.BuySkillResultCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.BuySkillResponseCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3819,23 +2820,23 @@ public final class MallCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_BuySkillResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuySkillResponseCommand_descriptor;
       }
 
-      public BuySkillResultCommand getDefaultInstanceForType() {
-        return BuySkillResultCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.BuySkillResponseCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.BuySkillResponseCommand.getDefaultInstance();
       }
 
-      public BuySkillResultCommand build() {
-        BuySkillResultCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.BuySkillResponseCommand build() {
+        com.lemeng.server.command.MallCommand.BuySkillResponseCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public BuySkillResultCommand buildPartial() {
-        BuySkillResultCommand result = new BuySkillResultCommand(this);
+      public com.lemeng.server.command.MallCommand.BuySkillResponseCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.BuySkillResponseCommand result = new com.lemeng.server.command.MallCommand.BuySkillResponseCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3882,16 +2883,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof BuySkillResultCommand) {
-          return mergeFrom((BuySkillResultCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.BuySkillResponseCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.BuySkillResponseCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(BuySkillResultCommand other) {
-        if (other == BuySkillResultCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.BuySkillResponseCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.BuySkillResponseCommand.getDefaultInstance()) return this;
         if (other.hasOperation()) {
           bitField0_ |= 0x00000001;
           operation_ = other.operation_;
@@ -3924,11 +2925,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        BuySkillResultCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.BuySkillResponseCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BuySkillResultCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.BuySkillResponseCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3939,7 +2940,7 @@ public final class MallCommand {
       }
       private int bitField0_;
 
-      private Object operation_ = "";
+      private java.lang.Object operation_ = "";
       /**
        * <pre>
        *操作
@@ -3957,18 +2958,18 @@ public final class MallCommand {
        *
        * <code>required string operation = 1;</code>
        */
-      public String getOperation() {
-        Object ref = operation_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getOperation() {
+        java.lang.Object ref = operation_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             operation_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3980,11 +2981,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getOperationBytes() {
-        Object ref = operation_;
+        java.lang.Object ref = operation_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           operation_ = b;
           return b;
         } else {
@@ -3999,7 +3000,7 @@ public final class MallCommand {
        * <code>required string operation = 1;</code>
        */
       public Builder setOperation(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4087,7 +3088,7 @@ public final class MallCommand {
         return this;
       }
 
-      private Object msg_ = "";
+      private java.lang.Object msg_ = "";
       /**
        * <code>optional string msg = 3;</code>
        */
@@ -4097,18 +3098,18 @@ public final class MallCommand {
       /**
        * <code>optional string msg = 3;</code>
        */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             msg_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4116,11 +3117,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
-        Object ref = msg_;
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msg_ = b;
           return b;
         } else {
@@ -4131,7 +3132,7 @@ public final class MallCommand {
        * <code>optional string msg = 3;</code>
        */
       public Builder setMsg(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4173,46 +3174,46 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.BuySkillResultCommand)
+      // @@protoc_insertion_point(builder_scope:message.BuySkillResponseCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.BuySkillResultCommand)
-    private static final BuySkillResultCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.BuySkillResponseCommand)
+    private static final com.lemeng.server.command.MallCommand.BuySkillResponseCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BuySkillResultCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.BuySkillResponseCommand();
     }
 
-    public static BuySkillResultCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.BuySkillResponseCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<BuySkillResultCommand>
-        PARSER = new com.google.protobuf.AbstractParser<BuySkillResultCommand>() {
-      public BuySkillResultCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<BuySkillResponseCommand>
+        PARSER = new com.google.protobuf.AbstractParser<BuySkillResponseCommand>() {
+      public BuySkillResponseCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuySkillResultCommand(input, extensionRegistry);
+          return new BuySkillResponseCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BuySkillResultCommand> parser() {
+    public static com.google.protobuf.Parser<BuySkillResponseCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<BuySkillResultCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuySkillResponseCommand> getParserForType() {
       return PARSER;
     }
 
-    public BuySkillResultCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.BuySkillResponseCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BuyPetCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.BuyPetCommand)
+  public interface BuyPetRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.BuyPetRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4247,7 +3248,7 @@ public final class MallCommand {
      *
      * <code>required string petName = 2;</code>
      */
-    String getPetName();
+    java.lang.String getPetName();
     /**
      * <pre>
      *宠物名称
@@ -4259,27 +3260,31 @@ public final class MallCommand {
         getPetNameBytes();
   }
   /**
-   * Protobuf type {@code message.BuyPetCommand}
+   * <pre>
+   *购买宠物请求
+   * </pre>
+   *
+   * Protobuf type {@code message.BuyPetRequestCommand}
    */
-  public  static final class BuyPetCommand extends
+  public  static final class BuyPetRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.BuyPetCommand)
-      BuyPetCommandOrBuilder {
-    // Use BuyPetCommand.newBuilder() to construct.
-    private BuyPetCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.BuyPetRequestCommand)
+      BuyPetRequestCommandOrBuilder {
+    // Use BuyPetRequestCommand.newBuilder() to construct.
+    private BuyPetRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BuyPetCommand() {
+    private BuyPetRequestCommand() {
       userId_ = 0;
       petName_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuyPetCommand(
+    private BuyPetRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4327,14 +3332,14 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_BuyPetCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_BuyPetCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              BuyPetCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.BuyPetRequestCommand.class, com.lemeng.server.command.MallCommand.BuyPetRequestCommand.Builder.class);
     }
 
     private int bitField0_;
@@ -4362,7 +3367,7 @@ public final class MallCommand {
     }
 
     public static final int PETNAME_FIELD_NUMBER = 2;
-    private volatile Object petName_;
+    private volatile java.lang.Object petName_;
     /**
      * <pre>
      *宠物名称
@@ -4380,14 +3385,14 @@ public final class MallCommand {
      *
      * <code>required string petName = 2;</code>
      */
-    public String getPetName() {
-      Object ref = petName_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getPetName() {
+      java.lang.Object ref = petName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           petName_ = s;
         }
@@ -4403,11 +3408,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getPetNameBytes() {
-      Object ref = petName_;
-      if (ref instanceof String) {
+      java.lang.Object ref = petName_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         petName_ = b;
         return b;
       } else {
@@ -4462,15 +3467,15 @@ public final class MallCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof BuyPetCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.BuyPetRequestCommand)) {
         return super.equals(obj);
       }
-      BuyPetCommand other = (BuyPetCommand) obj;
+      com.lemeng.server.command.MallCommand.BuyPetRequestCommand other = (com.lemeng.server.command.MallCommand.BuyPetRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasUserId() == other.hasUserId());
@@ -4487,7 +3492,7 @@ public final class MallCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -4507,69 +3512,69 @@ public final class MallCommand {
       return hash;
     }
 
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyPetCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyPetCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyPetCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static BuyPetCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyPetCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4581,7 +3586,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(BuyPetCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.BuyPetRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4589,38 +3594,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code message.BuyPetCommand}
+     * <pre>
+     *购买宠物请求
+     * </pre>
+     *
+     * Protobuf type {@code message.BuyPetRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.BuyPetCommand)
-        BuyPetCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.BuyPetRequestCommand)
+        com.lemeng.server.command.MallCommand.BuyPetRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_BuyPetCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_BuyPetCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                BuyPetCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.BuyPetRequestCommand.class, com.lemeng.server.command.MallCommand.BuyPetRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.BuyPetCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.BuyPetRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4640,23 +3649,23 @@ public final class MallCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_BuyPetCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetRequestCommand_descriptor;
       }
 
-      public BuyPetCommand getDefaultInstanceForType() {
-        return BuyPetCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.BuyPetRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.BuyPetRequestCommand.getDefaultInstance();
       }
 
-      public BuyPetCommand build() {
-        BuyPetCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.BuyPetRequestCommand build() {
+        com.lemeng.server.command.MallCommand.BuyPetRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public BuyPetCommand buildPartial() {
-        BuyPetCommand result = new BuyPetCommand(this);
+      public com.lemeng.server.command.MallCommand.BuyPetRequestCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.BuyPetRequestCommand result = new com.lemeng.server.command.MallCommand.BuyPetRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4699,16 +3708,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof BuyPetCommand) {
-          return mergeFrom((BuyPetCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.BuyPetRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.BuyPetRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(BuyPetCommand other) {
-        if (other == BuyPetCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.BuyPetRequestCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.BuyPetRequestCommand.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -4736,11 +3745,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        BuyPetCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.BuyPetRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BuyPetCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.BuyPetRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4799,7 +3808,7 @@ public final class MallCommand {
         return this;
       }
 
-      private Object petName_ = "";
+      private java.lang.Object petName_ = "";
       /**
        * <pre>
        *宠物名称
@@ -4817,18 +3826,18 @@ public final class MallCommand {
        *
        * <code>required string petName = 2;</code>
        */
-      public String getPetName() {
-        Object ref = petName_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getPetName() {
+        java.lang.Object ref = petName_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             petName_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4840,11 +3849,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getPetNameBytes() {
-        Object ref = petName_;
+        java.lang.Object ref = petName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           petName_ = b;
           return b;
         } else {
@@ -4859,7 +3868,7 @@ public final class MallCommand {
        * <code>required string petName = 2;</code>
        */
       public Builder setPetName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4909,46 +3918,46 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.BuyPetCommand)
+      // @@protoc_insertion_point(builder_scope:message.BuyPetRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.BuyPetCommand)
-    private static final BuyPetCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.BuyPetRequestCommand)
+    private static final com.lemeng.server.command.MallCommand.BuyPetRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BuyPetCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.BuyPetRequestCommand();
     }
 
-    public static BuyPetCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.BuyPetRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<BuyPetCommand>
-        PARSER = new com.google.protobuf.AbstractParser<BuyPetCommand>() {
-      public BuyPetCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<BuyPetRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<BuyPetRequestCommand>() {
+      public BuyPetRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuyPetCommand(input, extensionRegistry);
+          return new BuyPetRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BuyPetCommand> parser() {
+    public static com.google.protobuf.Parser<BuyPetRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<BuyPetCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuyPetRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public BuyPetCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.BuyPetRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BuyPetResultCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.BuyPetResultCommand)
+  public interface BuyPetResponseCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.BuyPetResponseCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4966,7 +3975,7 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    String getOperation();
+    java.lang.String getOperation();
     /**
      * <pre>
      *操作
@@ -5001,7 +4010,7 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    String getMsg();
+    java.lang.String getMsg();
     /**
      * <code>optional string msg = 3;</code>
      */
@@ -5009,28 +4018,32 @@ public final class MallCommand {
         getMsgBytes();
   }
   /**
-   * Protobuf type {@code message.BuyPetResultCommand}
+   * <pre>
+   *购买宠物响应
+   * </pre>
+   *
+   * Protobuf type {@code message.BuyPetResponseCommand}
    */
-  public  static final class BuyPetResultCommand extends
+  public  static final class BuyPetResponseCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.BuyPetResultCommand)
-      BuyPetResultCommandOrBuilder {
-    // Use BuyPetResultCommand.newBuilder() to construct.
-    private BuyPetResultCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.BuyPetResponseCommand)
+      BuyPetResponseCommandOrBuilder {
+    // Use BuyPetResponseCommand.newBuilder() to construct.
+    private BuyPetResponseCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BuyPetResultCommand() {
+    private BuyPetResponseCommand() {
       operation_ = "";
       code_ = 0;
       msg_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuyPetResultCommand(
+    private BuyPetResponseCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5084,19 +4097,19 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_BuyPetResultCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetResponseCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_BuyPetResultCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetResponseCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              BuyPetResultCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.BuyPetResponseCommand.class, com.lemeng.server.command.MallCommand.BuyPetResponseCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int OPERATION_FIELD_NUMBER = 1;
-    private volatile Object operation_;
+    private volatile java.lang.Object operation_;
     /**
      * <pre>
      *操作
@@ -5114,14 +4127,14 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    public String getOperation() {
-      Object ref = operation_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getOperation() {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           operation_ = s;
         }
@@ -5137,11 +4150,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getOperationBytes() {
-      Object ref = operation_;
-      if (ref instanceof String) {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         operation_ = b;
         return b;
       } else {
@@ -5173,7 +4186,7 @@ public final class MallCommand {
     }
 
     public static final int MSG_FIELD_NUMBER = 3;
-    private volatile Object msg_;
+    private volatile java.lang.Object msg_;
     /**
      * <code>optional string msg = 3;</code>
      */
@@ -5183,14 +4196,14 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           msg_ = s;
         }
@@ -5202,11 +4215,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msg_ = b;
         return b;
       } else {
@@ -5267,15 +4280,15 @@ public final class MallCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof BuyPetResultCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.BuyPetResponseCommand)) {
         return super.equals(obj);
       }
-      BuyPetResultCommand other = (BuyPetResultCommand) obj;
+      com.lemeng.server.command.MallCommand.BuyPetResponseCommand other = (com.lemeng.server.command.MallCommand.BuyPetResponseCommand) obj;
 
       boolean result = true;
       result = result && (hasOperation() == other.hasOperation());
@@ -5297,7 +4310,7 @@ public final class MallCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -5321,69 +4334,69 @@ public final class MallCommand {
       return hash;
     }
 
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyPetResultCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyPetResultCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyPetResultCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static BuyPetResultCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyPetResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5395,7 +4408,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(BuyPetResultCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.BuyPetResponseCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -5403,38 +4416,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code message.BuyPetResultCommand}
+     * <pre>
+     *购买宠物响应
+     * </pre>
+     *
+     * Protobuf type {@code message.BuyPetResponseCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.BuyPetResultCommand)
-        BuyPetResultCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.BuyPetResponseCommand)
+        com.lemeng.server.command.MallCommand.BuyPetResponseCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_BuyPetResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetResponseCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_BuyPetResultCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetResponseCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                BuyPetResultCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.BuyPetResponseCommand.class, com.lemeng.server.command.MallCommand.BuyPetResponseCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.BuyPetResultCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.BuyPetResponseCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5456,23 +4473,23 @@ public final class MallCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_BuyPetResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyPetResponseCommand_descriptor;
       }
 
-      public BuyPetResultCommand getDefaultInstanceForType() {
-        return BuyPetResultCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.BuyPetResponseCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.BuyPetResponseCommand.getDefaultInstance();
       }
 
-      public BuyPetResultCommand build() {
-        BuyPetResultCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.BuyPetResponseCommand build() {
+        com.lemeng.server.command.MallCommand.BuyPetResponseCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public BuyPetResultCommand buildPartial() {
-        BuyPetResultCommand result = new BuyPetResultCommand(this);
+      public com.lemeng.server.command.MallCommand.BuyPetResponseCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.BuyPetResponseCommand result = new com.lemeng.server.command.MallCommand.BuyPetResponseCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5519,16 +4536,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof BuyPetResultCommand) {
-          return mergeFrom((BuyPetResultCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.BuyPetResponseCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.BuyPetResponseCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(BuyPetResultCommand other) {
-        if (other == BuyPetResultCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.BuyPetResponseCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.BuyPetResponseCommand.getDefaultInstance()) return this;
         if (other.hasOperation()) {
           bitField0_ |= 0x00000001;
           operation_ = other.operation_;
@@ -5561,11 +4578,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        BuyPetResultCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.BuyPetResponseCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BuyPetResultCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.BuyPetResponseCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5576,7 +4593,7 @@ public final class MallCommand {
       }
       private int bitField0_;
 
-      private Object operation_ = "";
+      private java.lang.Object operation_ = "";
       /**
        * <pre>
        *操作
@@ -5594,18 +4611,18 @@ public final class MallCommand {
        *
        * <code>required string operation = 1;</code>
        */
-      public String getOperation() {
-        Object ref = operation_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getOperation() {
+        java.lang.Object ref = operation_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             operation_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -5617,11 +4634,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getOperationBytes() {
-        Object ref = operation_;
+        java.lang.Object ref = operation_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           operation_ = b;
           return b;
         } else {
@@ -5636,7 +4653,7 @@ public final class MallCommand {
        * <code>required string operation = 1;</code>
        */
       public Builder setOperation(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5724,7 +4741,7 @@ public final class MallCommand {
         return this;
       }
 
-      private Object msg_ = "";
+      private java.lang.Object msg_ = "";
       /**
        * <code>optional string msg = 3;</code>
        */
@@ -5734,18 +4751,18 @@ public final class MallCommand {
       /**
        * <code>optional string msg = 3;</code>
        */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             msg_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -5753,11 +4770,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
-        Object ref = msg_;
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msg_ = b;
           return b;
         } else {
@@ -5768,7 +4785,7 @@ public final class MallCommand {
        * <code>optional string msg = 3;</code>
        */
       public Builder setMsg(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5810,46 +4827,46 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.BuyPetResultCommand)
+      // @@protoc_insertion_point(builder_scope:message.BuyPetResponseCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.BuyPetResultCommand)
-    private static final BuyPetResultCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.BuyPetResponseCommand)
+    private static final com.lemeng.server.command.MallCommand.BuyPetResponseCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BuyPetResultCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.BuyPetResponseCommand();
     }
 
-    public static BuyPetResultCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.BuyPetResponseCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<BuyPetResultCommand>
-        PARSER = new com.google.protobuf.AbstractParser<BuyPetResultCommand>() {
-      public BuyPetResultCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<BuyPetResponseCommand>
+        PARSER = new com.google.protobuf.AbstractParser<BuyPetResponseCommand>() {
+      public BuyPetResponseCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuyPetResultCommand(input, extensionRegistry);
+          return new BuyPetResponseCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BuyPetResultCommand> parser() {
+    public static com.google.protobuf.Parser<BuyPetResponseCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<BuyPetResultCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuyPetResponseCommand> getParserForType() {
       return PARSER;
     }
 
-    public BuyPetResultCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.BuyPetResponseCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BuyFootPrintCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.BuyFootPrintCommand)
+  public interface BuyFootPrintRequestCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.BuyFootPrintRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5884,7 +4901,7 @@ public final class MallCommand {
      *
      * <code>required string footPrintName = 2;</code>
      */
-    String getFootPrintName();
+    java.lang.String getFootPrintName();
     /**
      * <pre>
      *脚印名称
@@ -5896,27 +4913,31 @@ public final class MallCommand {
         getFootPrintNameBytes();
   }
   /**
-   * Protobuf type {@code message.BuyFootPrintCommand}
+   * <pre>
+   *购买脚印请求
+   * </pre>
+   *
+   * Protobuf type {@code message.BuyFootPrintRequestCommand}
    */
-  public  static final class BuyFootPrintCommand extends
+  public  static final class BuyFootPrintRequestCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.BuyFootPrintCommand)
-      BuyFootPrintCommandOrBuilder {
-    // Use BuyFootPrintCommand.newBuilder() to construct.
-    private BuyFootPrintCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.BuyFootPrintRequestCommand)
+      BuyFootPrintRequestCommandOrBuilder {
+    // Use BuyFootPrintRequestCommand.newBuilder() to construct.
+    private BuyFootPrintRequestCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BuyFootPrintCommand() {
+    private BuyFootPrintRequestCommand() {
       userId_ = 0;
       footPrintName_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuyFootPrintCommand(
+    private BuyFootPrintRequestCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5964,14 +4985,14 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_BuyFootPrintCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintRequestCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_BuyFootPrintCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintRequestCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              BuyFootPrintCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand.class, com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand.Builder.class);
     }
 
     private int bitField0_;
@@ -5999,7 +5020,7 @@ public final class MallCommand {
     }
 
     public static final int FOOTPRINTNAME_FIELD_NUMBER = 2;
-    private volatile Object footPrintName_;
+    private volatile java.lang.Object footPrintName_;
     /**
      * <pre>
      *脚印名称
@@ -6017,14 +5038,14 @@ public final class MallCommand {
      *
      * <code>required string footPrintName = 2;</code>
      */
-    public String getFootPrintName() {
-      Object ref = footPrintName_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getFootPrintName() {
+      java.lang.Object ref = footPrintName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           footPrintName_ = s;
         }
@@ -6040,11 +5061,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getFootPrintNameBytes() {
-      Object ref = footPrintName_;
-      if (ref instanceof String) {
+      java.lang.Object ref = footPrintName_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         footPrintName_ = b;
         return b;
       } else {
@@ -6099,15 +5120,15 @@ public final class MallCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof BuyFootPrintCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand)) {
         return super.equals(obj);
       }
-      BuyFootPrintCommand other = (BuyFootPrintCommand) obj;
+      com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand other = (com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand) obj;
 
       boolean result = true;
       result = result && (hasUserId() == other.hasUserId());
@@ -6124,7 +5145,7 @@ public final class MallCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -6144,69 +5165,69 @@ public final class MallCommand {
       return hash;
     }
 
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyFootPrintCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyFootPrintCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyFootPrintCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static BuyFootPrintCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyFootPrintCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6218,7 +5239,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(BuyFootPrintCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6226,38 +5247,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code message.BuyFootPrintCommand}
+     * <pre>
+     *购买脚印请求
+     * </pre>
+     *
+     * Protobuf type {@code message.BuyFootPrintRequestCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.BuyFootPrintCommand)
-        BuyFootPrintCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.BuyFootPrintRequestCommand)
+        com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_BuyFootPrintCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintRequestCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_BuyFootPrintCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintRequestCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                BuyFootPrintCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand.class, com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.BuyFootPrintCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6277,23 +5302,23 @@ public final class MallCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_BuyFootPrintCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintRequestCommand_descriptor;
       }
 
-      public BuyFootPrintCommand getDefaultInstanceForType() {
-        return BuyFootPrintCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand.getDefaultInstance();
       }
 
-      public BuyFootPrintCommand build() {
-        BuyFootPrintCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand build() {
+        com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public BuyFootPrintCommand buildPartial() {
-        BuyFootPrintCommand result = new BuyFootPrintCommand(this);
+      public com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand result = new com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6336,16 +5361,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof BuyFootPrintCommand) {
-          return mergeFrom((BuyFootPrintCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(BuyFootPrintCommand other) {
-        if (other == BuyFootPrintCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -6373,11 +5398,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        BuyFootPrintCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BuyFootPrintCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6436,7 +5461,7 @@ public final class MallCommand {
         return this;
       }
 
-      private Object footPrintName_ = "";
+      private java.lang.Object footPrintName_ = "";
       /**
        * <pre>
        *脚印名称
@@ -6454,18 +5479,18 @@ public final class MallCommand {
        *
        * <code>required string footPrintName = 2;</code>
        */
-      public String getFootPrintName() {
-        Object ref = footPrintName_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getFootPrintName() {
+        java.lang.Object ref = footPrintName_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             footPrintName_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6477,11 +5502,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getFootPrintNameBytes() {
-        Object ref = footPrintName_;
+        java.lang.Object ref = footPrintName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           footPrintName_ = b;
           return b;
         } else {
@@ -6496,7 +5521,7 @@ public final class MallCommand {
        * <code>required string footPrintName = 2;</code>
        */
       public Builder setFootPrintName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6546,46 +5571,46 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.BuyFootPrintCommand)
+      // @@protoc_insertion_point(builder_scope:message.BuyFootPrintRequestCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.BuyFootPrintCommand)
-    private static final BuyFootPrintCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.BuyFootPrintRequestCommand)
+    private static final com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BuyFootPrintCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand();
     }
 
-    public static BuyFootPrintCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<BuyFootPrintCommand>
-        PARSER = new com.google.protobuf.AbstractParser<BuyFootPrintCommand>() {
-      public BuyFootPrintCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<BuyFootPrintRequestCommand>
+        PARSER = new com.google.protobuf.AbstractParser<BuyFootPrintRequestCommand>() {
+      public BuyFootPrintRequestCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuyFootPrintCommand(input, extensionRegistry);
+          return new BuyFootPrintRequestCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BuyFootPrintCommand> parser() {
+    public static com.google.protobuf.Parser<BuyFootPrintRequestCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<BuyFootPrintCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuyFootPrintRequestCommand> getParserForType() {
       return PARSER;
     }
 
-    public BuyFootPrintCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.BuyFootPrintRequestCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BuyFootPrintResultCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.BuyFootPrintResultCommand)
+  public interface BuyFootPrintResponseCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.BuyFootPrintResponseCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6603,7 +5628,7 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    String getOperation();
+    java.lang.String getOperation();
     /**
      * <pre>
      *操作
@@ -6638,7 +5663,7 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    String getMsg();
+    java.lang.String getMsg();
     /**
      * <code>optional string msg = 3;</code>
      */
@@ -6646,28 +5671,32 @@ public final class MallCommand {
         getMsgBytes();
   }
   /**
-   * Protobuf type {@code message.BuyFootPrintResultCommand}
+   * <pre>
+   *购买脚印响应
+   * </pre>
+   *
+   * Protobuf type {@code message.BuyFootPrintResponseCommand}
    */
-  public  static final class BuyFootPrintResultCommand extends
+  public  static final class BuyFootPrintResponseCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.BuyFootPrintResultCommand)
-      BuyFootPrintResultCommandOrBuilder {
-    // Use BuyFootPrintResultCommand.newBuilder() to construct.
-    private BuyFootPrintResultCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.BuyFootPrintResponseCommand)
+      BuyFootPrintResponseCommandOrBuilder {
+    // Use BuyFootPrintResponseCommand.newBuilder() to construct.
+    private BuyFootPrintResponseCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BuyFootPrintResultCommand() {
+    private BuyFootPrintResponseCommand() {
       operation_ = "";
       code_ = 0;
       msg_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuyFootPrintResultCommand(
+    private BuyFootPrintResponseCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6721,19 +5750,19 @@ public final class MallCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MallCommand.internal_static_message_BuyFootPrintResultCommand_descriptor;
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintResponseCommand_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MallCommand.internal_static_message_BuyFootPrintResultCommand_fieldAccessorTable
+      return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintResponseCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              BuyFootPrintResultCommand.class, Builder.class);
+              com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand.class, com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand.Builder.class);
     }
 
     private int bitField0_;
     public static final int OPERATION_FIELD_NUMBER = 1;
-    private volatile Object operation_;
+    private volatile java.lang.Object operation_;
     /**
      * <pre>
      *操作
@@ -6751,14 +5780,14 @@ public final class MallCommand {
      *
      * <code>required string operation = 1;</code>
      */
-    public String getOperation() {
-      Object ref = operation_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getOperation() {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           operation_ = s;
         }
@@ -6774,11 +5803,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getOperationBytes() {
-      Object ref = operation_;
-      if (ref instanceof String) {
+      java.lang.Object ref = operation_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         operation_ = b;
         return b;
       } else {
@@ -6810,7 +5839,7 @@ public final class MallCommand {
     }
 
     public static final int MSG_FIELD_NUMBER = 3;
-    private volatile Object msg_;
+    private volatile java.lang.Object msg_;
     /**
      * <code>optional string msg = 3;</code>
      */
@@ -6820,14 +5849,14 @@ public final class MallCommand {
     /**
      * <code>optional string msg = 3;</code>
      */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           msg_ = s;
         }
@@ -6839,11 +5868,11 @@ public final class MallCommand {
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msg_ = b;
         return b;
       } else {
@@ -6904,15 +5933,15 @@ public final class MallCommand {
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof BuyFootPrintResultCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand)) {
         return super.equals(obj);
       }
-      BuyFootPrintResultCommand other = (BuyFootPrintResultCommand) obj;
+      com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand other = (com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand) obj;
 
       boolean result = true;
       result = result && (hasOperation() == other.hasOperation());
@@ -6934,7 +5963,7 @@ public final class MallCommand {
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -6958,69 +5987,69 @@ public final class MallCommand {
       return hash;
     }
 
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyFootPrintResultCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static BuyFootPrintResultCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyFootPrintResultCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static BuyFootPrintResultCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static BuyFootPrintResultCommand parseFrom(
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7032,7 +6061,7 @@ public final class MallCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(BuyFootPrintResultCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -7040,38 +6069,42 @@ public final class MallCommand {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code message.BuyFootPrintResultCommand}
+     * <pre>
+     *购买脚印响应
+     * </pre>
+     *
+     * Protobuf type {@code message.BuyFootPrintResponseCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.BuyFootPrintResultCommand)
-        BuyFootPrintResultCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.BuyFootPrintResponseCommand)
+        com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return MallCommand.internal_static_message_BuyFootPrintResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintResponseCommand_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return MallCommand.internal_static_message_BuyFootPrintResultCommand_fieldAccessorTable
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintResponseCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                BuyFootPrintResultCommand.class, Builder.class);
+                com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand.class, com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.MallCommand.BuyFootPrintResultCommand.newBuilder()
+      // Construct using com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -7093,23 +6126,23 @@ public final class MallCommand {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return MallCommand.internal_static_message_BuyFootPrintResultCommand_descriptor;
+        return com.lemeng.server.command.MallCommand.internal_static_message_BuyFootPrintResponseCommand_descriptor;
       }
 
-      public BuyFootPrintResultCommand getDefaultInstanceForType() {
-        return BuyFootPrintResultCommand.getDefaultInstance();
+      public com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand.getDefaultInstance();
       }
 
-      public BuyFootPrintResultCommand build() {
-        BuyFootPrintResultCommand result = buildPartial();
+      public com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand build() {
+        com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public BuyFootPrintResultCommand buildPartial() {
-        BuyFootPrintResultCommand result = new BuyFootPrintResultCommand(this);
+      public com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand buildPartial() {
+        com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand result = new com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7156,16 +6189,16 @@ public final class MallCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof BuyFootPrintResultCommand) {
-          return mergeFrom((BuyFootPrintResultCommand)other);
+        if (other instanceof com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand) {
+          return mergeFrom((com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(BuyFootPrintResultCommand other) {
-        if (other == BuyFootPrintResultCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand other) {
+        if (other == com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand.getDefaultInstance()) return this;
         if (other.hasOperation()) {
           bitField0_ |= 0x00000001;
           operation_ = other.operation_;
@@ -7198,11 +6231,11 @@ public final class MallCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        BuyFootPrintResultCommand parsedMessage = null;
+        com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BuyFootPrintResultCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7213,7 +6246,7 @@ public final class MallCommand {
       }
       private int bitField0_;
 
-      private Object operation_ = "";
+      private java.lang.Object operation_ = "";
       /**
        * <pre>
        *操作
@@ -7231,18 +6264,18 @@ public final class MallCommand {
        *
        * <code>required string operation = 1;</code>
        */
-      public String getOperation() {
-        Object ref = operation_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getOperation() {
+        java.lang.Object ref = operation_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             operation_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -7254,11 +6287,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getOperationBytes() {
-        Object ref = operation_;
+        java.lang.Object ref = operation_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           operation_ = b;
           return b;
         } else {
@@ -7273,7 +6306,7 @@ public final class MallCommand {
        * <code>required string operation = 1;</code>
        */
       public Builder setOperation(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7361,7 +6394,7 @@ public final class MallCommand {
         return this;
       }
 
-      private Object msg_ = "";
+      private java.lang.Object msg_ = "";
       /**
        * <code>optional string msg = 3;</code>
        */
@@ -7371,18 +6404,18 @@ public final class MallCommand {
       /**
        * <code>optional string msg = 3;</code>
        */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             msg_ = s;
           }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -7390,11 +6423,11 @@ public final class MallCommand {
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
-        Object ref = msg_;
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msg_ = b;
           return b;
         } else {
@@ -7405,7 +6438,7 @@ public final class MallCommand {
        * <code>optional string msg = 3;</code>
        */
       public Builder setMsg(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7447,89 +6480,84 @@ public final class MallCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.BuyFootPrintResultCommand)
+      // @@protoc_insertion_point(builder_scope:message.BuyFootPrintResponseCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.BuyFootPrintResultCommand)
-    private static final BuyFootPrintResultCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.BuyFootPrintResponseCommand)
+    private static final com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new BuyFootPrintResultCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand();
     }
 
-    public static BuyFootPrintResultCommand getDefaultInstance() {
+    public static com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @Deprecated public static final com.google.protobuf.Parser<BuyFootPrintResultCommand>
-        PARSER = new com.google.protobuf.AbstractParser<BuyFootPrintResultCommand>() {
-      public BuyFootPrintResultCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<BuyFootPrintResponseCommand>
+        PARSER = new com.google.protobuf.AbstractParser<BuyFootPrintResponseCommand>() {
+      public BuyFootPrintResponseCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuyFootPrintResultCommand(input, extensionRegistry);
+          return new BuyFootPrintResponseCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BuyFootPrintResultCommand> parser() {
+    public static com.google.protobuf.Parser<BuyFootPrintResponseCommand> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<BuyFootPrintResultCommand> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuyFootPrintResponseCommand> getParserForType() {
       return PARSER;
     }
 
-    public BuyFootPrintResultCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.MallCommand.BuyFootPrintResponseCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_RechargeGemstoneCommand_descriptor;
+    internal_static_message_RechargeGemstoneRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_RechargeGemstoneCommand_fieldAccessorTable;
+      internal_static_message_RechargeGemstoneRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_OperationResultCommand_descriptor;
+    internal_static_message_RechargeGemstoneResponseCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_OperationResultCommand_fieldAccessorTable;
+      internal_static_message_RechargeGemstoneResponseCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_RechargeGemstoneResultCommand_descriptor;
+    internal_static_message_BuySkillRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_RechargeGemstoneResultCommand_fieldAccessorTable;
+      internal_static_message_BuySkillRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_BuySkillCommand_descriptor;
+    internal_static_message_BuySkillResponseCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_BuySkillCommand_fieldAccessorTable;
+      internal_static_message_BuySkillResponseCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_BuySkillResultCommand_descriptor;
+    internal_static_message_BuyPetRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_BuySkillResultCommand_fieldAccessorTable;
+      internal_static_message_BuyPetRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_BuyPetCommand_descriptor;
+    internal_static_message_BuyPetResponseCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_BuyPetCommand_fieldAccessorTable;
+      internal_static_message_BuyPetResponseCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_BuyPetResultCommand_descriptor;
+    internal_static_message_BuyFootPrintRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_BuyPetResultCommand_fieldAccessorTable;
+      internal_static_message_BuyFootPrintRequestCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_BuyFootPrintCommand_descriptor;
+    internal_static_message_BuyFootPrintResponseCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_BuyFootPrintCommand_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_BuyFootPrintResultCommand_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_BuyFootPrintResultCommand_fieldAccessorTable;
+      internal_static_message_BuyFootPrintResponseCommand_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7538,24 +6566,23 @@ public final class MallCommand {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
-      "\n\021MallCommand.proto\022\007message\"8\n\027Recharge" +
-      "GemstoneCommand\022\016\n\006userId\030\001 \001(\005\022\r\n\005count" +
-      "\030\002 \001(\005\"T\n\026OperationResultCommand\022\021\n\toper" +
-      "ation\030\001 \002(\t\022\014\n\004code\030\002 \002(\005\022\013\n\003msg\030\003 \001(\t\022\014" +
-      "\n\004data\030\004 \001(\014\"M\n\035RechargeGemstoneResultCo" +
-      "mmand\022\021\n\toperation\030\001 \002(\t\022\014\n\004code\030\002 \002(\005\022\013" +
-      "\n\003msg\030\003 \001(\t\"4\n\017BuySkillCommand\022\016\n\006userId" +
-      "\030\001 \002(\005\022\021\n\tskillName\030\002 \002(\t\"E\n\025BuySkillRes" +
-      "ultCommand\022\021\n\toperation\030\001 \002(\t\022\014\n\004code\030\002 " +
-      "\002(\005\022\013\n\003msg\030\003 \001(\t\"0\n\rBuyPetCommand\022\016\n\006use",
-      "rId\030\001 \002(\005\022\017\n\007petName\030\002 \002(\t\"C\n\023BuyPetResu" +
-      "ltCommand\022\021\n\toperation\030\001 \002(\t\022\014\n\004code\030\002 \002" +
-      "(\005\022\013\n\003msg\030\003 \001(\t\"<\n\023BuyFootPrintCommand\022\016" +
-      "\n\006userId\030\001 \002(\005\022\025\n\rfootPrintName\030\002 \002(\t\"I\n" +
-      "\031BuyFootPrintResultCommand\022\021\n\toperation\030" +
-      "\001 \002(\t\022\014\n\004code\030\002 \002(\005\022\013\n\003msg\030\003 \001(\tB(\n\031com." +
-      "lemeng.server.commandB\013MallCommand"
+    java.lang.String[] descriptorData = {
+      "\n\021MallCommand.proto\022\007message\"?\n\036Recharge" +
+      "GemstoneRequestCommand\022\016\n\006userId\030\001 \001(\005\022\r" +
+      "\n\005count\030\002 \001(\005\"O\n\037RechargeGemstoneRespons" +
+      "eCommand\022\021\n\toperation\030\001 \002(\t\022\014\n\004code\030\002 \002(" +
+      "\005\022\013\n\003msg\030\003 \001(\t\";\n\026BuySkillRequestCommand" +
+      "\022\016\n\006userId\030\001 \002(\005\022\021\n\tskillName\030\002 \002(\t\"G\n\027B" +
+      "uySkillResponseCommand\022\021\n\toperation\030\001 \002(" +
+      "\t\022\014\n\004code\030\002 \002(\005\022\013\n\003msg\030\003 \001(\t\"7\n\024BuyPetRe" +
+      "questCommand\022\016\n\006userId\030\001 \002(\005\022\017\n\007petName\030" +
+      "\002 \002(\t\"E\n\025BuyPetResponseCommand\022\021\n\toperat",
+      "ion\030\001 \002(\t\022\014\n\004code\030\002 \002(\005\022\013\n\003msg\030\003 \001(\t\"C\n\032" +
+      "BuyFootPrintRequestCommand\022\016\n\006userId\030\001 \002" +
+      "(\005\022\025\n\rfootPrintName\030\002 \002(\t\"K\n\033BuyFootPrin" +
+      "tResponseCommand\022\021\n\toperation\030\001 \002(\t\022\014\n\004c" +
+      "ode\030\002 \002(\005\022\013\n\003msg\030\003 \001(\tB(\n\031com.lemeng.ser" +
+      "ver.commandB\013MallCommand"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7569,60 +6596,54 @@ public final class MallCommand {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_message_RechargeGemstoneCommand_descriptor =
+    internal_static_message_RechargeGemstoneRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_message_RechargeGemstoneCommand_fieldAccessorTable = new
+    internal_static_message_RechargeGemstoneRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_RechargeGemstoneCommand_descriptor,
-        new String[] { "UserId", "Count", });
-    internal_static_message_OperationResultCommand_descriptor =
+        internal_static_message_RechargeGemstoneRequestCommand_descriptor,
+        new java.lang.String[] { "UserId", "Count", });
+    internal_static_message_RechargeGemstoneResponseCommand_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_message_OperationResultCommand_fieldAccessorTable = new
+    internal_static_message_RechargeGemstoneResponseCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_OperationResultCommand_descriptor,
-        new String[] { "Operation", "Code", "Msg", "Data", });
-    internal_static_message_RechargeGemstoneResultCommand_descriptor =
+        internal_static_message_RechargeGemstoneResponseCommand_descriptor,
+        new java.lang.String[] { "Operation", "Code", "Msg", });
+    internal_static_message_BuySkillRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_message_RechargeGemstoneResultCommand_fieldAccessorTable = new
+    internal_static_message_BuySkillRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_RechargeGemstoneResultCommand_descriptor,
-        new String[] { "Operation", "Code", "Msg", });
-    internal_static_message_BuySkillCommand_descriptor =
+        internal_static_message_BuySkillRequestCommand_descriptor,
+        new java.lang.String[] { "UserId", "SkillName", });
+    internal_static_message_BuySkillResponseCommand_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_message_BuySkillCommand_fieldAccessorTable = new
+    internal_static_message_BuySkillResponseCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_BuySkillCommand_descriptor,
-        new String[] { "UserId", "SkillName", });
-    internal_static_message_BuySkillResultCommand_descriptor =
+        internal_static_message_BuySkillResponseCommand_descriptor,
+        new java.lang.String[] { "Operation", "Code", "Msg", });
+    internal_static_message_BuyPetRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_message_BuySkillResultCommand_fieldAccessorTable = new
+    internal_static_message_BuyPetRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_BuySkillResultCommand_descriptor,
-        new String[] { "Operation", "Code", "Msg", });
-    internal_static_message_BuyPetCommand_descriptor =
+        internal_static_message_BuyPetRequestCommand_descriptor,
+        new java.lang.String[] { "UserId", "PetName", });
+    internal_static_message_BuyPetResponseCommand_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_message_BuyPetCommand_fieldAccessorTable = new
+    internal_static_message_BuyPetResponseCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_BuyPetCommand_descriptor,
-        new String[] { "UserId", "PetName", });
-    internal_static_message_BuyPetResultCommand_descriptor =
+        internal_static_message_BuyPetResponseCommand_descriptor,
+        new java.lang.String[] { "Operation", "Code", "Msg", });
+    internal_static_message_BuyFootPrintRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_message_BuyPetResultCommand_fieldAccessorTable = new
+    internal_static_message_BuyFootPrintRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_BuyPetResultCommand_descriptor,
-        new String[] { "Operation", "Code", "Msg", });
-    internal_static_message_BuyFootPrintCommand_descriptor =
+        internal_static_message_BuyFootPrintRequestCommand_descriptor,
+        new java.lang.String[] { "UserId", "FootPrintName", });
+    internal_static_message_BuyFootPrintResponseCommand_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_message_BuyFootPrintCommand_fieldAccessorTable = new
+    internal_static_message_BuyFootPrintResponseCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_BuyFootPrintCommand_descriptor,
-        new String[] { "UserId", "FootPrintName", });
-    internal_static_message_BuyFootPrintResultCommand_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_message_BuyFootPrintResultCommand_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_BuyFootPrintResultCommand_descriptor,
-        new String[] { "Operation", "Code", "Msg", });
+        internal_static_message_BuyFootPrintResponseCommand_descriptor,
+        new java.lang.String[] { "Operation", "Code", "Msg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

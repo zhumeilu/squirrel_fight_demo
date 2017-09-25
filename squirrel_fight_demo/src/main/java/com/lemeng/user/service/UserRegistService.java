@@ -32,7 +32,7 @@ public class UserRegistService extends AbstractService{
         SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         try {
-            UserCommand.RegistCommand registCommand = UserCommand.RegistCommand.parseFrom(bodyBytes);
+            UserCommand.RegistRequestCommand registCommand = UserCommand.RegistRequestCommand.parseFrom(bodyBytes);
 
             String mobile=registCommand.getMobile();
             String password=registCommand.getPassword();
@@ -48,7 +48,7 @@ public class UserRegistService extends AbstractService{
             if(regist!=null){
                 System.out.println("------构建返回消息----------");
                 //注册成功
-                UserCommand.LoginResultCommand.Builder builder = UserCommand.LoginResultCommand.newBuilder();
+                UserCommand.LoginResponseCommand.Builder builder = UserCommand.LoginResponseCommand.newBuilder();
                 builder.setCode(1);
                 builder.setMsg("注册成功");
                 UserCommand.UserInfoCommand.Builder userBuilder = UserCommand.UserInfoCommand.newBuilder();
@@ -78,7 +78,7 @@ public class UserRegistService extends AbstractService{
 
                 SquirrelFightTcpMessage returnMessage = new SquirrelFightTcpMessage();
                 returnMessage.setBody(builder.build().toByteArray());
-                returnMessage.setCmd(Const.LoginResultCommand);
+                returnMessage.setCmd(Const.LoginResponseCommand);
                 returnMessage.setLength(returnMessage.getBody().length);
                 channel.writeAndFlush(returnMessage);
                 System.out.println("---------注册成功--------");

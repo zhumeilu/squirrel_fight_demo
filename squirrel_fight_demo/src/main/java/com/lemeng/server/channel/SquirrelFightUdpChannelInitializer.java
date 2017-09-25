@@ -1,6 +1,5 @@
 package com.lemeng.server.channel;
 
-import com.lemeng.common.SystemManager;
 import com.lemeng.server.handler.SquirrelFightUdpChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

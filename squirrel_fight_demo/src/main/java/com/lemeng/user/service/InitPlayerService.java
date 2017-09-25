@@ -25,14 +25,14 @@ public class InitPlayerService extends AbstractService{
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取nickname
         try {
-            UserCommand.InitPlayerCommand initPlayerCommand = UserCommand.InitPlayerCommand.parseFrom(bodyBytes);
+            UserCommand.InitPlayerRequestCommand initPlayerCommand = UserCommand.InitPlayerRequestCommand.parseFrom(bodyBytes);
             String nickname = initPlayerCommand.getNickname();
             Integer userId = initPlayerCommand.getUserId();
 
             boolean b = userManager.initUser(userId, nickname);
-            UserCommand.InitPlayerResultCommand.Builder builder = UserCommand.InitPlayerResultCommand.newBuilder();
+            UserCommand.InitPlayerResponseCommand.Builder builder = UserCommand.InitPlayerResponseCommand.newBuilder();
             SquirrelFightTcpMessage retTcpMessage = new SquirrelFightTcpMessage();
-            retTcpMessage.setCmd(Const.InitPlayerCommand);
+            retTcpMessage.setCmd(Const.InitPlayerResponseCommand);
             if (b) {
                 builder.setCode(1);
                 builder.setMsg("初始化成功");

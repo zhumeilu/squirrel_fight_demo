@@ -1,6 +1,8 @@
 package com.lemeng.common;
 
+import com.lemeng.game.domain.Team;
 import com.lemeng.server.session.NettyTcpSession;
+import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,12 +33,21 @@ public class SystemManager {
 
     private ConcurrentHashMap tcpSessionMap = new ConcurrentHashMap<Long,NettyTcpSession>();       //存储session
     @Getter
+    private ConcurrentHashMap teamMap = new ConcurrentHashMap<Integer,Team>();       //存储session
+    @Getter
+    private ConcurrentHashMap userChannelMap = new ConcurrentHashMap<Integer,Channel>();       //存储user- channel
+    @Getter
     private HashMap<Short,String> userOrderHandlerMap;           //存储命令和服务对应map
+
     private SystemManager(){
 
         userOrderHandlerMap = new HashMap<Short, String>();
         userOrderHandlerMap.put(Const.HeartBreakCommand,"HeartBreak");  //心跳
-        userOrderHandlerMap.put(Const.LoginCommand,"UserLoginService");  //登录
+        userOrderHandlerMap.put(Const.LoginRequestCommand,"UserLoginService");  //登录
+
+        userOrderHandlerMap.put(Const.RegistRequestCommand,"UserRegistTestService");  //测试  upd位置同步使用
+        userOrderHandlerMap.put(Const.PlayerInfoCommand,"PlayerInfoTestService");  //测试 upd位置同步使用
+        userOrderHandlerMap.put(Const.QuitGameCommand,"QuitGameTestService");  //测试 upd位置同步使用
 
 
     }

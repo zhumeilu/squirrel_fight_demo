@@ -27,13 +27,13 @@ public class BuySkillService extends AbstractService{
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         try {
-            MallCommand.BuySkillCommand rechargeGemstoneCommand = MallCommand.BuySkillCommand.parseFrom(bodyBytes);
+            MallCommand.BuySkillRequestCommand rechargeGemstoneCommand = MallCommand.BuySkillRequestCommand.parseFrom(bodyBytes);
             int userId = rechargeGemstoneCommand.getUserId();
             String skillName = rechargeGemstoneCommand.getSkillName();
             boolean b = skillManager.buySkill(userId, skillName);
-            MallCommand.BuySkillResultCommand.Builder builder = MallCommand.BuySkillResultCommand.newBuilder();
+            MallCommand.BuySkillResponseCommand.Builder builder = MallCommand.BuySkillResponseCommand.newBuilder();
             SquirrelFightTcpMessage returnTcpMessage = new SquirrelFightTcpMessage();
-            returnTcpMessage.setCmd(Const.BuySkillResultCommand);
+            returnTcpMessage.setCmd(Const.BuySkillResponseCommand);
             if(b){
                 builder.setCode(1);
                 builder.setMsg("充值成功");

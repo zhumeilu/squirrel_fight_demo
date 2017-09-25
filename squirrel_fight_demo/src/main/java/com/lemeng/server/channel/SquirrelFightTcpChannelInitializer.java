@@ -7,6 +7,9 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import io.netty.handler.timeout.IdleStateHandler;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by zhumeilu on 17/9/7.
@@ -25,6 +28,7 @@ public class SquirrelFightTcpChannelInitializer extends ChannelInitializer<NioSo
         ChannelPipeline pipeline = nioSocketChannel.pipeline();
         int maxLength = Integer.MAX_VALUE;
         pipeline.addLast("frame", new LengthFieldBasedFrameDecoder(maxLength, 2, 4, 3, 0));
+        pipeline.addLast(new IdleStateHandler(5,0,0, TimeUnit.SECONDS));    //2次读超时5秒，自动关闭channel
         nioSocketChannel.pipeline().addLast(new TcpMessageDecoder());
         nioSocketChannel.pipeline().addLast(new TcpMessageEncoder());
         nioSocketChannel.pipeline().addLast(new SquirrelFightTcpChannelrHandler());

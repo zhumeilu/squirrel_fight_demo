@@ -20,16 +20,16 @@ public class TcpClientChannelTest extends SimpleChannelInboundHandler<SquirrelFi
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("-------channel激活--------");
-        UserCommand.LoginCommand.Builder builder = UserCommand.LoginCommand.newBuilder();
-        builder.setMobile("zml");
-        builder.setPassword("123");
-        builder.setType(3);
-        byte[] body = builder.build().toByteArray();
-        SquirrelFightTcpMessage tcpMessage = new SquirrelFightTcpMessage();
-        tcpMessage.setLength(body.length);
-        tcpMessage.setCmd(Const.LoginCommand);
-        tcpMessage.setBody(body);
-        ctx.channel().writeAndFlush(tcpMessage);
+//        System.out.println("-------channel激活--------");
+//        UserCommand.LoginRequestCommand.Builder builder = UserCommand.LoginRequestCommand.newBuilder();
+//        builder.setMobile("zml");
+//        builder.setPassword("123");
+//        builder.setType(3);
+//        byte[] body = builder.build().toByteArray();
+//        SquirrelFightTcpMessage tcpMessage = new SquirrelFightTcpMessage();
+//        tcpMessage.setLength(body.length);
+//        tcpMessage.setCmd(Const.LoginCommand);
+//        tcpMessage.setBody(body);
+//        ctx.channel().writeAndFlush(tcpMessage);
     }
 }

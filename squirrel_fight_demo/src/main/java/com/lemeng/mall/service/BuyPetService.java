@@ -27,13 +27,13 @@ public class BuyPetService extends AbstractService{
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         try {
-            MallCommand.BuyPetCommand rechargeGemstoneCommand = MallCommand.BuyPetCommand.parseFrom(bodyBytes);
+            MallCommand.BuyPetRequestCommand rechargeGemstoneCommand = MallCommand.BuyPetRequestCommand.parseFrom(bodyBytes);
             int userId = rechargeGemstoneCommand.getUserId();
             String petName = rechargeGemstoneCommand.getPetName();
             boolean b = petManager.buyPet(userId, petName);
-            MallCommand.BuyPetResultCommand.Builder builder = MallCommand.BuyPetResultCommand.newBuilder();
+            MallCommand.BuyPetResponseCommand.Builder builder = MallCommand.BuyPetResponseCommand.newBuilder();
             SquirrelFightTcpMessage returnTcpMessage = new SquirrelFightTcpMessage();
-            returnTcpMessage.setCmd(Const.BuyPetResultCommand);
+            returnTcpMessage.setCmd(Const.BuyPetResponseCommand);
             if(b){
                 builder.setCode(1);
                 builder.setMsg("购买成功");

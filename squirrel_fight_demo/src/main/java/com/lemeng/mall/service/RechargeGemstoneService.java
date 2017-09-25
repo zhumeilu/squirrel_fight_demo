@@ -33,13 +33,13 @@ public class RechargeGemstoneService extends AbstractService{
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         try {
-            MallCommand.RechargeGemstoneCommand rechargeGemstoneCommand = MallCommand.RechargeGemstoneCommand.parseFrom(bodyBytes);
+            MallCommand.RechargeGemstoneRequestCommand rechargeGemstoneCommand = MallCommand.RechargeGemstoneRequestCommand.parseFrom(bodyBytes);
             int userId = rechargeGemstoneCommand.getUserId();
             int count = rechargeGemstoneCommand.getCount();
             boolean b = mallManager.rechargeGemstone(userId, count);
-            MallCommand.RechargeGemstoneResultCommand.Builder builder = MallCommand.RechargeGemstoneResultCommand.newBuilder();
+            MallCommand.RechargeGemstoneResponseCommand.Builder builder = MallCommand.RechargeGemstoneResponseCommand.newBuilder();
             SquirrelFightTcpMessage returnTcpMessage = new SquirrelFightTcpMessage();
-            returnTcpMessage.setCmd(Const.RechargeGemstoneResultCommand);
+            returnTcpMessage.setCmd(Const.RechargeGemstoneResponseCommand);
             if(b){
                 builder.setCode(1);
                 builder.setMsg("充值成功");
