@@ -16,7 +16,16 @@ import java.util.List;
 @Setter
 public class Game extends BaseDomain{
 
+    //玩家
     private List<Player> playerList;
+    //地图
+    private String map;
+    //坚果
+    private List<Nut> nutList;
+    //箱子
+    private List<Box> boxList;
+    //天气
+    private String weather;
 
 
 }

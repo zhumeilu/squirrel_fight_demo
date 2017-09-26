@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  * Time: 13:25
  */
 @Component("CreateTeamRequestService")
-public class CreateTeamRequestService extends AbstractService {
+public class CreateRoomRequestService extends AbstractService {
 
     @Autowired
     private ITeamManager teamManager;

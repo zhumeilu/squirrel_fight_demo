@@ -9,19 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Description:队伍
+ * Description:房间
  * User: zhumeilu
  * Date: 2017/9/21
  * Time: 11:29
  */
 @Setter
 @Getter
-public class Team extends BaseDomain{
+public class Room extends BaseDomain{
 
+    private User header;    //队长
     private List<User> userList = new ArrayList<User>();    //队员
-    //杀人数
-    private Integer killNum;
-    //死亡数
-    private Integer deathNum;
-
 }

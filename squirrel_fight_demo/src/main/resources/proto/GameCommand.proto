@@ -8,13 +8,13 @@ option java_outer_classname = "GameCommand";
 //用户基本信息
 //cmd:userInfo
 message UserInfoCommand{
-    required int32 id = 1;
-    required string mobile = 2;
-    required string nickname = 3;
-    required int32 level = 4;
-    required int32 statue = 5;
-    required int32 gemstone = 6;
-    required int32 goldCoin = 7;
+    optional int32 id = 1;
+    optional string mobile = 2;
+    optional string nickname = 3;
+    optional int32 level = 4;
+    optional int32 statue = 5;
+    optional int32 gemstone = 6;
+    optional int32 goldCoin = 7;
 
     repeated string petList = 11;
     repeated string skillList = 12;
@@ -22,22 +22,22 @@ message UserInfoCommand{
 }
 
 message SimpleUserInfoCommand{
-    required int32 id = 1;
-    required string nickname = 2;
+    optional int32 id = 1;
+    optional string nickname = 2;
 }
 
 
-//创建队伍请求
-message CreateTeamRequestCommand{
+//创建房间请求
+message CreateRoomRequestCommand{
 
-    required int32 userId = 1;
+    optional int32 userId = 1;
 }
-//创建队伍响应
-message CreateTeamResponseCommand{
-    required int32 userId = 1;
-    required int32 teamId = 2;
-    required int32 statue = 3;      //创建成功
-    required string msg = 4;        //返回信息
+//创建房间响应
+message CreateRoomResponseCommand{
+    optional int32 userId = 1;
+    optional int32 roomId = 2;
+    optional int32 statue = 3;      //创建成功
+    optional string msg = 4;        //返回信息
 
 
 }
@@ -45,16 +45,16 @@ message CreateTeamResponseCommand{
 
 //邀请玩家加入游戏请求
 message InviteJoinGameRequestCommand{
-    required int32 teamId = 1;      //队伍id
-    required int32 userId = 2;
-    required int32 invitedId = 3;  //被邀请人的id
+    optional int32 roomId = 1;      //队伍id
+    optional int32 userId = 2;
+    optional int32 invitedId = 3;  //被邀请人的id
 
 }
 //邀请玩家加入游戏响应
 message InviteJoinGameResponseCommand{
-    required int32 statue = 1;      //状态
-    required string msg = 2;      //信息
-    required SimpleUserInfoCommand userInfo = 3;  //玩家信息
+    optional int32 statue = 1;      //状态
+    optional string msg = 2;      //信息
+    optional SimpleUserInfoCommand userInfo = 3;  //玩家信息
 
 }
 
@@ -62,57 +62,57 @@ message InviteJoinGameResponseCommand{
 //被邀请加入游戏(转发给玩家)
 message BeInvitedJoinGameRequestCommand{
 
-    required int32 teamId = 1;      //队伍id
-    required int32 inviterId = 2;   //邀请人id    invitee被邀请人      （改）
-    required string inviterName = 3; //邀请人名称                         （改）
+    optional int32 roomId = 1;      //队伍id
+    optional int32 inviterId = 2;   //邀请人id    invitee被邀请人      （改）
+    optional string inviterName = 3; //邀请人名称                         （改）
 
 }
 //被邀请加入游戏(玩家发给服务器)
 message BeInvitedJoinGameResponseCommand{
 
-    required int32 statue = 1;      //状态
-    required string msg = 2;      //信息
-    required int32 userId = 3;      //用户id      （新加）
-    required int32 teamId = 4;      //队伍id      （新加）
+    optional int32 statue = 1;      //状态
+    optional string msg = 2;      //信息
+    optional int32 userId = 3;      //用户id      （新加）
+    optional int32 roomId = 4;      //队伍id      （新加）
 }
 
 
+//房间更新
+message RoomUpdateCommand{
 
-message TeamCommand{
-
-    required int32 teamId = 1;      //队伍id
-    required bytes gameType = 2;   //游戏类型
+    optional int32 roomId = 1;      //队伍id
+    optional bytes gameType = 2;   //游戏类型
     repeated SimpleUserInfoCommand userInfoList = 3;
-    required SimpleUserInfoCommand hader = 4;   //房主
+    optional SimpleUserInfoCommand hader = 4;   //房主
 
 }
 //寻找队列
 message FindGameRequestCommand{
-    required int32 teamId = 1;      //队伍id
-    required int32 headerId = 2;     //房主id
+    optional int32 roomId = 1;      //队伍id
+    optional int32 headerId = 2;     //房主id
 
 }
 //退出组队请求
-message QuitTeamRequestCommand{
-    required int32 userId = 1;
-    required int32 teamId = 2;
+message QuitRoomRequestCommand{
+    optional int32 userId = 1;
+    optional int32 roomId = 2;
 }
 //退出组队响应
-message QuitTeamResponseCommand{
-    required int32 userId = 1;
-    required int32 teamId = 2;
+message QuitRoomResponseCommand{
+    optional int32 userId = 1;
+    optional int32 roomId = 2;
 }
 
 //拒绝开始游戏请求
 message RefuseGameRequestCommand{
-    required int32 teamId = 1;      //队伍id
-    required int32 userId = 2;     //用户id
+    optional int32 roomId = 1;      //队伍id
+    optional int32 userId = 2;     //用户id
 
 }
 //拒绝开始游戏响应
 message RefuseGameResponseCommand{
-    required int32 teamId = 1;      //队伍id
-    required int32 userId = 2;     //用户id
+    optional int32 roomId = 1;      //队伍id
+    optional int32 userId = 2;     //用户id
 
 }
 
@@ -130,19 +130,19 @@ message FindedGameRequestCommand{
 }
 //新玩家加入（服务器向客户端请求）
 message NewPlayerJoinGameRequestCommand{
-    required PlayerInfoCommand newPlayer = 1;
+    optional PlayerInfoCommand newPlayer = 1;
 }
 
 //战斗中主动离开游戏
 //cmd:qutiGame
 message QuitGameCommand{
-//    required int32 id = 4;
-    required string nickname = 5;
+//    optional int32 id = 4;
+    optional string nickname = 5;
 }
 
 //player基本信息    每帧同步
 //cmd: playerInfo
-message PlayerInfoCommand{
+message FullPlayerInfoCommand{
 
     optional int32 id = 2;
     optional string nickname = 3;
@@ -158,13 +158,15 @@ message PlayerInfoCommand{
     optional float gunRoll = 13;
     optional int32 teamId = 14;     //所属队伍
     optional string actionName = 15;    //动作名称
+    optional int32 killNum = 16;        //杀人数
+    optional int32 assistNum = 17;      //助攻数
+    optional int32 level = 18;          //等级
+    repeated string skillList = 19;     //技能
 }
-message PlayerInfoCommand{
+//简单的玩家信息
+message SimplePlayerInfoCommand{
 
     optional int32 id = 2;
-    optional string nickname = 3;
-    optional int32 hp = 4;
-    optional int32 attack = 5;
     optional float positionX = 6;
     optional float positionY = 7;
     optional float positionZ  = 8;
@@ -173,28 +175,30 @@ message PlayerInfoCommand{
     optional float rotZ = 11;
     optional float gunRot = 12;
     optional float gunRoll = 13;
-    optional int32 teamId = 14;     //所属队伍
     optional string actionName = 15;    //动作名称
-    //击杀数，助攻数
-    //等级，技能
 }
 //升级事件
-message LevelUpCommand{
+message LevelUpRequestCommand{
+    repeated string skillNameList = 1;
+    //随机返回三个技能
+}
+//升级响应
+message LevelUpResponseCommand{
     repeated string skillNameList = 1;
     //随机返回三个技能
 }
 message ChooseSkill{
     //升级后选择一个技能
-    required string skillName = 1;
+    optional string skillName = 1;
 }
 
 //动作命令
 message ActionCommand{
-    required int32 userId = 1;
-    required string actionName = 2;
-    required float positionX = 3;
-    required float positionY = 4;
-    required float positionZ  = 5;
+    optional int32 userId = 1;
+    optional string actionName = 2;
+    optional float positionX = 3;
+    optional float positionY = 4;
+    optional float positionZ  = 5;
 
 }
 
@@ -202,48 +206,48 @@ message ActionCommand{
 //cmd：eat
 message EatCommand{
     optional int32 id = 1;
-    required string name = 2;   //坚果类型（大坚果，小坚果）
+    optional string name = 2;   //坚果类型（大坚果，小坚果）
 }
 //坚果
 message NutCommand{
-    required int32 id = 1;
-    required float positionX = 2;
-    required float positionY = 3;
-    required float positionZ  = 4;
-    required float rotX = 5;
-    required float rotY = 6;
-    required float rotZ = 7;
+    optional int32 id = 1;
+    optional float positionX = 2;
+    optional float positionY = 3;
+    optional float positionZ  = 4;
+    optional float rotX = 5;
+    optional float rotY = 6;
+    optional float rotZ = 7;
 }
 //箱子同步位置
 //cmd:Box
 message BoxCommand{
-    required int32 id = 1;
-    required float positionX = 2;
-    required float positionY = 3;
-    required float positionZ  = 4;
-    required float rotX = 5;
-    required float rotY = 6;
-    required float rotZ = 7;
+    optional int32 id = 1;
+    optional float positionX = 2;
+    optional float positionY = 3;
+    optional float positionZ  = 4;
+    optional float rotX = 5;
+    optional float rotY = 6;
+    optional float rotZ = 7;
 }
 
 //击中
 //cmd：hit
 message HitCommand{
-    required int32 enemyId = 2;     //敌人id
-    required int32 damage = 3;      //伤害
-    required int32 id = 4;  //自己id
-    required int32 boxId = 5;//箱子id
+    optional int32 enemyId = 2;     //敌人id
+    optional int32 damage = 3;      //伤害
+    optional int32 id = 4;  //自己id
+    optional int32 boxId = 5;//箱子id
 }
 //助攻实现：每一次击中
 //击杀
 message KillCommand{
-    required int32 id = 1;  //击杀者id
-    required int32 deadId = 2;  //被击杀id
+    optional int32 id = 1;  //击杀者id
+    optional int32 deadId = 2;  //被击杀id
 }
 //助攻
 message AssistCommand{
-    required int32 id = 1;  //助攻id
-    required int32 deadId = 2;  //被击杀id
+    optional int32 id = 1;  //助攻id
+    optional int32 deadId = 2;  //被击杀id
 }
 //坚果位置
 message NutPositionCommand{
