@@ -131,7 +131,8 @@ message NewPlayerJoinGameRequestCommand{
 //战斗中主动离开游戏
 //cmd:qutiGame
 message QuitGameCommand{
-    required int32 id = 4;
+//    required int32 id = 4;
+    required string nickname = 5;
 }
 
 //player基本信息    每帧同步

@@ -1,3 +1,4 @@
+import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.user.domain.User;
 import com.lemeng.user.manager.IUserManager;
 import com.lemeng.user.mapper.UserMapper;
@@ -20,11 +21,20 @@ public class MapperTest {
 
     @Autowired
     private IUserManager userManager;
-
+    @Autowired
+    JedisClusterUtil jedisClusterUtil;
     @org.junit.Test
     public void test(){
         User zml = userManager.login("zml", "123");
         System.out.println(zml);
+    }
+    @org.junit.Test
+    public void test2(){
+//        jedisClusterUtil.setString("name","zml");
+        String name = jedisClusterUtil.getString("name");
+        boolean name1 = jedisClusterUtil.delete("name");
+        System.out.println(name);
+        System.out.println(name1);
     }
 
 }
