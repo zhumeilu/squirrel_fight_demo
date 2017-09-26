@@ -25,6 +25,7 @@ public class FindedGameRequestService extends AbstractService {
         //解析数据，获取moible
         try {
             //将对局的所有玩家的信息都广播给对局的玩家
+            //初始化地图，坚果，天气，箱子等信息
 
 
 

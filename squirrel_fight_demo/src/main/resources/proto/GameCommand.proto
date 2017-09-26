@@ -121,6 +121,11 @@ message RefuseGameResponseCommand{
 message FindedGameRequestCommand{
 
     repeated PlayerInfoCommand playerInfoList = 1;
+    //初始化地图
+    //初始化箱子
+    //初始化坚果
+    //初始化天气
+    //初始化玩家
 
 }
 //新玩家加入（服务器向客户端请求）
@@ -152,31 +157,55 @@ message PlayerInfoCommand{
     optional float gunRot = 12;
     optional float gunRoll = 13;
     optional int32 teamId = 14;     //所属队伍
+    optional string actionName = 15;    //动作名称
+}
+message PlayerInfoCommand{
+
+    optional int32 id = 2;
+    optional string nickname = 3;
+    optional int32 hp = 4;
+    optional int32 attack = 5;
+    optional float positionX = 6;
+    optional float positionY = 7;
+    optional float positionZ  = 8;
+    optional float rotX = 9;
+    optional float rotY = 10;
+    optional float rotZ = 11;
+    optional float gunRot = 12;
+    optional float gunRoll = 13;
+    optional int32 teamId = 14;     //所属队伍
+    optional string actionName = 15;    //动作名称
+    //击杀数，助攻数
+    //等级，技能
+}
+//升级事件
+message LevelUpCommand{
+    repeated string skillNameList = 1;
+    //随机返回三个技能
+}
+message ChooseSkill{
+    //升级后选择一个技能
+    required string skillName = 1;
 }
 
-//跳
-//cmd:jump
-message JumpCommand{
-
-    optional int32 id = 1;
-    required float positionX = 2;
-    required float positionY = 3;
-    required float positionZ  = 4;
-    required float rotX = 5;
-    required float rotY = 6;
-    required float rotZ = 7;
+//动作命令
+message ActionCommand{
+    required int32 userId = 1;
+    required string actionName = 2;
+    required float positionX = 3;
+    required float positionY = 4;
+    required float positionZ  = 5;
 
 }
+
 //吃
 //cmd：eat
 message EatCommand{
     optional int32 id = 1;
-    required string name = 2;
+    required string name = 2;   //坚果类型（大坚果，小坚果）
 }
-
-//扔箱子
-//cmd:throwBox
-message ThrowBoxCommand{
+//坚果
+message NutCommand{
     required int32 id = 1;
     required float positionX = 2;
     required float positionY = 3;
@@ -185,20 +214,40 @@ message ThrowBoxCommand{
     required float rotY = 6;
     required float rotZ = 7;
 }
-//躲箱子
-//cmd:hideBox
-message HideBoxCommand{
+//箱子同步位置
+//cmd:Box
+message BoxCommand{
     required int32 id = 1;
     required float positionX = 2;
     required float positionY = 3;
     required float positionZ  = 4;
+    required float rotX = 5;
+    required float rotY = 6;
+    required float rotZ = 7;
 }
-//被击中
+
+//击中
 //cmd：hit
 message HitCommand{
-    required int32 enemyId = 2;
-    required int32 damage = 3;
-    required int32 id = 4;
+    required int32 enemyId = 2;     //敌人id
+    required int32 damage = 3;      //伤害
+    required int32 id = 4;  //自己id
+    required int32 boxId = 5;//箱子id
+}
+//助攻实现：每一次击中
+//击杀
+message KillCommand{
+    required int32 id = 1;  //击杀者id
+    required int32 deadId = 2;  //被击杀id
+}
+//助攻
+message AssistCommand{
+    required int32 id = 1;  //助攻id
+    required int32 deadId = 2;  //被击杀id
+}
+//坚果位置
+message NutPositionCommand{
+
 }
 
 //游戏结束
