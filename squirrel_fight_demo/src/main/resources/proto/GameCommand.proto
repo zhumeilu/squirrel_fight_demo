@@ -8,7 +8,8 @@ option java_outer_classname = "GameCommand";
 //用户基本信息
 //cmd:userInfo
 message UserInfoCommand{
-    required string mobile = 1;
+    required int32 id = 1;
+    required string mobile = 2;
     required string nickname = 3;
     required int32 level = 4;
     required int32 statue = 5;
@@ -18,6 +19,11 @@ message UserInfoCommand{
     repeated string petList = 11;
     repeated string skillList = 12;
     repeated string footPrintList = 13;
+}
+
+message SimpleUserInfoCommand{
+    required int32 id = 1;
+    required string nickname = 2;
 }
 
 
@@ -48,7 +54,7 @@ message InviteJoinGameRequestCommand{
 message InviteJoinGameResponseCommand{
     required int32 statue = 1;      //状态
     required string msg = 2;      //信息
-    required UserInfoCommand userInfo = 3;  //玩家信息
+    required SimpleUserInfoCommand userInfo = 3;  //玩家信息
 
 }
 
@@ -76,8 +82,8 @@ message TeamCommand{
 
     required int32 teamId = 1;      //队伍id
     required bytes gameType = 2;   //游戏类型
-    repeated UserInfoCommand userInfoList = 3;
-    required UserInfoCommand hader = 4;   //房主
+    repeated SimpleUserInfoCommand userInfoList = 3;
+    required SimpleUserInfoCommand hader = 4;   //房主
 
 }
 //寻找队列

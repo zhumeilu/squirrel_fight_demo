@@ -25,11 +25,12 @@ public class PlayerInfoTestService extends AbstractService {
 
         SquirrelFightUdpMessage udpMessage = (SquirrelFightUdpMessage) this.message;
         byte[] bodyBytes = udpMessage.getBody();
-        logger.info("----------------收到playerInfo同步信息cmd----------------");
+        InetSocketAddress sender = udpMessage.getSender();
+        logger.info("----------------收到playerInfo同步信息cmd------sender:"+sender+"----------");
         try{
             GameCommand.PlayerInfoCommand playerInfoCommand = GameCommand.PlayerInfoCommand.parseFrom(bodyBytes);
             //更新本地
-            InetSocketAddress sender = udpMessage.getSender();
+
             Player player = TestSystemManager.getInstance().getPlayer(sender);
             player.setPositionY(playerInfoCommand.getPositionY());
             player.setPositionX(playerInfoCommand.getPositionX());

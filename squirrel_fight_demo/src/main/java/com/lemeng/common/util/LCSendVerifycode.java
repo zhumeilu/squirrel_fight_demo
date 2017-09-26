@@ -16,7 +16,6 @@ import java.io.InputStream;
 import java.net.URLDecoder;
 import java.util.PropertyResourceBundle;
 
-import static com.sun.org.apache.xml.internal.resolver.Catalog.URI;
 
 /**
  * @author hanhuaiwei

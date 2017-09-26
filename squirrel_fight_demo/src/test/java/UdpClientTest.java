@@ -40,9 +40,8 @@ public class UdpClientTest {
                     .handler(new UdpClientChannelTest());
             //绑定端口，同步等待成功
             ChannelFuture f= b.bind(0).sync();
-
             Channel channel = f.channel();
-
+//
             UserCommand.RegistRequestCommand.Builder builder = UserCommand.RegistRequestCommand.newBuilder();
             builder.setMobile("18679654496");
             builder.setPassword("123456");
@@ -50,6 +49,8 @@ public class UdpClientTest {
             //登录
             byte[] loginCommand = ConvertUtil.getBytes((Const.RegistRequestCommand));
             channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(loginCommand,builder.build().toByteArray()),new InetSocketAddress(hostname,port)));
+
+
             Thread.sleep(1000);
 
             GameCommand.PlayerInfoCommand.Builder builder1 = GameCommand.PlayerInfoCommand.newBuilder();
@@ -58,7 +59,9 @@ public class UdpClientTest {
             builder1.setPositionY(11f);
             builder1.setPositionZ(12f);
             byte[] playInfoCommand = ConvertUtil.getBytes((Const.PlayerInfoCommand));
-          channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(playInfoCommand,builder1.build().toByteArray()),new InetSocketAddress(hostname,port)));
+            channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(playInfoCommand,builder1.build().toByteArray()),new InetSocketAddress(hostname,port)));
+
+
             //等待服务器监听端口关闭
             channel.closeFuture().await();
         }catch (Exception e){
@@ -79,7 +82,8 @@ public class UdpClientTest {
 
             }
         }
-        String hostname ="127.0.0.1";
+//        String hostname ="127.0.0.1";
+        String hostname = "47.92.114.52";
         new UdpClientTest().bind(hostname,port);
 
     }

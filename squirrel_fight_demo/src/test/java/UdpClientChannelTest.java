@@ -22,15 +22,15 @@ public class UdpClientChannelTest extends SimpleChannelInboundHandler<DatagramPa
         System.out.println("cmd"+aShort);
         byte[] body = new byte[content.readableBytes()];
         content.readBytes(body);
-        GameCommand.PlayerInfoCommand playerInfoCommand = GameCommand.PlayerInfoCommand.parseFrom(body);
-        int id = playerInfoCommand.getId();
-        float positionY = playerInfoCommand.getPositionY();
-        float positionX = playerInfoCommand.getPositionX();
-        float positionZ = playerInfoCommand.getPositionZ();
-        System.out.println("-------id:"+id);
-        System.out.println("-------positionY:"+positionY);
-        System.out.println("-------positionX:"+positionX);
-        System.out.println("-------positionZ:"+positionZ);
+//        GameCommand.PlayerInfoCommand playerInfoCommand = GameCommand.PlayerInfoCommand.parseFrom(body);
+//        int id = playerInfoCommand.getId();
+//        float positionY = playerInfoCommand.getPositionY();
+//        float positionX = playerInfoCommand.getPositionX();
+//        float positionZ = playerInfoCommand.getPositionZ();
+//        System.out.println("-------id:"+id);
+//        System.out.println("-------positionY:"+positionY);
+//        System.out.println("-------positionX:"+positionX);
+//        System.out.println("-------positionZ:"+positionZ);
 
     }
 }

@@ -3,6 +3,7 @@ package com.lemeng.test.service;
 import com.lemeng.game.domain.Player;
 
 import java.net.InetSocketAddress;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -36,5 +37,8 @@ public class TestSystemManager {
     }
     public Enumeration getAllSender(){
         return this.playerInfoMap.keys();
+    }
+    public Collection getAllPlayer(){
+        return this.playerInfoMap.values();
     }
 }
