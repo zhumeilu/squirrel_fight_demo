@@ -36,7 +36,10 @@ public class SquirrelFightUdpChannelHandler extends SimpleChannelInboundHandler<
         System.out.println("---------当前handler："+this+"-------------");
         byte[] bodyByte = new byte[data.readableBytes()];
         data.readBytes(bodyByte);
-        SquirrelFightUdpMessage message = new SquirrelFightUdpMessage(order,bodyByte,datagramPacket.sender());
+        SquirrelFightUdpMessage message = new SquirrelFightUdpMessage();
+        message.setSender(datagramPacket.sender());
+        message.setCmd(order);
+        message.setBody(bodyByte);
         System.out.println("---------封装message-------------");
         UdpHandlerService handlerService = (UdpHandlerService) SystemManager.getInstance().getContext().getBean("UdpHandlerService");
         System.out.println("-----handlerService:"+ handlerService);

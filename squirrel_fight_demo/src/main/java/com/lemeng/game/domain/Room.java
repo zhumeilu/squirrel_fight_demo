@@ -20,4 +20,5 @@ public class Room extends BaseDomain{
 
     private User header;    //队长
     private List<User> userList = new ArrayList<User>();    //队员
+    private Integer score;      //分数
 }

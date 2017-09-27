@@ -1,5 +1,7 @@
 package com.lemeng.server.channel;
 
+import com.lemeng.server.decoder.UdpMessageDecoder;
+import com.lemeng.server.encoder.UdpMessageEncoder;
 import com.lemeng.server.handler.SquirrelFightUdpChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -17,6 +19,8 @@ public class SquirrelFightUdpChannelInitializer extends ChannelInitializer<NioDa
     protected void initChannel(NioDatagramChannel nioDatagramChannel) throws Exception {
         System.out.println("-------当前channelInitializer:"+this);
         ChannelPipeline pipeline = nioDatagramChannel.pipeline();
+        pipeline.addLast("decoder",new UdpMessageDecoder());
+        pipeline.addLast("encoder",new UdpMessageEncoder());
         pipeline.addLast("handler", new SquirrelFightUdpChannelHandler());//消息处理器
 //        pipeline.addLast("handler", new S);//消息处理器
         pipeline.addLast("logging",new LoggingHandler(LogLevel.INFO));

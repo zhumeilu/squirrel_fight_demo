@@ -1,12 +1,14 @@
 syntax = "proto2";
 package message;
-option java_package = "com.lemeng.server.command";
+//option java_package = "com.lemeng.server.command";
+option java_package = "com.lemeng.test.service";
 option java_outer_classname = "SystemCommand";
 
 //系统命令 心跳
 
 message HeartBreakCommand{
 
+    optional int32 id=2;
 }
 
 

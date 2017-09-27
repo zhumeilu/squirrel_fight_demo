@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-/**创建组队
+/**邀请玩家加入游戏
  * Description:
  * User: zhumeilu
  * Date: 2017/9/25
@@ -24,26 +24,26 @@ import org.springframework.stereotype.Component;
 public class InviteJoinGameRequestService extends AbstractService {
 
     @Autowired
-    private ITeamManager teamManager;
-    @Autowired
     private UserMapper userMapper;
     public void run() {
 
         SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
         byte[] bodyBytes = tcpMessage.getBody();
-        //解析数据，获取moible
         try {
             GameCommand.InviteJoinGameRequestCommand inviteJoinGameRequestCommand= GameCommand.InviteJoinGameRequestCommand.parseFrom(bodyBytes);
+            //邀请人
             int userId = inviteJoinGameRequestCommand.getUserId();
+            //被邀请人
             int invitedId = inviteJoinGameRequestCommand.getInvitedId();
-            int teamId = inviteJoinGameRequestCommand.getTeamId();
+            //房间id
+            int roomId = inviteJoinGameRequestCommand.getRoomId();
             //构建转发消息
             User inviter = userMapper.selectById(userId);
 
             GameCommand.BeInvitedJoinGameRequestCommand.Builder builder = GameCommand.BeInvitedJoinGameRequestCommand.newBuilder();
             builder.setInviterId(userId);
             builder.setInviterName(inviter.getNickname());
-            builder.setTeamId(teamId);
+            builder.setRoomId(roomId);
 
             SquirrelFightTcpMessage retMessage = new SquirrelFightTcpMessage();
             byte[] body = builder.build().toByteArray();

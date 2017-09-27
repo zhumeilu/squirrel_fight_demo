@@ -1,5 +1,6 @@
 package com.lemeng.game.manager;
 
+import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Room;
@@ -30,7 +31,8 @@ public class RoomManagerImpl implements IRoomManager {
             room.setHeader(user);
             room.setId(user.getId());
             room.getUserList().add(user);
-            jedisClusterUtil.setObject(room.getId().toString(),room);
+            //存储到redis中
+            jedisClusterUtil.setObject(Const.RoomPrefix+room.getId(),room);
             return room;
         }
         return null;

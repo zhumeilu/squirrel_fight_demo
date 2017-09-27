@@ -26,15 +26,9 @@ public class SquirrelFightUdpMessage implements IMessage{
     private InetSocketAddress sender;
 
 
-    public SquirrelFightUdpMessage(short cmd,byte[] body,InetSocketAddress sender){
-        this.body = body;
-        this.cmd = cmd;
-        this.sender = sender;
-    }
-
-
     public SquirrelFightUdpMessage(){
-
+        this.head = MESSAGE_HEADER_FLAG;
+        this.version = 0x01;
     }
 
     public ByteBuf getByteBuf(){

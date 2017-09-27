@@ -8,6 +8,10 @@ package com.lemeng.common;
  */
 public class Const {
 
+    public static final String RoomPrefix = "Squirrel_Fight_Room";
+    public static final String GamePrefix = "Squirrel_Fight_Game";
+
+
     /*****************SystemCommand****1-100****************/
 
     public static final short HeartBreakCommand = 1;
@@ -26,13 +30,13 @@ public class Const {
 
     /**********************GameCommand*****501-1000*********************/
 
-    public static final short CreateTeamRequestCommand = 501;
-    public static final short CreateTeamResponseCommand = 502;
+    public static final short CreateRoomRequestCommand = 501;
+    public static final short CreateRoomResponseCommand = 502;
     public static final short InviteJoinGameRequestCommand = 503;
     public static final short InviteJoinGameResponseCommand = 504;
     public static final short BeInvitedJoinGameRequestCommand = 505;
     public static final short BeInvitedJoinGameResponseCommand = 506;
-    public static final short TeamCommand = 507;
+    public static final short RoomUpdateCommand = 507;
     public static final short RefuseGameRequestCommand = 508;
     public static final short RefuseGameResponseCommand = 509;
     public static final short FindGameRequestCommand = 510;
@@ -48,6 +52,7 @@ public class Const {
     public static final short QuitGameCommand = 519;
     public static final short GameOverCommand = 520;
     public static final short GameMessageCommand = 521;
+    public static final short QuitRoomCommand = 521;
 
     /****************************MallCommand********1001-1200**************************/
 

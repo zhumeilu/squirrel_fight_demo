@@ -28,13 +28,13 @@ public class PlayerInfoTestService extends AbstractService {
         InetSocketAddress sender = udpMessage.getSender();
         logger.info("----------------收到playerInfo同步信息cmd------sender:"+sender+"----------");
         try{
-            GameCommand.PlayerInfoCommand playerInfoCommand = GameCommand.PlayerInfoCommand.parseFrom(bodyBytes);
+//            GameCommand.PlayerInfoCommand playerInfoCommand = GameCommand.PlayerInfoCommand.parseFrom(bodyBytes);
             //更新本地
 
             Player player = TestSystemManager.getInstance().getPlayer(sender);
-            player.setPositionY(playerInfoCommand.getPositionY());
-            player.setPositionX(playerInfoCommand.getPositionX());
-            player.setPositionZ(playerInfoCommand.getPositionZ());
+//            player.setPositionY(playerInfoCommand.getPositionY());
+//            player.setPositionX(playerInfoCommand.getPositionX());
+//            player.setPositionZ(playerInfoCommand.getPositionZ());
 
             //广播到所有客户端
             Enumeration allSender = TestSystemManager.getInstance().getAllSender();

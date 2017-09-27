@@ -23,5 +23,10 @@ public class Team extends BaseDomain{
     private Integer killNum;
     //死亡数
     private Integer deathNum;
+    //助攻数
+    private Integer assistNum;
+    //mvp
+    private User mvp;
+
 
 }

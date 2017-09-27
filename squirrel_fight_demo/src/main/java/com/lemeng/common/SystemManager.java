@@ -1,5 +1,6 @@
 package com.lemeng.common;
 
+import com.lemeng.game.domain.Room;
 import com.lemeng.game.domain.Team;
 import com.lemeng.server.session.NettyTcpSession;
 import io.netty.channel.Channel;
@@ -10,7 +11,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Description:
@@ -38,6 +41,12 @@ public class SystemManager {
     private ConcurrentHashMap userChannelMap = new ConcurrentHashMap<Integer,Channel>();       //存储user- channel
     @Getter
     private HashMap<Short,String> userOrderHandlerMap;           //存储命令和服务对应map
+
+    BlockingQueue<Room> oneRoomQueue = new LinkedBlockingQueue<Room>();     //1人匹配队列
+    BlockingQueue<Room> twoRoomQueue = new LinkedBlockingQueue<Room>();     //2人匹配队列
+    BlockingQueue<Room> threeRoomQueue = new LinkedBlockingQueue<Room>();    //3人匹配队列
+    BlockingQueue<Room> fourRoomQueue = new LinkedBlockingQueue<Room>();    //4人匹配队列
+    BlockingQueue<Room> fiveRoomQueue = new LinkedBlockingQueue<Room>();    //5人匹配队列
 
     private SystemManager(){
 
@@ -72,4 +81,29 @@ public class SystemManager {
     public void removeTcpSession(Long sessionId){
         tcpSessionMap.remove(sessionId);
     }
+
+    public void addQuene(Room room){
+        int size = room.getUserList().size();
+        switch (size){
+            case 1:
+                oneRoomQueue.add(room);
+                return;
+            case 2:
+                twoRoomQueue.add(room);
+                return;
+            case 3:
+                threeRoomQueue.add(room);
+                return;
+            case 4:
+                fourRoomQueue.add(room);
+                return;
+            case 5:
+                fiveRoomQueue.add(room);
+                return;
+            default:
+                throw new RuntimeException("房间为空，无法加入匹配队列");
+        }
+
+    }
+
 }

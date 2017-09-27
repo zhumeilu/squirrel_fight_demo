@@ -92,25 +92,14 @@ message FindGameRequestCommand{
     optional int32 headerId = 2;     //房主id
 
 }
-//退出组队请求
-message QuitRoomRequestCommand{
-    optional int32 userId = 1;
-    optional int32 roomId = 2;
-}
-//退出组队响应
-message QuitRoomResponseCommand{
+//退出组队
+message QuitRoomCommand{
     optional int32 userId = 1;
     optional int32 roomId = 2;
 }
 
-//拒绝开始游戏请求
-message RefuseGameRequestCommand{
-    optional int32 roomId = 1;      //队伍id
-    optional int32 userId = 2;     //用户id
-
-}
-//拒绝开始游戏响应
-message RefuseGameResponseCommand{
+//拒绝开始游戏
+message RefuseGameCommand{
     optional int32 roomId = 1;      //队伍id
     optional int32 userId = 2;     //用户id
 
@@ -120,23 +109,27 @@ message RefuseGameResponseCommand{
 //对局已找到(服务器向客户端请求)
 message FindedGameRequestCommand{
 
-    repeated PlayerInfoCommand playerInfoList = 1;
-    //初始化地图
-    //初始化箱子
-    //初始化坚果
-    //初始化天气
     //初始化玩家
+    repeated FullPlayerInfoCommand playerInfoList = 1;
+    //初始化地图
+    optional string mapName = 2;
+    //初始化箱子
+    repeated BoxCommand box = 3;
+    //初始化坚果
+    repeated NutCommand nut = 4;
+    //初始化天气
+    optional string weather = 5;
 
 }
 //新玩家加入（服务器向客户端请求）
 message NewPlayerJoinGameRequestCommand{
-    optional PlayerInfoCommand newPlayer = 1;
+    optional FullPlayerInfoCommand newPlayer = 1;
 }
 
 //战斗中主动离开游戏
 //cmd:qutiGame
 message QuitGameCommand{
-//    optional int32 id = 4;
+    optional int32 id = 4;
     optional string nickname = 5;
 }
 
@@ -162,6 +155,7 @@ message FullPlayerInfoCommand{
     optional int32 assistNum = 17;      //助攻数
     optional int32 level = 18;          //等级
     repeated string skillList = 19;     //技能
+    optional int32 gameI = 20;      //所属游戏id
 }
 //简单的玩家信息
 message SimplePlayerInfoCommand{
@@ -176,6 +170,7 @@ message SimplePlayerInfoCommand{
     optional float gunRot = 12;
     optional float gunRoll = 13;
     optional string actionName = 15;    //动作名称
+    optional int32 gameId = 16;      //所属游戏id
 }
 //升级事件
 message LevelUpRequestCommand{
@@ -208,16 +203,7 @@ message EatCommand{
     optional int32 id = 1;
     optional string name = 2;   //坚果类型（大坚果，小坚果）
 }
-//坚果
-message NutCommand{
-    optional int32 id = 1;
-    optional float positionX = 2;
-    optional float positionY = 3;
-    optional float positionZ  = 4;
-    optional float rotX = 5;
-    optional float rotY = 6;
-    optional float rotZ = 7;
-}
+
 //箱子同步位置
 //cmd:Box
 message BoxCommand{
@@ -228,6 +214,8 @@ message BoxCommand{
     optional float rotX = 5;
     optional float rotY = 6;
     optional float rotZ = 7;
+
+    optional int32 gameId = 8;      //所属游戏id
 }
 
 //击中
@@ -250,8 +238,16 @@ message AssistCommand{
     optional int32 deadId = 2;  //被击杀id
 }
 //坚果位置
-message NutPositionCommand{
+message NutCommand{
+    optional int32 id = 1;
+    optional float positionX = 2;
+    optional float positionY = 3;
+    optional float positionZ  = 4;
+    optional float rotX = 5;
+    optional float rotY = 6;
+    optional float rotZ = 7;
 
+    optional int32 gameId = 8;      //所属游戏id
 }
 
 //游戏结束

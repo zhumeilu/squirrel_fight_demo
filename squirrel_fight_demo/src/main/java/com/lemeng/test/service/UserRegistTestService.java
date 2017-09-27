@@ -43,7 +43,7 @@ public class UserRegistTestService extends AbstractService {
             logger.info("--------------verifyCode:"+verifyCode);
             //随机成功用户信息
             Player player = new Player();
-            GameCommand.PlayerInfoCommand.Builder retBuilder = GameCommand.PlayerInfoCommand.newBuilder();
+//            GameCommand.PlayerInfoCommand.Builder retBuilder = GameCommand.PlayerInfoCommand.newBuilder();
 
             Integer id = TestSystemManager.getInstance().getId();
             player.setId(id);
@@ -65,28 +65,28 @@ public class UserRegistTestService extends AbstractService {
             logger.info("--------sender:"+sender);
             TestSystemManager.getInstance().savePlayer(sender,player);
             //构建返回信息
-            retBuilder.setId(player.getId());
-            retBuilder.setAttack(player.getAttack());
-            retBuilder.setGunRoll(player.getGunRoll());
-            retBuilder.setGunRot(player.getGunRot());
-            retBuilder.setHp(player.getHp());
-            retBuilder.setNickname(player.getNickname());
-            retBuilder.setPositionX(player.getPositionX());
-            retBuilder.setPositionY(player.getPositionY());
-            retBuilder.setPositionZ(player.getPositionZ());
-            retBuilder.setRotX(player.getRotX());
-            retBuilder.setRotY(player.getRotY());
-            retBuilder.setRotZ(player.getRotZ());
-            retBuilder.setTeamId(player.getTeamId());
+//            retBuilder.setId(player.getId());
+//            retBuilder.setAttack(player.getAttack());
+//            retBuilder.setGunRoll(player.getGunRoll());
+//            retBuilder.setGunRot(player.getGunRot());
+//            retBuilder.setHp(player.getHp());
+//            retBuilder.setNickname(player.getNickname());
+//            retBuilder.setPositionX(player.getPositionX());
+//            retBuilder.setPositionY(player.getPositionY());
+//            retBuilder.setPositionZ(player.getPositionZ());
+//            retBuilder.setRotX(player.getRotX());
+//            retBuilder.setRotY(player.getRotY());
+//            retBuilder.setRotZ(player.getRotZ());
+//            retBuilder.setTeamId(player.getTeamId());
             //返回初始化后的信息
             System.out.println("-----------发送PlayerInfoCommand");
-            DatagramPacket datagramPacket = new DatagramPacket(Unpooled.copiedBuffer(ConvertUtil.getBytes(Const.PlayerInfoCommand),retBuilder.build().toByteArray()),sender);
-            channel.write(datagramPacket);
+//            DatagramPacket datagramPacket = new DatagramPacket(Unpooled.copiedBuffer(ConvertUtil.getBytes(Const.PlayerInfoCommand),retBuilder.build().toByteArray()),sender);
+//            channel.write(datagramPacket);
             //向其他玩家广播
             Enumeration allSender = TestSystemManager.getInstance().getAllSender();
             while (allSender.hasMoreElements()){
                 System.out.println("----------发送NewPlayerJoinGameRequestCommand");
-                channel.write(new DatagramPacket(Unpooled.copiedBuffer(ConvertUtil.getBytes(Const.NewPlayerJoinGameRequestCommand),retBuilder.build().toByteArray()),(InetSocketAddress) allSender.nextElement()));
+//                channel.write(new DatagramPacket(Unpooled.copiedBuffer(ConvertUtil.getBytes(Const.NewPlayerJoinGameRequestCommand),retBuilder.build().toByteArray()),(InetSocketAddress) allSender.nextElement()));
             }
             //向该玩家推送所有在线玩家的信息
             GameCommand.FindedGameRequestCommand.Builder builder = GameCommand.FindedGameRequestCommand.newBuilder();
@@ -96,21 +96,21 @@ public class UserRegistTestService extends AbstractService {
             int i = 0;
             while (iterator.hasNext()){
                 Player next = (Player)iterator.next();
-                GameCommand.PlayerInfoCommand.Builder builder1 = GameCommand.PlayerInfoCommand.newBuilder();
-                builder1.setId(next.getId());
-                builder1.setAttack(next.getAttack());
-                builder1.setGunRoll(next.getGunRoll());
-                builder1.setGunRot(next.getGunRot());
-                builder1.setHp(next.getHp());
-                builder1.setNickname(next.getNickname());
-                builder1.setPositionX(next.getPositionX());
-                builder1.setPositionY(next.getPositionY());
-                builder1.setPositionZ(next.getPositionZ());
-                builder1.setRotX(next.getRotX());
-                builder1.setRotY(next.getRotY());
-                builder1.setRotZ(next.getRotZ());
-                builder1.setTeamId(next.getTeamId());
-                builder.addPlayerInfoList(builder1);
+//                GameCommand.PlayerInfoCommand.Builder builder1 = GameCommand.PlayerInfoCommand.newBuilder();
+//                builder1.setId(next.getId());
+//                builder1.setAttack(next.getAttack());
+//                builder1.setGunRoll(next.getGunRoll());
+//                builder1.setGunRot(next.getGunRot());
+//                builder1.setHp(next.getHp());
+//                builder1.setNickname(next.getNickname());
+//                builder1.setPositionX(next.getPositionX());
+//                builder1.setPositionY(next.getPositionY());
+//                builder1.setPositionZ(next.getPositionZ());
+//                builder1.setRotX(next.getRotX());
+//                builder1.setRotY(next.getRotY());
+//                builder1.setRotZ(next.getRotZ());
+//                builder1.setTeamId(next.getTeamId());
+//                builder.addPlayerInfoList(builder1);
                 i++;
             }
             System.out.println("j-----------发送FindedGameRequestCommand");

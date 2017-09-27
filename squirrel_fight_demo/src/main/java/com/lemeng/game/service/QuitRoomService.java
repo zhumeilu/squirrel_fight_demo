@@ -1,11 +1,9 @@
 package com.lemeng.game.service;
 
-import com.google.protobuf.InvalidProtocolBufferException;
 import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Room;
-import com.lemeng.game.manager.ITeamManager;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.service.AbstractService;
@@ -15,15 +13,17 @@ import io.netty.channel.Channel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 
-/**寻找游戏
+
+/**退出房间请求
  * Description:
  * User: zhumeilu
  * Date: 2017/9/25
  * Time: 13:25
  */
-@Component("FindGameRequestService")
-public class FindGameRequestService extends AbstractService {
+@Component("QuitRoomService")
+public class QuitRoomService extends AbstractService {
 
     @Autowired
     private JedisClusterUtil jedisClusterUtil;
@@ -32,14 +32,21 @@ public class FindGameRequestService extends AbstractService {
         SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         try {
-            GameCommand.FindGameRequestCommand findGameRequestCommand= GameCommand.FindGameRequestCommand.parseFrom(bodyBytes);
-            int roomId = findGameRequestCommand.getRoomId();        //队伍id
+            GameCommand.QuitRoomCommand quitRoomRequestCommand = GameCommand.QuitRoomCommand.parseFrom(bodyBytes);
+            int roomId = quitRoomRequestCommand.getRoomId();
             Room room = (Room) jedisClusterUtil.getObject(Const.RoomPrefix + roomId);
+            List<User> userList = room.getUserList();
 
-            //加入匹配队列，进行匹配（创建一个list，循环list查询水平相近的3对玩家，包括已经在对局中的？？）
-            SystemManager.getInstance().addQuene(room);
+            //退出房间，转发给房间里面的所有人
+            //转发消息
 
-        } catch (InvalidProtocolBufferException e) {
+            for (User user: userList) {
+                Channel roomTeamChannel = (Channel) SystemManager.getInstance().getUserChannelMap().get(user.getId());
+                roomTeamChannel.writeAndFlush(tcpMessage);
+
+            }
+
+        } catch (Exception e) {
             logStackTrace(e);
         }
     }

@@ -53,7 +53,7 @@ public class UdpClientTest {
 
             Thread.sleep(1000);
 
-            GameCommand.PlayerInfoCommand.Builder builder1 = GameCommand.PlayerInfoCommand.newBuilder();
+            GameCommand.FullPlayerInfoCommand.Builder builder1 = GameCommand.FullPlayerInfoCommand.newBuilder();
             builder1.setId(1);
             builder1.setPositionX(10f);
             builder1.setPositionY(11f);
