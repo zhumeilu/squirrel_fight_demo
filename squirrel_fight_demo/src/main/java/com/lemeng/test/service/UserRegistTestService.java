@@ -77,7 +77,7 @@ public class UserRegistTestService extends AbstractService {
 //            retBuilder.setRotX(player.getRotX());
 //            retBuilder.setRotY(player.getRotY());
 //            retBuilder.setRotZ(player.getRotZ());
-//            retBuilder.setTeamId(player.getTeamId());
+//            retBuilder.setTeamId(player.generateTeamId());
             //返回初始化后的信息
             System.out.println("-----------发送PlayerInfoCommand");
 //            DatagramPacket datagramPacket = new DatagramPacket(Unpooled.copiedBuffer(ConvertUtil.getBytes(Const.PlayerInfoCommand),retBuilder.build().toByteArray()),sender);
@@ -109,7 +109,7 @@ public class UserRegistTestService extends AbstractService {
 //                builder1.setRotX(next.getRotX());
 //                builder1.setRotY(next.getRotY());
 //                builder1.setRotZ(next.getRotZ());
-//                builder1.setTeamId(next.getTeamId());
+//                builder1.setTeamId(next.generateTeamId());
 //                builder.addPlayerInfoList(builder1);
                 i++;
             }

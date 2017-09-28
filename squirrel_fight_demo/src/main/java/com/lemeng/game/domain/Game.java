@@ -4,6 +4,7 @@ import com.lemeng.common.domain.BaseDomain;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +19,8 @@ public class Game extends BaseDomain{
 
     //玩家
     private List<Player> playerList;
+    //队伍
+    private List<Team> teamList;
     //地图
     private String map;
     //坚果
@@ -27,5 +30,7 @@ public class Game extends BaseDomain{
     //天气
     private String weather;
 
+    private Date beginDate;     //游戏开始时间
 
+    private Date endDate;     //游戏结束时间
 }

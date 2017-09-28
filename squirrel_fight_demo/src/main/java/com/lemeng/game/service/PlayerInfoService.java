@@ -34,8 +34,8 @@ public class PlayerInfoService extends AbstractService{
             int gameId = simplePlayerInfoCommand.getGameId();
             String actionName = simplePlayerInfoCommand.getActionName();
             float positionX = simplePlayerInfoCommand.getPositionX();
-            float positionY = simplePlayerInfoCommand.getPositionY();
             float positionZ = simplePlayerInfoCommand.getPositionZ();
+            float positionY = simplePlayerInfoCommand.getPositionY();
 
 
             Game game = (Game) jedisClusterUtil.getObject(Const.GamePrefix + gameId);

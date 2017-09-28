@@ -1,5 +1,6 @@
 package com.lemeng.common;
 
+import com.lemeng.game.domain.Game;
 import com.lemeng.game.domain.Room;
 import com.lemeng.game.domain.Team;
 import com.lemeng.server.session.NettyTcpSession;
@@ -7,10 +8,16 @@ import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.RandomUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Service;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -23,6 +30,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class SystemManager {
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
     private static SystemManager instance = new SystemManager();
     @Getter
     @Setter
@@ -42,11 +50,22 @@ public class SystemManager {
     @Getter
     private HashMap<Short,String> userOrderHandlerMap;           //存储命令和服务对应map
 
+    @Getter
     BlockingQueue<Room> oneRoomQueue = new LinkedBlockingQueue<Room>();     //1人匹配队列
+    @Getter
     BlockingQueue<Room> twoRoomQueue = new LinkedBlockingQueue<Room>();     //2人匹配队列
+    @Getter
     BlockingQueue<Room> threeRoomQueue = new LinkedBlockingQueue<Room>();    //3人匹配队列
+    @Getter
     BlockingQueue<Room> fourRoomQueue = new LinkedBlockingQueue<Room>();    //4人匹配队列
+    @Getter
     BlockingQueue<Room> fiveRoomQueue = new LinkedBlockingQueue<Room>();    //5人匹配队列
+    @Getter
+    BlockingQueue<Team> teamQuenue = new LinkedBlockingQueue<Team>();    //组队队列
+    @Getter
+    BlockingQueue<Game> gameQuenue = new LinkedBlockingQueue<Game>();    //游戏队列（可以加入的游戏队列）
+    @Getter
+    private IdGenertor idGenertor = new IdGenertor();
 
     private SystemManager(){
 
@@ -106,4 +125,42 @@ public class SystemManager {
 
     }
 
+    //同步synchronized
+    public List<Team> getMatchTeam(){
+        List<Team> teamList = new ArrayList<Team>();
+        //满足6个组队
+        if(teamQuenue.size()>=6){
+            for (int i=0;i<teamQuenue.size();i++){
+                try {
+                    teamList.add(teamQuenue.take());
+                } catch (InterruptedException e) {
+                    logStackTrace(e);
+                }
+            }
+            return teamList;
+
+        }else if(teamQuenue.size()<6&&teamQuenue.size()>=2){
+            //不满6个组队
+            int num = RandomUtils.nextInt(2, 6);
+            for (int i=0;i<num;i++){
+                try {
+                    teamList.add(teamQuenue.take());
+                } catch (InterruptedException e) {
+                    logStackTrace(e);
+                }
+            }
+
+            return teamList;
+        }
+
+       return null;
+    }
+
+    protected void logStackTrace( Exception e ) {
+        StringWriter writer = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(writer);
+        e.printStackTrace(printWriter);
+        // e.printStackTrace();
+        logger.error(writer.toString());
+    }
 }

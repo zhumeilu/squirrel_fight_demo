@@ -2,12 +2,12 @@ package com.lemeng.server.service;
 
 import com.lemeng.common.SystemManager;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
-import com.lemeng.user.service.UserLoginService;
 import io.netty.channel.ChannelHandlerContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,6 +21,7 @@ import java.util.concurrent.Executors;
 @Component("UdpHandlerService")
 public class UdpHandlerService {
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private ApplicationContext context;
 
@@ -37,9 +38,7 @@ public class UdpHandlerService {
         String serviceName = SystemManager.getInstance().getUserOrderHandlerMap().get(cmd);
         AbstractService service = (AbstractService) context.getBean(serviceName);
         System.out.println("-------handlerService:"+cmd+"--根据命令获取serviceName:"+serviceName+"---获取的service实例："+service);
-        if(service instanceof UserLoginService){
-            System.out.println("---------该服务为UserLoginService");
-        }
+        logger.info("-------handlerService:"+cmd+"--根据命令获取serviceName:"+serviceName+"---获取的service实例："+service);
         service.setChannel(ctx.channel());
         service.setMessage(message);
         executorService.submit(service);

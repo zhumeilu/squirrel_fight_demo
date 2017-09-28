@@ -20,4 +20,6 @@ public class Box extends BaseDomain{
     private Float rotX;   //坐标
     private Float rotY;   //坐标
     private Float rotZ;   //坐标
+    private Integer gameId;     //所属游戏id
+    private Integer statue;     //状态
 }

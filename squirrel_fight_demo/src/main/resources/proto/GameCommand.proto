@@ -155,7 +155,7 @@ message FullPlayerInfoCommand{
     optional int32 assistNum = 17;      //助攻数
     optional int32 level = 18;          //等级
     repeated string skillList = 19;     //技能
-    optional int32 gameI = 20;      //所属游戏id
+    optional int32 gameId = 20;      //所属游戏id
 }
 //简单的玩家信息
 message SimplePlayerInfoCommand{
@@ -248,6 +248,7 @@ message NutCommand{
     optional float rotZ = 7;
 
     optional int32 gameId = 8;      //所属游戏id
+    optional string name = 9;      //名称（大坚果，小坚果）
 }
 
 //游戏结束

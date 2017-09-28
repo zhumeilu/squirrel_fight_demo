@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Date;
+
 /**
  * Description:玩家
  * User: zhumeilu
@@ -42,9 +44,16 @@ public class Player extends BaseDomain{
     private Float gunRot;   //坐标
     private Float gunRoll;   //坐标
 
+    private String actionName;      //当前动作名称
 
     private Integer userId;     //所属用户id
     private Integer gameId;     //所属游戏
     private Integer teamId;        //所属组队
+
+    private Integer killNum;        //杀人数
+    private Integer deathNum;       //死亡数
+    private Integer assistNum;      //助攻数
+
+    private Date lastDead;      //上一次死亡时间
 
 }

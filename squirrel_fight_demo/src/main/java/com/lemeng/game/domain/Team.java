@@ -18,7 +18,7 @@ import java.util.List;
 @Getter
 public class Team extends BaseDomain{
 
-    private List<User> userList = new ArrayList<User>();    //队员
+    private List<Player> playerList = new ArrayList<Player>();    //队员
     //杀人数
     private Integer killNum;
     //死亡数
@@ -26,7 +26,8 @@ public class Team extends BaseDomain{
     //助攻数
     private Integer assistNum;
     //mvp
-    private User mvp;
+    private Player mvp;
 
+    private Integer gameId;
 
 }

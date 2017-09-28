@@ -8,8 +8,10 @@ package com.lemeng.common;
  */
 public class Const {
 
-    public static final String RoomPrefix = "Squirrel_Fight_Room";
-    public static final String GamePrefix = "Squirrel_Fight_Game";
+    public static final String RoomPrefix = "Squirrel_Fight_Room_";
+    public static final String GamePrefix = "Squirrel_Fight_Game_";
+    public static final String TeamPrefix = "Squirrel_Fight_Team_";
+    public static final String PlayerPrefix = "Squirrel_Fight_Player_";
 
 
     /*****************SystemCommand****1-100****************/
