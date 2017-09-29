@@ -1,7 +1,7 @@
 package com.lemeng.game.service;
 
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractTcpService;
 import com.lemeng.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,13 +14,13 @@ import org.springframework.stereotype.Component;
  * Time: 13:25
  */
 @Component("NewPlayerJoinGameRequestService")
-public class NewPlayerJoinGameRequestService extends AbstractService {
+public class NewPlayerJoinGameRequestService extends AbstractTcpService {
 
     @Autowired
     private UserMapper userMapper;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        SquirrelFightTcpMessage tcpMessage = this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         try {

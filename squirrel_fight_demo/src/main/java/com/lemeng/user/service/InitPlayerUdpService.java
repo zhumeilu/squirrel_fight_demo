@@ -3,7 +3,8 @@ package com.lemeng.user.service;
 import com.lemeng.common.Const;
 import com.lemeng.server.command.UserCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractTcpService;
+import com.lemeng.server.service.AbstractUdpService;
 import com.lemeng.user.manager.IUserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,13 +16,13 @@ import org.springframework.stereotype.Component;
  * Time: 10:36
  */
 @Component("InitPlayerService")
-public class InitPlayerService extends AbstractService{
+public class InitPlayerUdpService extends AbstractTcpService {
 
     @Autowired
     private IUserManager userManager;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        SquirrelFightTcpMessage tcpMessage =  this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取nickname
         try {

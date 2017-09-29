@@ -1,9 +1,9 @@
 package com.lemeng.common;
 
-import com.lemeng.game.domain.Game;
-import com.lemeng.game.domain.Room;
-import com.lemeng.game.domain.Team;
+import com.lemeng.common.redis.JedisClusterUtil;
+import com.lemeng.game.domain.*;
 import com.lemeng.server.session.NettyTcpSession;
+import com.sun.javafx.image.IntPixelGetter;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import lombok.Getter;
@@ -42,9 +42,21 @@ public class SystemManager {
     @Setter
     private EventLoopGroup tcpWorkerGroup;
 
+    //暂时没用到
     private ConcurrentHashMap tcpSessionMap = new ConcurrentHashMap<Long,NettyTcpSession>();       //存储session
+
     @Getter
-    private ConcurrentHashMap teamMap = new ConcurrentHashMap<Integer,Team>();       //存储session
+    private ConcurrentHashMap<Integer,Game> gameConcurrentHashMap = new ConcurrentHashMap<Integer,Game>();       //存储game
+    @Getter
+    private ConcurrentHashMap<Integer,Team> teamConcurrentHashMap = new ConcurrentHashMap<Integer,Team>();       //存储team
+    @Getter
+    private ConcurrentHashMap<Integer,AssistRecord> assistRecordConcurrentHashMap = new ConcurrentHashMap<Integer,AssistRecord>();       //存储助攻记录
+    @Getter
+    private ConcurrentHashMap<Integer,Player> playerConcurrentHashMap = new ConcurrentHashMap<Integer,Player>();       //存储玩家信息
+    @Getter
+    private ConcurrentHashMap<Integer,Room> roomConcurrentHashMap = new ConcurrentHashMap<Integer,Room>();       //存储Room
+
+
     @Getter
     private ConcurrentHashMap userChannelMap = new ConcurrentHashMap<Integer,Channel>();       //存储user- channel
     @Getter
@@ -67,15 +79,20 @@ public class SystemManager {
     @Getter
     private IdGenertor idGenertor = new IdGenertor();
 
+    private JedisClusterUtil jedisClusterUtil;
+    public JedisClusterUtil getJedisClusterUtil(){
+        return (JedisClusterUtil)context.getBean("jedisCluster");
+    }
+
     private SystemManager(){
 
         userOrderHandlerMap = new HashMap<Short, String>();
         userOrderHandlerMap.put(Const.HeartBreakCommand,"HeartBreak");  //心跳
-        userOrderHandlerMap.put(Const.LoginRequestCommand,"UserLoginService");  //登录
+        userOrderHandlerMap.put(Const.LoginRequestCommand,"UserLoginUdpService");  //登录
 
-        userOrderHandlerMap.put(Const.RegistRequestCommand,"UserRegistTestService");  //测试  upd位置同步使用
-        userOrderHandlerMap.put(Const.PlayerInfoCommand,"PlayerInfoTestService");  //测试 upd位置同步使用
-        userOrderHandlerMap.put(Const.QuitGameCommand,"QuitGameTestService");  //测试 upd位置同步使用
+        userOrderHandlerMap.put(Const.RegistRequestCommand,"UserRegistTestUdpService");  //测试  upd位置同步使用
+        userOrderHandlerMap.put(Const.PlayerInfoCommand,"PlayerInfoTestUdpService");  //测试 upd位置同步使用
+        userOrderHandlerMap.put(Const.QuitGameCommand,"QuitGameTestUdpService");  //测试 upd位置同步使用
 
 
     }

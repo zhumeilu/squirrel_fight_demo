@@ -13,6 +13,7 @@ public class IdGenertor {
     private AtomicInteger teamId = new AtomicInteger(1);
     private AtomicInteger playerId = new AtomicInteger(1);
     private AtomicInteger gameId = new AtomicInteger(1);
+    private AtomicInteger assistId = new AtomicInteger(1);
 
     public Integer generateTeamId(){
         return teamId.getAndIncrement();
@@ -22,6 +23,9 @@ public class IdGenertor {
     }
      public Integer generateGameId(){
         return gameId.getAndIncrement();
+    }
+     public Integer generateAssistId(){
+        return assistId.getAndIncrement();
     }
 
 }

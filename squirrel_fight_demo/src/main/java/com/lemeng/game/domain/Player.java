@@ -53,7 +53,7 @@ public class Player extends BaseDomain{
     private Integer killNum;        //杀人数
     private Integer deathNum;       //死亡数
     private Integer assistNum;      //助攻数
-
+    private Integer statue;         //状态  1正常 2死亡
     private Date lastDead;      //上一次死亡时间
 
 }

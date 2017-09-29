@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -38,7 +38,6 @@ public class FindedGameRequestService implements Runnable {
 
             //初始化坚果集合
 
-
             //初始化箱子集合
             String mapName = "";
             String weather = "";
@@ -48,7 +47,7 @@ public class FindedGameRequestService implements Runnable {
             game.setBeginDate(new Date());
             game.setMap(mapName);
             game.setWeather(weather);
-            List<Player> allPlayer = new ArrayList<Player>();
+            HashSet<Integer> allPlayer = new HashSet<Integer>();
             for (Team team : matchTeam) {
                 allPlayer.addAll(team.getPlayerList());
             }
@@ -90,7 +89,8 @@ public class FindedGameRequestService implements Runnable {
 //
 
 
-            for (Player player: allPlayer) {
+            for (Integer playerId: allPlayer) {
+                Player player = SystemManager.getInstance().getJedisClusterUtil().getObject(Const.PlayerPrefix+playerId);
                 //构建消息
                 GameCommand.FullPlayerInfoCommand.Builder fullPlayerInfoBulder = GameCommand.FullPlayerInfoCommand.newBuilder();
                 fullPlayerInfoBulder.setActionName(player.getActionName());
@@ -106,7 +106,8 @@ public class FindedGameRequestService implements Runnable {
             tcpMessage.setBody(retBody);
 
             //发送消息
-            for (Player player: allPlayer) {
+            for (Integer playerId: allPlayer) {
+                Player player = SystemManager.getInstance().getJedisClusterUtil().getObject(Const.PlayerPrefix+playerId);
                 Integer userId = player.getUserId();
                 Channel channel = (Channel) SystemManager.getInstance().getUserChannelMap().get(userId);
                 channel.writeAndFlush(tcpMessage);

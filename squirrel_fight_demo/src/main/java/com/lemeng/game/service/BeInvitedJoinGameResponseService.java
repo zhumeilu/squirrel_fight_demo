@@ -5,11 +5,11 @@ import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Room;
-import com.lemeng.game.domain.Team;
 import com.lemeng.game.manager.ITeamManager;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractTcpService;
+import com.lemeng.server.service.AbstractUdpService;
 import com.lemeng.user.domain.User;
 import com.lemeng.user.mapper.UserMapper;
 import io.netty.channel.Channel;
@@ -26,17 +26,15 @@ import java.util.List;
  * Time: 13:25
  */
 @Component("BeInvitedJoinGameResponseService")
-public class BeInvitedJoinGameResponseService extends AbstractService {
+public class BeInvitedJoinGameResponseService extends AbstractTcpService {
 
-    @Autowired
-    private ITeamManager teamManager;
     @Autowired
     private UserMapper userMapper;
     @Autowired
     private JedisClusterUtil jedisClusterUtil;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        SquirrelFightTcpMessage tcpMessage = this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         try {

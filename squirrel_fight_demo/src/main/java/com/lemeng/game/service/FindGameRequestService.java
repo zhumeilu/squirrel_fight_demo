@@ -5,13 +5,10 @@ import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Room;
-import com.lemeng.game.manager.ITeamManager;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.server.service.AbstractService;
-import com.lemeng.user.domain.User;
-import com.lemeng.user.mapper.UserMapper;
-import io.netty.channel.Channel;
+import com.lemeng.server.service.AbstractTcpService;
+import com.lemeng.server.service.AbstractUdpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,13 +20,13 @@ import org.springframework.stereotype.Component;
  * Time: 13:25
  */
 @Component("FindGameRequestService")
-public class FindGameRequestService extends AbstractService {
+public class FindGameRequestService extends AbstractTcpService {
 
     @Autowired
     private JedisClusterUtil jedisClusterUtil;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        SquirrelFightTcpMessage tcpMessage = this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         try {
             GameCommand.FindGameRequestCommand findGameRequestCommand= GameCommand.FindGameRequestCommand.parseFrom(bodyBytes);

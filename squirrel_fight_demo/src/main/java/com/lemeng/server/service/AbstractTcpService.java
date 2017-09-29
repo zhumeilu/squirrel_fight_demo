@@ -1,6 +1,6 @@
 package com.lemeng.server.service;
 
-import com.lemeng.server.message.IMessage;
+import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
 import io.netty.channel.Channel;
 import lombok.Getter;
@@ -19,11 +19,11 @@ import java.io.StringWriter;
  */
 @Getter
 @Setter
-public abstract class AbstractService implements Runnable{
+public abstract class AbstractTcpService implements Runnable{
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     protected Channel channel;
-    protected IMessage message;
+    protected SquirrelFightTcpMessage message;
 
     /** 记录异常调用
      * @param e

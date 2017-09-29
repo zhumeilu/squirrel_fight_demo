@@ -1,6 +1,6 @@
 package com.lemeng.game.service;
 
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractTcpService;
 
 /**箱子位置同步
  * Description:
@@ -8,7 +8,7 @@ import com.lemeng.server.service.AbstractService;
  * Date: 2017/9/27
  * Time: 11:57
  */
-public class BoxPositionService extends AbstractService{
+public class BoxPositionService extends AbstractTcpService {
 
     //在箱子被扔出去的时候做箱子的同步
 

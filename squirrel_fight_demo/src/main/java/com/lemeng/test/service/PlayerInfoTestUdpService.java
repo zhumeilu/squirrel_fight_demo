@@ -2,9 +2,8 @@ package com.lemeng.test.service;
 
 import com.lemeng.common.util.ConvertUtil;
 import com.lemeng.game.domain.Player;
-import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractUdpService;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.socket.DatagramPacket;
 import org.springframework.stereotype.Component;
@@ -19,7 +18,7 @@ import java.util.Enumeration;
  * Time: 14:11
  */
 @Component("PlayerInfoTestService")
-public class PlayerInfoTestService extends AbstractService {
+public class PlayerInfoTestUdpService extends AbstractUdpService {
     public void run() {
 
 

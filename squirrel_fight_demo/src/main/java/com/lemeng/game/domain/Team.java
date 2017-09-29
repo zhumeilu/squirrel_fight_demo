@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ import java.util.List;
 @Getter
 public class Team extends BaseDomain{
 
-    private List<Player> playerList = new ArrayList<Player>();    //队员
+    private HashSet<Integer> playerList = new HashSet<Integer>();    //队员id
     //杀人数
     private Integer killNum;
     //死亡数

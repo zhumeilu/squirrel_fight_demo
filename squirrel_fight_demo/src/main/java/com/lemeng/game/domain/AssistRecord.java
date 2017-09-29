@@ -19,4 +19,18 @@ public class AssistRecord extends BaseDomain{
     private Integer assistId;       //助攻人id
     private Integer enemyId;        //敌人id，被攻击人id
     private Date createDate;        //创建时间
+
+
+
+    //添加到hashset中去重
+    @Override
+    public int hashCode() {
+        return this.getId();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        AssistRecord other = (AssistRecord) obj;
+        return this.getId().equals(other.getId());
+    }
 }

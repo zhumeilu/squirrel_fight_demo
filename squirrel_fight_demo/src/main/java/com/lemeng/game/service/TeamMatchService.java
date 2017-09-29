@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
@@ -38,7 +39,7 @@ public class TeamMatchService implements Runnable{
 
     public void run() {
         //一直循环，随机一个方式组合生成一个Team
-        //1+1+1+1+1,1+1+1+2,1+1+3,1+4,1+2+2,2+3
+        //1+1+1+1+1,1+1+1+2,1+1+3,1+4,1+2+2,2+3,5
 
         while(true){
 
@@ -107,10 +108,22 @@ public class TeamMatchService implements Runnable{
                         }
                     }
                     break;
+                case 7:
+                    Team match7 = match7();
+                    if(match7!=null){
+                        try {
+                            SystemManager.getInstance().getTeamQuenue().put(match7);
+                        } catch (InterruptedException e) {
+                            logStackTrace(e);
+                        }
+                    }
+                    break;
             }
             }
 
     }
+
+
 
     private Player initPlayer(User user,Integer teamId){
         Player player = new Player();
@@ -126,7 +139,7 @@ public class TeamMatchService implements Runnable{
     //1+1+1+1+1,
     private Team match1(){
         BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getOneRoomQueue();
-        List<Player> playerList = new ArrayList<Player>();
+        HashSet<Integer> playerList = new HashSet<Integer>();
         if(twoRoomQueue.size()>=5){
             try {
                 Room room1 = twoRoomQueue.take();
@@ -138,7 +151,7 @@ public class TeamMatchService implements Runnable{
                 team.setKillNum(0);
                 team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
                 //初始化玩家
-                List<Player> playerList1 = initPlayer(room1,team.getId());
+                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
                 playerList.addAll(playerList1);
 
                 jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
@@ -190,12 +203,37 @@ public class TeamMatchService implements Runnable{
 //        return null;
 
     }
+    //5
+    private Team match7() {
+        BlockingQueue<Room> fiveQueue = SystemManager.getInstance().getFiveRoomQueue();
+        HashSet<Integer> playerList = new HashSet<Integer>();
+        if(fiveQueue.size()>=1){
+            try {
+                Room room1 = fiveQueue.take();
+                //初始化队伍
+                Team team = new Team();
+                team.setPlayerList(playerList);
+                team.setAssistNum(0);
+                team.setDeathNum(0);
+                team.setKillNum(0);
+                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
+                //初始化玩家
+                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
+                playerList.addAll(playerList1);
 
+                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                return team;
+            } catch (InterruptedException e) {
+                logStackTrace(e);
+            }
+        }
+        return null;
+    }
     //2+3
     private Team match6() {
         BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getTwoRoomQueue();
         BlockingQueue<Room> threeRoomQueue = SystemManager.getInstance().getThreeRoomQueue();
-        List<Player> playerList = new ArrayList<Player>();
+        HashSet<Integer> playerList = new HashSet<Integer>();
         if(twoRoomQueue.size()>=1&&threeRoomQueue.size()>=1){
             try {
                 Room room1 = twoRoomQueue.take();
@@ -208,8 +246,8 @@ public class TeamMatchService implements Runnable{
                 team.setKillNum(0);
                 team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
                 //初始化玩家
-                List<Player> playerList1 = initPlayer(room1,team.getId());
-                List<Player> playerList2 = initPlayer(room2,team.getId());
+                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
+                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
                 playerList.addAll(playerList1);
                 playerList.addAll(playerList2);
 
@@ -226,7 +264,7 @@ public class TeamMatchService implements Runnable{
     private Team match5() {
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> fourRoomQueue = SystemManager.getInstance().getFourRoomQueue();
-        List<Player> playerList = new ArrayList<Player>();
+        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=1&&fourRoomQueue.size()>=1){
             try {
                 Room room1 = oneRoomQueue.take();
@@ -239,8 +277,8 @@ public class TeamMatchService implements Runnable{
                 team.setKillNum(0);
                 team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
                 //初始化玩家
-                List<Player> playerList1 = initPlayer(room1,team.getId());
-                List<Player> playerList2 = initPlayer(room2,team.getId());
+                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
+                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
                 playerList.addAll(playerList1);
                 playerList.addAll(playerList2);
 
@@ -257,7 +295,7 @@ public class TeamMatchService implements Runnable{
     private Team match4() {
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getTwoRoomQueue();
-        List<Player> playerList = new ArrayList<Player>();
+        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=1&&twoRoomQueue.size()>=2){
             try {
                 Room room1 = oneRoomQueue.take();
@@ -271,9 +309,9 @@ public class TeamMatchService implements Runnable{
                 team.setKillNum(0);
                 team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
                 //初始化玩家
-                List<Player> playerList1 = initPlayer(room1,team.getId());
-                List<Player> playerList2 = initPlayer(room2,team.getId());
-                List<Player> playerList3 = initPlayer(room3,team.getId());
+                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
+                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
+                HashSet<Integer> playerList3 = initPlayer(room3,team.getId());
                 playerList.addAll(playerList1);
                 playerList.addAll(playerList2);
                 playerList.addAll(playerList3);
@@ -292,7 +330,7 @@ public class TeamMatchService implements Runnable{
 
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> threeRoomQueue = SystemManager.getInstance().getThreeRoomQueue();
-        List<Player> playerList = new ArrayList<Player>();
+        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=3&&threeRoomQueue.size()>=1){
             try {
                 Room room1 = oneRoomQueue.take();
@@ -306,9 +344,9 @@ public class TeamMatchService implements Runnable{
                 team.setKillNum(0);
                 team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
                 //初始化玩家
-                List<Player> playerList1 = initPlayer(room1,team.getId());
-                List<Player> playerList2 = initPlayer(room2,team.getId());
-                List<Player> playerList3 = initPlayer(room3,team.getId());
+                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
+                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
+                HashSet<Integer> playerList3 = initPlayer(room3,team.getId());
                 playerList.addAll(playerList1);
                 playerList.addAll(playerList2);
                 playerList.addAll(playerList3);
@@ -323,8 +361,8 @@ public class TeamMatchService implements Runnable{
     }
 
     //初始化房间里面的所有玩家
-    private List<Player> initPlayer(Room room1,Integer teamId) {
-        List<Player> playerList = new ArrayList<Player>();
+    private HashSet<Integer> initPlayer(Room room1,Integer teamId) {
+        HashSet<Integer> playerList = new HashSet<Integer>();
         List<User> userList = room1.getUserList();
         for (User user : userList) {
             Player player = new Player();
@@ -334,7 +372,7 @@ public class TeamMatchService implements Runnable{
 
             player.setTeamId(teamId);
 
-            playerList.add(player);
+            playerList.add(player.getId());
             //保存到redis中
             jedisClusterUtil.setObject(Const.PlayerPrefix+player.getId(),player);
         }
@@ -345,7 +383,7 @@ public class TeamMatchService implements Runnable{
     private Team match2() {
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getTwoRoomQueue();
-        List<Player> playerList = new ArrayList<Player>();
+        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=3&&twoRoomQueue.size()>=1){
             try {
                 Room room1 = oneRoomQueue.take();
@@ -360,10 +398,10 @@ public class TeamMatchService implements Runnable{
                 team.setKillNum(0);
                 team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
                 //初始化玩家
-                List<Player> playerList1 = initPlayer(room1,team.getId());
-                List<Player> playerList2 = initPlayer(room2,team.getId());
-                List<Player> playerList3 = initPlayer(room3,team.getId());
-                List<Player> playerList4 = initPlayer(room4,team.getId());
+                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
+                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
+                HashSet<Integer> playerList3 = initPlayer(room3,team.getId());
+                HashSet<Integer> playerList4 = initPlayer(room4,team.getId());
                 playerList.addAll(playerList1);
                 playerList.addAll(playerList2);
                 playerList.addAll(playerList3);

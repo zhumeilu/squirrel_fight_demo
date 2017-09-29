@@ -3,6 +3,8 @@ package com.lemeng.common.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 /**
  * Description:
  * User: zhumeilu
@@ -11,7 +13,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class BaseDomain {
+public class BaseDomain implements Serializable{
     private Integer id;
 
 }

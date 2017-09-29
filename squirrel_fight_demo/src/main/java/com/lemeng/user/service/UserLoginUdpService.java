@@ -5,14 +5,13 @@ import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.server.command.UserCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractTcpService;
+import com.lemeng.server.service.AbstractUdpService;
 import com.lemeng.user.domain.FootPrint;
 import com.lemeng.user.domain.Pet;
 import com.lemeng.user.domain.Skill;
 import com.lemeng.user.domain.User;
 import com.lemeng.user.manager.IUserManager;
-import io.netty.buffer.Unpooled;
-import io.netty.channel.socket.DatagramPacket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +24,7 @@ import java.util.List;
  * Time: 10:36
  */
 @Component("UserLoginService")
-public class UserLoginService extends AbstractService{
+public class UserLoginUdpService extends AbstractTcpService {
 
     @Autowired
     private IUserManager userManager;

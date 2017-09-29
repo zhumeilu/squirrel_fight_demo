@@ -7,7 +7,8 @@ import com.lemeng.game.domain.Room;
 import com.lemeng.game.manager.IRoomManager;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractTcpService;
+import com.lemeng.server.service.AbstractUdpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,15 +19,13 @@ import org.springframework.stereotype.Component;
  * Time: 13:25
  */
 @Component("CreateRoomRequestService")
-public class CreateRoomRequestService extends AbstractService {
+public class CreateRoomRequestService extends AbstractTcpService {
 
     @Autowired
     private IRoomManager roomManager;
-    @Autowired
-    private JedisClusterUtil jedisClusterUtil;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        SquirrelFightTcpMessage tcpMessage =  this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         try {
             GameCommand.CreateRoomRequestCommand createRoomRequestCommand = GameCommand.CreateRoomRequestCommand.parseFrom(bodyBytes);

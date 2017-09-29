@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ import java.util.List;
 public class Game extends BaseDomain{
 
     //玩家
-    private List<Player> playerList;
+    private HashSet<Integer> playerList;
     //队伍
     private List<Team> teamList;
     //地图

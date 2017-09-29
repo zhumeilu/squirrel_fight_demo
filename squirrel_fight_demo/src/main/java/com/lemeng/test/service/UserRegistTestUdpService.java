@@ -6,7 +6,7 @@ import com.lemeng.game.domain.Player;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.command.UserCommand;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractUdpService;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.socket.DatagramPacket;
 import org.apache.commons.lang3.RandomUtils;
@@ -24,7 +24,7 @@ import java.util.Iterator;
  * Time: 14:11
  */
 @Component("UserRegistTestService")
-public class UserRegistTestService extends AbstractService {
+public class UserRegistTestUdpService extends AbstractUdpService {
 
     public void run() {
 

@@ -12,6 +12,7 @@ public class Const {
     public static final String GamePrefix = "Squirrel_Fight_Game_";
     public static final String TeamPrefix = "Squirrel_Fight_Team_";
     public static final String PlayerPrefix = "Squirrel_Fight_Player_";
+    public static final String AssistPrefix = "Squirrel_Fight_Assist_";
 
 
     /*****************SystemCommand****1-100****************/

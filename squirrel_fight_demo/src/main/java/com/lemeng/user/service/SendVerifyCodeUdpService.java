@@ -5,9 +5,9 @@ import com.lemeng.common.util.LCSendVerifycode;
 import com.lemeng.common.util.RandomUtil;
 import com.lemeng.server.command.UserCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractTcpService;
+import com.lemeng.server.service.AbstractUdpService;
 import com.lemeng.user.domain.UserVerifyCode;
-import com.lemeng.user.manager.IUserManager;
 import com.lemeng.user.manager.IUserVerifyCodeManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,7 +21,7 @@ import java.util.Date;
  * Time: 10:36
  */
 @Component("SendVerifyCodeService")
-public class SendVerifyCodeService extends AbstractService{
+public class SendVerifyCodeUdpService extends AbstractTcpService {
 
     @Autowired
     IUserVerifyCodeManager userVerifyCodeManager;

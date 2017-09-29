@@ -1,6 +1,6 @@
 package com.lemeng.game.service;
 
-import com.lemeng.server.service.AbstractService;
+import com.lemeng.server.service.AbstractUdpService;
 
 /**吃坚果
  * Description:
@@ -8,7 +8,7 @@ import com.lemeng.server.service.AbstractService;
  * Date: 2017/9/27
  * Time: 11:58
  */
-public class EatNutService extends AbstractService{
+public class EatNutService extends AbstractUdpService {
 
     //当坚果被吃掉时，广播给其他玩家做同步
 
