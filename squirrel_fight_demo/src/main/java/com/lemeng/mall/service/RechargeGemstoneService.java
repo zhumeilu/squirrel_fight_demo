@@ -2,44 +2,46 @@ package com.lemeng.mall.service;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.lemeng.common.Const;
+import com.lemeng.mall.manager.IMallManager;
 import com.lemeng.server.command.MallCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.service.AbstractTcpService;
 import com.lemeng.server.service.AbstractUdpService;
-import com.lemeng.user.manager.IPetManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Description:购买宠物服务
+ * Description:登录服务
  * User: zhumeilu
  * Date: 2017/9/20
  * Time: 10:36
  */
-@Component("BuyPetService")
-public class BuyPetUdpService extends AbstractTcpService {
+@Component("RechargeGemstoneService")
+public class RechargeGemstoneService extends AbstractTcpService {
 
     @Autowired
-    private IPetManager petManager;
+    private IMallManager mallManager;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        SquirrelFightTcpMessage tcpMessage = this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         try {
-            MallCommand.BuyPetRequestCommand rechargeGemstoneCommand = MallCommand.BuyPetRequestCommand.parseFrom(bodyBytes);
+            MallCommand.RechargeGemstoneRequestCommand rechargeGemstoneCommand = MallCommand.RechargeGemstoneRequestCommand.parseFrom(bodyBytes);
             int userId = rechargeGemstoneCommand.getUserId();
-            String petName = rechargeGemstoneCommand.getPetName();
-            boolean b = petManager.buyPet(userId, petName);
-            MallCommand.BuyPetResponseCommand.Builder builder = MallCommand.BuyPetResponseCommand.newBuilder();
+            int count = rechargeGemstoneCommand.getCount();
+            //充值
+            boolean b = mallManager.rechargeGemstone(userId, count);
+            //构建返回消息
+            MallCommand.RechargeGemstoneResponseCommand.Builder builder = MallCommand.RechargeGemstoneResponseCommand.newBuilder();
             SquirrelFightTcpMessage returnTcpMessage = new SquirrelFightTcpMessage();
-            returnTcpMessage.setCmd(Const.BuyPetResponseCommand);
+            returnTcpMessage.setCmd(Const.RechargeGemstoneResponseCommand);
             if(b){
                 builder.setCode(1);
-                builder.setMsg("购买成功");
+                builder.setMsg("充值成功");
             }else{
                 builder.setCode(2);
-                builder.setMsg("购买失败");
+                builder.setMsg("充值失败");
             }
             byte[] retBody = builder.build().toByteArray();
             returnTcpMessage.setBody(retBody);

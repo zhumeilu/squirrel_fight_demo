@@ -1,13 +1,11 @@
 package com.lemeng.game.service;
 
-import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Room;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.service.AbstractTcpService;
-import com.lemeng.server.service.AbstractUdpService;
 import com.lemeng.user.domain.User;
 import io.netty.channel.Channel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +33,7 @@ public class QuitRoomService extends AbstractTcpService {
             GameCommand.QuitRoomCommand quitRoomRequestCommand = GameCommand.QuitRoomCommand.parseFrom(bodyBytes);
             int roomId = quitRoomRequestCommand.getRoomId();
 //            Room room = (Room) jedisClusterUtil.getObject(Const.RoomPrefix + roomId);
+            //从内存中获取room
             Room room = SystemManager.getInstance().getRoomConcurrentHashMap().get(roomId);
             List<User> userList = room.getUserList();
 

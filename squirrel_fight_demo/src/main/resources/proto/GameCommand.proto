@@ -200,8 +200,9 @@ message ActionCommand{
 //吃
 //cmd：eat
 message EatCommand{
-    optional int32 id = 1;
-    optional string name = 2;   //坚果类型（大坚果，小坚果）
+    optional int32 id = 1;      //玩家id
+    optional int32 nutId = 2;   //坚果id
+    optional string name = 3;   //坚果类型（大坚果，小坚果）
 }
 
 //箱子同步位置

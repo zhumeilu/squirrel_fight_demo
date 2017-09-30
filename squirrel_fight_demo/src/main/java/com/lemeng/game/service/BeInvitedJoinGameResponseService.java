@@ -5,11 +5,9 @@ import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Room;
-import com.lemeng.game.manager.ITeamManager;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.service.AbstractTcpService;
-import com.lemeng.server.service.AbstractUdpService;
 import com.lemeng.user.domain.User;
 import com.lemeng.user.mapper.UserMapper;
 import io.netty.channel.Channel;
@@ -24,14 +22,15 @@ import java.util.List;
  * User: zhumeilu
  * Date: 2017/9/25
  * Time: 13:25
+ * 被邀请者返回响应
+ *1. 将响应结果返回给邀请者
+ * 2.如果同意，将被邀请者添加到room中，在向room中所有用户推送更新房间协议
  */
 @Component("BeInvitedJoinGameResponseService")
 public class BeInvitedJoinGameResponseService extends AbstractTcpService {
 
     @Autowired
     private UserMapper userMapper;
-    @Autowired
-    private JedisClusterUtil jedisClusterUtil;
     public void run() {
 
         SquirrelFightTcpMessage tcpMessage = this.message;
@@ -42,9 +41,12 @@ public class BeInvitedJoinGameResponseService extends AbstractTcpService {
             Integer statue = beInvitedJoinGameResponseCommand.getStatue();
             Integer roomId = beInvitedJoinGameResponseCommand.getRoomId();
             String msg = beInvitedJoinGameResponseCommand.getMsg();
+            int userId = beInvitedJoinGameResponseCommand.getUserId();
+            User invitee = SystemManager.getInstance().getOnlineUserMap().get(userId);
             //从reids中获取房间
-            Room room = (Room) jedisClusterUtil.getObject(Const.RoomPrefix+roomId.toString());
-
+//            Room room = (Room) jedisClusterUtil.getObject(Const.RoomPrefix+roomId.toString());
+            //从内存中获取room
+            Room room = SystemManager.getInstance().getRoomConcurrentHashMap().get(roomId);
             //获取队长channel
             Integer headerId = room.getHeader().getId();
             Channel channel = (Channel) SystemManager.getInstance().getUserChannelMap().get(headerId);
@@ -66,6 +68,8 @@ public class BeInvitedJoinGameResponseService extends AbstractTcpService {
             roomTeamMessage.setCmd(Const.RoomUpdateCommand);
             User header = userMapper.selectById(headerId);
             if(statue==1){
+                //将被邀请者添加到房间中
+                room.getUserList().add(invitee);
                 GameCommand.RoomUpdateCommand.Builder roomUpdateBuilder = GameCommand.RoomUpdateCommand.newBuilder();
                 roomUpdateBuilder.setRoomId(roomId);
                 GameCommand.SimpleUserInfoCommand.Builder simpleUserInfoBuilder = GameCommand.SimpleUserInfoCommand.newBuilder();

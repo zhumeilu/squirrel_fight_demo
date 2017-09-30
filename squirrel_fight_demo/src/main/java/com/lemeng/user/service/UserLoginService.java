@@ -2,6 +2,7 @@ package com.lemeng.user.service;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.lemeng.common.Const;
+import com.lemeng.common.SystemManager;
 import com.lemeng.server.command.UserCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
 import com.lemeng.server.service.AbstractTcpService;
@@ -22,8 +23,8 @@ import java.util.List;
  * Date: 2017/9/20
  * Time: 10:36
  */
-@Component("UserRegistService")
-public class UserRegistUdpService extends AbstractTcpService {
+@Component("UserLoginService")
+public class UserLoginService extends AbstractTcpService {
 
     @Autowired
     private IUserManager userManager;
@@ -33,47 +34,48 @@ public class UserRegistUdpService extends AbstractTcpService {
         SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         try {
-            UserCommand.RegistRequestCommand registCommand = UserCommand.RegistRequestCommand.parseFrom(bodyBytes);
+            UserCommand.LoginRequestCommand loginCommand = UserCommand.LoginRequestCommand.parseFrom(bodyBytes);
 
-            String mobile=registCommand.getMobile();
-            String password=registCommand.getPassword();
-            String verifyCode=registCommand.getVerifyCode();
+            String mobile=loginCommand.getMobile();
+            String password=loginCommand.getPassword();
             System.out.println("--------接收到------mobile:"+mobile+"------password:"+password);
-            User regist = null;
+            User login = null;
             try{
-                regist = userManager.regist(mobile, password,verifyCode);
+                login = userManager.login(mobile, password);
 
             }catch (Exception e){
                 e.printStackTrace();
             }
-            if(regist!=null){
+            if(login!=null){
                 System.out.println("------构建返回消息----------");
-                //注册成功
+                //返回登录信息
                 UserCommand.LoginResponseCommand.Builder builder = UserCommand.LoginResponseCommand.newBuilder();
                 builder.setCode(1);
-                builder.setMsg("注册成功");
+                builder.setMsg("登录成功");
                 UserCommand.UserInfoCommand.Builder userBuilder = UserCommand.UserInfoCommand.newBuilder();
-                userBuilder.setGemstone(regist.getGemstone());
-                userBuilder.setLevel(regist.getLevel());
+                userBuilder.setGemstone(login.getGemstone());
+                userBuilder.setLevel(login.getLevel());
 
-                userBuilder.setGoldCoin(regist.getGoldCoin());
+                userBuilder.setGoldCoin(login.getGoldCoin());
                 userBuilder.setMobile(userBuilder.getMobile());
                 userBuilder.setNickname(userBuilder.getNickname());
                 userBuilder.setStatue(userBuilder.getStatue());
 
-                List<Pet> petList = userManager.getPetListByUserId(regist.getId());
+                List<Pet> petList = userManager.getPetListByUserId(login.getId());
                 for (int i = 0 ;i<petList.size();i++){
                     userBuilder.setPetList(i,petList.get(i).getType());
                 }
-                List<FootPrint> footPrintList = userManager.getFootPrintListByUserId(regist.getId());
+                List<FootPrint> footPrintList = userManager.getFootPrintListByUserId(login.getId());
                 for (int i = 0 ;i<footPrintList.size();i++){
                     userBuilder.setFootPrintList(i,footPrintList.get(i).getType());
                 }
 
-                List<Skill> skillList = userManager.getSkillListByUserId(regist.getId());
+                List<Skill> skillList = userManager.getSkillListByUserId(login.getId());
                 for (int i = 0 ;i<skillList.size();i++){
                     userBuilder.setSkillList(i,skillList.get(i).getType());
                 }
+
+
 
                 builder.setUserInfo(userBuilder);
 
@@ -82,11 +84,14 @@ public class UserRegistUdpService extends AbstractTcpService {
                 returnMessage.setCmd(Const.LoginResponseCommand);
                 returnMessage.setLength(returnMessage.getBody().length);
                 channel.writeAndFlush(returnMessage);
-                System.out.println("---------注册成功--------");
-
+                logger.info("---------登录成功--------");
+                //保存user_channel
+                SystemManager.getInstance().getUserChannelMap().put(login.getId(),channel);
+                //保存到在线用户
+                SystemManager.getInstance().getOnlineUserMap().put(login.getId(),login);
             }else{
-                //返回注册失败
-                System.out.println("---------注册失败--------");
+                //返回登录失败
+                logger.info("---------登录失败--------");
 
             }
 

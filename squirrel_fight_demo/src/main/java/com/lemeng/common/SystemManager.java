@@ -3,6 +3,7 @@ package com.lemeng.common;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.*;
 import com.lemeng.server.session.NettyTcpSession;
+import com.lemeng.user.domain.User;
 import com.sun.javafx.image.IntPixelGetter;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
@@ -13,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 
+import javax.jws.soap.SOAPBinding;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -42,6 +44,8 @@ public class SystemManager {
     @Setter
     private EventLoopGroup tcpWorkerGroup;
 
+    @Getter
+    private ConcurrentHashMap<Integer,User> onlineUserMap = new ConcurrentHashMap<Integer, User>();
     //暂时没用到
     private ConcurrentHashMap tcpSessionMap = new ConcurrentHashMap<Long,NettyTcpSession>();       //存储session
 

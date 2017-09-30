@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * Time: 10:36
  */
 @Component("InitPlayerService")
-public class InitPlayerUdpService extends AbstractTcpService {
+public class InitPlayeService extends AbstractTcpService {
 
     @Autowired
     private IUserManager userManager;

@@ -1,6 +1,5 @@
 package com.lemeng.game.service;
 
-import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Player;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -138,11 +136,11 @@ public class TeamMatchService implements Runnable{
 
     //1+1+1+1+1,
     private Team match1(){
-        BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getOneRoomQueue();
+        BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         HashSet<Integer> playerList = new HashSet<Integer>();
-        if(twoRoomQueue.size()>=5){
+        if(oneRoomQueue.size()>=5){
             try {
-                Room room1 = twoRoomQueue.take();
+                Room room1 = oneRoomQueue.take();
                 //初始化队伍
                 Team team = new Team();
                 team.setPlayerList(playerList);
@@ -154,53 +152,14 @@ public class TeamMatchService implements Runnable{
                 HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
                 playerList.addAll(playerList1);
 
-                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         return null;
-//        BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
-//        List<Player> playerList = new ArrayList<Player>();
-//        if(oneRoomQueue.size()>=5){
-//            try {
-//                Room room1 = oneRoomQueue.take();
-//                Room room2 = oneRoomQueue.take();
-//                Room room3 = oneRoomQueue.take();
-//                Room room4 = oneRoomQueue.take();
-//                Room room5 = oneRoomQueue.take();
-//                //初始化队伍
-//                Team team = new Team();
-//                team.setPlayerList(playerList);
-//                team.setAssistNum(0);
-//                team.setDeathNum(0);
-//                team.setKillNum(0);
-//                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
-//                //初始化玩家
-//                Player player1 = initPlayer(room1.getUserList().get(0),team.getId());
-//                Player player2 = initPlayer(room2.getUserList().get(0),team.getId());
-//                Player player3 = initPlayer(room3.getUserList().get(0),team.getId());
-//                Player player4 = initPlayer(room4.getUserList().get(0),team.getId());
-//                Player player5 = initPlayer(room5.getUserList().get(0),team.getId());
-//                playerList.add(player1);
-//                playerList.add(player2);
-//                playerList.add(player3);
-//                playerList.add(player4);
-//                playerList.add(player5);
-//
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
-//                jedisClusterUtil.setObject(Const.PlayerPrefix+player1.getId(),player1);
-//                jedisClusterUtil.setObject(Const.PlayerPrefix+player2.getId(),player2);
-//                jedisClusterUtil.setObject(Const.PlayerPrefix+player3.getId(),player3);
-//                jedisClusterUtil.setObject(Const.PlayerPrefix+player4.getId(),player4);
-//                jedisClusterUtil.setObject(Const.PlayerPrefix+player5.getId(),player5);
-//                return team;
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return null;
 
     }
     //5
@@ -221,7 +180,8 @@ public class TeamMatchService implements Runnable{
                 HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
                 playerList.addAll(playerList1);
 
-                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
                 logStackTrace(e);
@@ -251,7 +211,8 @@ public class TeamMatchService implements Runnable{
                 playerList.addAll(playerList1);
                 playerList.addAll(playerList2);
 
-                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
                 logStackTrace(e);
@@ -282,7 +243,8 @@ public class TeamMatchService implements Runnable{
                 playerList.addAll(playerList1);
                 playerList.addAll(playerList2);
 
-                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
                 logStackTrace(e);
@@ -316,7 +278,8 @@ public class TeamMatchService implements Runnable{
                 playerList.addAll(playerList2);
                 playerList.addAll(playerList3);
 
-                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
                 logStackTrace(e);
@@ -351,7 +314,8 @@ public class TeamMatchService implements Runnable{
                 playerList.addAll(playerList2);
                 playerList.addAll(playerList3);
 
-                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
                 logStackTrace(e);
@@ -360,24 +324,7 @@ public class TeamMatchService implements Runnable{
         return null;
     }
 
-    //初始化房间里面的所有玩家
-    private HashSet<Integer> initPlayer(Room room1,Integer teamId) {
-        HashSet<Integer> playerList = new HashSet<Integer>();
-        List<User> userList = room1.getUserList();
-        for (User user : userList) {
-            Player player = new Player();
-            player.setId(SystemManager.getInstance().getIdGenertor().generatePlayerId());
-            player.setUserId(user.getId());
-            player.setNickname(user.getNickname());
 
-            player.setTeamId(teamId);
-
-            playerList.add(player.getId());
-            //保存到redis中
-            jedisClusterUtil.setObject(Const.PlayerPrefix+player.getId(),player);
-        }
-        return playerList;
-    }
 
     //1+1+1+2,
     private Team match2() {
@@ -407,7 +354,8 @@ public class TeamMatchService implements Runnable{
                 playerList.addAll(playerList3);
                 playerList.addAll(playerList4);
 
-                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
                 logStackTrace(e);
@@ -416,7 +364,25 @@ public class TeamMatchService implements Runnable{
         return null;
 
     }
+    //初始化房间里面的所有玩家
+    private HashSet<Integer> initPlayer(Room room1,Integer teamId) {
+        HashSet<Integer> playerList = new HashSet<Integer>();
+        List<User> userList = room1.getUserList();
+        for (User user : userList) {
+            Player player = new Player();
+            player.setId(SystemManager.getInstance().getIdGenertor().generatePlayerId());
+            player.setUserId(user.getId());
+            player.setNickname(user.getNickname());
 
+            player.setTeamId(teamId);
+
+            playerList.add(player.getId());
+            //保存到redis中
+//            jedisClusterUtil.setObject(Const.PlayerPrefix+player.getId(),player);
+            SystemManager.getInstance().getPlayerConcurrentHashMap().put(player.getId(),player);
+        }
+        return playerList;
+    }
     protected void logStackTrace( Exception e ) {
         StringWriter writer = new StringWriter();
         PrintWriter printWriter = new PrintWriter(writer);

@@ -21,7 +21,7 @@ import java.util.Date;
  * Time: 10:36
  */
 @Component("SendVerifyCodeService")
-public class SendVerifyCodeUdpService extends AbstractTcpService {
+public class SendVerifyCodeService extends AbstractTcpService {
 
     @Autowired
     IUserVerifyCodeManager userVerifyCodeManager;
