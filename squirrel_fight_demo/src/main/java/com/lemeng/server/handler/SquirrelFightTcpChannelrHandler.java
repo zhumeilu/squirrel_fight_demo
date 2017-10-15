@@ -41,16 +41,16 @@ public class SquirrelFightTcpChannelrHandler extends ChannelInboundHandlerAdapte
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
         super.channelRegistered(ctx);
-        SystemManager.getInstance().addTcpSession(new NettyTcpSession(ctx.channel()));
+//        SystemManager.getInstance().addTcpSession(new NettyTcpSession(ctx.channel()));
     }
 
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
         super.channelUnregistered(ctx);
 
-        Channel channel = ctx.channel();
-        Long sessionId = channel.attr(NettyTcpSession.channel_session_id).get();
-        SystemManager.getInstance().removeTcpSession(sessionId);
+//        Channel channel = ctx.channel();
+//        Long sessionId = channel.attr(NettyTcpSession.channel_session_id).get();
+//        SystemManager.getInstance().removeTcpSession(sessionId);
     }
 
     @Override

@@ -18,8 +18,6 @@ import java.util.List;
 @Setter
 public class Game extends BaseDomain{
 
-    //玩家
-    private HashSet<Integer> playerList;
     //队伍
     private List<Team> teamList;
     //地图

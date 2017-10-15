@@ -43,8 +43,6 @@ public class BeInvitedJoinGameResponseService extends AbstractTcpService {
             String msg = beInvitedJoinGameResponseCommand.getMsg();
             int userId = beInvitedJoinGameResponseCommand.getUserId();
             User invitee = SystemManager.getInstance().getOnlineUserMap().get(userId);
-            //从reids中获取房间
-//            Room room = (Room) jedisClusterUtil.getObject(Const.RoomPrefix+roomId.toString());
             //从内存中获取room
             Room room = SystemManager.getInstance().getRoomConcurrentHashMap().get(roomId);
             //获取队长channel

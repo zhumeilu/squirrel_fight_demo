@@ -47,7 +47,7 @@ public class SystemManager {
     @Getter
     private ConcurrentHashMap<Integer,User> onlineUserMap = new ConcurrentHashMap<Integer, User>();
     //暂时没用到
-    private ConcurrentHashMap tcpSessionMap = new ConcurrentHashMap<Long,NettyTcpSession>();       //存储session
+//    private ConcurrentHashMap tcpSessionMap = new ConcurrentHashMap<Long,NettyTcpSession>();       //存储session
 
     @Getter
     private ConcurrentHashMap<Integer,Game> gameConcurrentHashMap = new ConcurrentHashMap<Integer,Game>();       //存储game
@@ -59,6 +59,10 @@ public class SystemManager {
     private ConcurrentHashMap<Integer,Player> playerConcurrentHashMap = new ConcurrentHashMap<Integer,Player>();       //存储玩家信息
     @Getter
     private ConcurrentHashMap<Integer,Room> roomConcurrentHashMap = new ConcurrentHashMap<Integer,Room>();       //存储Room
+    @Getter
+    private ConcurrentHashMap<Integer,Nut> nutConcurrentHashMap = new ConcurrentHashMap<Integer,Nut>();       //存储nut
+    @Getter
+    private ConcurrentHashMap<Integer,Box> boxConcurrentHashMap = new ConcurrentHashMap<Integer,Box>();       //存储box
 
 
     @Getter
@@ -79,7 +83,9 @@ public class SystemManager {
     @Getter
     BlockingQueue<Team> teamQuenue = new LinkedBlockingQueue<Team>();    //组队队列
     @Getter
-    BlockingQueue<Game> gameQuenue = new LinkedBlockingQueue<Game>();    //游戏队列（可以加入的游戏队列）
+    BlockingQueue<Game> gameQuenue = new LinkedBlockingQueue<Game>();    //游戏队列
+    @Getter
+    BlockingQueue<Nut> nut = new LinkedBlockingQueue<Nut>();    //游戏队列（可以加入的游戏队列）
     @Getter
     private IdGenertor idGenertor = new IdGenertor();
 
@@ -115,12 +121,12 @@ public class SystemManager {
 
     }
 
-    public void addTcpSession(NettyTcpSession nettyTcpSession){
-        tcpSessionMap.put(nettyTcpSession.getSessionId(),nettyTcpSession);
-    }
-    public void removeTcpSession(Long sessionId){
-        tcpSessionMap.remove(sessionId);
-    }
+//    public void addTcpSession(NettyTcpSession nettyTcpSession){
+//        tcpSessionMap.put(nettyTcpSession.getSessionId(),nettyTcpSession);
+//    }
+//    public void removeTcpSession(Long sessionId){
+//        tcpSessionMap.remove(sessionId);
+//    }
 
     public void addQuene(Room room){
         int size = room.getUserList().size();
@@ -144,6 +150,23 @@ public class SystemManager {
                 throw new RuntimeException("房间为空，无法加入匹配队列");
         }
 
+    }
+
+
+    public BlockingQueue<Room> getRoomQueueByRoomSize(int size){
+        switch (size){
+            case 1:
+                return oneRoomQueue;
+            case 2:
+                return twoRoomQueue;
+            case 3:
+                return threeRoomQueue;
+            case 4:
+                return fourRoomQueue;
+            case 5:
+                return fiveRoomQueue;
+        }
+        return null;
     }
 
     //同步synchronized

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -28,8 +29,7 @@ import java.util.concurrent.Executors;
 public class TeamMatchService implements Runnable{
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
-    @Autowired
-    private JedisClusterUtil jedisClusterUtil;
+
     private static final int MAX_THREAD_NUM = 50;
 
     private ExecutorService executorService =
@@ -123,36 +123,20 @@ public class TeamMatchService implements Runnable{
 
 
 
-    private Player initPlayer(User user,Integer teamId){
-        Player player = new Player();
-        player.setId(SystemManager.getInstance().getIdGenertor().generatePlayerId());
-        player.setUserId(user.getId());
-        player.setNickname(user.getNickname());
-
-        player.setTeamId(teamId);
-
-        return player;
-    }
 
     //1+1+1+1+1,
     private Team match1(){
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
-        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=5){
             try {
                 Room room1 = oneRoomQueue.take();
+                Room room2 = oneRoomQueue.take();
+                Room room3 = oneRoomQueue.take();
+                Room room4 = oneRoomQueue.take();
+                Room room5 = oneRoomQueue.take();
                 //初始化队伍
-                Team team = new Team();
-                team.setPlayerList(playerList);
-                team.setAssistNum(0);
-                team.setDeathNum(0);
-                team.setKillNum(0);
-                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
-                //初始化玩家
-                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
-                playerList.addAll(playerList1);
+                Team team = initTeam(room1,room2,room3,room4,room5);
 
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
                 SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
@@ -165,22 +149,11 @@ public class TeamMatchService implements Runnable{
     //5
     private Team match7() {
         BlockingQueue<Room> fiveQueue = SystemManager.getInstance().getFiveRoomQueue();
-        HashSet<Integer> playerList = new HashSet<Integer>();
         if(fiveQueue.size()>=1){
             try {
                 Room room1 = fiveQueue.take();
                 //初始化队伍
-                Team team = new Team();
-                team.setPlayerList(playerList);
-                team.setAssistNum(0);
-                team.setDeathNum(0);
-                team.setKillNum(0);
-                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
-                //初始化玩家
-                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
-                playerList.addAll(playerList1);
-
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                Team team = initTeam(room1);
                 SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
@@ -193,25 +166,12 @@ public class TeamMatchService implements Runnable{
     private Team match6() {
         BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getTwoRoomQueue();
         BlockingQueue<Room> threeRoomQueue = SystemManager.getInstance().getThreeRoomQueue();
-        HashSet<Integer> playerList = new HashSet<Integer>();
         if(twoRoomQueue.size()>=1&&threeRoomQueue.size()>=1){
             try {
                 Room room1 = twoRoomQueue.take();
                 Room room2 = threeRoomQueue.take();
                 //初始化队伍
-                Team team = new Team();
-                team.setPlayerList(playerList);
-                team.setAssistNum(0);
-                team.setDeathNum(0);
-                team.setKillNum(0);
-                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
-                //初始化玩家
-                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
-                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
-                playerList.addAll(playerList1);
-                playerList.addAll(playerList2);
-
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                Team team = initTeam(room1,room2);
                 SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
@@ -225,25 +185,12 @@ public class TeamMatchService implements Runnable{
     private Team match5() {
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> fourRoomQueue = SystemManager.getInstance().getFourRoomQueue();
-        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=1&&fourRoomQueue.size()>=1){
             try {
                 Room room1 = oneRoomQueue.take();
                 Room room2 = fourRoomQueue.take();
                 //初始化队伍
-                Team team = new Team();
-                team.setPlayerList(playerList);
-                team.setAssistNum(0);
-                team.setDeathNum(0);
-                team.setKillNum(0);
-                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
-                //初始化玩家
-                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
-                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
-                playerList.addAll(playerList1);
-                playerList.addAll(playerList2);
-
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                Team team = initTeam(room1,room2);
                 SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
@@ -257,28 +204,14 @@ public class TeamMatchService implements Runnable{
     private Team match4() {
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getTwoRoomQueue();
-        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=1&&twoRoomQueue.size()>=2){
             try {
                 Room room1 = oneRoomQueue.take();
                 Room room2 = twoRoomQueue.take();
                 Room room3 = twoRoomQueue.take();
                 //初始化队伍
-                Team team = new Team();
-                team.setPlayerList(playerList);
-                team.setAssistNum(0);
-                team.setDeathNum(0);
-                team.setKillNum(0);
-                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
-                //初始化玩家
-                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
-                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
-                HashSet<Integer> playerList3 = initPlayer(room3,team.getId());
-                playerList.addAll(playerList1);
-                playerList.addAll(playerList2);
-                playerList.addAll(playerList3);
-
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                Team team = initTeam(room1,room2,room3);
+                //将team保存到内存中
                 SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
@@ -293,28 +226,15 @@ public class TeamMatchService implements Runnable{
 
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> threeRoomQueue = SystemManager.getInstance().getThreeRoomQueue();
-        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=3&&threeRoomQueue.size()>=1){
             try {
                 Room room1 = oneRoomQueue.take();
                 Room room2 = oneRoomQueue.take();
                 Room room3 = threeRoomQueue.take();
                 //初始化队伍
-                Team team = new Team();
-                team.setPlayerList(playerList);
-                team.setAssistNum(0);
-                team.setDeathNum(0);
-                team.setKillNum(0);
-                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
+                Team team = initTeam(room1,room2,room3);
                 //初始化玩家
-                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
-                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
-                HashSet<Integer> playerList3 = initPlayer(room3,team.getId());
-                playerList.addAll(playerList1);
-                playerList.addAll(playerList2);
-                playerList.addAll(playerList3);
 
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
                 SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
@@ -330,31 +250,16 @@ public class TeamMatchService implements Runnable{
     private Team match2() {
         BlockingQueue<Room> oneRoomQueue = SystemManager.getInstance().getOneRoomQueue();
         BlockingQueue<Room> twoRoomQueue = SystemManager.getInstance().getTwoRoomQueue();
-        HashSet<Integer> playerList = new HashSet<Integer>();
         if(oneRoomQueue.size()>=3&&twoRoomQueue.size()>=1){
             try {
                 Room room1 = oneRoomQueue.take();
                 Room room2 = oneRoomQueue.take();
                 Room room3 = oneRoomQueue.take();
                 Room room4 = twoRoomQueue.take();
-                //初始化队伍
-                Team team = new Team();
-                team.setPlayerList(playerList);
-                team.setAssistNum(0);
-                team.setDeathNum(0);
-                team.setKillNum(0);
-                team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
-                //初始化玩家
-                HashSet<Integer> playerList1 = initPlayer(room1,team.getId());
-                HashSet<Integer> playerList2 = initPlayer(room2,team.getId());
-                HashSet<Integer> playerList3 = initPlayer(room3,team.getId());
-                HashSet<Integer> playerList4 = initPlayer(room4,team.getId());
-                playerList.addAll(playerList1);
-                playerList.addAll(playerList2);
-                playerList.addAll(playerList3);
-                playerList.addAll(playerList4);
 
-//                jedisClusterUtil.setObject(Const.TeamPrefix+team.getId(),team);
+                //初始化队伍
+                Team team = initTeam(room1,room2,room3,room4);
+                //初始化玩家
                 SystemManager.getInstance().getTeamConcurrentHashMap().put(team.getId(),team);
                 return team;
             } catch (InterruptedException e) {
@@ -364,25 +269,29 @@ public class TeamMatchService implements Runnable{
         return null;
 
     }
-    //初始化房间里面的所有玩家
-    private HashSet<Integer> initPlayer(Room room1,Integer teamId) {
-        HashSet<Integer> playerList = new HashSet<Integer>();
-        List<User> userList = room1.getUserList();
-        for (User user : userList) {
-            Player player = new Player();
-            player.setId(SystemManager.getInstance().getIdGenertor().generatePlayerId());
-            player.setUserId(user.getId());
-            player.setNickname(user.getNickname());
 
-            player.setTeamId(teamId);
 
-            playerList.add(player.getId());
-            //保存到redis中
-//            jedisClusterUtil.setObject(Const.PlayerPrefix+player.getId(),player);
-            SystemManager.getInstance().getPlayerConcurrentHashMap().put(player.getId(),player);
+    private Team initTeam(Room... rooms){
+        List<User> userList = new ArrayList<User>();
+        List<Room> roomList = new ArrayList<Room>();
+        for (Room room : rooms) {
+            userList.addAll(room.getUserList());
+            roomList.add(room);
         }
-        return playerList;
+
+        Team team = new Team();
+        team.setUserList(userList);
+        team.setRoomList(roomList);
+        team.setAssistNum(0);
+        team.setDeathNum(0);
+        team.setKillNum(0);
+        team.setId(SystemManager.getInstance().getIdGenertor().generateTeamId());
+        for (User user :    userList) {
+            user.setTeamId(team.getId());
+        }
+        return team;
     }
+
     protected void logStackTrace( Exception e ) {
         StringWriter writer = new StringWriter();
         PrintWriter printWriter = new PrintWriter(writer);

@@ -39,37 +39,39 @@ public class UserRegistService extends AbstractTcpService {
             String password=registCommand.getPassword();
             String verifyCode=registCommand.getVerifyCode();
             logger.info("--------接收到------mobile:"+mobile+"------password:"+password);
-            User regist = null;
+            User registUser = null;
             try{
-                regist = userManager.regist(mobile, password,verifyCode);
+                registUser = userManager.regist(mobile, password,verifyCode);
 
             }catch (Exception e){
                 e.printStackTrace();
             }
-            if(regist!=null){
+            if(registUser!=null){
                 //注册成功
                 UserCommand.LoginResponseCommand.Builder builder = UserCommand.LoginResponseCommand.newBuilder();
                 builder.setCode(1);
                 builder.setMsg("注册成功");
                 UserCommand.UserInfoCommand.Builder userBuilder = UserCommand.UserInfoCommand.newBuilder();
-                userBuilder.setGemstone(regist.getGemstone());
-                userBuilder.setLevel(regist.getLevel());
+                userBuilder.setGemstone(registUser.getGemstone());
+                userBuilder.setLevel(registUser.getLevel());
 
-                userBuilder.setGoldCoin(regist.getGoldCoin());
+                userBuilder.setGoldCoin(registUser.getGoldCoin());
                 userBuilder.setMobile(userBuilder.getMobile());
                 userBuilder.setNickname(userBuilder.getNickname());
                 userBuilder.setStatue(userBuilder.getStatue());
 
-                List<Pet> petList = userManager.getPetListByUserId(regist.getId());
+                //查询用户的宠物列表
+                List<Pet> petList = userManager.getPetListByUserId(registUser.getId());
                 for (int i = 0 ;i<petList.size();i++){
                     userBuilder.setPetList(i,petList.get(i).getType());
                 }
-                List<FootPrint> footPrintList = userManager.getFootPrintListByUserId(regist.getId());
+                //查询用户的脚印列表
+                List<FootPrint> footPrintList = userManager.getFootPrintListByUserId(registUser.getId());
                 for (int i = 0 ;i<footPrintList.size();i++){
                     userBuilder.setFootPrintList(i,footPrintList.get(i).getType());
                 }
-
-                List<Skill> skillList = userManager.getSkillListByUserId(regist.getId());
+                //查询用户的技能列表
+                List<Skill> skillList = userManager.getSkillListByUserId(registUser.getId());
                 for (int i = 0 ;i<skillList.size();i++){
                     userBuilder.setSkillList(i,skillList.get(i).getType());
                 }

@@ -31,4 +31,5 @@ public class User extends BaseDomain {
     private Integer gemstone; //宝石
     private Integer goldCoin;  //金币
 
+    private Integer teamId; //队伍id
 }

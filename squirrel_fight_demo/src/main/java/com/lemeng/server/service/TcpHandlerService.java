@@ -2,7 +2,6 @@ package com.lemeng.server.service;
 
 import com.lemeng.common.SystemManager;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
-import com.lemeng.user.service.UserLoginUdpService;
 import io.netty.channel.ChannelHandlerContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

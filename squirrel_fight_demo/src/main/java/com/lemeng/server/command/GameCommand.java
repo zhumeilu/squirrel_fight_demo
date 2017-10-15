@@ -19,13 +19,13 @@ public final class GameCommand {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    boolean hasId();
+    boolean hasUserId();
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    int getId();
+    int getUserId();
 
     /**
      * <code>optional string mobile = 2;</code>
@@ -165,7 +165,7 @@ public final class GameCommand {
       super(builder);
     }
     private UserInfoCommand() {
-      id_ = 0;
+      userId_ = 0;
       mobile_ = "";
       nickname_ = "";
       level_ = 0;
@@ -207,7 +207,7 @@ public final class GameCommand {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              userId_ = input.readInt32();
               break;
             }
             case 18: {
@@ -303,19 +303,19 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private int userId_;
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasUserId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public int getUserId() {
+      return userId_;
     }
 
     public static final int MOBILE_FIELD_NUMBER = 2;
@@ -562,7 +562,7 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
+        output.writeInt32(1, userId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mobile_);
@@ -601,7 +601,7 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+          .computeInt32Size(1, userId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mobile_);
@@ -666,10 +666,10 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.UserInfoCommand other = (com.lemeng.server.command.GameCommand.UserInfoCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasUserId() == other.hasUserId());
+      if (hasUserId()) {
+        result = result && (getUserId()
+            == other.getUserId());
       }
       result = result && (hasMobile() == other.hasMobile());
       if (hasMobile()) {
@@ -718,9 +718,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasUserId()) {
+        hash = (37 * hash) + USERID_FIELD_NUMBER;
+        hash = (53 * hash) + getUserId();
       }
       if (hasMobile()) {
         hash = (37 * hash) + MOBILE_FIELD_NUMBER;
@@ -892,7 +892,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        userId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         mobile_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -939,7 +939,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.userId_ = userId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -1021,8 +1021,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.UserInfoCommand other) {
         if (other == com.lemeng.server.command.GameCommand.UserInfoCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasUserId()) {
+          setUserId(other.getUserId());
         }
         if (other.hasMobile()) {
           bitField0_ |= 0x00000002;
@@ -1104,34 +1104,34 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int userId_ ;
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasUserId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getUserId() {
+        return userId_;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public Builder setId(int value) {
+      public Builder setUserId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearUserId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        userId_ = 0;
         onChanged();
         return this;
       }
@@ -1748,13 +1748,13 @@ public final class GameCommand {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    boolean hasId();
+    boolean hasUserId();
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    int getId();
+    int getUserId();
 
     /**
      * <code>optional string nickname = 2;</code>
@@ -1782,7 +1782,7 @@ public final class GameCommand {
       super(builder);
     }
     private SimpleUserInfoCommand() {
-      id_ = 0;
+      userId_ = 0;
       nickname_ = "";
     }
 
@@ -1816,7 +1816,7 @@ public final class GameCommand {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              userId_ = input.readInt32();
               break;
             }
             case 18: {
@@ -1850,19 +1850,19 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private int userId_;
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasUserId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 userId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public int getUserId() {
+      return userId_;
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 2;
@@ -1920,7 +1920,7 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
+        output.writeInt32(1, userId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickname_);
@@ -1935,7 +1935,7 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+          .computeInt32Size(1, userId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickname_);
@@ -1957,10 +1957,10 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.SimpleUserInfoCommand other = (com.lemeng.server.command.GameCommand.SimpleUserInfoCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasUserId() == other.hasUserId());
+      if (hasUserId()) {
+        result = result && (getUserId()
+            == other.getUserId());
       }
       result = result && (hasNickname() == other.hasNickname());
       if (hasNickname()) {
@@ -1978,9 +1978,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasUserId()) {
+        hash = (37 * hash) + USERID_FIELD_NUMBER;
+        hash = (53 * hash) + getUserId();
       }
       if (hasNickname()) {
         hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
@@ -2115,7 +2115,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        userId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         nickname_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2146,7 +2146,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.userId_ = userId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -2193,8 +2193,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.SimpleUserInfoCommand other) {
         if (other == com.lemeng.server.command.GameCommand.SimpleUserInfoCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasUserId()) {
+          setUserId(other.getUserId());
         }
         if (other.hasNickname()) {
           bitField0_ |= 0x00000002;
@@ -2229,34 +2229,34 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int userId_ ;
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasUserId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getUserId() {
+        return userId_;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public Builder setId(int value) {
+      public Builder setUserId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 userId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearUserId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        userId_ = 0;
         onChanged();
         return this;
       }
@@ -13275,13 +13275,13 @@ public final class GameCommand {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    boolean hasId();
+    boolean hasPlayerId();
     /**
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    int getId();
+    int getPlayerId();
 
     /**
      * <code>optional string nickname = 5;</code>
@@ -13314,7 +13314,7 @@ public final class GameCommand {
       super(builder);
     }
     private QuitGameCommand() {
-      id_ = 0;
+      playerId_ = 0;
       nickname_ = "";
     }
 
@@ -13348,7 +13348,7 @@ public final class GameCommand {
             }
             case 32: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              playerId_ = input.readInt32();
               break;
             }
             case 42: {
@@ -13382,19 +13382,19 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 4;
-    private int id_;
+    public static final int PLAYERID_FIELD_NUMBER = 4;
+    private int playerId_;
     /**
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    public boolean hasId() {
+    public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    public int getId() {
-      return id_;
+    public int getPlayerId() {
+      return playerId_;
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 5;
@@ -13452,7 +13452,7 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(4, id_);
+        output.writeInt32(4, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nickname_);
@@ -13467,7 +13467,7 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, id_);
+          .computeInt32Size(4, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nickname_);
@@ -13489,10 +13489,10 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.QuitGameCommand other = (com.lemeng.server.command.GameCommand.QuitGameCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
       }
       result = result && (hasNickname() == other.hasNickname());
       if (hasNickname()) {
@@ -13510,9 +13510,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
       }
       if (hasNickname()) {
         hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
@@ -13652,7 +13652,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         nickname_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -13683,7 +13683,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.playerId_ = playerId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -13730,8 +13730,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.QuitGameCommand other) {
         if (other == com.lemeng.server.command.GameCommand.QuitGameCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
         }
         if (other.hasNickname()) {
           bitField0_ |= 0x00000002;
@@ -13766,34 +13766,34 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int playerId_ ;
       /**
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public boolean hasId() {
+      public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public int getId() {
-        return id_;
+      public int getPlayerId() {
+        return playerId_;
       }
       /**
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public Builder setId(int value) {
+      public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        playerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public Builder clearId() {
+      public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        playerId_ = 0;
         onChanged();
         return this;
       }
@@ -14187,7 +14187,7 @@ public final class GameCommand {
   }
   /**
    * <pre>
-   *player基本信息    每帧同步
+   *player全部信息，当某些事件触发时，推送
    *cmd: playerInfo
    * </pre>
    *
@@ -15271,7 +15271,7 @@ public final class GameCommand {
     }
     /**
      * <pre>
-     *player基本信息    每帧同步
+     *player全部信息，当某些事件触发时，推送
      *cmd: playerInfo
      * </pre>
      *
@@ -16532,1581 +16532,18 @@ public final class GameCommand {
 
   }
 
-  public interface SimplePlayerInfoCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.SimplePlayerInfoCommand)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    int getId();
-
-    /**
-     * <code>optional float positionX = 6;</code>
-     */
-    boolean hasPositionX();
-    /**
-     * <code>optional float positionX = 6;</code>
-     */
-    float getPositionX();
-
-    /**
-     * <code>optional float positionY = 7;</code>
-     */
-    boolean hasPositionY();
-    /**
-     * <code>optional float positionY = 7;</code>
-     */
-    float getPositionY();
-
-    /**
-     * <code>optional float positionZ = 8;</code>
-     */
-    boolean hasPositionZ();
-    /**
-     * <code>optional float positionZ = 8;</code>
-     */
-    float getPositionZ();
-
-    /**
-     * <code>optional float rotX = 9;</code>
-     */
-    boolean hasRotX();
-    /**
-     * <code>optional float rotX = 9;</code>
-     */
-    float getRotX();
-
-    /**
-     * <code>optional float rotY = 10;</code>
-     */
-    boolean hasRotY();
-    /**
-     * <code>optional float rotY = 10;</code>
-     */
-    float getRotY();
-
-    /**
-     * <code>optional float rotZ = 11;</code>
-     */
-    boolean hasRotZ();
-    /**
-     * <code>optional float rotZ = 11;</code>
-     */
-    float getRotZ();
-
-    /**
-     * <code>optional float gunRot = 12;</code>
-     */
-    boolean hasGunRot();
-    /**
-     * <code>optional float gunRot = 12;</code>
-     */
-    float getGunRot();
-
-    /**
-     * <code>optional float gunRoll = 13;</code>
-     */
-    boolean hasGunRoll();
-    /**
-     * <code>optional float gunRoll = 13;</code>
-     */
-    float getGunRoll();
-
-    /**
-     * <pre>
-     *动作名称
-     * </pre>
-     *
-     * <code>optional string actionName = 15;</code>
-     */
-    boolean hasActionName();
-    /**
-     * <pre>
-     *动作名称
-     * </pre>
-     *
-     * <code>optional string actionName = 15;</code>
-     */
-    java.lang.String getActionName();
-    /**
-     * <pre>
-     *动作名称
-     * </pre>
-     *
-     * <code>optional string actionName = 15;</code>
-     */
-    com.google.protobuf.ByteString
-        getActionNameBytes();
-
-    /**
-     * <pre>
-     *所属游戏id
-     * </pre>
-     *
-     * <code>optional int32 gameId = 16;</code>
-     */
-    boolean hasGameId();
-    /**
-     * <pre>
-     *所属游戏id
-     * </pre>
-     *
-     * <code>optional int32 gameId = 16;</code>
-     */
-    int getGameId();
-  }
-  /**
-   * <pre>
-   *简单的玩家信息
-   * </pre>
-   *
-   * Protobuf type {@code message.SimplePlayerInfoCommand}
-   */
-  public  static final class SimplePlayerInfoCommand extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.SimplePlayerInfoCommand)
-      SimplePlayerInfoCommandOrBuilder {
-    // Use SimplePlayerInfoCommand.newBuilder() to construct.
-    private SimplePlayerInfoCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SimplePlayerInfoCommand() {
-      id_ = 0;
-      positionX_ = 0F;
-      positionY_ = 0F;
-      positionZ_ = 0F;
-      rotX_ = 0F;
-      rotY_ = 0F;
-      rotZ_ = 0F;
-      gunRot_ = 0F;
-      gunRoll_ = 0F;
-      actionName_ = "";
-      gameId_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SimplePlayerInfoCommand(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
-              break;
-            }
-            case 53: {
-              bitField0_ |= 0x00000002;
-              positionX_ = input.readFloat();
-              break;
-            }
-            case 61: {
-              bitField0_ |= 0x00000004;
-              positionY_ = input.readFloat();
-              break;
-            }
-            case 69: {
-              bitField0_ |= 0x00000008;
-              positionZ_ = input.readFloat();
-              break;
-            }
-            case 77: {
-              bitField0_ |= 0x00000010;
-              rotX_ = input.readFloat();
-              break;
-            }
-            case 85: {
-              bitField0_ |= 0x00000020;
-              rotY_ = input.readFloat();
-              break;
-            }
-            case 93: {
-              bitField0_ |= 0x00000040;
-              rotZ_ = input.readFloat();
-              break;
-            }
-            case 101: {
-              bitField0_ |= 0x00000080;
-              gunRot_ = input.readFloat();
-              break;
-            }
-            case 109: {
-              bitField0_ |= 0x00000100;
-              gunRoll_ = input.readFloat();
-              break;
-            }
-            case 122: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000200;
-              actionName_ = bs;
-              break;
-            }
-            case 128: {
-              bitField0_ |= 0x00000400;
-              gameId_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_SimplePlayerInfoCommand_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_SimplePlayerInfoCommand_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand.class, com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 2;
-    private int id_;
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    public int getId() {
-      return id_;
-    }
-
-    public static final int POSITIONX_FIELD_NUMBER = 6;
-    private float positionX_;
-    /**
-     * <code>optional float positionX = 6;</code>
-     */
-    public boolean hasPositionX() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional float positionX = 6;</code>
-     */
-    public float getPositionX() {
-      return positionX_;
-    }
-
-    public static final int POSITIONY_FIELD_NUMBER = 7;
-    private float positionY_;
-    /**
-     * <code>optional float positionY = 7;</code>
-     */
-    public boolean hasPositionY() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional float positionY = 7;</code>
-     */
-    public float getPositionY() {
-      return positionY_;
-    }
-
-    public static final int POSITIONZ_FIELD_NUMBER = 8;
-    private float positionZ_;
-    /**
-     * <code>optional float positionZ = 8;</code>
-     */
-    public boolean hasPositionZ() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional float positionZ = 8;</code>
-     */
-    public float getPositionZ() {
-      return positionZ_;
-    }
-
-    public static final int ROTX_FIELD_NUMBER = 9;
-    private float rotX_;
-    /**
-     * <code>optional float rotX = 9;</code>
-     */
-    public boolean hasRotX() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional float rotX = 9;</code>
-     */
-    public float getRotX() {
-      return rotX_;
-    }
-
-    public static final int ROTY_FIELD_NUMBER = 10;
-    private float rotY_;
-    /**
-     * <code>optional float rotY = 10;</code>
-     */
-    public boolean hasRotY() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional float rotY = 10;</code>
-     */
-    public float getRotY() {
-      return rotY_;
-    }
-
-    public static final int ROTZ_FIELD_NUMBER = 11;
-    private float rotZ_;
-    /**
-     * <code>optional float rotZ = 11;</code>
-     */
-    public boolean hasRotZ() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional float rotZ = 11;</code>
-     */
-    public float getRotZ() {
-      return rotZ_;
-    }
-
-    public static final int GUNROT_FIELD_NUMBER = 12;
-    private float gunRot_;
-    /**
-     * <code>optional float gunRot = 12;</code>
-     */
-    public boolean hasGunRot() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    /**
-     * <code>optional float gunRot = 12;</code>
-     */
-    public float getGunRot() {
-      return gunRot_;
-    }
-
-    public static final int GUNROLL_FIELD_NUMBER = 13;
-    private float gunRoll_;
-    /**
-     * <code>optional float gunRoll = 13;</code>
-     */
-    public boolean hasGunRoll() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    /**
-     * <code>optional float gunRoll = 13;</code>
-     */
-    public float getGunRoll() {
-      return gunRoll_;
-    }
-
-    public static final int ACTIONNAME_FIELD_NUMBER = 15;
-    private volatile java.lang.Object actionName_;
-    /**
-     * <pre>
-     *动作名称
-     * </pre>
-     *
-     * <code>optional string actionName = 15;</code>
-     */
-    public boolean hasActionName() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <pre>
-     *动作名称
-     * </pre>
-     *
-     * <code>optional string actionName = 15;</code>
-     */
-    public java.lang.String getActionName() {
-      java.lang.Object ref = actionName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          actionName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *动作名称
-     * </pre>
-     *
-     * <code>optional string actionName = 15;</code>
-     */
-    public com.google.protobuf.ByteString
-        getActionNameBytes() {
-      java.lang.Object ref = actionName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        actionName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int GAMEID_FIELD_NUMBER = 16;
-    private int gameId_;
-    /**
-     * <pre>
-     *所属游戏id
-     * </pre>
-     *
-     * <code>optional int32 gameId = 16;</code>
-     */
-    public boolean hasGameId() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
-    }
-    /**
-     * <pre>
-     *所属游戏id
-     * </pre>
-     *
-     * <code>optional int32 gameId = 16;</code>
-     */
-    public int getGameId() {
-      return gameId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(2, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeFloat(6, positionX_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeFloat(7, positionY_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeFloat(8, positionZ_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeFloat(9, rotX_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeFloat(10, rotY_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeFloat(11, rotZ_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeFloat(12, gunRot_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeFloat(13, gunRoll_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, actionName_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeInt32(16, gameId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(6, positionX_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, positionY_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(8, positionZ_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(9, rotX_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(10, rotY_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(11, rotZ_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(12, gunRot_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(13, gunRoll_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, actionName_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(16, gameId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand)) {
-        return super.equals(obj);
-      }
-      com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand other = (com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand) obj;
-
-      boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
-      }
-      result = result && (hasPositionX() == other.hasPositionX());
-      if (hasPositionX()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getPositionX())
-            == java.lang.Float.floatToIntBits(
-                other.getPositionX()));
-      }
-      result = result && (hasPositionY() == other.hasPositionY());
-      if (hasPositionY()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getPositionY())
-            == java.lang.Float.floatToIntBits(
-                other.getPositionY()));
-      }
-      result = result && (hasPositionZ() == other.hasPositionZ());
-      if (hasPositionZ()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getPositionZ())
-            == java.lang.Float.floatToIntBits(
-                other.getPositionZ()));
-      }
-      result = result && (hasRotX() == other.hasRotX());
-      if (hasRotX()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getRotX())
-            == java.lang.Float.floatToIntBits(
-                other.getRotX()));
-      }
-      result = result && (hasRotY() == other.hasRotY());
-      if (hasRotY()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getRotY())
-            == java.lang.Float.floatToIntBits(
-                other.getRotY()));
-      }
-      result = result && (hasRotZ() == other.hasRotZ());
-      if (hasRotZ()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getRotZ())
-            == java.lang.Float.floatToIntBits(
-                other.getRotZ()));
-      }
-      result = result && (hasGunRot() == other.hasGunRot());
-      if (hasGunRot()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getGunRot())
-            == java.lang.Float.floatToIntBits(
-                other.getGunRot()));
-      }
-      result = result && (hasGunRoll() == other.hasGunRoll());
-      if (hasGunRoll()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getGunRoll())
-            == java.lang.Float.floatToIntBits(
-                other.getGunRoll()));
-      }
-      result = result && (hasActionName() == other.hasActionName());
-      if (hasActionName()) {
-        result = result && getActionName()
-            .equals(other.getActionName());
-      }
-      result = result && (hasGameId() == other.hasGameId());
-      if (hasGameId()) {
-        result = result && (getGameId()
-            == other.getGameId());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
-      }
-      if (hasPositionX()) {
-        hash = (37 * hash) + POSITIONX_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPositionX());
-      }
-      if (hasPositionY()) {
-        hash = (37 * hash) + POSITIONY_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPositionY());
-      }
-      if (hasPositionZ()) {
-        hash = (37 * hash) + POSITIONZ_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPositionZ());
-      }
-      if (hasRotX()) {
-        hash = (37 * hash) + ROTX_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getRotX());
-      }
-      if (hasRotY()) {
-        hash = (37 * hash) + ROTY_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getRotY());
-      }
-      if (hasRotZ()) {
-        hash = (37 * hash) + ROTZ_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getRotZ());
-      }
-      if (hasGunRot()) {
-        hash = (37 * hash) + GUNROT_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getGunRot());
-      }
-      if (hasGunRoll()) {
-        hash = (37 * hash) + GUNROLL_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getGunRoll());
-      }
-      if (hasActionName()) {
-        hash = (37 * hash) + ACTIONNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getActionName().hashCode();
-      }
-      if (hasGameId()) {
-        hash = (37 * hash) + GAMEID_FIELD_NUMBER;
-        hash = (53 * hash) + getGameId();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *简单的玩家信息
-     * </pre>
-     *
-     * Protobuf type {@code message.SimplePlayerInfoCommand}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.SimplePlayerInfoCommand)
-        com.lemeng.server.command.GameCommand.SimplePlayerInfoCommandOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_SimplePlayerInfoCommand_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_SimplePlayerInfoCommand_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand.class, com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand.Builder.class);
-      }
-
-      // Construct using com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        id_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        positionX_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        positionY_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        positionZ_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        rotX_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        rotY_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        rotZ_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        gunRot_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        gunRoll_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000100);
-        actionName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000200);
-        gameId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000400);
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_SimplePlayerInfoCommand_descriptor;
-      }
-
-      public com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand getDefaultInstanceForType() {
-        return com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand.getDefaultInstance();
-      }
-
-      public com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand build() {
-        com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand buildPartial() {
-        com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand result = new com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.positionX_ = positionX_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.positionY_ = positionY_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.positionZ_ = positionZ_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.rotX_ = rotX_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.rotY_ = rotY_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.rotZ_ = rotZ_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.gunRot_ = gunRot_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        result.gunRoll_ = gunRoll_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        result.actionName_ = actionName_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
-        }
-        result.gameId_ = gameId_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand) {
-          return mergeFrom((com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand other) {
-        if (other == com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasPositionX()) {
-          setPositionX(other.getPositionX());
-        }
-        if (other.hasPositionY()) {
-          setPositionY(other.getPositionY());
-        }
-        if (other.hasPositionZ()) {
-          setPositionZ(other.getPositionZ());
-        }
-        if (other.hasRotX()) {
-          setRotX(other.getRotX());
-        }
-        if (other.hasRotY()) {
-          setRotY(other.getRotY());
-        }
-        if (other.hasRotZ()) {
-          setRotZ(other.getRotZ());
-        }
-        if (other.hasGunRot()) {
-          setGunRot(other.getGunRot());
-        }
-        if (other.hasGunRoll()) {
-          setGunRoll(other.getGunRoll());
-        }
-        if (other.hasActionName()) {
-          bitField0_ |= 0x00000200;
-          actionName_ = other.actionName_;
-          onChanged();
-        }
-        if (other.hasGameId()) {
-          setGameId(other.getGameId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int id_ ;
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public Builder setId(int value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private float positionX_ ;
-      /**
-       * <code>optional float positionX = 6;</code>
-       */
-      public boolean hasPositionX() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional float positionX = 6;</code>
-       */
-      public float getPositionX() {
-        return positionX_;
-      }
-      /**
-       * <code>optional float positionX = 6;</code>
-       */
-      public Builder setPositionX(float value) {
-        bitField0_ |= 0x00000002;
-        positionX_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float positionX = 6;</code>
-       */
-      public Builder clearPositionX() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        positionX_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float positionY_ ;
-      /**
-       * <code>optional float positionY = 7;</code>
-       */
-      public boolean hasPositionY() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional float positionY = 7;</code>
-       */
-      public float getPositionY() {
-        return positionY_;
-      }
-      /**
-       * <code>optional float positionY = 7;</code>
-       */
-      public Builder setPositionY(float value) {
-        bitField0_ |= 0x00000004;
-        positionY_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float positionY = 7;</code>
-       */
-      public Builder clearPositionY() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        positionY_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float positionZ_ ;
-      /**
-       * <code>optional float positionZ = 8;</code>
-       */
-      public boolean hasPositionZ() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional float positionZ = 8;</code>
-       */
-      public float getPositionZ() {
-        return positionZ_;
-      }
-      /**
-       * <code>optional float positionZ = 8;</code>
-       */
-      public Builder setPositionZ(float value) {
-        bitField0_ |= 0x00000008;
-        positionZ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float positionZ = 8;</code>
-       */
-      public Builder clearPositionZ() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        positionZ_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float rotX_ ;
-      /**
-       * <code>optional float rotX = 9;</code>
-       */
-      public boolean hasRotX() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional float rotX = 9;</code>
-       */
-      public float getRotX() {
-        return rotX_;
-      }
-      /**
-       * <code>optional float rotX = 9;</code>
-       */
-      public Builder setRotX(float value) {
-        bitField0_ |= 0x00000010;
-        rotX_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float rotX = 9;</code>
-       */
-      public Builder clearRotX() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        rotX_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float rotY_ ;
-      /**
-       * <code>optional float rotY = 10;</code>
-       */
-      public boolean hasRotY() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional float rotY = 10;</code>
-       */
-      public float getRotY() {
-        return rotY_;
-      }
-      /**
-       * <code>optional float rotY = 10;</code>
-       */
-      public Builder setRotY(float value) {
-        bitField0_ |= 0x00000020;
-        rotY_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float rotY = 10;</code>
-       */
-      public Builder clearRotY() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        rotY_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float rotZ_ ;
-      /**
-       * <code>optional float rotZ = 11;</code>
-       */
-      public boolean hasRotZ() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>optional float rotZ = 11;</code>
-       */
-      public float getRotZ() {
-        return rotZ_;
-      }
-      /**
-       * <code>optional float rotZ = 11;</code>
-       */
-      public Builder setRotZ(float value) {
-        bitField0_ |= 0x00000040;
-        rotZ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float rotZ = 11;</code>
-       */
-      public Builder clearRotZ() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        rotZ_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float gunRot_ ;
-      /**
-       * <code>optional float gunRot = 12;</code>
-       */
-      public boolean hasGunRot() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      /**
-       * <code>optional float gunRot = 12;</code>
-       */
-      public float getGunRot() {
-        return gunRot_;
-      }
-      /**
-       * <code>optional float gunRot = 12;</code>
-       */
-      public Builder setGunRot(float value) {
-        bitField0_ |= 0x00000080;
-        gunRot_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float gunRot = 12;</code>
-       */
-      public Builder clearGunRot() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        gunRot_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float gunRoll_ ;
-      /**
-       * <code>optional float gunRoll = 13;</code>
-       */
-      public boolean hasGunRoll() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      /**
-       * <code>optional float gunRoll = 13;</code>
-       */
-      public float getGunRoll() {
-        return gunRoll_;
-      }
-      /**
-       * <code>optional float gunRoll = 13;</code>
-       */
-      public Builder setGunRoll(float value) {
-        bitField0_ |= 0x00000100;
-        gunRoll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float gunRoll = 13;</code>
-       */
-      public Builder clearGunRoll() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        gunRoll_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object actionName_ = "";
-      /**
-       * <pre>
-       *动作名称
-       * </pre>
-       *
-       * <code>optional string actionName = 15;</code>
-       */
-      public boolean hasActionName() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      /**
-       * <pre>
-       *动作名称
-       * </pre>
-       *
-       * <code>optional string actionName = 15;</code>
-       */
-      public java.lang.String getActionName() {
-        java.lang.Object ref = actionName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            actionName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *动作名称
-       * </pre>
-       *
-       * <code>optional string actionName = 15;</code>
-       */
-      public com.google.protobuf.ByteString
-          getActionNameBytes() {
-        java.lang.Object ref = actionName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          actionName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *动作名称
-       * </pre>
-       *
-       * <code>optional string actionName = 15;</code>
-       */
-      public Builder setActionName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        actionName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *动作名称
-       * </pre>
-       *
-       * <code>optional string actionName = 15;</code>
-       */
-      public Builder clearActionName() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        actionName_ = getDefaultInstance().getActionName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *动作名称
-       * </pre>
-       *
-       * <code>optional string actionName = 15;</code>
-       */
-      public Builder setActionNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        actionName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int gameId_ ;
-      /**
-       * <pre>
-       *所属游戏id
-       * </pre>
-       *
-       * <code>optional int32 gameId = 16;</code>
-       */
-      public boolean hasGameId() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
-      }
-      /**
-       * <pre>
-       *所属游戏id
-       * </pre>
-       *
-       * <code>optional int32 gameId = 16;</code>
-       */
-      public int getGameId() {
-        return gameId_;
-      }
-      /**
-       * <pre>
-       *所属游戏id
-       * </pre>
-       *
-       * <code>optional int32 gameId = 16;</code>
-       */
-      public Builder setGameId(int value) {
-        bitField0_ |= 0x00000400;
-        gameId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *所属游戏id
-       * </pre>
-       *
-       * <code>optional int32 gameId = 16;</code>
-       */
-      public Builder clearGameId() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        gameId_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:message.SimplePlayerInfoCommand)
-    }
-
-    // @@protoc_insertion_point(class_scope:message.SimplePlayerInfoCommand)
-    private static final com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand();
-    }
-
-    public static com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<SimplePlayerInfoCommand>
-        PARSER = new com.google.protobuf.AbstractParser<SimplePlayerInfoCommand>() {
-      public SimplePlayerInfoCommand parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SimplePlayerInfoCommand(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SimplePlayerInfoCommand> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SimplePlayerInfoCommand> getParserForType() {
-      return PARSER;
-    }
-
-    public com.lemeng.server.command.GameCommand.SimplePlayerInfoCommand getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface LevelUpRequestCommandOrBuilder extends
       // @@protoc_insertion_point(interface_extends:message.LevelUpRequestCommand)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getSkillNameListList();
+    boolean hasPlayerId();
     /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    int getSkillNameListCount();
-    /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
-     */
-    java.lang.String getSkillNameList(int index);
-    /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getSkillNameListBytes(int index);
+    int getPlayerId();
   }
   /**
    * <pre>
@@ -18124,7 +16561,7 @@ public final class GameCommand {
       super(builder);
     }
     private LevelUpRequestCommand() {
-      skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      playerId_ = 0;
     }
 
     @java.lang.Override
@@ -18155,13 +16592,9 @@ public final class GameCommand {
               }
               break;
             }
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                skillNameList_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              skillNameList_.add(bs);
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
               break;
             }
           }
@@ -18172,9 +16605,6 @@ public final class GameCommand {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          skillNameList_ = skillNameList_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -18191,49 +16621,20 @@ public final class GameCommand {
               com.lemeng.server.command.GameCommand.LevelUpRequestCommand.class, com.lemeng.server.command.GameCommand.LevelUpRequestCommand.Builder.class);
     }
 
-    public static final int SKILLNAMELIST_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList skillNameList_;
+    private int bitField0_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
     /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getSkillNameListList() {
-      return skillNameList_;
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    public int getSkillNameListCount() {
-      return skillNameList_.size();
-    }
-    /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
-     */
-    public java.lang.String getSkillNameList(int index) {
-      return skillNameList_.get(index);
-    }
-    /**
-     * <pre>
-     *随机返回三个技能
-     * </pre>
-     *
-     * <code>repeated string skillNameList = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSkillNameListBytes(int index) {
-      return skillNameList_.getByteString(index);
+    public int getPlayerId() {
+      return playerId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -18248,8 +16649,8 @@ public final class GameCommand {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < skillNameList_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, skillNameList_.getRaw(i));
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
       }
       unknownFields.writeTo(output);
     }
@@ -18259,13 +16660,9 @@ public final class GameCommand {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < skillNameList_.size(); i++) {
-          dataSize += computeStringSizeNoTag(skillNameList_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getSkillNameListList().size();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -18284,8 +16681,11 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.LevelUpRequestCommand other = (com.lemeng.server.command.GameCommand.LevelUpRequestCommand) obj;
 
       boolean result = true;
-      result = result && getSkillNameListList()
-          .equals(other.getSkillNameListList());
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -18297,9 +16697,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getSkillNameListCount() > 0) {
-        hash = (37 * hash) + SKILLNAMELIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSkillNameListList().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -18434,7 +16834,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -18459,11 +16859,12 @@ public final class GameCommand {
       public com.lemeng.server.command.GameCommand.LevelUpRequestCommand buildPartial() {
         com.lemeng.server.command.GameCommand.LevelUpRequestCommand result = new com.lemeng.server.command.GameCommand.LevelUpRequestCommand(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          skillNameList_ = skillNameList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        result.skillNameList_ = skillNameList_;
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -18505,15 +16906,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.LevelUpRequestCommand other) {
         if (other == com.lemeng.server.command.GameCommand.LevelUpRequestCommand.getDefaultInstance()) return this;
-        if (!other.skillNameList_.isEmpty()) {
-          if (skillNameList_.isEmpty()) {
-            skillNameList_ = other.skillNameList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureSkillNameListIsMutable();
-            skillNameList_.addAll(other.skillNameList_);
-          }
-          onChanged();
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18543,131 +16937,34 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureSkillNameListIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          skillNameList_ = new com.google.protobuf.LazyStringArrayList(skillNameList_);
-          bitField0_ |= 0x00000001;
-         }
+      private int playerId_ ;
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getSkillNameListList() {
-        return skillNameList_.getUnmodifiableView();
+      public int getPlayerId() {
+        return playerId_;
       }
       /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public int getSkillNameListCount() {
-        return skillNameList_.size();
-      }
-      /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
-       */
-      public java.lang.String getSkillNameList(int index) {
-        return skillNameList_.get(index);
-      }
-      /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSkillNameListBytes(int index) {
-        return skillNameList_.getByteString(index);
-      }
-      /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
-       */
-      public Builder setSkillNameList(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSkillNameListIsMutable();
-        skillNameList_.set(index, value);
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public Builder addSkillNameList(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSkillNameListIsMutable();
-        skillNameList_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
-       */
-      public Builder addAllSkillNameList(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureSkillNameListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, skillNameList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
-       */
-      public Builder clearSkillNameList() {
-        skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *随机返回三个技能
-       * </pre>
-       *
-       * <code>repeated string skillNameList = 1;</code>
-       */
-      public Builder addSkillNameListBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSkillNameListIsMutable();
-        skillNameList_.add(value);
+        playerId_ = 0;
         onChanged();
         return this;
       }
@@ -18725,11 +17022,20 @@ public final class GameCommand {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+
+    /**
      * <pre>
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     java.util.List<java.lang.String>
         getSkillNameListList();
@@ -18738,7 +17044,7 @@ public final class GameCommand {
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     int getSkillNameListCount();
     /**
@@ -18746,7 +17052,7 @@ public final class GameCommand {
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     java.lang.String getSkillNameList(int index);
     /**
@@ -18754,7 +17060,7 @@ public final class GameCommand {
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     com.google.protobuf.ByteString
         getSkillNameListBytes(int index);
@@ -18775,6 +17081,7 @@ public final class GameCommand {
       super(builder);
     }
     private LevelUpResponseCommand() {
+      playerId_ = 0;
       skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -18806,11 +17113,16 @@ public final class GameCommand {
               }
               break;
             }
-            case 10: {
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+            case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 skillNameList_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               skillNameList_.add(bs);
               break;
@@ -18823,7 +17135,7 @@ public final class GameCommand {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           skillNameList_ = skillNameList_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -18842,14 +17154,30 @@ public final class GameCommand {
               com.lemeng.server.command.GameCommand.LevelUpResponseCommand.class, com.lemeng.server.command.GameCommand.LevelUpResponseCommand.Builder.class);
     }
 
-    public static final int SKILLNAMELIST_FIELD_NUMBER = 1;
+    private int bitField0_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    public static final int SKILLNAMELIST_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList skillNameList_;
     /**
      * <pre>
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getSkillNameListList() {
@@ -18860,7 +17188,7 @@ public final class GameCommand {
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     public int getSkillNameListCount() {
       return skillNameList_.size();
@@ -18870,7 +17198,7 @@ public final class GameCommand {
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     public java.lang.String getSkillNameList(int index) {
       return skillNameList_.get(index);
@@ -18880,7 +17208,7 @@ public final class GameCommand {
      *随机返回三个技能
      * </pre>
      *
-     * <code>repeated string skillNameList = 1;</code>
+     * <code>repeated string skillNameList = 2;</code>
      */
     public com.google.protobuf.ByteString
         getSkillNameListBytes(int index) {
@@ -18899,8 +17227,11 @@ public final class GameCommand {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
       for (int i = 0; i < skillNameList_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, skillNameList_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, skillNameList_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -18910,6 +17241,10 @@ public final class GameCommand {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < skillNameList_.size(); i++) {
@@ -18935,6 +17270,11 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.LevelUpResponseCommand other = (com.lemeng.server.command.GameCommand.LevelUpResponseCommand) obj;
 
       boolean result = true;
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
       result = result && getSkillNameListList()
           .equals(other.getSkillNameListList());
       result = result && unknownFields.equals(other.unknownFields);
@@ -18948,6 +17288,10 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
+      }
       if (getSkillNameListCount() > 0) {
         hash = (37 * hash) + SKILLNAMELIST_FIELD_NUMBER;
         hash = (53 * hash) + getSkillNameListList().hashCode();
@@ -19085,8 +17429,10 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -19110,11 +17456,17 @@ public final class GameCommand {
       public com.lemeng.server.command.GameCommand.LevelUpResponseCommand buildPartial() {
         com.lemeng.server.command.GameCommand.LevelUpResponseCommand result = new com.lemeng.server.command.GameCommand.LevelUpResponseCommand(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           skillNameList_ = skillNameList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.skillNameList_ = skillNameList_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -19156,10 +17508,13 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.LevelUpResponseCommand other) {
         if (other == com.lemeng.server.command.GameCommand.LevelUpResponseCommand.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
         if (!other.skillNameList_.isEmpty()) {
           if (skillNameList_.isEmpty()) {
             skillNameList_ = other.skillNameList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSkillNameListIsMutable();
             skillNameList_.addAll(other.skillNameList_);
@@ -19194,11 +17549,43 @@ public final class GameCommand {
       }
       private int bitField0_;
 
+      private int playerId_ ;
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureSkillNameListIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           skillNameList_ = new com.google.protobuf.LazyStringArrayList(skillNameList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
@@ -19206,7 +17593,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getSkillNameListList() {
@@ -19217,7 +17604,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public int getSkillNameListCount() {
         return skillNameList_.size();
@@ -19227,7 +17614,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public java.lang.String getSkillNameList(int index) {
         return skillNameList_.get(index);
@@ -19237,7 +17624,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public com.google.protobuf.ByteString
           getSkillNameListBytes(int index) {
@@ -19248,7 +17635,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public Builder setSkillNameList(
           int index, java.lang.String value) {
@@ -19265,7 +17652,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public Builder addSkillNameList(
           java.lang.String value) {
@@ -19282,7 +17669,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public Builder addAllSkillNameList(
           java.lang.Iterable<java.lang.String> values) {
@@ -19297,11 +17684,11 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public Builder clearSkillNameList() {
         skillNameList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -19310,7 +17697,7 @@ public final class GameCommand {
        *随机返回三个技能
        * </pre>
        *
-       * <code>repeated string skillNameList = 1;</code>
+       * <code>repeated string skillNameList = 2;</code>
        */
       public Builder addSkillNameListBytes(
           com.google.protobuf.ByteString value) {
@@ -19371,16 +17758,25 @@ public final class GameCommand {
 
   }
 
-  public interface ChooseSkillOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.ChooseSkill)
+  public interface ChooseSkillCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.ChooseSkillCommand)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    int getPlayerId();
 
     /**
      * <pre>
      *升级后选择一个技能
      * </pre>
      *
-     * <code>optional string skillName = 1;</code>
+     * <code>optional string skillName = 2;</code>
      */
     boolean hasSkillName();
     /**
@@ -19388,7 +17784,7 @@ public final class GameCommand {
      *升级后选择一个技能
      * </pre>
      *
-     * <code>optional string skillName = 1;</code>
+     * <code>optional string skillName = 2;</code>
      */
     java.lang.String getSkillName();
     /**
@@ -19396,23 +17792,24 @@ public final class GameCommand {
      *升级后选择一个技能
      * </pre>
      *
-     * <code>optional string skillName = 1;</code>
+     * <code>optional string skillName = 2;</code>
      */
     com.google.protobuf.ByteString
         getSkillNameBytes();
   }
   /**
-   * Protobuf type {@code message.ChooseSkill}
+   * Protobuf type {@code message.ChooseSkillCommand}
    */
-  public  static final class ChooseSkill extends
+  public  static final class ChooseSkillCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.ChooseSkill)
-      ChooseSkillOrBuilder {
-    // Use ChooseSkill.newBuilder() to construct.
-    private ChooseSkill(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.ChooseSkillCommand)
+      ChooseSkillCommandOrBuilder {
+    // Use ChooseSkillCommand.newBuilder() to construct.
+    private ChooseSkillCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ChooseSkill() {
+    private ChooseSkillCommand() {
+      playerId_ = 0;
       skillName_ = "";
     }
 
@@ -19421,7 +17818,7 @@ public final class GameCommand {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChooseSkill(
+    private ChooseSkillCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -19444,9 +17841,14 @@ public final class GameCommand {
               }
               break;
             }
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 8: {
               bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
               skillName_ = bs;
               break;
             }
@@ -19464,35 +17866,50 @@ public final class GameCommand {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkill_descriptor;
+      return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkillCommand_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkill_fieldAccessorTable
+      return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkillCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.lemeng.server.command.GameCommand.ChooseSkill.class, com.lemeng.server.command.GameCommand.ChooseSkill.Builder.class);
+              com.lemeng.server.command.GameCommand.ChooseSkillCommand.class, com.lemeng.server.command.GameCommand.ChooseSkillCommand.Builder.class);
     }
 
     private int bitField0_;
-    public static final int SKILLNAME_FIELD_NUMBER = 1;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    public static final int SKILLNAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object skillName_;
     /**
      * <pre>
      *升级后选择一个技能
      * </pre>
      *
-     * <code>optional string skillName = 1;</code>
+     * <code>optional string skillName = 2;</code>
      */
     public boolean hasSkillName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
      *升级后选择一个技能
      * </pre>
      *
-     * <code>optional string skillName = 1;</code>
+     * <code>optional string skillName = 2;</code>
      */
     public java.lang.String getSkillName() {
       java.lang.Object ref = skillName_;
@@ -19513,7 +17930,7 @@ public final class GameCommand {
      *升级后选择一个技能
      * </pre>
      *
-     * <code>optional string skillName = 1;</code>
+     * <code>optional string skillName = 2;</code>
      */
     public com.google.protobuf.ByteString
         getSkillNameBytes() {
@@ -19542,7 +17959,10 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, skillName_);
+        output.writeInt32(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, skillName_);
       }
       unknownFields.writeTo(output);
     }
@@ -19553,7 +17973,11 @@ public final class GameCommand {
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, skillName_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, skillName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -19566,12 +17990,17 @@ public final class GameCommand {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.lemeng.server.command.GameCommand.ChooseSkill)) {
+      if (!(obj instanceof com.lemeng.server.command.GameCommand.ChooseSkillCommand)) {
         return super.equals(obj);
       }
-      com.lemeng.server.command.GameCommand.ChooseSkill other = (com.lemeng.server.command.GameCommand.ChooseSkill) obj;
+      com.lemeng.server.command.GameCommand.ChooseSkillCommand other = (com.lemeng.server.command.GameCommand.ChooseSkillCommand) obj;
 
       boolean result = true;
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
       result = result && (hasSkillName() == other.hasSkillName());
       if (hasSkillName()) {
         result = result && getSkillName()
@@ -19588,6 +18017,10 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
+      }
       if (hasSkillName()) {
         hash = (37 * hash) + SKILLNAME_FIELD_NUMBER;
         hash = (53 * hash) + getSkillName().hashCode();
@@ -19597,69 +18030,69 @@ public final class GameCommand {
       return hash;
     }
 
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(byte[] data)
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseDelimitedFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.lemeng.server.command.GameCommand.ChooseSkill parseFrom(
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19671,7 +18104,7 @@ public final class GameCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.lemeng.server.command.GameCommand.ChooseSkill prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.GameCommand.ChooseSkillCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -19686,25 +18119,25 @@ public final class GameCommand {
       return builder;
     }
     /**
-     * Protobuf type {@code message.ChooseSkill}
+     * Protobuf type {@code message.ChooseSkillCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.ChooseSkill)
-        com.lemeng.server.command.GameCommand.ChooseSkillOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.ChooseSkillCommand)
+        com.lemeng.server.command.GameCommand.ChooseSkillCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkill_descriptor;
+        return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkillCommand_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkill_fieldAccessorTable
+        return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkillCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.lemeng.server.command.GameCommand.ChooseSkill.class, com.lemeng.server.command.GameCommand.ChooseSkill.Builder.class);
+                com.lemeng.server.command.GameCommand.ChooseSkillCommand.class, com.lemeng.server.command.GameCommand.ChooseSkillCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.GameCommand.ChooseSkill.newBuilder()
+      // Construct using com.lemeng.server.command.GameCommand.ChooseSkillCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -19721,34 +18154,40 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        skillName_ = "";
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        skillName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkill_descriptor;
+        return com.lemeng.server.command.GameCommand.internal_static_message_ChooseSkillCommand_descriptor;
       }
 
-      public com.lemeng.server.command.GameCommand.ChooseSkill getDefaultInstanceForType() {
-        return com.lemeng.server.command.GameCommand.ChooseSkill.getDefaultInstance();
+      public com.lemeng.server.command.GameCommand.ChooseSkillCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.GameCommand.ChooseSkillCommand.getDefaultInstance();
       }
 
-      public com.lemeng.server.command.GameCommand.ChooseSkill build() {
-        com.lemeng.server.command.GameCommand.ChooseSkill result = buildPartial();
+      public com.lemeng.server.command.GameCommand.ChooseSkillCommand build() {
+        com.lemeng.server.command.GameCommand.ChooseSkillCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.lemeng.server.command.GameCommand.ChooseSkill buildPartial() {
-        com.lemeng.server.command.GameCommand.ChooseSkill result = new com.lemeng.server.command.GameCommand.ChooseSkill(this);
+      public com.lemeng.server.command.GameCommand.ChooseSkillCommand buildPartial() {
+        com.lemeng.server.command.GameCommand.ChooseSkillCommand result = new com.lemeng.server.command.GameCommand.ChooseSkillCommand(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
         }
         result.skillName_ = skillName_;
         result.bitField0_ = to_bitField0_;
@@ -19783,18 +18222,21 @@ public final class GameCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.lemeng.server.command.GameCommand.ChooseSkill) {
-          return mergeFrom((com.lemeng.server.command.GameCommand.ChooseSkill)other);
+        if (other instanceof com.lemeng.server.command.GameCommand.ChooseSkillCommand) {
+          return mergeFrom((com.lemeng.server.command.GameCommand.ChooseSkillCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.lemeng.server.command.GameCommand.ChooseSkill other) {
-        if (other == com.lemeng.server.command.GameCommand.ChooseSkill.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.GameCommand.ChooseSkillCommand other) {
+        if (other == com.lemeng.server.command.GameCommand.ChooseSkillCommand.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
         if (other.hasSkillName()) {
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
           skillName_ = other.skillName_;
           onChanged();
         }
@@ -19811,11 +18253,11 @@ public final class GameCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.lemeng.server.command.GameCommand.ChooseSkill parsedMessage = null;
+        com.lemeng.server.command.GameCommand.ChooseSkillCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.lemeng.server.command.GameCommand.ChooseSkill) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.GameCommand.ChooseSkillCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -19826,23 +18268,55 @@ public final class GameCommand {
       }
       private int bitField0_;
 
+      private int playerId_ ;
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object skillName_ = "";
       /**
        * <pre>
        *升级后选择一个技能
        * </pre>
        *
-       * <code>optional string skillName = 1;</code>
+       * <code>optional string skillName = 2;</code>
        */
       public boolean hasSkillName() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
        *升级后选择一个技能
        * </pre>
        *
-       * <code>optional string skillName = 1;</code>
+       * <code>optional string skillName = 2;</code>
        */
       public java.lang.String getSkillName() {
         java.lang.Object ref = skillName_;
@@ -19863,7 +18337,7 @@ public final class GameCommand {
        *升级后选择一个技能
        * </pre>
        *
-       * <code>optional string skillName = 1;</code>
+       * <code>optional string skillName = 2;</code>
        */
       public com.google.protobuf.ByteString
           getSkillNameBytes() {
@@ -19883,14 +18357,14 @@ public final class GameCommand {
        *升级后选择一个技能
        * </pre>
        *
-       * <code>optional string skillName = 1;</code>
+       * <code>optional string skillName = 2;</code>
        */
       public Builder setSkillName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         skillName_ = value;
         onChanged();
         return this;
@@ -19900,10 +18374,10 @@ public final class GameCommand {
        *升级后选择一个技能
        * </pre>
        *
-       * <code>optional string skillName = 1;</code>
+       * <code>optional string skillName = 2;</code>
        */
       public Builder clearSkillName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         skillName_ = getDefaultInstance().getSkillName();
         onChanged();
         return this;
@@ -19913,14 +18387,14 @@ public final class GameCommand {
        *升级后选择一个技能
        * </pre>
        *
-       * <code>optional string skillName = 1;</code>
+       * <code>optional string skillName = 2;</code>
        */
       public Builder setSkillNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
         skillName_ = value;
         onChanged();
         return this;
@@ -19936,959 +18410,39 @@ public final class GameCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.ChooseSkill)
+      // @@protoc_insertion_point(builder_scope:message.ChooseSkillCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.ChooseSkill)
-    private static final com.lemeng.server.command.GameCommand.ChooseSkill DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.ChooseSkillCommand)
+    private static final com.lemeng.server.command.GameCommand.ChooseSkillCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.ChooseSkill();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.ChooseSkillCommand();
     }
 
-    public static com.lemeng.server.command.GameCommand.ChooseSkill getDefaultInstance() {
+    public static com.lemeng.server.command.GameCommand.ChooseSkillCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ChooseSkill>
-        PARSER = new com.google.protobuf.AbstractParser<ChooseSkill>() {
-      public ChooseSkill parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ChooseSkillCommand>
+        PARSER = new com.google.protobuf.AbstractParser<ChooseSkillCommand>() {
+      public ChooseSkillCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChooseSkill(input, extensionRegistry);
+          return new ChooseSkillCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ChooseSkill> parser() {
+    public static com.google.protobuf.Parser<ChooseSkillCommand> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ChooseSkill> getParserForType() {
+    public com.google.protobuf.Parser<ChooseSkillCommand> getParserForType() {
       return PARSER;
     }
 
-    public com.lemeng.server.command.GameCommand.ChooseSkill getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ActionCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.ActionCommand)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional int32 userId = 1;</code>
-     */
-    boolean hasUserId();
-    /**
-     * <code>optional int32 userId = 1;</code>
-     */
-    int getUserId();
-
-    /**
-     * <code>optional string actionName = 2;</code>
-     */
-    boolean hasActionName();
-    /**
-     * <code>optional string actionName = 2;</code>
-     */
-    java.lang.String getActionName();
-    /**
-     * <code>optional string actionName = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getActionNameBytes();
-
-    /**
-     * <code>optional float positionX = 3;</code>
-     */
-    boolean hasPositionX();
-    /**
-     * <code>optional float positionX = 3;</code>
-     */
-    float getPositionX();
-
-    /**
-     * <code>optional float positionY = 4;</code>
-     */
-    boolean hasPositionY();
-    /**
-     * <code>optional float positionY = 4;</code>
-     */
-    float getPositionY();
-
-    /**
-     * <code>optional float positionZ = 5;</code>
-     */
-    boolean hasPositionZ();
-    /**
-     * <code>optional float positionZ = 5;</code>
-     */
-    float getPositionZ();
-  }
-  /**
-   * <pre>
-   *动作命令
-   * </pre>
-   *
-   * Protobuf type {@code message.ActionCommand}
-   */
-  public  static final class ActionCommand extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.ActionCommand)
-      ActionCommandOrBuilder {
-    // Use ActionCommand.newBuilder() to construct.
-    private ActionCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ActionCommand() {
-      userId_ = 0;
-      actionName_ = "";
-      positionX_ = 0F;
-      positionY_ = 0F;
-      positionZ_ = 0F;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ActionCommand(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              userId_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              actionName_ = bs;
-              break;
-            }
-            case 29: {
-              bitField0_ |= 0x00000004;
-              positionX_ = input.readFloat();
-              break;
-            }
-            case 37: {
-              bitField0_ |= 0x00000008;
-              positionY_ = input.readFloat();
-              break;
-            }
-            case 45: {
-              bitField0_ |= 0x00000010;
-              positionZ_ = input.readFloat();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_ActionCommand_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_ActionCommand_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.lemeng.server.command.GameCommand.ActionCommand.class, com.lemeng.server.command.GameCommand.ActionCommand.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int USERID_FIELD_NUMBER = 1;
-    private int userId_;
-    /**
-     * <code>optional int32 userId = 1;</code>
-     */
-    public boolean hasUserId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional int32 userId = 1;</code>
-     */
-    public int getUserId() {
-      return userId_;
-    }
-
-    public static final int ACTIONNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object actionName_;
-    /**
-     * <code>optional string actionName = 2;</code>
-     */
-    public boolean hasActionName() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string actionName = 2;</code>
-     */
-    public java.lang.String getActionName() {
-      java.lang.Object ref = actionName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          actionName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string actionName = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getActionNameBytes() {
-      java.lang.Object ref = actionName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        actionName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int POSITIONX_FIELD_NUMBER = 3;
-    private float positionX_;
-    /**
-     * <code>optional float positionX = 3;</code>
-     */
-    public boolean hasPositionX() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional float positionX = 3;</code>
-     */
-    public float getPositionX() {
-      return positionX_;
-    }
-
-    public static final int POSITIONY_FIELD_NUMBER = 4;
-    private float positionY_;
-    /**
-     * <code>optional float positionY = 4;</code>
-     */
-    public boolean hasPositionY() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional float positionY = 4;</code>
-     */
-    public float getPositionY() {
-      return positionY_;
-    }
-
-    public static final int POSITIONZ_FIELD_NUMBER = 5;
-    private float positionZ_;
-    /**
-     * <code>optional float positionZ = 5;</code>
-     */
-    public boolean hasPositionZ() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional float positionZ = 5;</code>
-     */
-    public float getPositionZ() {
-      return positionZ_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, userId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, actionName_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeFloat(3, positionX_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeFloat(4, positionY_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeFloat(5, positionZ_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, userId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, actionName_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, positionX_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, positionY_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, positionZ_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.lemeng.server.command.GameCommand.ActionCommand)) {
-        return super.equals(obj);
-      }
-      com.lemeng.server.command.GameCommand.ActionCommand other = (com.lemeng.server.command.GameCommand.ActionCommand) obj;
-
-      boolean result = true;
-      result = result && (hasUserId() == other.hasUserId());
-      if (hasUserId()) {
-        result = result && (getUserId()
-            == other.getUserId());
-      }
-      result = result && (hasActionName() == other.hasActionName());
-      if (hasActionName()) {
-        result = result && getActionName()
-            .equals(other.getActionName());
-      }
-      result = result && (hasPositionX() == other.hasPositionX());
-      if (hasPositionX()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getPositionX())
-            == java.lang.Float.floatToIntBits(
-                other.getPositionX()));
-      }
-      result = result && (hasPositionY() == other.hasPositionY());
-      if (hasPositionY()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getPositionY())
-            == java.lang.Float.floatToIntBits(
-                other.getPositionY()));
-      }
-      result = result && (hasPositionZ() == other.hasPositionZ());
-      if (hasPositionZ()) {
-        result = result && (
-            java.lang.Float.floatToIntBits(getPositionZ())
-            == java.lang.Float.floatToIntBits(
-                other.getPositionZ()));
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUserId()) {
-        hash = (37 * hash) + USERID_FIELD_NUMBER;
-        hash = (53 * hash) + getUserId();
-      }
-      if (hasActionName()) {
-        hash = (37 * hash) + ACTIONNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getActionName().hashCode();
-      }
-      if (hasPositionX()) {
-        hash = (37 * hash) + POSITIONX_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPositionX());
-      }
-      if (hasPositionY()) {
-        hash = (37 * hash) + POSITIONY_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPositionY());
-      }
-      if (hasPositionZ()) {
-        hash = (37 * hash) + POSITIONZ_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPositionZ());
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.lemeng.server.command.GameCommand.ActionCommand parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.lemeng.server.command.GameCommand.ActionCommand prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *动作命令
-     * </pre>
-     *
-     * Protobuf type {@code message.ActionCommand}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.ActionCommand)
-        com.lemeng.server.command.GameCommand.ActionCommandOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_ActionCommand_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_ActionCommand_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.lemeng.server.command.GameCommand.ActionCommand.class, com.lemeng.server.command.GameCommand.ActionCommand.Builder.class);
-      }
-
-      // Construct using com.lemeng.server.command.GameCommand.ActionCommand.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        userId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        actionName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        positionX_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        positionY_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        positionZ_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_ActionCommand_descriptor;
-      }
-
-      public com.lemeng.server.command.GameCommand.ActionCommand getDefaultInstanceForType() {
-        return com.lemeng.server.command.GameCommand.ActionCommand.getDefaultInstance();
-      }
-
-      public com.lemeng.server.command.GameCommand.ActionCommand build() {
-        com.lemeng.server.command.GameCommand.ActionCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.lemeng.server.command.GameCommand.ActionCommand buildPartial() {
-        com.lemeng.server.command.GameCommand.ActionCommand result = new com.lemeng.server.command.GameCommand.ActionCommand(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.userId_ = userId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.actionName_ = actionName_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.positionX_ = positionX_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.positionY_ = positionY_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.positionZ_ = positionZ_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.lemeng.server.command.GameCommand.ActionCommand) {
-          return mergeFrom((com.lemeng.server.command.GameCommand.ActionCommand)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.lemeng.server.command.GameCommand.ActionCommand other) {
-        if (other == com.lemeng.server.command.GameCommand.ActionCommand.getDefaultInstance()) return this;
-        if (other.hasUserId()) {
-          setUserId(other.getUserId());
-        }
-        if (other.hasActionName()) {
-          bitField0_ |= 0x00000002;
-          actionName_ = other.actionName_;
-          onChanged();
-        }
-        if (other.hasPositionX()) {
-          setPositionX(other.getPositionX());
-        }
-        if (other.hasPositionY()) {
-          setPositionY(other.getPositionY());
-        }
-        if (other.hasPositionZ()) {
-          setPositionZ(other.getPositionZ());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.lemeng.server.command.GameCommand.ActionCommand parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.lemeng.server.command.GameCommand.ActionCommand) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int userId_ ;
-      /**
-       * <code>optional int32 userId = 1;</code>
-       */
-      public boolean hasUserId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional int32 userId = 1;</code>
-       */
-      public int getUserId() {
-        return userId_;
-      }
-      /**
-       * <code>optional int32 userId = 1;</code>
-       */
-      public Builder setUserId(int value) {
-        bitField0_ |= 0x00000001;
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 userId = 1;</code>
-       */
-      public Builder clearUserId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        userId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object actionName_ = "";
-      /**
-       * <code>optional string actionName = 2;</code>
-       */
-      public boolean hasActionName() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional string actionName = 2;</code>
-       */
-      public java.lang.String getActionName() {
-        java.lang.Object ref = actionName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            actionName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string actionName = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getActionNameBytes() {
-        java.lang.Object ref = actionName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          actionName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string actionName = 2;</code>
-       */
-      public Builder setActionName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        actionName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string actionName = 2;</code>
-       */
-      public Builder clearActionName() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        actionName_ = getDefaultInstance().getActionName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string actionName = 2;</code>
-       */
-      public Builder setActionNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        actionName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private float positionX_ ;
-      /**
-       * <code>optional float positionX = 3;</code>
-       */
-      public boolean hasPositionX() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional float positionX = 3;</code>
-       */
-      public float getPositionX() {
-        return positionX_;
-      }
-      /**
-       * <code>optional float positionX = 3;</code>
-       */
-      public Builder setPositionX(float value) {
-        bitField0_ |= 0x00000004;
-        positionX_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float positionX = 3;</code>
-       */
-      public Builder clearPositionX() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        positionX_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float positionY_ ;
-      /**
-       * <code>optional float positionY = 4;</code>
-       */
-      public boolean hasPositionY() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional float positionY = 4;</code>
-       */
-      public float getPositionY() {
-        return positionY_;
-      }
-      /**
-       * <code>optional float positionY = 4;</code>
-       */
-      public Builder setPositionY(float value) {
-        bitField0_ |= 0x00000008;
-        positionY_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float positionY = 4;</code>
-       */
-      public Builder clearPositionY() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        positionY_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float positionZ_ ;
-      /**
-       * <code>optional float positionZ = 5;</code>
-       */
-      public boolean hasPositionZ() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional float positionZ = 5;</code>
-       */
-      public float getPositionZ() {
-        return positionZ_;
-      }
-      /**
-       * <code>optional float positionZ = 5;</code>
-       */
-      public Builder setPositionZ(float value) {
-        bitField0_ |= 0x00000010;
-        positionZ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float positionZ = 5;</code>
-       */
-      public Builder clearPositionZ() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        positionZ_ = 0F;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:message.ActionCommand)
-    }
-
-    // @@protoc_insertion_point(class_scope:message.ActionCommand)
-    private static final com.lemeng.server.command.GameCommand.ActionCommand DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.ActionCommand();
-    }
-
-    public static com.lemeng.server.command.GameCommand.ActionCommand getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionCommand>
-        PARSER = new com.google.protobuf.AbstractParser<ActionCommand>() {
-      public ActionCommand parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionCommand(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ActionCommand> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ActionCommand> getParserForType() {
-      return PARSER;
-    }
-
-    public com.lemeng.server.command.GameCommand.ActionCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.GameCommand.ChooseSkillCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -20899,20 +18453,45 @@ public final class GameCommand {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 id = 1;</code>
+     * <pre>
+     *玩家id
+     * </pre>
+     *
+     * <code>optional int32 playerId = 1;</code>
      */
-    boolean hasId();
+    boolean hasPlayerId();
     /**
-     * <code>optional int32 id = 1;</code>
+     * <pre>
+     *玩家id
+     * </pre>
+     *
+     * <code>optional int32 playerId = 1;</code>
      */
-    int getId();
+    int getPlayerId();
+
+    /**
+     * <pre>
+     *坚果id
+     * </pre>
+     *
+     * <code>optional int32 nutId = 2;</code>
+     */
+    boolean hasNutId();
+    /**
+     * <pre>
+     *坚果id
+     * </pre>
+     *
+     * <code>optional int32 nutId = 2;</code>
+     */
+    int getNutId();
 
     /**
      * <pre>
      *坚果类型（大坚果，小坚果）
      * </pre>
      *
-     * <code>optional string name = 2;</code>
+     * <code>optional string name = 3;</code>
      */
     boolean hasName();
     /**
@@ -20920,7 +18499,7 @@ public final class GameCommand {
      *坚果类型（大坚果，小坚果）
      * </pre>
      *
-     * <code>optional string name = 2;</code>
+     * <code>optional string name = 3;</code>
      */
     java.lang.String getName();
     /**
@@ -20928,7 +18507,7 @@ public final class GameCommand {
      *坚果类型（大坚果，小坚果）
      * </pre>
      *
-     * <code>optional string name = 2;</code>
+     * <code>optional string name = 3;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -20950,7 +18529,8 @@ public final class GameCommand {
       super(builder);
     }
     private EatCommand() {
-      id_ = 0;
+      playerId_ = 0;
+      nutId_ = 0;
       name_ = "";
     }
 
@@ -20984,12 +18564,17 @@ public final class GameCommand {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              playerId_ = input.readInt32();
               break;
             }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 16: {
               bitField0_ |= 0x00000002;
+              nutId_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
               name_ = bs;
               break;
             }
@@ -21018,39 +18603,70 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
     /**
-     * <code>optional int32 id = 1;</code>
+     * <pre>
+     *玩家id
+     * </pre>
+     *
+     * <code>optional int32 playerId = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional int32 id = 1;</code>
+     * <pre>
+     *玩家id
+     * </pre>
+     *
+     * <code>optional int32 playerId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public int getPlayerId() {
+      return playerId_;
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
+    public static final int NUTID_FIELD_NUMBER = 2;
+    private int nutId_;
+    /**
+     * <pre>
+     *坚果id
+     * </pre>
+     *
+     * <code>optional int32 nutId = 2;</code>
+     */
+    public boolean hasNutId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     *坚果id
+     * </pre>
+     *
+     * <code>optional int32 nutId = 2;</code>
+     */
+    public int getNutId() {
+      return nutId_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object name_;
     /**
      * <pre>
      *坚果类型（大坚果，小坚果）
      * </pre>
      *
-     * <code>optional string name = 2;</code>
+     * <code>optional string name = 3;</code>
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
      *坚果类型（大坚果，小坚果）
      * </pre>
      *
-     * <code>optional string name = 2;</code>
+     * <code>optional string name = 3;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -21071,7 +18687,7 @@ public final class GameCommand {
      *坚果类型（大坚果，小坚果）
      * </pre>
      *
-     * <code>optional string name = 2;</code>
+     * <code>optional string name = 3;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -21100,10 +18716,13 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
+        output.writeInt32(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        output.writeInt32(2, nutId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       unknownFields.writeTo(output);
     }
@@ -21115,10 +18734,14 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+          .computeInt32Size(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, nutId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -21137,10 +18760,15 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.EatCommand other = (com.lemeng.server.command.GameCommand.EatCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
+      result = result && (hasNutId() == other.hasNutId());
+      if (hasNutId()) {
+        result = result && (getNutId()
+            == other.getNutId());
       }
       result = result && (hasName() == other.hasName());
       if (hasName()) {
@@ -21158,9 +18786,13 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
+      }
+      if (hasNutId()) {
+        hash = (37 * hash) + NUTID_FIELD_NUMBER;
+        hash = (53 * hash) + getNutId();
       }
       if (hasName()) {
         hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -21300,10 +18932,12 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        name_ = "";
+        nutId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -21331,9 +18965,13 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.playerId_ = playerId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
+        }
+        result.nutId_ = nutId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
         result.name_ = name_;
         result.bitField0_ = to_bitField0_;
@@ -21378,11 +19016,14 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.EatCommand other) {
         if (other == com.lemeng.server.command.GameCommand.EatCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        if (other.hasNutId()) {
+          setNutId(other.getNutId());
         }
         if (other.hasName()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           name_ = other.name_;
           onChanged();
         }
@@ -21414,34 +19055,98 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int playerId_ ;
       /**
-       * <code>optional int32 id = 1;</code>
+       * <pre>
+       *玩家id
+       * </pre>
+       *
+       * <code>optional int32 playerId = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <pre>
+       *玩家id
+       * </pre>
+       *
+       * <code>optional int32 playerId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getPlayerId() {
+        return playerId_;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <pre>
+       *玩家id
+       * </pre>
+       *
+       * <code>optional int32 playerId = 1;</code>
        */
-      public Builder setId(int value) {
+      public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        playerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <pre>
+       *玩家id
+       * </pre>
+       *
+       * <code>optional int32 playerId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nutId_ ;
+      /**
+       * <pre>
+       *坚果id
+       * </pre>
+       *
+       * <code>optional int32 nutId = 2;</code>
+       */
+      public boolean hasNutId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       *坚果id
+       * </pre>
+       *
+       * <code>optional int32 nutId = 2;</code>
+       */
+      public int getNutId() {
+        return nutId_;
+      }
+      /**
+       * <pre>
+       *坚果id
+       * </pre>
+       *
+       * <code>optional int32 nutId = 2;</code>
+       */
+      public Builder setNutId(int value) {
+        bitField0_ |= 0x00000002;
+        nutId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *坚果id
+       * </pre>
+       *
+       * <code>optional int32 nutId = 2;</code>
+       */
+      public Builder clearNutId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nutId_ = 0;
         onChanged();
         return this;
       }
@@ -21452,17 +19157,17 @@ public final class GameCommand {
        *坚果类型（大坚果，小坚果）
        * </pre>
        *
-       * <code>optional string name = 2;</code>
+       * <code>optional string name = 3;</code>
        */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
        *坚果类型（大坚果，小坚果）
        * </pre>
        *
-       * <code>optional string name = 2;</code>
+       * <code>optional string name = 3;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -21483,7 +19188,7 @@ public final class GameCommand {
        *坚果类型（大坚果，小坚果）
        * </pre>
        *
-       * <code>optional string name = 2;</code>
+       * <code>optional string name = 3;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -21503,14 +19208,14 @@ public final class GameCommand {
        *坚果类型（大坚果，小坚果）
        * </pre>
        *
-       * <code>optional string name = 2;</code>
+       * <code>optional string name = 3;</code>
        */
       public Builder setName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         name_ = value;
         onChanged();
         return this;
@@ -21520,10 +19225,10 @@ public final class GameCommand {
        *坚果类型（大坚果，小坚果）
        * </pre>
        *
-       * <code>optional string name = 2;</code>
+       * <code>optional string name = 3;</code>
        */
       public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -21533,14 +19238,14 @@ public final class GameCommand {
        *坚果类型（大坚果，小坚果）
        * </pre>
        *
-       * <code>optional string name = 2;</code>
+       * <code>optional string name = 3;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         name_ = value;
         onChanged();
         return this;
@@ -21599,13 +19304,13 @@ public final class GameCommand {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 boxId = 1;</code>
      */
-    boolean hasId();
+    boolean hasBoxId();
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 boxId = 1;</code>
      */
-    int getId();
+    int getBoxId();
 
     /**
      * <code>optional float positionX = 2;</code>
@@ -21695,7 +19400,7 @@ public final class GameCommand {
       super(builder);
     }
     private BoxCommand() {
-      id_ = 0;
+      boxId_ = 0;
       positionX_ = 0F;
       positionY_ = 0F;
       positionZ_ = 0F;
@@ -21735,7 +19440,7 @@ public final class GameCommand {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              boxId_ = input.readInt32();
               break;
             }
             case 21: {
@@ -21798,19 +19503,19 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int BOXID_FIELD_NUMBER = 1;
+    private int boxId_;
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 boxId = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasBoxId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 boxId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public int getBoxId() {
+      return boxId_;
     }
 
     public static final int POSITIONX_FIELD_NUMBER = 2;
@@ -21939,7 +19644,7 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
+        output.writeInt32(1, boxId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, positionX_);
@@ -21972,7 +19677,7 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+          .computeInt32Size(1, boxId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -22019,10 +19724,10 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.BoxCommand other = (com.lemeng.server.command.GameCommand.BoxCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasBoxId() == other.hasBoxId());
+      if (hasBoxId()) {
+        result = result && (getBoxId()
+            == other.getBoxId());
       }
       result = result && (hasPositionX() == other.hasPositionX());
       if (hasPositionX()) {
@@ -22082,9 +19787,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasBoxId()) {
+        hash = (37 * hash) + BOXID_FIELD_NUMBER;
+        hash = (53 * hash) + getBoxId();
       }
       if (hasPositionX()) {
         hash = (37 * hash) + POSITIONX_FIELD_NUMBER;
@@ -22254,7 +19959,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        boxId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         positionX_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -22297,7 +20002,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.boxId_ = boxId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -22368,8 +20073,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.BoxCommand other) {
         if (other == com.lemeng.server.command.GameCommand.BoxCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasBoxId()) {
+          setBoxId(other.getBoxId());
         }
         if (other.hasPositionX()) {
           setPositionX(other.getPositionX());
@@ -22420,34 +20125,34 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int boxId_ ;
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 boxId = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasBoxId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 boxId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getBoxId() {
+        return boxId_;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 boxId = 1;</code>
        */
-      public Builder setId(int value) {
+      public Builder setBoxId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        boxId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 boxId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearBoxId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        boxId_ = 0;
         onChanged();
         return this;
       }
@@ -22783,17 +20488,17 @@ public final class GameCommand {
      *自己id
      * </pre>
      *
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    boolean hasId();
+    boolean hasPlayerId();
     /**
      * <pre>
      *自己id
      * </pre>
      *
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    int getId();
+    int getPlayerId();
 
     /**
      * <pre>
@@ -22831,7 +20536,7 @@ public final class GameCommand {
     private HitCommand() {
       enemyId_ = 0;
       damage_ = 0;
-      id_ = 0;
+      playerId_ = 0;
       boxId_ = 0;
     }
 
@@ -22875,7 +20580,7 @@ public final class GameCommand {
             }
             case 32: {
               bitField0_ |= 0x00000004;
-              id_ = input.readInt32();
+              playerId_ = input.readInt32();
               break;
             }
             case 40: {
@@ -22954,16 +20659,16 @@ public final class GameCommand {
       return damage_;
     }
 
-    public static final int ID_FIELD_NUMBER = 4;
-    private int id_;
+    public static final int PLAYERID_FIELD_NUMBER = 4;
+    private int playerId_;
     /**
      * <pre>
      *自己id
      * </pre>
      *
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    public boolean hasId() {
+    public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
@@ -22971,10 +20676,10 @@ public final class GameCommand {
      *自己id
      * </pre>
      *
-     * <code>optional int32 id = 4;</code>
+     * <code>optional int32 playerId = 4;</code>
      */
-    public int getId() {
-      return id_;
+    public int getPlayerId() {
+      return playerId_;
     }
 
     public static final int BOXID_FIELD_NUMBER = 5;
@@ -23019,7 +20724,7 @@ public final class GameCommand {
         output.writeInt32(3, damage_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(4, id_);
+        output.writeInt32(4, playerId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt32(5, boxId_);
@@ -23042,7 +20747,7 @@ public final class GameCommand {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, id_);
+          .computeInt32Size(4, playerId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
@@ -23075,10 +20780,10 @@ public final class GameCommand {
         result = result && (getDamage()
             == other.getDamage());
       }
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
       }
       result = result && (hasBoxId() == other.hasBoxId());
       if (hasBoxId()) {
@@ -23104,9 +20809,9 @@ public final class GameCommand {
         hash = (37 * hash) + DAMAGE_FIELD_NUMBER;
         hash = (53 * hash) + getDamage();
       }
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
       }
       if (hasBoxId()) {
         hash = (37 * hash) + BOXID_FIELD_NUMBER;
@@ -23250,7 +20955,7 @@ public final class GameCommand {
         bitField0_ = (bitField0_ & ~0x00000001);
         damage_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        id_ = 0;
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
         boxId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -23289,7 +20994,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.id_ = id_;
+        result.playerId_ = playerId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
@@ -23342,8 +21047,8 @@ public final class GameCommand {
         if (other.hasDamage()) {
           setDamage(other.getDamage());
         }
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
         }
         if (other.hasBoxId()) {
           setBoxId(other.getBoxId());
@@ -23472,15 +21177,15 @@ public final class GameCommand {
         return this;
       }
 
-      private int id_ ;
+      private int playerId_ ;
       /**
        * <pre>
        *自己id
        * </pre>
        *
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public boolean hasId() {
+      public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
@@ -23488,21 +21193,21 @@ public final class GameCommand {
        *自己id
        * </pre>
        *
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public int getId() {
-        return id_;
+      public int getPlayerId() {
+        return playerId_;
       }
       /**
        * <pre>
        *自己id
        * </pre>
        *
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public Builder setId(int value) {
+      public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000004;
-        id_ = value;
+        playerId_ = value;
         onChanged();
         return this;
       }
@@ -23511,11 +21216,11 @@ public final class GameCommand {
        *自己id
        * </pre>
        *
-       * <code>optional int32 id = 4;</code>
+       * <code>optional int32 playerId = 4;</code>
        */
-      public Builder clearId() {
+      public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        id_ = 0;
+        playerId_ = 0;
         onChanged();
         return this;
       }
@@ -23625,17 +21330,17 @@ public final class GameCommand {
      *击杀者id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    boolean hasId();
+    boolean hasPlayerId();
     /**
      * <pre>
      *击杀者id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    int getId();
+    int getPlayerId();
 
     /**
      * <pre>
@@ -23671,7 +21376,7 @@ public final class GameCommand {
       super(builder);
     }
     private KillCommand() {
-      id_ = 0;
+      playerId_ = 0;
       deadId_ = 0;
     }
 
@@ -23705,7 +21410,7 @@ public final class GameCommand {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              playerId_ = input.readInt32();
               break;
             }
             case 16: {
@@ -23738,16 +21443,16 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
     /**
      * <pre>
      *击杀者id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
@@ -23755,10 +21460,10 @@ public final class GameCommand {
      *击杀者id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public int getPlayerId() {
+      return playerId_;
     }
 
     public static final int DEADID_FIELD_NUMBER = 2;
@@ -23797,7 +21502,7 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
+        output.writeInt32(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, deadId_);
@@ -23812,7 +21517,7 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+          .computeInt32Size(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -23835,10 +21540,10 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.KillCommand other = (com.lemeng.server.command.GameCommand.KillCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
       }
       result = result && (hasDeadId() == other.hasDeadId());
       if (hasDeadId()) {
@@ -23856,9 +21561,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
       }
       if (hasDeadId()) {
         hash = (37 * hash) + DEADID_FIELD_NUMBER;
@@ -23998,7 +21703,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         deadId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -24029,7 +21734,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.playerId_ = playerId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -24076,8 +21781,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.KillCommand other) {
         if (other == com.lemeng.server.command.GameCommand.KillCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
         }
         if (other.hasDeadId()) {
           setDeadId(other.getDeadId());
@@ -24110,15 +21815,15 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int playerId_ ;
       /**
        * <pre>
        *击杀者id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
@@ -24126,21 +21831,21 @@ public final class GameCommand {
        *击杀者id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getPlayerId() {
+        return playerId_;
       }
       /**
        * <pre>
        *击杀者id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public Builder setId(int value) {
+      public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        playerId_ = value;
         onChanged();
         return this;
       }
@@ -24149,11 +21854,11 @@ public final class GameCommand {
        *击杀者id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        playerId_ = 0;
         onChanged();
         return this;
       }
@@ -24263,17 +21968,17 @@ public final class GameCommand {
      *助攻id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    boolean hasId();
+    boolean hasPlayerId();
     /**
      * <pre>
      *助攻id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    int getId();
+    int getPlayerId();
 
     /**
      * <pre>
@@ -24308,7 +22013,7 @@ public final class GameCommand {
       super(builder);
     }
     private AssistCommand() {
-      id_ = 0;
+      playerId_ = 0;
       deadId_ = 0;
     }
 
@@ -24342,7 +22047,7 @@ public final class GameCommand {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              playerId_ = input.readInt32();
               break;
             }
             case 16: {
@@ -24375,16 +22080,16 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
     /**
      * <pre>
      *助攻id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
@@ -24392,10 +22097,10 @@ public final class GameCommand {
      *助攻id
      * </pre>
      *
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 playerId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public int getPlayerId() {
+      return playerId_;
     }
 
     public static final int DEADID_FIELD_NUMBER = 2;
@@ -24434,7 +22139,7 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
+        output.writeInt32(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, deadId_);
@@ -24449,7 +22154,7 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+          .computeInt32Size(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -24472,10 +22177,10 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.AssistCommand other = (com.lemeng.server.command.GameCommand.AssistCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
       }
       result = result && (hasDeadId() == other.hasDeadId());
       if (hasDeadId()) {
@@ -24493,9 +22198,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
       }
       if (hasDeadId()) {
         hash = (37 * hash) + DEADID_FIELD_NUMBER;
@@ -24634,7 +22339,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        playerId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         deadId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -24665,7 +22370,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.playerId_ = playerId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -24712,8 +22417,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.AssistCommand other) {
         if (other == com.lemeng.server.command.GameCommand.AssistCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
         }
         if (other.hasDeadId()) {
           setDeadId(other.getDeadId());
@@ -24746,15 +22451,15 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int playerId_ ;
       /**
        * <pre>
        *助攻id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
@@ -24762,21 +22467,21 @@ public final class GameCommand {
        *助攻id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getPlayerId() {
+        return playerId_;
       }
       /**
        * <pre>
        *助攻id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public Builder setId(int value) {
+      public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        playerId_ = value;
         onChanged();
         return this;
       }
@@ -24785,11 +22490,11 @@ public final class GameCommand {
        *助攻id
        * </pre>
        *
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 playerId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        playerId_ = 0;
         onChanged();
         return this;
       }
@@ -24895,13 +22600,13 @@ public final class GameCommand {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 nutId = 1;</code>
      */
-    boolean hasId();
+    boolean hasNutId();
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 nutId = 1;</code>
      */
-    int getId();
+    int getNutId();
 
     /**
      * <code>optional float positionX = 2;</code>
@@ -25016,7 +22721,7 @@ public final class GameCommand {
       super(builder);
     }
     private NutCommand() {
-      id_ = 0;
+      nutId_ = 0;
       positionX_ = 0F;
       positionY_ = 0F;
       positionZ_ = 0F;
@@ -25057,7 +22762,7 @@ public final class GameCommand {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
+              nutId_ = input.readInt32();
               break;
             }
             case 21: {
@@ -25126,19 +22831,19 @@ public final class GameCommand {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int NUTID_FIELD_NUMBER = 1;
+    private int nutId_;
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 nutId = 1;</code>
      */
-    public boolean hasId() {
+    public boolean hasNutId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional int32 id = 1;</code>
+     * <code>optional int32 nutId = 1;</code>
      */
-    public int getId() {
-      return id_;
+    public int getNutId() {
+      return nutId_;
     }
 
     public static final int POSITIONX_FIELD_NUMBER = 2;
@@ -25321,7 +23026,7 @@ public final class GameCommand {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
+        output.writeInt32(1, nutId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, positionX_);
@@ -25357,7 +23062,7 @@ public final class GameCommand {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+          .computeInt32Size(1, nutId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -25407,10 +23112,10 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.NutCommand other = (com.lemeng.server.command.GameCommand.NutCommand) obj;
 
       boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+      result = result && (hasNutId() == other.hasNutId());
+      if (hasNutId()) {
+        result = result && (getNutId()
+            == other.getNutId());
       }
       result = result && (hasPositionX() == other.hasPositionX());
       if (hasPositionX()) {
@@ -25475,9 +23180,9 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
+      if (hasNutId()) {
+        hash = (37 * hash) + NUTID_FIELD_NUMBER;
+        hash = (53 * hash) + getNutId();
       }
       if (hasPositionX()) {
         hash = (37 * hash) + POSITIONX_FIELD_NUMBER;
@@ -25650,7 +23355,7 @@ public final class GameCommand {
       }
       public Builder clear() {
         super.clear();
-        id_ = 0;
+        nutId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         positionX_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -25695,7 +23400,7 @@ public final class GameCommand {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.id_ = id_;
+        result.nutId_ = nutId_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -25770,8 +23475,8 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.NutCommand other) {
         if (other == com.lemeng.server.command.GameCommand.NutCommand.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
+        if (other.hasNutId()) {
+          setNutId(other.getNutId());
         }
         if (other.hasPositionX()) {
           setPositionX(other.getPositionX());
@@ -25827,34 +23532,34 @@ public final class GameCommand {
       }
       private int bitField0_;
 
-      private int id_ ;
+      private int nutId_ ;
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 nutId = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasNutId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 nutId = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getNutId() {
+        return nutId_;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 nutId = 1;</code>
        */
-      public Builder setId(int value) {
+      public Builder setNutId(int value) {
         bitField0_ |= 0x00000001;
-        id_ = value;
+        nutId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 id = 1;</code>
+       * <code>optional int32 nutId = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearNutId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
+        nutId_ = 0;
         onChanged();
         return this;
       }
@@ -26250,6 +23955,30 @@ public final class GameCommand {
   public interface GameOverCommandOrBuilder extends
       // @@protoc_insertion_point(interface_extends:message.GameOverCommand)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    java.util.List<com.lemeng.server.command.GameCommand.TeamCommand> 
+        getTeamListList();
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    com.lemeng.server.command.GameCommand.TeamCommand getTeamList(int index);
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    int getTeamListCount();
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    java.util.List<? extends com.lemeng.server.command.GameCommand.TeamCommandOrBuilder> 
+        getTeamListOrBuilderList();
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    com.lemeng.server.command.GameCommand.TeamCommandOrBuilder getTeamListOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -26267,6 +23996,7 @@ public final class GameCommand {
       super(builder);
     }
     private GameOverCommand() {
+      teamList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -26279,6 +24009,7 @@ public final class GameCommand {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -26296,6 +24027,15 @@ public final class GameCommand {
               }
               break;
             }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                teamList_ = new java.util.ArrayList<com.lemeng.server.command.GameCommand.TeamCommand>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              teamList_.add(
+                  input.readMessage(com.lemeng.server.command.GameCommand.TeamCommand.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -26304,6 +24044,9 @@ public final class GameCommand {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          teamList_ = java.util.Collections.unmodifiableList(teamList_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -26320,6 +24063,41 @@ public final class GameCommand {
               com.lemeng.server.command.GameCommand.GameOverCommand.class, com.lemeng.server.command.GameCommand.GameOverCommand.Builder.class);
     }
 
+    public static final int TEAMLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.lemeng.server.command.GameCommand.TeamCommand> teamList_;
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    public java.util.List<com.lemeng.server.command.GameCommand.TeamCommand> getTeamListList() {
+      return teamList_;
+    }
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    public java.util.List<? extends com.lemeng.server.command.GameCommand.TeamCommandOrBuilder> 
+        getTeamListOrBuilderList() {
+      return teamList_;
+    }
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    public int getTeamListCount() {
+      return teamList_.size();
+    }
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    public com.lemeng.server.command.GameCommand.TeamCommand getTeamList(int index) {
+      return teamList_.get(index);
+    }
+    /**
+     * <code>repeated .message.TeamCommand teamList = 1;</code>
+     */
+    public com.lemeng.server.command.GameCommand.TeamCommandOrBuilder getTeamListOrBuilder(
+        int index) {
+      return teamList_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -26332,6 +24110,9 @@ public final class GameCommand {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      for (int i = 0; i < teamList_.size(); i++) {
+        output.writeMessage(1, teamList_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -26340,6 +24121,10 @@ public final class GameCommand {
       if (size != -1) return size;
 
       size = 0;
+      for (int i = 0; i < teamList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, teamList_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -26357,6 +24142,8 @@ public final class GameCommand {
       com.lemeng.server.command.GameCommand.GameOverCommand other = (com.lemeng.server.command.GameCommand.GameOverCommand) obj;
 
       boolean result = true;
+      result = result && getTeamListList()
+          .equals(other.getTeamListList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -26368,6 +24155,10 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTeamListCount() > 0) {
+        hash = (37 * hash) + TEAMLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getTeamListList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -26497,10 +24288,17 @@ public final class GameCommand {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTeamListFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
+        if (teamListBuilder_ == null) {
+          teamList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          teamListBuilder_.clear();
+        }
         return this;
       }
 
@@ -26523,6 +24321,16 @@ public final class GameCommand {
 
       public com.lemeng.server.command.GameCommand.GameOverCommand buildPartial() {
         com.lemeng.server.command.GameCommand.GameOverCommand result = new com.lemeng.server.command.GameCommand.GameOverCommand(this);
+        int from_bitField0_ = bitField0_;
+        if (teamListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            teamList_ = java.util.Collections.unmodifiableList(teamList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.teamList_ = teamList_;
+        } else {
+          result.teamList_ = teamListBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -26564,6 +24372,32 @@ public final class GameCommand {
 
       public Builder mergeFrom(com.lemeng.server.command.GameCommand.GameOverCommand other) {
         if (other == com.lemeng.server.command.GameCommand.GameOverCommand.getDefaultInstance()) return this;
+        if (teamListBuilder_ == null) {
+          if (!other.teamList_.isEmpty()) {
+            if (teamList_.isEmpty()) {
+              teamList_ = other.teamList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTeamListIsMutable();
+              teamList_.addAll(other.teamList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.teamList_.isEmpty()) {
+            if (teamListBuilder_.isEmpty()) {
+              teamListBuilder_.dispose();
+              teamListBuilder_ = null;
+              teamList_ = other.teamList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              teamListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTeamListFieldBuilder() : null;
+            } else {
+              teamListBuilder_.addAllMessages(other.teamList_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -26589,6 +24423,247 @@ public final class GameCommand {
           }
         }
         return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.lemeng.server.command.GameCommand.TeamCommand> teamList_ =
+        java.util.Collections.emptyList();
+      private void ensureTeamListIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          teamList_ = new java.util.ArrayList<com.lemeng.server.command.GameCommand.TeamCommand>(teamList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.lemeng.server.command.GameCommand.TeamCommand, com.lemeng.server.command.GameCommand.TeamCommand.Builder, com.lemeng.server.command.GameCommand.TeamCommandOrBuilder> teamListBuilder_;
+
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public java.util.List<com.lemeng.server.command.GameCommand.TeamCommand> getTeamListList() {
+        if (teamListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(teamList_);
+        } else {
+          return teamListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public int getTeamListCount() {
+        if (teamListBuilder_ == null) {
+          return teamList_.size();
+        } else {
+          return teamListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.TeamCommand getTeamList(int index) {
+        if (teamListBuilder_ == null) {
+          return teamList_.get(index);
+        } else {
+          return teamListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder setTeamList(
+          int index, com.lemeng.server.command.GameCommand.TeamCommand value) {
+        if (teamListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamListIsMutable();
+          teamList_.set(index, value);
+          onChanged();
+        } else {
+          teamListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder setTeamList(
+          int index, com.lemeng.server.command.GameCommand.TeamCommand.Builder builderForValue) {
+        if (teamListBuilder_ == null) {
+          ensureTeamListIsMutable();
+          teamList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          teamListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder addTeamList(com.lemeng.server.command.GameCommand.TeamCommand value) {
+        if (teamListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamListIsMutable();
+          teamList_.add(value);
+          onChanged();
+        } else {
+          teamListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder addTeamList(
+          int index, com.lemeng.server.command.GameCommand.TeamCommand value) {
+        if (teamListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamListIsMutable();
+          teamList_.add(index, value);
+          onChanged();
+        } else {
+          teamListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder addTeamList(
+          com.lemeng.server.command.GameCommand.TeamCommand.Builder builderForValue) {
+        if (teamListBuilder_ == null) {
+          ensureTeamListIsMutable();
+          teamList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          teamListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder addTeamList(
+          int index, com.lemeng.server.command.GameCommand.TeamCommand.Builder builderForValue) {
+        if (teamListBuilder_ == null) {
+          ensureTeamListIsMutable();
+          teamList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          teamListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder addAllTeamList(
+          java.lang.Iterable<? extends com.lemeng.server.command.GameCommand.TeamCommand> values) {
+        if (teamListBuilder_ == null) {
+          ensureTeamListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, teamList_);
+          onChanged();
+        } else {
+          teamListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder clearTeamList() {
+        if (teamListBuilder_ == null) {
+          teamList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          teamListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public Builder removeTeamList(int index) {
+        if (teamListBuilder_ == null) {
+          ensureTeamListIsMutable();
+          teamList_.remove(index);
+          onChanged();
+        } else {
+          teamListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.TeamCommand.Builder getTeamListBuilder(
+          int index) {
+        return getTeamListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.TeamCommandOrBuilder getTeamListOrBuilder(
+          int index) {
+        if (teamListBuilder_ == null) {
+          return teamList_.get(index);  } else {
+          return teamListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public java.util.List<? extends com.lemeng.server.command.GameCommand.TeamCommandOrBuilder> 
+           getTeamListOrBuilderList() {
+        if (teamListBuilder_ != null) {
+          return teamListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(teamList_);
+        }
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.TeamCommand.Builder addTeamListBuilder() {
+        return getTeamListFieldBuilder().addBuilder(
+            com.lemeng.server.command.GameCommand.TeamCommand.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.TeamCommand.Builder addTeamListBuilder(
+          int index) {
+        return getTeamListFieldBuilder().addBuilder(
+            index, com.lemeng.server.command.GameCommand.TeamCommand.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .message.TeamCommand teamList = 1;</code>
+       */
+      public java.util.List<com.lemeng.server.command.GameCommand.TeamCommand.Builder> 
+           getTeamListBuilderList() {
+        return getTeamListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.lemeng.server.command.GameCommand.TeamCommand, com.lemeng.server.command.GameCommand.TeamCommand.Builder, com.lemeng.server.command.GameCommand.TeamCommandOrBuilder> 
+          getTeamListFieldBuilder() {
+        if (teamListBuilder_ == null) {
+          teamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.lemeng.server.command.GameCommand.TeamCommand, com.lemeng.server.command.GameCommand.TeamCommand.Builder, com.lemeng.server.command.GameCommand.TeamCommandOrBuilder>(
+                  teamList_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          teamList_ = null;
+        }
+        return teamListBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -26639,22 +24714,104 @@ public final class GameCommand {
 
   }
 
-  public interface GameMessageCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:message.GameMessageCommand)
+  public interface TeamCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.TeamCommand)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    java.util.List<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand> 
+        getPlayerListList();
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    com.lemeng.server.command.GameCommand.FullPlayerInfoCommand getPlayerList(int index);
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    int getPlayerListCount();
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    java.util.List<? extends com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder> 
+        getPlayerListOrBuilderList();
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder getPlayerListOrBuilder(
+        int index);
+
+    /**
+     * <code>optional int32 killNum = 2;</code>
+     */
+    boolean hasKillNum();
+    /**
+     * <code>optional int32 killNum = 2;</code>
+     */
+    int getKillNum();
+
+    /**
+     * <code>optional int32 deathNum = 3;</code>
+     */
+    boolean hasDeathNum();
+    /**
+     * <code>optional int32 deathNum = 3;</code>
+     */
+    int getDeathNum();
+
+    /**
+     * <code>optional int32 assistNum = 4;</code>
+     */
+    boolean hasAssistNum();
+    /**
+     * <code>optional int32 assistNum = 4;</code>
+     */
+    int getAssistNum();
+
+    /**
+     * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+     */
+    boolean hasMvp();
+    /**
+     * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+     */
+    com.lemeng.server.command.GameCommand.FullPlayerInfoCommand getMvp();
+    /**
+     * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+     */
+    com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder getMvpOrBuilder();
+
+    /**
+     * <code>optional int32 gameId = 6;</code>
+     */
+    boolean hasGameId();
+    /**
+     * <code>optional int32 gameId = 6;</code>
+     */
+    int getGameId();
   }
   /**
-   * Protobuf type {@code message.GameMessageCommand}
+   * <pre>
+   *队伍
+   * </pre>
+   *
+   * Protobuf type {@code message.TeamCommand}
    */
-  public  static final class GameMessageCommand extends
+  public  static final class TeamCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:message.GameMessageCommand)
-      GameMessageCommandOrBuilder {
-    // Use GameMessageCommand.newBuilder() to construct.
-    private GameMessageCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:message.TeamCommand)
+      TeamCommandOrBuilder {
+    // Use TeamCommand.newBuilder() to construct.
+    private TeamCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GameMessageCommand() {
+    private TeamCommand() {
+      playerList_ = java.util.Collections.emptyList();
+      killNum_ = 0;
+      deathNum_ = 0;
+      assistNum_ = 0;
+      gameId_ = 0;
     }
 
     @java.lang.Override
@@ -26662,11 +24819,12 @@ public final class GameCommand {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GameMessageCommand(
+    private TeamCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -26684,6 +24842,48 @@ public final class GameCommand {
               }
               break;
             }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                playerList_ = new java.util.ArrayList<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              playerList_.add(
+                  input.readMessage(com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.PARSER, extensionRegistry));
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000001;
+              killNum_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000002;
+              deathNum_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000004;
+              assistNum_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = mvp_.toBuilder();
+              }
+              mvp_ = input.readMessage(com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mvp_);
+                mvp_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000010;
+              gameId_ = input.readInt32();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -26692,20 +24892,140 @@ public final class GameCommand {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          playerList_ = java.util.Collections.unmodifiableList(playerList_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_GameMessageCommand_descriptor;
+      return com.lemeng.server.command.GameCommand.internal_static_message_TeamCommand_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.lemeng.server.command.GameCommand.internal_static_message_GameMessageCommand_fieldAccessorTable
+      return com.lemeng.server.command.GameCommand.internal_static_message_TeamCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.lemeng.server.command.GameCommand.GameMessageCommand.class, com.lemeng.server.command.GameCommand.GameMessageCommand.Builder.class);
+              com.lemeng.server.command.GameCommand.TeamCommand.class, com.lemeng.server.command.GameCommand.TeamCommand.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYERLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand> playerList_;
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    public java.util.List<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand> getPlayerListList() {
+      return playerList_;
+    }
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    public java.util.List<? extends com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder> 
+        getPlayerListOrBuilderList() {
+      return playerList_;
+    }
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    public int getPlayerListCount() {
+      return playerList_.size();
+    }
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand getPlayerList(int index) {
+      return playerList_.get(index);
+    }
+    /**
+     * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+     */
+    public com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder getPlayerListOrBuilder(
+        int index) {
+      return playerList_.get(index);
+    }
+
+    public static final int KILLNUM_FIELD_NUMBER = 2;
+    private int killNum_;
+    /**
+     * <code>optional int32 killNum = 2;</code>
+     */
+    public boolean hasKillNum() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 killNum = 2;</code>
+     */
+    public int getKillNum() {
+      return killNum_;
+    }
+
+    public static final int DEATHNUM_FIELD_NUMBER = 3;
+    private int deathNum_;
+    /**
+     * <code>optional int32 deathNum = 3;</code>
+     */
+    public boolean hasDeathNum() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 deathNum = 3;</code>
+     */
+    public int getDeathNum() {
+      return deathNum_;
+    }
+
+    public static final int ASSISTNUM_FIELD_NUMBER = 4;
+    private int assistNum_;
+    /**
+     * <code>optional int32 assistNum = 4;</code>
+     */
+    public boolean hasAssistNum() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 assistNum = 4;</code>
+     */
+    public int getAssistNum() {
+      return assistNum_;
+    }
+
+    public static final int MVP_FIELD_NUMBER = 5;
+    private com.lemeng.server.command.GameCommand.FullPlayerInfoCommand mvp_;
+    /**
+     * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+     */
+    public boolean hasMvp() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+     */
+    public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand getMvp() {
+      return mvp_ == null ? com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.getDefaultInstance() : mvp_;
+    }
+    /**
+     * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+     */
+    public com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder getMvpOrBuilder() {
+      return mvp_ == null ? com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.getDefaultInstance() : mvp_;
+    }
+
+    public static final int GAMEID_FIELD_NUMBER = 6;
+    private int gameId_;
+    /**
+     * <code>optional int32 gameId = 6;</code>
+     */
+    public boolean hasGameId() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int32 gameId = 6;</code>
+     */
+    public int getGameId() {
+      return gameId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -26720,6 +25040,24 @@ public final class GameCommand {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      for (int i = 0; i < playerList_.size(); i++) {
+        output.writeMessage(1, playerList_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(2, killNum_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(3, deathNum_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(4, assistNum_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(5, getMvp());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(6, gameId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -26728,6 +25066,30 @@ public final class GameCommand {
       if (size != -1) return size;
 
       size = 0;
+      for (int i = 0; i < playerList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, playerList_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, killNum_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, deathNum_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, assistNum_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getMvp());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, gameId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -26739,12 +25101,39 @@ public final class GameCommand {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.lemeng.server.command.GameCommand.GameMessageCommand)) {
+      if (!(obj instanceof com.lemeng.server.command.GameCommand.TeamCommand)) {
         return super.equals(obj);
       }
-      com.lemeng.server.command.GameCommand.GameMessageCommand other = (com.lemeng.server.command.GameCommand.GameMessageCommand) obj;
+      com.lemeng.server.command.GameCommand.TeamCommand other = (com.lemeng.server.command.GameCommand.TeamCommand) obj;
 
       boolean result = true;
+      result = result && getPlayerListList()
+          .equals(other.getPlayerListList());
+      result = result && (hasKillNum() == other.hasKillNum());
+      if (hasKillNum()) {
+        result = result && (getKillNum()
+            == other.getKillNum());
+      }
+      result = result && (hasDeathNum() == other.hasDeathNum());
+      if (hasDeathNum()) {
+        result = result && (getDeathNum()
+            == other.getDeathNum());
+      }
+      result = result && (hasAssistNum() == other.hasAssistNum());
+      if (hasAssistNum()) {
+        result = result && (getAssistNum()
+            == other.getAssistNum());
+      }
+      result = result && (hasMvp() == other.hasMvp());
+      if (hasMvp()) {
+        result = result && getMvp()
+            .equals(other.getMvp());
+      }
+      result = result && (hasGameId() == other.hasGameId());
+      if (hasGameId()) {
+        result = result && (getGameId()
+            == other.getGameId());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -26756,74 +25145,98 @@ public final class GameCommand {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPlayerListCount() > 0) {
+        hash = (37 * hash) + PLAYERLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerListList().hashCode();
+      }
+      if (hasKillNum()) {
+        hash = (37 * hash) + KILLNUM_FIELD_NUMBER;
+        hash = (53 * hash) + getKillNum();
+      }
+      if (hasDeathNum()) {
+        hash = (37 * hash) + DEATHNUM_FIELD_NUMBER;
+        hash = (53 * hash) + getDeathNum();
+      }
+      if (hasAssistNum()) {
+        hash = (37 * hash) + ASSISTNUM_FIELD_NUMBER;
+        hash = (53 * hash) + getAssistNum();
+      }
+      if (hasMvp()) {
+        hash = (37 * hash) + MVP_FIELD_NUMBER;
+        hash = (53 * hash) + getMvp().hashCode();
+      }
+      if (hasGameId()) {
+        hash = (37 * hash) + GAMEID_FIELD_NUMBER;
+        hash = (53 * hash) + getGameId();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(byte[] data)
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseDelimitedFrom(java.io.InputStream input)
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseDelimitedFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand parseFrom(
+    public static com.lemeng.server.command.GameCommand.TeamCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -26835,7 +25248,7 @@ public final class GameCommand {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.lemeng.server.command.GameCommand.GameMessageCommand prototype) {
+    public static Builder newBuilder(com.lemeng.server.command.GameCommand.TeamCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -26850,25 +25263,29 @@ public final class GameCommand {
       return builder;
     }
     /**
-     * Protobuf type {@code message.GameMessageCommand}
+     * <pre>
+     *队伍
+     * </pre>
+     *
+     * Protobuf type {@code message.TeamCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:message.GameMessageCommand)
-        com.lemeng.server.command.GameCommand.GameMessageCommandOrBuilder {
+        // @@protoc_insertion_point(builder_implements:message.TeamCommand)
+        com.lemeng.server.command.GameCommand.TeamCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_GameMessageCommand_descriptor;
+        return com.lemeng.server.command.GameCommand.internal_static_message_TeamCommand_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_GameMessageCommand_fieldAccessorTable
+        return com.lemeng.server.command.GameCommand.internal_static_message_TeamCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.lemeng.server.command.GameCommand.GameMessageCommand.class, com.lemeng.server.command.GameCommand.GameMessageCommand.Builder.class);
+                com.lemeng.server.command.GameCommand.TeamCommand.class, com.lemeng.server.command.GameCommand.TeamCommand.Builder.class);
       }
 
-      // Construct using com.lemeng.server.command.GameCommand.GameMessageCommand.newBuilder()
+      // Construct using com.lemeng.server.command.GameCommand.TeamCommand.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -26881,32 +25298,90 @@ public final class GameCommand {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getPlayerListFieldBuilder();
+          getMvpFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
+        if (playerListBuilder_ == null) {
+          playerList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          playerListBuilder_.clear();
+        }
+        killNum_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        deathNum_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        assistNum_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (mvpBuilder_ == null) {
+          mvp_ = null;
+        } else {
+          mvpBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        gameId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.lemeng.server.command.GameCommand.internal_static_message_GameMessageCommand_descriptor;
+        return com.lemeng.server.command.GameCommand.internal_static_message_TeamCommand_descriptor;
       }
 
-      public com.lemeng.server.command.GameCommand.GameMessageCommand getDefaultInstanceForType() {
-        return com.lemeng.server.command.GameCommand.GameMessageCommand.getDefaultInstance();
+      public com.lemeng.server.command.GameCommand.TeamCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.GameCommand.TeamCommand.getDefaultInstance();
       }
 
-      public com.lemeng.server.command.GameCommand.GameMessageCommand build() {
-        com.lemeng.server.command.GameCommand.GameMessageCommand result = buildPartial();
+      public com.lemeng.server.command.GameCommand.TeamCommand build() {
+        com.lemeng.server.command.GameCommand.TeamCommand result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.lemeng.server.command.GameCommand.GameMessageCommand buildPartial() {
-        com.lemeng.server.command.GameCommand.GameMessageCommand result = new com.lemeng.server.command.GameCommand.GameMessageCommand(this);
+      public com.lemeng.server.command.GameCommand.TeamCommand buildPartial() {
+        com.lemeng.server.command.GameCommand.TeamCommand result = new com.lemeng.server.command.GameCommand.TeamCommand(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (playerListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            playerList_ = java.util.Collections.unmodifiableList(playerList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.playerList_ = playerList_;
+        } else {
+          result.playerList_ = playerListBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.killNum_ = killNum_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.deathNum_ = deathNum_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.assistNum_ = assistNum_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        if (mvpBuilder_ == null) {
+          result.mvp_ = mvp_;
+        } else {
+          result.mvp_ = mvpBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.gameId_ = gameId_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -26938,16 +25413,57 @@ public final class GameCommand {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.lemeng.server.command.GameCommand.GameMessageCommand) {
-          return mergeFrom((com.lemeng.server.command.GameCommand.GameMessageCommand)other);
+        if (other instanceof com.lemeng.server.command.GameCommand.TeamCommand) {
+          return mergeFrom((com.lemeng.server.command.GameCommand.TeamCommand)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.lemeng.server.command.GameCommand.GameMessageCommand other) {
-        if (other == com.lemeng.server.command.GameCommand.GameMessageCommand.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.lemeng.server.command.GameCommand.TeamCommand other) {
+        if (other == com.lemeng.server.command.GameCommand.TeamCommand.getDefaultInstance()) return this;
+        if (playerListBuilder_ == null) {
+          if (!other.playerList_.isEmpty()) {
+            if (playerList_.isEmpty()) {
+              playerList_ = other.playerList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePlayerListIsMutable();
+              playerList_.addAll(other.playerList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.playerList_.isEmpty()) {
+            if (playerListBuilder_.isEmpty()) {
+              playerListBuilder_.dispose();
+              playerListBuilder_ = null;
+              playerList_ = other.playerList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              playerListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPlayerListFieldBuilder() : null;
+            } else {
+              playerListBuilder_.addAllMessages(other.playerList_);
+            }
+          }
+        }
+        if (other.hasKillNum()) {
+          setKillNum(other.getKillNum());
+        }
+        if (other.hasDeathNum()) {
+          setDeathNum(other.getDeathNum());
+        }
+        if (other.hasAssistNum()) {
+          setAssistNum(other.getAssistNum());
+        }
+        if (other.hasMvp()) {
+          mergeMvp(other.getMvp());
+        }
+        if (other.hasGameId()) {
+          setGameId(other.getGameId());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -26961,17 +25477,504 @@ public final class GameCommand {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.lemeng.server.command.GameCommand.GameMessageCommand parsedMessage = null;
+        com.lemeng.server.command.GameCommand.TeamCommand parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.lemeng.server.command.GameCommand.GameMessageCommand) e.getUnfinishedMessage();
+          parsedMessage = (com.lemeng.server.command.GameCommand.TeamCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand> playerList_ =
+        java.util.Collections.emptyList();
+      private void ensurePlayerListIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          playerList_ = new java.util.ArrayList<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand>(playerList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.lemeng.server.command.GameCommand.FullPlayerInfoCommand, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder, com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder> playerListBuilder_;
+
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public java.util.List<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand> getPlayerListList() {
+        if (playerListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(playerList_);
+        } else {
+          return playerListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public int getPlayerListCount() {
+        if (playerListBuilder_ == null) {
+          return playerList_.size();
+        } else {
+          return playerListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand getPlayerList(int index) {
+        if (playerListBuilder_ == null) {
+          return playerList_.get(index);
+        } else {
+          return playerListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder setPlayerList(
+          int index, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand value) {
+        if (playerListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlayerListIsMutable();
+          playerList_.set(index, value);
+          onChanged();
+        } else {
+          playerListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder setPlayerList(
+          int index, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder builderForValue) {
+        if (playerListBuilder_ == null) {
+          ensurePlayerListIsMutable();
+          playerList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          playerListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder addPlayerList(com.lemeng.server.command.GameCommand.FullPlayerInfoCommand value) {
+        if (playerListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlayerListIsMutable();
+          playerList_.add(value);
+          onChanged();
+        } else {
+          playerListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder addPlayerList(
+          int index, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand value) {
+        if (playerListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlayerListIsMutable();
+          playerList_.add(index, value);
+          onChanged();
+        } else {
+          playerListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder addPlayerList(
+          com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder builderForValue) {
+        if (playerListBuilder_ == null) {
+          ensurePlayerListIsMutable();
+          playerList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          playerListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder addPlayerList(
+          int index, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder builderForValue) {
+        if (playerListBuilder_ == null) {
+          ensurePlayerListIsMutable();
+          playerList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          playerListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder addAllPlayerList(
+          java.lang.Iterable<? extends com.lemeng.server.command.GameCommand.FullPlayerInfoCommand> values) {
+        if (playerListBuilder_ == null) {
+          ensurePlayerListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, playerList_);
+          onChanged();
+        } else {
+          playerListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder clearPlayerList() {
+        if (playerListBuilder_ == null) {
+          playerList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          playerListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public Builder removePlayerList(int index) {
+        if (playerListBuilder_ == null) {
+          ensurePlayerListIsMutable();
+          playerList_.remove(index);
+          onChanged();
+        } else {
+          playerListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder getPlayerListBuilder(
+          int index) {
+        return getPlayerListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder getPlayerListOrBuilder(
+          int index) {
+        if (playerListBuilder_ == null) {
+          return playerList_.get(index);  } else {
+          return playerListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public java.util.List<? extends com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder> 
+           getPlayerListOrBuilderList() {
+        if (playerListBuilder_ != null) {
+          return playerListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(playerList_);
+        }
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder addPlayerListBuilder() {
+        return getPlayerListFieldBuilder().addBuilder(
+            com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder addPlayerListBuilder(
+          int index) {
+        return getPlayerListFieldBuilder().addBuilder(
+            index, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .message.FullPlayerInfoCommand playerList = 1;</code>
+       */
+      public java.util.List<com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder> 
+           getPlayerListBuilderList() {
+        return getPlayerListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.lemeng.server.command.GameCommand.FullPlayerInfoCommand, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder, com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder> 
+          getPlayerListFieldBuilder() {
+        if (playerListBuilder_ == null) {
+          playerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.lemeng.server.command.GameCommand.FullPlayerInfoCommand, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder, com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder>(
+                  playerList_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          playerList_ = null;
+        }
+        return playerListBuilder_;
+      }
+
+      private int killNum_ ;
+      /**
+       * <code>optional int32 killNum = 2;</code>
+       */
+      public boolean hasKillNum() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 killNum = 2;</code>
+       */
+      public int getKillNum() {
+        return killNum_;
+      }
+      /**
+       * <code>optional int32 killNum = 2;</code>
+       */
+      public Builder setKillNum(int value) {
+        bitField0_ |= 0x00000002;
+        killNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 killNum = 2;</code>
+       */
+      public Builder clearKillNum() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        killNum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int deathNum_ ;
+      /**
+       * <code>optional int32 deathNum = 3;</code>
+       */
+      public boolean hasDeathNum() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 deathNum = 3;</code>
+       */
+      public int getDeathNum() {
+        return deathNum_;
+      }
+      /**
+       * <code>optional int32 deathNum = 3;</code>
+       */
+      public Builder setDeathNum(int value) {
+        bitField0_ |= 0x00000004;
+        deathNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 deathNum = 3;</code>
+       */
+      public Builder clearDeathNum() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        deathNum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int assistNum_ ;
+      /**
+       * <code>optional int32 assistNum = 4;</code>
+       */
+      public boolean hasAssistNum() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 assistNum = 4;</code>
+       */
+      public int getAssistNum() {
+        return assistNum_;
+      }
+      /**
+       * <code>optional int32 assistNum = 4;</code>
+       */
+      public Builder setAssistNum(int value) {
+        bitField0_ |= 0x00000008;
+        assistNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 assistNum = 4;</code>
+       */
+      public Builder clearAssistNum() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        assistNum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.lemeng.server.command.GameCommand.FullPlayerInfoCommand mvp_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.lemeng.server.command.GameCommand.FullPlayerInfoCommand, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder, com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder> mvpBuilder_;
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public boolean hasMvp() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand getMvp() {
+        if (mvpBuilder_ == null) {
+          return mvp_ == null ? com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.getDefaultInstance() : mvp_;
+        } else {
+          return mvpBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public Builder setMvp(com.lemeng.server.command.GameCommand.FullPlayerInfoCommand value) {
+        if (mvpBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mvp_ = value;
+          onChanged();
+        } else {
+          mvpBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public Builder setMvp(
+          com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder builderForValue) {
+        if (mvpBuilder_ == null) {
+          mvp_ = builderForValue.build();
+          onChanged();
+        } else {
+          mvpBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public Builder mergeMvp(com.lemeng.server.command.GameCommand.FullPlayerInfoCommand value) {
+        if (mvpBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              mvp_ != null &&
+              mvp_ != com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.getDefaultInstance()) {
+            mvp_ =
+              com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.newBuilder(mvp_).mergeFrom(value).buildPartial();
+          } else {
+            mvp_ = value;
+          }
+          onChanged();
+        } else {
+          mvpBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public Builder clearMvp() {
+        if (mvpBuilder_ == null) {
+          mvp_ = null;
+          onChanged();
+        } else {
+          mvpBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder getMvpBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getMvpFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      public com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder getMvpOrBuilder() {
+        if (mvpBuilder_ != null) {
+          return mvpBuilder_.getMessageOrBuilder();
+        } else {
+          return mvp_ == null ?
+              com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.getDefaultInstance() : mvp_;
+        }
+      }
+      /**
+       * <code>optional .message.FullPlayerInfoCommand mvp = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.lemeng.server.command.GameCommand.FullPlayerInfoCommand, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder, com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder> 
+          getMvpFieldBuilder() {
+        if (mvpBuilder_ == null) {
+          mvpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.lemeng.server.command.GameCommand.FullPlayerInfoCommand, com.lemeng.server.command.GameCommand.FullPlayerInfoCommand.Builder, com.lemeng.server.command.GameCommand.FullPlayerInfoCommandOrBuilder>(
+                  getMvp(),
+                  getParentForChildren(),
+                  isClean());
+          mvp_ = null;
+        }
+        return mvpBuilder_;
+      }
+
+      private int gameId_ ;
+      /**
+       * <code>optional int32 gameId = 6;</code>
+       */
+      public boolean hasGameId() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int32 gameId = 6;</code>
+       */
+      public int getGameId() {
+        return gameId_;
+      }
+      /**
+       * <code>optional int32 gameId = 6;</code>
+       */
+      public Builder setGameId(int value) {
+        bitField0_ |= 0x00000020;
+        gameId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 gameId = 6;</code>
+       */
+      public Builder clearGameId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        gameId_ = 0;
+        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -26985,39 +25988,1762 @@ public final class GameCommand {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:message.GameMessageCommand)
+      // @@protoc_insertion_point(builder_scope:message.TeamCommand)
     }
 
-    // @@protoc_insertion_point(class_scope:message.GameMessageCommand)
-    private static final com.lemeng.server.command.GameCommand.GameMessageCommand DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:message.TeamCommand)
+    private static final com.lemeng.server.command.GameCommand.TeamCommand DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.GameMessageCommand();
+      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.TeamCommand();
     }
 
-    public static com.lemeng.server.command.GameCommand.GameMessageCommand getDefaultInstance() {
+    public static com.lemeng.server.command.GameCommand.TeamCommand getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<GameMessageCommand>
-        PARSER = new com.google.protobuf.AbstractParser<GameMessageCommand>() {
-      public GameMessageCommand parsePartialFrom(
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<TeamCommand>
+        PARSER = new com.google.protobuf.AbstractParser<TeamCommand>() {
+      public TeamCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GameMessageCommand(input, extensionRegistry);
+          return new TeamCommand(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GameMessageCommand> parser() {
+    public static com.google.protobuf.Parser<TeamCommand> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GameMessageCommand> getParserForType() {
+    public com.google.protobuf.Parser<TeamCommand> getParserForType() {
       return PARSER;
     }
 
-    public com.lemeng.server.command.GameCommand.GameMessageCommand getDefaultInstanceForType() {
+    public com.lemeng.server.command.GameCommand.TeamCommand getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PlayerPositionCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.PlayerPositionCommand)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+
+    /**
+     * <code>optional float positionX = 2;</code>
+     */
+    boolean hasPositionX();
+    /**
+     * <code>optional float positionX = 2;</code>
+     */
+    float getPositionX();
+
+    /**
+     * <code>optional float positionY = 3;</code>
+     */
+    boolean hasPositionY();
+    /**
+     * <code>optional float positionY = 3;</code>
+     */
+    float getPositionY();
+
+    /**
+     * <code>optional float positionZ = 4;</code>
+     */
+    boolean hasPositionZ();
+    /**
+     * <code>optional float positionZ = 4;</code>
+     */
+    float getPositionZ();
+
+    /**
+     * <code>optional float rotX = 5;</code>
+     */
+    boolean hasRotX();
+    /**
+     * <code>optional float rotX = 5;</code>
+     */
+    float getRotX();
+
+    /**
+     * <code>optional float rotY = 6;</code>
+     */
+    boolean hasRotY();
+    /**
+     * <code>optional float rotY = 6;</code>
+     */
+    float getRotY();
+
+    /**
+     * <code>optional float rotZ = 7;</code>
+     */
+    boolean hasRotZ();
+    /**
+     * <code>optional float rotZ = 7;</code>
+     */
+    float getRotZ();
+
+    /**
+     * <pre>
+     *动作名称
+     * </pre>
+     *
+     * <code>optional string actionName = 8;</code>
+     */
+    boolean hasActionName();
+    /**
+     * <pre>
+     *动作名称
+     * </pre>
+     *
+     * <code>optional string actionName = 8;</code>
+     */
+    java.lang.String getActionName();
+    /**
+     * <pre>
+     *动作名称
+     * </pre>
+     *
+     * <code>optional string actionName = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getActionNameBytes();
+  }
+  /**
+   * <pre>
+   *玩家位置
+   * </pre>
+   *
+   * Protobuf type {@code message.PlayerPositionCommand}
+   */
+  public  static final class PlayerPositionCommand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:message.PlayerPositionCommand)
+      PlayerPositionCommandOrBuilder {
+    // Use PlayerPositionCommand.newBuilder() to construct.
+    private PlayerPositionCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PlayerPositionCommand() {
+      playerId_ = 0;
+      positionX_ = 0F;
+      positionY_ = 0F;
+      positionZ_ = 0F;
+      rotX_ = 0F;
+      rotY_ = 0F;
+      rotZ_ = 0F;
+      actionName_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PlayerPositionCommand(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              positionX_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              positionY_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              positionZ_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              rotX_ = input.readFloat();
+              break;
+            }
+            case 53: {
+              bitField0_ |= 0x00000020;
+              rotY_ = input.readFloat();
+              break;
+            }
+            case 61: {
+              bitField0_ |= 0x00000040;
+              rotZ_ = input.readFloat();
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              actionName_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.lemeng.server.command.GameCommand.internal_static_message_PlayerPositionCommand_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.lemeng.server.command.GameCommand.internal_static_message_PlayerPositionCommand_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.lemeng.server.command.GameCommand.PlayerPositionCommand.class, com.lemeng.server.command.GameCommand.PlayerPositionCommand.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    public static final int POSITIONX_FIELD_NUMBER = 2;
+    private float positionX_;
+    /**
+     * <code>optional float positionX = 2;</code>
+     */
+    public boolean hasPositionX() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional float positionX = 2;</code>
+     */
+    public float getPositionX() {
+      return positionX_;
+    }
+
+    public static final int POSITIONY_FIELD_NUMBER = 3;
+    private float positionY_;
+    /**
+     * <code>optional float positionY = 3;</code>
+     */
+    public boolean hasPositionY() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional float positionY = 3;</code>
+     */
+    public float getPositionY() {
+      return positionY_;
+    }
+
+    public static final int POSITIONZ_FIELD_NUMBER = 4;
+    private float positionZ_;
+    /**
+     * <code>optional float positionZ = 4;</code>
+     */
+    public boolean hasPositionZ() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional float positionZ = 4;</code>
+     */
+    public float getPositionZ() {
+      return positionZ_;
+    }
+
+    public static final int ROTX_FIELD_NUMBER = 5;
+    private float rotX_;
+    /**
+     * <code>optional float rotX = 5;</code>
+     */
+    public boolean hasRotX() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional float rotX = 5;</code>
+     */
+    public float getRotX() {
+      return rotX_;
+    }
+
+    public static final int ROTY_FIELD_NUMBER = 6;
+    private float rotY_;
+    /**
+     * <code>optional float rotY = 6;</code>
+     */
+    public boolean hasRotY() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional float rotY = 6;</code>
+     */
+    public float getRotY() {
+      return rotY_;
+    }
+
+    public static final int ROTZ_FIELD_NUMBER = 7;
+    private float rotZ_;
+    /**
+     * <code>optional float rotZ = 7;</code>
+     */
+    public boolean hasRotZ() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional float rotZ = 7;</code>
+     */
+    public float getRotZ() {
+      return rotZ_;
+    }
+
+    public static final int ACTIONNAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object actionName_;
+    /**
+     * <pre>
+     *动作名称
+     * </pre>
+     *
+     * <code>optional string actionName = 8;</code>
+     */
+    public boolean hasActionName() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <pre>
+     *动作名称
+     * </pre>
+     *
+     * <code>optional string actionName = 8;</code>
+     */
+    public java.lang.String getActionName() {
+      java.lang.Object ref = actionName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          actionName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *动作名称
+     * </pre>
+     *
+     * <code>optional string actionName = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getActionNameBytes() {
+      java.lang.Object ref = actionName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        actionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, positionX_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeFloat(3, positionY_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeFloat(4, positionZ_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeFloat(5, rotX_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeFloat(6, rotY_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeFloat(7, rotZ_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, actionName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, positionX_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, positionY_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, positionZ_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, rotX_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(6, rotY_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(7, rotZ_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, actionName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.lemeng.server.command.GameCommand.PlayerPositionCommand)) {
+        return super.equals(obj);
+      }
+      com.lemeng.server.command.GameCommand.PlayerPositionCommand other = (com.lemeng.server.command.GameCommand.PlayerPositionCommand) obj;
+
+      boolean result = true;
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
+      result = result && (hasPositionX() == other.hasPositionX());
+      if (hasPositionX()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getPositionX())
+            == java.lang.Float.floatToIntBits(
+                other.getPositionX()));
+      }
+      result = result && (hasPositionY() == other.hasPositionY());
+      if (hasPositionY()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getPositionY())
+            == java.lang.Float.floatToIntBits(
+                other.getPositionY()));
+      }
+      result = result && (hasPositionZ() == other.hasPositionZ());
+      if (hasPositionZ()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getPositionZ())
+            == java.lang.Float.floatToIntBits(
+                other.getPositionZ()));
+      }
+      result = result && (hasRotX() == other.hasRotX());
+      if (hasRotX()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getRotX())
+            == java.lang.Float.floatToIntBits(
+                other.getRotX()));
+      }
+      result = result && (hasRotY() == other.hasRotY());
+      if (hasRotY()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getRotY())
+            == java.lang.Float.floatToIntBits(
+                other.getRotY()));
+      }
+      result = result && (hasRotZ() == other.hasRotZ());
+      if (hasRotZ()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getRotZ())
+            == java.lang.Float.floatToIntBits(
+                other.getRotZ()));
+      }
+      result = result && (hasActionName() == other.hasActionName());
+      if (hasActionName()) {
+        result = result && getActionName()
+            .equals(other.getActionName());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
+      }
+      if (hasPositionX()) {
+        hash = (37 * hash) + POSITIONX_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getPositionX());
+      }
+      if (hasPositionY()) {
+        hash = (37 * hash) + POSITIONY_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getPositionY());
+      }
+      if (hasPositionZ()) {
+        hash = (37 * hash) + POSITIONZ_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getPositionZ());
+      }
+      if (hasRotX()) {
+        hash = (37 * hash) + ROTX_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getRotX());
+      }
+      if (hasRotY()) {
+        hash = (37 * hash) + ROTY_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getRotY());
+      }
+      if (hasRotZ()) {
+        hash = (37 * hash) + ROTZ_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getRotZ());
+      }
+      if (hasActionName()) {
+        hash = (37 * hash) + ACTIONNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getActionName().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.lemeng.server.command.GameCommand.PlayerPositionCommand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *玩家位置
+     * </pre>
+     *
+     * Protobuf type {@code message.PlayerPositionCommand}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:message.PlayerPositionCommand)
+        com.lemeng.server.command.GameCommand.PlayerPositionCommandOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.lemeng.server.command.GameCommand.internal_static_message_PlayerPositionCommand_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.lemeng.server.command.GameCommand.internal_static_message_PlayerPositionCommand_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.lemeng.server.command.GameCommand.PlayerPositionCommand.class, com.lemeng.server.command.GameCommand.PlayerPositionCommand.Builder.class);
+      }
+
+      // Construct using com.lemeng.server.command.GameCommand.PlayerPositionCommand.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        positionX_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        positionY_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        positionZ_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        rotX_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rotY_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        rotZ_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        actionName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.lemeng.server.command.GameCommand.internal_static_message_PlayerPositionCommand_descriptor;
+      }
+
+      public com.lemeng.server.command.GameCommand.PlayerPositionCommand getDefaultInstanceForType() {
+        return com.lemeng.server.command.GameCommand.PlayerPositionCommand.getDefaultInstance();
+      }
+
+      public com.lemeng.server.command.GameCommand.PlayerPositionCommand build() {
+        com.lemeng.server.command.GameCommand.PlayerPositionCommand result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.lemeng.server.command.GameCommand.PlayerPositionCommand buildPartial() {
+        com.lemeng.server.command.GameCommand.PlayerPositionCommand result = new com.lemeng.server.command.GameCommand.PlayerPositionCommand(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.positionX_ = positionX_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.positionY_ = positionY_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.positionZ_ = positionZ_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.rotX_ = rotX_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.rotY_ = rotY_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.rotZ_ = rotZ_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.actionName_ = actionName_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.lemeng.server.command.GameCommand.PlayerPositionCommand) {
+          return mergeFrom((com.lemeng.server.command.GameCommand.PlayerPositionCommand)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.lemeng.server.command.GameCommand.PlayerPositionCommand other) {
+        if (other == com.lemeng.server.command.GameCommand.PlayerPositionCommand.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        if (other.hasPositionX()) {
+          setPositionX(other.getPositionX());
+        }
+        if (other.hasPositionY()) {
+          setPositionY(other.getPositionY());
+        }
+        if (other.hasPositionZ()) {
+          setPositionZ(other.getPositionZ());
+        }
+        if (other.hasRotX()) {
+          setRotX(other.getRotX());
+        }
+        if (other.hasRotY()) {
+          setRotY(other.getRotY());
+        }
+        if (other.hasRotZ()) {
+          setRotZ(other.getRotZ());
+        }
+        if (other.hasActionName()) {
+          bitField0_ |= 0x00000080;
+          actionName_ = other.actionName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.lemeng.server.command.GameCommand.PlayerPositionCommand parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.lemeng.server.command.GameCommand.PlayerPositionCommand) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int playerId_ ;
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float positionX_ ;
+      /**
+       * <code>optional float positionX = 2;</code>
+       */
+      public boolean hasPositionX() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional float positionX = 2;</code>
+       */
+      public float getPositionX() {
+        return positionX_;
+      }
+      /**
+       * <code>optional float positionX = 2;</code>
+       */
+      public Builder setPositionX(float value) {
+        bitField0_ |= 0x00000002;
+        positionX_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float positionX = 2;</code>
+       */
+      public Builder clearPositionX() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        positionX_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float positionY_ ;
+      /**
+       * <code>optional float positionY = 3;</code>
+       */
+      public boolean hasPositionY() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional float positionY = 3;</code>
+       */
+      public float getPositionY() {
+        return positionY_;
+      }
+      /**
+       * <code>optional float positionY = 3;</code>
+       */
+      public Builder setPositionY(float value) {
+        bitField0_ |= 0x00000004;
+        positionY_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float positionY = 3;</code>
+       */
+      public Builder clearPositionY() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        positionY_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float positionZ_ ;
+      /**
+       * <code>optional float positionZ = 4;</code>
+       */
+      public boolean hasPositionZ() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional float positionZ = 4;</code>
+       */
+      public float getPositionZ() {
+        return positionZ_;
+      }
+      /**
+       * <code>optional float positionZ = 4;</code>
+       */
+      public Builder setPositionZ(float value) {
+        bitField0_ |= 0x00000008;
+        positionZ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float positionZ = 4;</code>
+       */
+      public Builder clearPositionZ() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        positionZ_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float rotX_ ;
+      /**
+       * <code>optional float rotX = 5;</code>
+       */
+      public boolean hasRotX() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional float rotX = 5;</code>
+       */
+      public float getRotX() {
+        return rotX_;
+      }
+      /**
+       * <code>optional float rotX = 5;</code>
+       */
+      public Builder setRotX(float value) {
+        bitField0_ |= 0x00000010;
+        rotX_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float rotX = 5;</code>
+       */
+      public Builder clearRotX() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rotX_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float rotY_ ;
+      /**
+       * <code>optional float rotY = 6;</code>
+       */
+      public boolean hasRotY() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional float rotY = 6;</code>
+       */
+      public float getRotY() {
+        return rotY_;
+      }
+      /**
+       * <code>optional float rotY = 6;</code>
+       */
+      public Builder setRotY(float value) {
+        bitField0_ |= 0x00000020;
+        rotY_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float rotY = 6;</code>
+       */
+      public Builder clearRotY() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        rotY_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float rotZ_ ;
+      /**
+       * <code>optional float rotZ = 7;</code>
+       */
+      public boolean hasRotZ() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional float rotZ = 7;</code>
+       */
+      public float getRotZ() {
+        return rotZ_;
+      }
+      /**
+       * <code>optional float rotZ = 7;</code>
+       */
+      public Builder setRotZ(float value) {
+        bitField0_ |= 0x00000040;
+        rotZ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float rotZ = 7;</code>
+       */
+      public Builder clearRotZ() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        rotZ_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object actionName_ = "";
+      /**
+       * <pre>
+       *动作名称
+       * </pre>
+       *
+       * <code>optional string actionName = 8;</code>
+       */
+      public boolean hasActionName() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <pre>
+       *动作名称
+       * </pre>
+       *
+       * <code>optional string actionName = 8;</code>
+       */
+      public java.lang.String getActionName() {
+        java.lang.Object ref = actionName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            actionName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *动作名称
+       * </pre>
+       *
+       * <code>optional string actionName = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getActionNameBytes() {
+        java.lang.Object ref = actionName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          actionName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *动作名称
+       * </pre>
+       *
+       * <code>optional string actionName = 8;</code>
+       */
+      public Builder setActionName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        actionName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *动作名称
+       * </pre>
+       *
+       * <code>optional string actionName = 8;</code>
+       */
+      public Builder clearActionName() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        actionName_ = getDefaultInstance().getActionName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *动作名称
+       * </pre>
+       *
+       * <code>optional string actionName = 8;</code>
+       */
+      public Builder setActionNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        actionName_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:message.PlayerPositionCommand)
+    }
+
+    // @@protoc_insertion_point(class_scope:message.PlayerPositionCommand)
+    private static final com.lemeng.server.command.GameCommand.PlayerPositionCommand DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.PlayerPositionCommand();
+    }
+
+    public static com.lemeng.server.command.GameCommand.PlayerPositionCommand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerPositionCommand>
+        PARSER = new com.google.protobuf.AbstractParser<PlayerPositionCommand>() {
+      public PlayerPositionCommand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PlayerPositionCommand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PlayerPositionCommand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PlayerPositionCommand> getParserForType() {
+      return PARSER;
+    }
+
+    public com.lemeng.server.command.GameCommand.PlayerPositionCommand getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RelifeComandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:message.RelifeComand)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * <pre>
+   *复活
+   * </pre>
+   *
+   * Protobuf type {@code message.RelifeComand}
+   */
+  public  static final class RelifeComand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:message.RelifeComand)
+      RelifeComandOrBuilder {
+    // Use RelifeComand.newBuilder() to construct.
+    private RelifeComand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RelifeComand() {
+      playerId_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RelifeComand(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.lemeng.server.command.GameCommand.internal_static_message_RelifeComand_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.lemeng.server.command.GameCommand.internal_static_message_RelifeComand_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.lemeng.server.command.GameCommand.RelifeComand.class, com.lemeng.server.command.GameCommand.RelifeComand.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYERID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 playerId = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, playerId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, playerId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.lemeng.server.command.GameCommand.RelifeComand)) {
+        return super.equals(obj);
+      }
+      com.lemeng.server.command.GameCommand.RelifeComand other = (com.lemeng.server.command.GameCommand.RelifeComand) obj;
+
+      boolean result = true;
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYERID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.lemeng.server.command.GameCommand.RelifeComand parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.lemeng.server.command.GameCommand.RelifeComand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *复活
+     * </pre>
+     *
+     * Protobuf type {@code message.RelifeComand}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:message.RelifeComand)
+        com.lemeng.server.command.GameCommand.RelifeComandOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.lemeng.server.command.GameCommand.internal_static_message_RelifeComand_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.lemeng.server.command.GameCommand.internal_static_message_RelifeComand_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.lemeng.server.command.GameCommand.RelifeComand.class, com.lemeng.server.command.GameCommand.RelifeComand.Builder.class);
+      }
+
+      // Construct using com.lemeng.server.command.GameCommand.RelifeComand.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.lemeng.server.command.GameCommand.internal_static_message_RelifeComand_descriptor;
+      }
+
+      public com.lemeng.server.command.GameCommand.RelifeComand getDefaultInstanceForType() {
+        return com.lemeng.server.command.GameCommand.RelifeComand.getDefaultInstance();
+      }
+
+      public com.lemeng.server.command.GameCommand.RelifeComand build() {
+        com.lemeng.server.command.GameCommand.RelifeComand result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.lemeng.server.command.GameCommand.RelifeComand buildPartial() {
+        com.lemeng.server.command.GameCommand.RelifeComand result = new com.lemeng.server.command.GameCommand.RelifeComand(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.lemeng.server.command.GameCommand.RelifeComand) {
+          return mergeFrom((com.lemeng.server.command.GameCommand.RelifeComand)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.lemeng.server.command.GameCommand.RelifeComand other) {
+        if (other == com.lemeng.server.command.GameCommand.RelifeComand.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.lemeng.server.command.GameCommand.RelifeComand parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.lemeng.server.command.GameCommand.RelifeComand) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int playerId_ ;
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 playerId = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:message.RelifeComand)
+    }
+
+    // @@protoc_insertion_point(class_scope:message.RelifeComand)
+    private static final com.lemeng.server.command.GameCommand.RelifeComand DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.lemeng.server.command.GameCommand.RelifeComand();
+    }
+
+    public static com.lemeng.server.command.GameCommand.RelifeComand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RelifeComand>
+        PARSER = new com.google.protobuf.AbstractParser<RelifeComand>() {
+      public RelifeComand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RelifeComand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RelifeComand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RelifeComand> getParserForType() {
+      return PARSER;
+    }
+
+    public com.lemeng.server.command.GameCommand.RelifeComand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -27104,11 +27830,6 @@ public final class GameCommand {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_message_FullPlayerInfoCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_SimplePlayerInfoCommand_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_SimplePlayerInfoCommand_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_message_LevelUpRequestCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -27119,15 +27840,10 @@ public final class GameCommand {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_message_LevelUpResponseCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_ChooseSkill_descriptor;
+    internal_static_message_ChooseSkillCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_ChooseSkill_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_ActionCommand_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_ActionCommand_fieldAccessorTable;
+      internal_static_message_ChooseSkillCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_message_EatCommand_descriptor;
   private static final 
@@ -27164,10 +27880,20 @@ public final class GameCommand {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_message_GameOverCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_message_GameMessageCommand_descriptor;
+    internal_static_message_TeamCommand_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_message_GameMessageCommand_fieldAccessorTable;
+      internal_static_message_TeamCommand_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_message_PlayerPositionCommand_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_message_PlayerPositionCommand_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_message_RelifeComand_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_message_RelifeComand_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -27177,77 +27903,81 @@ public final class GameCommand {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021GameCommand.proto\022\007message\"\275\001\n\017UserInf" +
-      "oCommand\022\n\n\002id\030\001 \001(\005\022\016\n\006mobile\030\002 \001(\t\022\020\n\010" +
-      "nickname\030\003 \001(\t\022\r\n\005level\030\004 \001(\005\022\016\n\006statue\030" +
-      "\005 \001(\005\022\020\n\010gemstone\030\006 \001(\005\022\020\n\010goldCoin\030\007 \001(" +
-      "\005\022\017\n\007petList\030\013 \003(\t\022\021\n\tskillList\030\014 \003(\t\022\025\n" +
-      "\rfootPrintList\030\r \003(\t\"5\n\025SimpleUserInfoCo" +
-      "mmand\022\n\n\002id\030\001 \001(\005\022\020\n\010nickname\030\002 \001(\t\"*\n\030C" +
-      "reateRoomRequestCommand\022\016\n\006userId\030\001 \001(\005\"" +
-      "X\n\031CreateRoomResponseCommand\022\016\n\006userId\030\001" +
-      " \001(\005\022\016\n\006roomId\030\002 \001(\005\022\016\n\006statue\030\003 \001(\005\022\013\n\003",
-      "msg\030\004 \001(\t\"Q\n\034InviteJoinGameRequestComman" +
-      "d\022\016\n\006roomId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\022\021\n\tinv" +
-      "itedId\030\003 \001(\005\"n\n\035InviteJoinGameResponseCo" +
-      "mmand\022\016\n\006statue\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\0220\n\010us" +
-      "erInfo\030\003 \001(\0132\036.message.SimpleUserInfoCom" +
-      "mand\"Y\n\037BeInvitedJoinGameRequestCommand\022" +
-      "\016\n\006roomId\030\001 \001(\005\022\021\n\tinviterId\030\002 \001(\005\022\023\n\013in" +
-      "viterName\030\003 \001(\t\"_\n BeInvitedJoinGameResp" +
-      "onseCommand\022\016\n\006statue\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t" +
-      "\022\016\n\006userId\030\003 \001(\005\022\016\n\006roomId\030\004 \001(\005\"\232\001\n\021Roo",
-      "mUpdateCommand\022\016\n\006roomId\030\001 \001(\005\022\020\n\010gameTy" +
-      "pe\030\002 \001(\014\0224\n\014userInfoList\030\003 \003(\0132\036.message" +
-      ".SimpleUserInfoCommand\022-\n\005hader\030\004 \001(\0132\036." +
-      "message.SimpleUserInfoCommand\":\n\026FindGam" +
-      "eRequestCommand\022\016\n\006roomId\030\001 \001(\005\022\020\n\010heade" +
-      "rId\030\002 \001(\005\"1\n\017QuitRoomCommand\022\016\n\006userId\030\001" +
-      " \001(\005\022\016\n\006roomId\030\002 \001(\005\"3\n\021RefuseGameComman" +
-      "d\022\016\n\006roomId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"\270\001\n\030Fi" +
-      "ndedGameRequestCommand\0226\n\016playerInfoList" +
-      "\030\001 \003(\0132\036.message.FullPlayerInfoCommand\022\017",
-      "\n\007mapName\030\002 \001(\t\022 \n\003box\030\003 \003(\0132\023.message.B" +
-      "oxCommand\022 \n\003nut\030\004 \003(\0132\023.message.NutComm" +
-      "and\022\017\n\007weather\030\005 \001(\t\"T\n\037NewPlayerJoinGam" +
-      "eRequestCommand\0221\n\tnewPlayer\030\001 \001(\0132\036.mes" +
-      "sage.FullPlayerInfoCommand\"/\n\017QuitGameCo" +
-      "mmand\022\n\n\002id\030\004 \001(\005\022\020\n\010nickname\030\005 \001(\t\"\317\002\n\025" +
-      "FullPlayerInfoCommand\022\n\n\002id\030\002 \001(\005\022\020\n\010nic" +
-      "kname\030\003 \001(\t\022\n\n\002hp\030\004 \001(\005\022\016\n\006attack\030\005 \001(\005\022" +
-      "\021\n\tpositionX\030\006 \001(\002\022\021\n\tpositionY\030\007 \001(\002\022\021\n" +
-      "\tpositionZ\030\010 \001(\002\022\014\n\004rotX\030\t \001(\002\022\014\n\004rotY\030\n",
-      " \001(\002\022\014\n\004rotZ\030\013 \001(\002\022\016\n\006gunRot\030\014 \001(\002\022\017\n\007gu" +
-      "nRoll\030\r \001(\002\022\016\n\006teamId\030\016 \001(\005\022\022\n\nactionNam" +
-      "e\030\017 \001(\t\022\017\n\007killNum\030\020 \001(\005\022\021\n\tassistNum\030\021 " +
-      "\001(\005\022\r\n\005level\030\022 \001(\005\022\021\n\tskillList\030\023 \003(\t\022\016\n" +
-      "\006gameId\030\024 \001(\005\"\315\001\n\027SimplePlayerInfoComman" +
-      "d\022\n\n\002id\030\002 \001(\005\022\021\n\tpositionX\030\006 \001(\002\022\021\n\tposi" +
-      "tionY\030\007 \001(\002\022\021\n\tpositionZ\030\010 \001(\002\022\014\n\004rotX\030\t" +
+      "\n\021GameCommand.proto\022\007message\"\301\001\n\017UserInf" +
+      "oCommand\022\016\n\006userId\030\001 \001(\005\022\016\n\006mobile\030\002 \001(\t" +
+      "\022\020\n\010nickname\030\003 \001(\t\022\r\n\005level\030\004 \001(\005\022\016\n\006sta" +
+      "tue\030\005 \001(\005\022\020\n\010gemstone\030\006 \001(\005\022\020\n\010goldCoin\030" +
+      "\007 \001(\005\022\017\n\007petList\030\013 \003(\t\022\021\n\tskillList\030\014 \003(" +
+      "\t\022\025\n\rfootPrintList\030\r \003(\t\"9\n\025SimpleUserIn" +
+      "foCommand\022\016\n\006userId\030\001 \001(\005\022\020\n\010nickname\030\002 " +
+      "\001(\t\"*\n\030CreateRoomRequestCommand\022\016\n\006userI" +
+      "d\030\001 \001(\005\"X\n\031CreateRoomResponseCommand\022\016\n\006" +
+      "userId\030\001 \001(\005\022\016\n\006roomId\030\002 \001(\005\022\016\n\006statue\030\003",
+      " \001(\005\022\013\n\003msg\030\004 \001(\t\"Q\n\034InviteJoinGameReque" +
+      "stCommand\022\016\n\006roomId\030\001 \001(\005\022\016\n\006userId\030\002 \001(" +
+      "\005\022\021\n\tinvitedId\030\003 \001(\005\"n\n\035InviteJoinGameRe" +
+      "sponseCommand\022\016\n\006statue\030\001 \001(\005\022\013\n\003msg\030\002 \001" +
+      "(\t\0220\n\010userInfo\030\003 \001(\0132\036.message.SimpleUse" +
+      "rInfoCommand\"Y\n\037BeInvitedJoinGameRequest" +
+      "Command\022\016\n\006roomId\030\001 \001(\005\022\021\n\tinviterId\030\002 \001" +
+      "(\005\022\023\n\013inviterName\030\003 \001(\t\"_\n BeInvitedJoin" +
+      "GameResponseCommand\022\016\n\006statue\030\001 \001(\005\022\013\n\003m" +
+      "sg\030\002 \001(\t\022\016\n\006userId\030\003 \001(\005\022\016\n\006roomId\030\004 \001(\005",
+      "\"\232\001\n\021RoomUpdateCommand\022\016\n\006roomId\030\001 \001(\005\022\020" +
+      "\n\010gameType\030\002 \001(\014\0224\n\014userInfoList\030\003 \003(\0132\036" +
+      ".message.SimpleUserInfoCommand\022-\n\005hader\030" +
+      "\004 \001(\0132\036.message.SimpleUserInfoCommand\":\n" +
+      "\026FindGameRequestCommand\022\016\n\006roomId\030\001 \001(\005\022" +
+      "\020\n\010headerId\030\002 \001(\005\"1\n\017QuitRoomCommand\022\016\n\006" +
+      "userId\030\001 \001(\005\022\016\n\006roomId\030\002 \001(\005\"3\n\021RefuseGa" +
+      "meCommand\022\016\n\006roomId\030\001 \001(\005\022\016\n\006userId\030\002 \001(" +
+      "\005\"\270\001\n\030FindedGameRequestCommand\0226\n\016player" +
+      "InfoList\030\001 \003(\0132\036.message.FullPlayerInfoC",
+      "ommand\022\017\n\007mapName\030\002 \001(\t\022 \n\003box\030\003 \003(\0132\023.m" +
+      "essage.BoxCommand\022 \n\003nut\030\004 \003(\0132\023.message" +
+      ".NutCommand\022\017\n\007weather\030\005 \001(\t\"T\n\037NewPlaye" +
+      "rJoinGameRequestCommand\0221\n\tnewPlayer\030\001 \001" +
+      "(\0132\036.message.FullPlayerInfoCommand\"5\n\017Qu" +
+      "itGameCommand\022\020\n\010playerId\030\004 \001(\005\022\020\n\010nickn" +
+      "ame\030\005 \001(\t\"\317\002\n\025FullPlayerInfoCommand\022\n\n\002i" +
+      "d\030\002 \001(\005\022\020\n\010nickname\030\003 \001(\t\022\n\n\002hp\030\004 \001(\005\022\016\n" +
+      "\006attack\030\005 \001(\005\022\021\n\tpositionX\030\006 \001(\002\022\021\n\tposi" +
+      "tionY\030\007 \001(\002\022\021\n\tpositionZ\030\010 \001(\002\022\014\n\004rotX\030\t",
       " \001(\002\022\014\n\004rotY\030\n \001(\002\022\014\n\004rotZ\030\013 \001(\002\022\016\n\006gunR" +
-      "ot\030\014 \001(\002\022\017\n\007gunRoll\030\r \001(\002\022\022\n\nactionName\030" +
-      "\017 \001(\t\022\016\n\006gameId\030\020 \001(\005\".\n\025LevelUpRequestC",
-      "ommand\022\025\n\rskillNameList\030\001 \003(\t\"/\n\026LevelUp" +
-      "ResponseCommand\022\025\n\rskillNameList\030\001 \003(\t\" " +
-      "\n\013ChooseSkill\022\021\n\tskillName\030\001 \001(\t\"l\n\rActi" +
-      "onCommand\022\016\n\006userId\030\001 \001(\005\022\022\n\nactionName\030" +
-      "\002 \001(\t\022\021\n\tpositionX\030\003 \001(\002\022\021\n\tpositionY\030\004 " +
-      "\001(\002\022\021\n\tpositionZ\030\005 \001(\002\"&\n\nEatCommand\022\n\n\002" +
-      "id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\"\213\001\n\nBoxCommand\022\n\n" +
-      "\002id\030\001 \001(\005\022\021\n\tpositionX\030\002 \001(\002\022\021\n\tposition" +
-      "Y\030\003 \001(\002\022\021\n\tpositionZ\030\004 \001(\002\022\014\n\004rotX\030\005 \001(\002" +
-      "\022\014\n\004rotY\030\006 \001(\002\022\014\n\004rotZ\030\007 \001(\002\022\016\n\006gameId\030\010",
-      " \001(\005\"H\n\nHitCommand\022\017\n\007enemyId\030\002 \001(\005\022\016\n\006d" +
-      "amage\030\003 \001(\005\022\n\n\002id\030\004 \001(\005\022\r\n\005boxId\030\005 \001(\005\")" +
-      "\n\013KillCommand\022\n\n\002id\030\001 \001(\005\022\016\n\006deadId\030\002 \001(" +
-      "\005\"+\n\rAssistCommand\022\n\n\002id\030\001 \001(\005\022\016\n\006deadId" +
-      "\030\002 \001(\005\"\231\001\n\nNutCommand\022\n\n\002id\030\001 \001(\005\022\021\n\tpos" +
-      "itionX\030\002 \001(\002\022\021\n\tpositionY\030\003 \001(\002\022\021\n\tposit" +
-      "ionZ\030\004 \001(\002\022\014\n\004rotX\030\005 \001(\002\022\014\n\004rotY\030\006 \001(\002\022\014" +
-      "\n\004rotZ\030\007 \001(\002\022\016\n\006gameId\030\010 \001(\005\022\014\n\004name\030\t \001" +
-      "(\t\"\021\n\017GameOverCommand\"\024\n\022GameMessageComm" +
-      "andB(\n\031com.lemeng.server.commandB\013GameCo",
-      "mmand"
+      "ot\030\014 \001(\002\022\017\n\007gunRoll\030\r \001(\002\022\016\n\006teamId\030\016 \001(" +
+      "\005\022\022\n\nactionName\030\017 \001(\t\022\017\n\007killNum\030\020 \001(\005\022\021" +
+      "\n\tassistNum\030\021 \001(\005\022\r\n\005level\030\022 \001(\005\022\021\n\tskil" +
+      "lList\030\023 \003(\t\022\016\n\006gameId\030\024 \001(\005\")\n\025LevelUpRe" +
+      "questCommand\022\020\n\010playerId\030\001 \001(\005\"A\n\026LevelU" +
+      "pResponseCommand\022\020\n\010playerId\030\001 \001(\005\022\025\n\rsk" +
+      "illNameList\030\002 \003(\t\"9\n\022ChooseSkillCommand\022" +
+      "\020\n\010playerId\030\001 \001(\005\022\021\n\tskillName\030\002 \001(\t\";\n\n" +
+      "EatCommand\022\020\n\010playerId\030\001 \001(\005\022\r\n\005nutId\030\002 ",
+      "\001(\005\022\014\n\004name\030\003 \001(\t\"\216\001\n\nBoxCommand\022\r\n\005boxI" +
+      "d\030\001 \001(\005\022\021\n\tpositionX\030\002 \001(\002\022\021\n\tpositionY\030" +
+      "\003 \001(\002\022\021\n\tpositionZ\030\004 \001(\002\022\014\n\004rotX\030\005 \001(\002\022\014" +
+      "\n\004rotY\030\006 \001(\002\022\014\n\004rotZ\030\007 \001(\002\022\016\n\006gameId\030\010 \001" +
+      "(\005\"N\n\nHitCommand\022\017\n\007enemyId\030\002 \001(\005\022\016\n\006dam" +
+      "age\030\003 \001(\005\022\020\n\010playerId\030\004 \001(\005\022\r\n\005boxId\030\005 \001" +
+      "(\005\"/\n\013KillCommand\022\020\n\010playerId\030\001 \001(\005\022\016\n\006d" +
+      "eadId\030\002 \001(\005\"1\n\rAssistCommand\022\020\n\010playerId" +
+      "\030\001 \001(\005\022\016\n\006deadId\030\002 \001(\005\"\234\001\n\nNutCommand\022\r\n" +
+      "\005nutId\030\001 \001(\005\022\021\n\tpositionX\030\002 \001(\002\022\021\n\tposit",
+      "ionY\030\003 \001(\002\022\021\n\tpositionZ\030\004 \001(\002\022\014\n\004rotX\030\005 " +
+      "\001(\002\022\014\n\004rotY\030\006 \001(\002\022\014\n\004rotZ\030\007 \001(\002\022\016\n\006gameI" +
+      "d\030\010 \001(\005\022\014\n\004name\030\t \001(\t\"9\n\017GameOverCommand" +
+      "\022&\n\010teamList\030\001 \003(\0132\024.message.TeamCommand" +
+      "\"\264\001\n\013TeamCommand\0222\n\nplayerList\030\001 \003(\0132\036.m" +
+      "essage.FullPlayerInfoCommand\022\017\n\007killNum\030" +
+      "\002 \001(\005\022\020\n\010deathNum\030\003 \001(\005\022\021\n\tassistNum\030\004 \001" +
+      "(\005\022+\n\003mvp\030\005 \001(\0132\036.message.FullPlayerInfo" +
+      "Command\022\016\n\006gameId\030\006 \001(\005\"\240\001\n\025PlayerPositi" +
+      "onCommand\022\020\n\010playerId\030\001 \001(\005\022\021\n\tpositionX",
+      "\030\002 \001(\002\022\021\n\tpositionY\030\003 \001(\002\022\021\n\tpositionZ\030\004" +
+      " \001(\002\022\014\n\004rotX\030\005 \001(\002\022\014\n\004rotY\030\006 \001(\002\022\014\n\004rotZ" +
+      "\030\007 \001(\002\022\022\n\nactionName\030\010 \001(\t\" \n\014RelifeComa" +
+      "nd\022\020\n\010playerId\030\001 \001(\005B(\n\031com.lemeng.serve" +
+      "r.commandB\013GameCommand"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -27266,13 +27996,13 @@ public final class GameCommand {
     internal_static_message_UserInfoCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_UserInfoCommand_descriptor,
-        new java.lang.String[] { "Id", "Mobile", "Nickname", "Level", "Statue", "Gemstone", "GoldCoin", "PetList", "SkillList", "FootPrintList", });
+        new java.lang.String[] { "UserId", "Mobile", "Nickname", "Level", "Statue", "Gemstone", "GoldCoin", "PetList", "SkillList", "FootPrintList", });
     internal_static_message_SimpleUserInfoCommand_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_message_SimpleUserInfoCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_SimpleUserInfoCommand_descriptor,
-        new java.lang.String[] { "Id", "Nickname", });
+        new java.lang.String[] { "UserId", "Nickname", });
     internal_static_message_CreateRoomRequestCommand_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_message_CreateRoomRequestCommand_fieldAccessorTable = new
@@ -27350,91 +28080,91 @@ public final class GameCommand {
     internal_static_message_QuitGameCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_QuitGameCommand_descriptor,
-        new java.lang.String[] { "Id", "Nickname", });
+        new java.lang.String[] { "PlayerId", "Nickname", });
     internal_static_message_FullPlayerInfoCommand_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_message_FullPlayerInfoCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_FullPlayerInfoCommand_descriptor,
         new java.lang.String[] { "Id", "Nickname", "Hp", "Attack", "PositionX", "PositionY", "PositionZ", "RotX", "RotY", "RotZ", "GunRot", "GunRoll", "TeamId", "ActionName", "KillNum", "AssistNum", "Level", "SkillList", "GameId", });
-    internal_static_message_SimplePlayerInfoCommand_descriptor =
-      getDescriptor().getMessageTypes().get(16);
-    internal_static_message_SimplePlayerInfoCommand_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_SimplePlayerInfoCommand_descriptor,
-        new java.lang.String[] { "Id", "PositionX", "PositionY", "PositionZ", "RotX", "RotY", "RotZ", "GunRot", "GunRoll", "ActionName", "GameId", });
     internal_static_message_LevelUpRequestCommand_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_message_LevelUpRequestCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_LevelUpRequestCommand_descriptor,
-        new java.lang.String[] { "SkillNameList", });
+        new java.lang.String[] { "PlayerId", });
     internal_static_message_LevelUpResponseCommand_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_message_LevelUpResponseCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_LevelUpResponseCommand_descriptor,
-        new java.lang.String[] { "SkillNameList", });
-    internal_static_message_ChooseSkill_descriptor =
-      getDescriptor().getMessageTypes().get(19);
-    internal_static_message_ChooseSkill_fieldAccessorTable = new
+        new java.lang.String[] { "PlayerId", "SkillNameList", });
+    internal_static_message_ChooseSkillCommand_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_message_ChooseSkillCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_ChooseSkill_descriptor,
-        new java.lang.String[] { "SkillName", });
-    internal_static_message_ActionCommand_descriptor =
-      getDescriptor().getMessageTypes().get(20);
-    internal_static_message_ActionCommand_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_ActionCommand_descriptor,
-        new java.lang.String[] { "UserId", "ActionName", "PositionX", "PositionY", "PositionZ", });
+        internal_static_message_ChooseSkillCommand_descriptor,
+        new java.lang.String[] { "PlayerId", "SkillName", });
     internal_static_message_EatCommand_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_message_EatCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_EatCommand_descriptor,
-        new java.lang.String[] { "Id", "Name", });
+        new java.lang.String[] { "PlayerId", "NutId", "Name", });
     internal_static_message_BoxCommand_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_message_BoxCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_BoxCommand_descriptor,
-        new java.lang.String[] { "Id", "PositionX", "PositionY", "PositionZ", "RotX", "RotY", "RotZ", "GameId", });
+        new java.lang.String[] { "BoxId", "PositionX", "PositionY", "PositionZ", "RotX", "RotY", "RotZ", "GameId", });
     internal_static_message_HitCommand_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_message_HitCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_HitCommand_descriptor,
-        new java.lang.String[] { "EnemyId", "Damage", "Id", "BoxId", });
+        new java.lang.String[] { "EnemyId", "Damage", "PlayerId", "BoxId", });
     internal_static_message_KillCommand_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_message_KillCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_KillCommand_descriptor,
-        new java.lang.String[] { "Id", "DeadId", });
+        new java.lang.String[] { "PlayerId", "DeadId", });
     internal_static_message_AssistCommand_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_message_AssistCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_AssistCommand_descriptor,
-        new java.lang.String[] { "Id", "DeadId", });
+        new java.lang.String[] { "PlayerId", "DeadId", });
     internal_static_message_NutCommand_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_message_NutCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_NutCommand_descriptor,
-        new java.lang.String[] { "Id", "PositionX", "PositionY", "PositionZ", "RotX", "RotY", "RotZ", "GameId", "Name", });
+        new java.lang.String[] { "NutId", "PositionX", "PositionY", "PositionZ", "RotX", "RotY", "RotZ", "GameId", "Name", });
     internal_static_message_GameOverCommand_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_message_GameOverCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_message_GameOverCommand_descriptor,
-        new java.lang.String[] { });
-    internal_static_message_GameMessageCommand_descriptor =
-      getDescriptor().getMessageTypes().get(28);
-    internal_static_message_GameMessageCommand_fieldAccessorTable = new
+        new java.lang.String[] { "TeamList", });
+    internal_static_message_TeamCommand_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_message_TeamCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_message_GameMessageCommand_descriptor,
-        new java.lang.String[] { });
+        internal_static_message_TeamCommand_descriptor,
+        new java.lang.String[] { "PlayerList", "KillNum", "DeathNum", "AssistNum", "Mvp", "GameId", });
+    internal_static_message_PlayerPositionCommand_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_message_PlayerPositionCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_message_PlayerPositionCommand_descriptor,
+        new java.lang.String[] { "PlayerId", "PositionX", "PositionY", "PositionZ", "RotX", "RotY", "RotZ", "ActionName", });
+    internal_static_message_RelifeComand_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_message_RelifeComand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_message_RelifeComand_descriptor,
+        new java.lang.String[] { "PlayerId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

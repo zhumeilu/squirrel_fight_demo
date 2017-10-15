@@ -61,15 +61,17 @@ public class UserLoginService extends AbstractTcpService {
                 userBuilder.setNickname(userBuilder.getNickname());
                 userBuilder.setStatue(userBuilder.getStatue());
 
+                //查询用户的宠物列表
                 List<Pet> petList = userManager.getPetListByUserId(login.getId());
                 for (int i = 0 ;i<petList.size();i++){
                     userBuilder.setPetList(i,petList.get(i).getType());
                 }
+                //查询用户的脚印列表
                 List<FootPrint> footPrintList = userManager.getFootPrintListByUserId(login.getId());
                 for (int i = 0 ;i<footPrintList.size();i++){
                     userBuilder.setFootPrintList(i,footPrintList.get(i).getType());
                 }
-
+                //查询用户的技能列表
                 List<Skill> skillList = userManager.getSkillListByUserId(login.getId());
                 for (int i = 0 ;i<skillList.size();i++){
                     userBuilder.setSkillList(i,skillList.get(i).getType());

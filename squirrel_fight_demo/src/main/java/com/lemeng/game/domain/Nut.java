@@ -23,4 +23,5 @@ public class Nut extends BaseDomain{
     private Float rotZ;   //坐标
     private Integer gameId; //所属游戏id
     private Integer statue;     //状态
+    private Integer exp;        //经验值
 }

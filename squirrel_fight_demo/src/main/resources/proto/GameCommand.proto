@@ -8,7 +8,7 @@ option java_outer_classname = "GameCommand";
 //用户基本信息
 //cmd:userInfo
 message UserInfoCommand{
-    optional int32 id = 1;
+    optional int32 userId = 1;
     optional string mobile = 2;
     optional string nickname = 3;
     optional int32 level = 4;
@@ -22,7 +22,7 @@ message UserInfoCommand{
 }
 
 message SimpleUserInfoCommand{
-    optional int32 id = 1;
+    optional int32 userId = 1;
     optional string nickname = 2;
 }
 
@@ -129,11 +129,11 @@ message NewPlayerJoinGameRequestCommand{
 //战斗中主动离开游戏
 //cmd:qutiGame
 message QuitGameCommand{
-    optional int32 id = 4;
+    optional int32 playerId = 4;
     optional string nickname = 5;
 }
 
-//player基本信息    每帧同步
+//player全部信息，当某些事件触发时，推送
 //cmd: playerInfo
 message FullPlayerInfoCommand{
 
@@ -157,50 +157,28 @@ message FullPlayerInfoCommand{
     repeated string skillList = 19;     //技能
     optional int32 gameId = 20;      //所属游戏id
 }
-//简单的玩家信息
-message SimplePlayerInfoCommand{
 
-    optional int32 id = 2;
-    optional float positionX = 6;
-    optional float positionY = 7;
-    optional float positionZ  = 8;
-    optional float rotX = 9;
-    optional float rotY = 10;
-    optional float rotZ = 11;
-    optional float gunRot = 12;
-    optional float gunRoll = 13;
-    optional string actionName = 15;    //动作名称
-    optional int32 gameId = 16;      //所属游戏id
-}
 //升级事件
 message LevelUpRequestCommand{
-    repeated string skillNameList = 1;
-    //随机返回三个技能
+    optional int32 playerId = 1;
 }
 //升级响应
 message LevelUpResponseCommand{
-    repeated string skillNameList = 1;
+    optional int32 playerId = 1;
+    repeated string skillNameList = 2;
     //随机返回三个技能
 }
-message ChooseSkill{
+message ChooseSkillCommand{
+    optional int32 playerId = 1;
     //升级后选择一个技能
-    optional string skillName = 1;
+    optional string skillName = 2;
 }
 
-//动作命令
-message ActionCommand{
-    optional int32 userId = 1;
-    optional string actionName = 2;
-    optional float positionX = 3;
-    optional float positionY = 4;
-    optional float positionZ  = 5;
-
-}
 
 //吃
 //cmd：eat
 message EatCommand{
-    optional int32 id = 1;      //玩家id
+    optional int32 playerId = 1;      //玩家id
     optional int32 nutId = 2;   //坚果id
     optional string name = 3;   //坚果类型（大坚果，小坚果）
 }
@@ -208,7 +186,7 @@ message EatCommand{
 //箱子同步位置
 //cmd:Box
 message BoxCommand{
-    optional int32 id = 1;
+    optional int32 boxId = 1;
     optional float positionX = 2;
     optional float positionY = 3;
     optional float positionZ  = 4;
@@ -224,23 +202,23 @@ message BoxCommand{
 message HitCommand{
     optional int32 enemyId = 2;     //敌人id
     optional int32 damage = 3;      //伤害
-    optional int32 id = 4;  //自己id
+    optional int32 playerId = 4;  //自己id
     optional int32 boxId = 5;//箱子id
 }
 //助攻实现：每一次击中
 //击杀
 message KillCommand{
-    optional int32 id = 1;  //击杀者id
+    optional int32 playerId = 1;  //击杀者id
     optional int32 deadId = 2;  //被击杀id
 }
 //助攻
 message AssistCommand{
-    optional int32 id = 1;  //助攻id
+    optional int32 playerId = 1;  //助攻id
     optional int32 deadId = 2;  //被击杀id
 }
 //坚果位置
 message NutCommand{
-    optional int32 id = 1;
+    optional int32 nutId = 1;
     optional float positionX = 2;
     optional float positionY = 3;
     optional float positionZ  = 4;
@@ -254,9 +232,31 @@ message NutCommand{
 
 //游戏结束
 message GameOverCommand{
+    repeated TeamCommand teamList = 1;
 }
 
-message GameMessageCommand{
+//队伍
+message TeamCommand{
+    repeated FullPlayerInfoCommand playerList = 1;
+    optional int32 killNum = 2;
+    optional int32 deathNum = 3;
+    optional int32 assistNum = 4;
+    optional FullPlayerInfoCommand mvp = 5;
+    optional int32 gameId = 6;
+}
+//玩家位置
+message PlayerPositionCommand{
+    optional int32 playerId = 1;
 
-
+    optional float positionX = 2;
+    optional float positionY = 3;
+    optional float positionZ  = 4;
+    optional float rotX = 5;
+    optional float rotY = 6;
+    optional float rotZ = 7;
+    optional string actionName = 8;    //动作名称
+}
+//复活
+message RelifeComand{
+    optional int32 playerId = 1;
 }

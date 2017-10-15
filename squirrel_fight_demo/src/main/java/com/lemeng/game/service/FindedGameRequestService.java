@@ -3,16 +3,19 @@ package com.lemeng.game.service;
 import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
 import com.lemeng.game.domain.*;
+import com.lemeng.game.manager.IBoxManager;
+import com.lemeng.game.manager.INutManager;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightTcpMessage;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 
 
@@ -23,6 +26,11 @@ import java.util.List;
  * Time: 13:25
  */
 public class FindedGameRequestService implements Runnable {
+
+    @Autowired
+    private IBoxManager boxManager;
+    @Autowired
+    private INutManager nutManager;
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
     public void run() {
@@ -38,6 +46,7 @@ public class FindedGameRequestService implements Runnable {
 
             //初始化坚果集合
 
+
             //初始化箱子集合
             String mapName = "";
             String weather = "";
@@ -47,13 +56,12 @@ public class FindedGameRequestService implements Runnable {
             game.setBeginDate(new Date());
             game.setMap(mapName);
             game.setWeather(weather);
-            HashSet<Integer> allPlayer = new HashSet<Integer>();
+            List<Player> allPlayer = new ArrayList<Player>();
             for (Team team : matchTeam) {
                 allPlayer.addAll(team.getPlayerList());
             }
-            game.setPlayerList(allPlayer);
-            List<Nut> nutList = initNut();
-            List<Box> boxList = initBox();
+            List<Nut> nutList = initNut(game);
+            List<Box> boxList = initBox(game);
             game.setNutList(nutList);
             game.setBoxList(boxList);
             //构建消息
@@ -89,8 +97,7 @@ public class FindedGameRequestService implements Runnable {
 //
 
 
-            for (Integer playerId: allPlayer) {
-                Player player = SystemManager.getInstance().getJedisClusterUtil().getObject(Const.PlayerPrefix+playerId);
+            for (Player player: allPlayer) {
                 //构建消息
                 GameCommand.FullPlayerInfoCommand.Builder fullPlayerInfoBulder = GameCommand.FullPlayerInfoCommand.newBuilder();
                 fullPlayerInfoBulder.setActionName(player.getActionName());
@@ -106,8 +113,7 @@ public class FindedGameRequestService implements Runnable {
             tcpMessage.setBody(retBody);
 
             //发送消息
-            for (Integer playerId: allPlayer) {
-                Player player = SystemManager.getInstance().getJedisClusterUtil().getObject(Const.PlayerPrefix+playerId);
+            for (Player player: allPlayer) {
                 Integer userId = player.getUserId();
                 Channel channel = (Channel) SystemManager.getInstance().getUserChannelMap().get(userId);
                 channel.writeAndFlush(tcpMessage);
@@ -119,13 +125,27 @@ public class FindedGameRequestService implements Runnable {
     }
 
     //初始化箱子
-    private List<Box> initBox() {
-        return null;
+    private List<Box> initBox(Game game) {
+        List<Box> boxListByMap = boxManager.getBoxListByMap(game.getMap());
+        for (Box box : boxListByMap) {
+            box.setGameId(game.getId());
+            box.setStatue(1);
+            box.setId(SystemManager.getInstance().getIdGenertor().generateBoxId());
+        }
+        return boxListByMap;
     }
 
     //初始化坚果
-    private List<Nut> initNut() {
-        return null;
+    private List<Nut> initNut(Game game) {
+
+        List<Nut> nutList = nutManager.getNutListByMap(game.getMap());
+        for (Nut nut : nutList) {
+            nut.setGameId(game.getId());
+            nut.setStatue(1);
+            nut.setId(SystemManager.getInstance().getIdGenertor().generateNutId());
+        }
+        return nutList;
+
     }
 
     protected void logStackTrace( Exception e ) {

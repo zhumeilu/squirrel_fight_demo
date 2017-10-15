@@ -10,8 +10,11 @@ import com.lemeng.game.domain.Team;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
 import com.lemeng.server.service.AbstractUdpService;
+import io.netty.handler.codec.spdy.SpdySynReplyFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**比赛中途退出游戏
@@ -22,33 +25,33 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class QuitGameService extends AbstractUdpService {
 
-    @Autowired
-    private JedisClusterUtil jedisClusterUtil;
     public void run() {
 
         try{
             SquirrelFightUdpMessage udpMessage = this.message;
             byte[] bodyBytes = udpMessage.getBody();
-            //game对象中删除player，
 
             GameCommand.QuitGameCommand quitGameCommand = GameCommand.QuitGameCommand.parseFrom(bodyBytes);
             int id = quitGameCommand.getId();
-            Player player = (Player) jedisClusterUtil.getObject(Const.PlayerPrefix + id);
-            //删除player
-//            jedisClusterUtil.delete(Const.PlayerPrefix + id);
-            SystemManager.getInstance().getPlayerConcurrentHashMap().remove(id);
+            //map中删除player
+            Player player = SystemManager.getInstance().getPlayerConcurrentHashMap().remove(id);
 
-            //删除tema中的player
+            //是否有结算，如果有，则进行结算
+            //todo
+
+            //删除team中的player
             Integer teamId = player.getTeamId();
-//            Team team = (Team) jedisClusterUtil.getObject(Const.TeamPrefix + teamId);
             Team team = SystemManager.getInstance().getTeamConcurrentHashMap().get(teamId);
             team.getPlayerList().remove(player);
-            jedisClusterUtil.setObject(Const.TeamPrefix+teamId,team);
             //广播该消息
-
             Integer gameId = player.getGameId();
-            Game game = (Game) jedisClusterUtil.getObject(Const.GamePrefix + gameId);
-            game.getPlayerList();
+            Game game = SystemManager.getInstance().getGameConcurrentHashMap().get(gameId);
+            List<Player> playerList = new ArrayList<Player>();
+            List<Team> teamList = game.getTeamList();
+            for (Team teamTemp :    teamList) {
+                playerList.addAll(teamTemp.getPlayerList());
+            }
+
 
 
         }catch (Exception e){

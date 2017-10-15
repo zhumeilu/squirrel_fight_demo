@@ -22,8 +22,6 @@ import org.springframework.stereotype.Component;
 @Component("FindGameRequestService")
 public class FindGameRequestService extends AbstractTcpService {
 
-    @Autowired
-    private JedisClusterUtil jedisClusterUtil;
     public void run() {
 
         SquirrelFightTcpMessage tcpMessage = this.message;
@@ -31,7 +29,7 @@ public class FindGameRequestService extends AbstractTcpService {
         try {
             GameCommand.FindGameRequestCommand findGameRequestCommand= GameCommand.FindGameRequestCommand.parseFrom(bodyBytes);
             int roomId = findGameRequestCommand.getRoomId();        //队伍id
-            Room room = (Room) jedisClusterUtil.getObject(Const.RoomPrefix + roomId);
+            Room room = SystemManager.getInstance().getRoomConcurrentHashMap().get(roomId);
 
             //加入匹配队列，进行匹配（创建一个list，循环list查询水平相近的3对玩家，包括已经在对局中的？？）
             SystemManager.getInstance().addQuene(room);

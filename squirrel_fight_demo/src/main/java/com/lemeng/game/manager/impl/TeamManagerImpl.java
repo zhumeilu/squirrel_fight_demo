@@ -1,6 +1,7 @@
-package com.lemeng.game.manager;
+package com.lemeng.game.manager.impl;
 
 import com.lemeng.game.domain.Team;
+import com.lemeng.game.manager.ITeamManager;
 import com.lemeng.game.mapper.TeamMapper;
 import com.lemeng.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;

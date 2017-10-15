@@ -1,8 +1,9 @@
-package com.lemeng.game.manager;
+package com.lemeng.game.manager.impl;
 
 import com.lemeng.common.SystemManager;
 import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Room;
+import com.lemeng.game.manager.IRoomManager;
 import com.lemeng.user.domain.User;
 import com.lemeng.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,6 @@ import org.springframework.stereotype.Service;
 public class RoomManagerImpl implements IRoomManager {
     @Autowired
     private UserMapper userMapper;
-    @Autowired
-    JedisClusterUtil jedisClusterUtil;
     public Room createRoom(Integer userId) {
         User user = userMapper.selectById(userId);
         if(user!= null){
@@ -28,8 +27,6 @@ public class RoomManagerImpl implements IRoomManager {
             room.setHeader(user);
             room.setId(user.getId());
             room.getUserList().add(user);
-            //存储到redis中
-//            jedisClusterUtil.setObject(Const.RoomPrefix+room.getId(),room);
             //存储到内存中
             SystemManager.getInstance().getRoomConcurrentHashMap().put(room.getId(),room);
             return room;

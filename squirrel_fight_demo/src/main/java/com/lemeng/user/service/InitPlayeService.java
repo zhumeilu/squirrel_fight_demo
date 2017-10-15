@@ -22,8 +22,7 @@ public class InitPlayeService extends AbstractTcpService {
     private IUserManager userManager;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage =  this.message;
-        byte[] bodyBytes = tcpMessage.getBody();
+        byte[] bodyBytes = this.message.getBody();
         //解析数据，获取nickname
         try {
             UserCommand.InitPlayerRequestCommand initPlayerCommand = UserCommand.InitPlayerRequestCommand.parseFrom(bodyBytes);

@@ -27,7 +27,7 @@ public class SendVerifyCodeService extends AbstractTcpService {
     IUserVerifyCodeManager userVerifyCodeManager;
     public void run() {
 
-        SquirrelFightTcpMessage tcpMessage = (SquirrelFightTcpMessage) this.message;
+        SquirrelFightTcpMessage tcpMessage = this.message;
         byte[] bodyBytes = tcpMessage.getBody();
         //解析数据，获取moible
         String mobile ="";

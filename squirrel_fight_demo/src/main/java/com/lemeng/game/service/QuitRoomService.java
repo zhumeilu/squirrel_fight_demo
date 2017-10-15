@@ -23,8 +23,6 @@ import java.util.List;
 @Component("QuitRoomService")
 public class QuitRoomService extends AbstractTcpService {
 
-    @Autowired
-    private JedisClusterUtil jedisClusterUtil;
     public void run() {
 
         SquirrelFightTcpMessage tcpMessage = this.message;

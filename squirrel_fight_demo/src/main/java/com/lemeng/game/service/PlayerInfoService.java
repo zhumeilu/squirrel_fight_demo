@@ -1,19 +1,16 @@
 package com.lemeng.game.service;
 
-import com.lemeng.common.Const;
 import com.lemeng.common.SystemManager;
-import com.lemeng.common.redis.JedisClusterUtil;
 import com.lemeng.game.domain.Game;
 import com.lemeng.game.domain.Player;
+import com.lemeng.game.domain.Team;
 import com.lemeng.server.command.GameCommand;
 import com.lemeng.server.message.SquirrelFightUdpMessage;
-import com.lemeng.server.service.AbstractTcpService;
 import com.lemeng.server.service.AbstractUdpService;
 import io.netty.channel.Channel;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**玩家信息同步
  * Description:
@@ -22,9 +19,6 @@ import java.util.Set;
  * Time: 11:54
  */
 public class PlayerInfoService extends AbstractUdpService {
-
-    @Autowired
-    private JedisClusterUtil jedisClusterUtil;
 
     public void run() {
         //接收玩家信息，更新并广播给游戏中其他玩家
@@ -39,10 +33,14 @@ public class PlayerInfoService extends AbstractUdpService {
             float positionY = simplePlayerInfoCommand.getPositionY();
 
 
-            Game game = (Game) jedisClusterUtil.getObject(Const.GamePrefix + gameId);
-            Set<Integer> playerIdList = game.getPlayerList();
-            for (Integer playerId : playerIdList) {
-                Player player = jedisClusterUtil.getObject(Const.PlayerPrefix+playerId);
+
+            Game game = SystemManager.getInstance().getGameConcurrentHashMap().get(gameId);
+            List<Player> playerList = new ArrayList<Player>();
+            List<Team> teamList = game.getTeamList();
+            for (Team team :    teamList) {
+                playerList.addAll(team.getPlayerList());
+            }
+            for (Player player : playerList) {
                 Channel channel = (Channel) SystemManager.getInstance().getUserChannelMap().get(player.getUserId());
                 channel.writeAndFlush(udpMessage);
             }
