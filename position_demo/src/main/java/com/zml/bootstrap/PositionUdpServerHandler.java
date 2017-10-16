@@ -110,4 +110,9 @@ public class PositionUdpServerHandler extends SimpleChannelInboundHandler<Datagr
 
     }
 
+    @Override
+    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("-------注册了一个新的连接------------");
+        super.channelRegistered(ctx);
+    }
 }

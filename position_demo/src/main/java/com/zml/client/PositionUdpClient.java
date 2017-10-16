@@ -18,70 +18,56 @@ import java.net.InetSocketAddress;
  * Created by zhumeilu on 17/9/7.
  */
 public class PositionUdpClient {
-//    public void bind(String hostname,int port) throws Exception{
-//
-//
-//        //配置服务端的NIO线程组
-//        EventLoopGroup workerGroup = new NioEventLoopGroup();
-//        try{
-//            Bootstrap b = new Bootstrap();
-//            b.group(workerGroup)
-//                    .channel(NioDatagramChannel.class)
-//                    .option(ChannelOption.SO_BROADCAST, true)   //支持广播
-//                    .option(ChannelOption.SO_RCVBUF, 1024 * 1024)// 设置UDP读缓冲区为1M
-//                    .option(ChannelOption.SO_SNDBUF, 1024 * 1024)// 设置UDP写缓冲区为1M
-//                    .handler(new PositionUdpClientHandler());
-//            //绑定端口，同步等待成功
-//            ChannelFuture f= b.bind(0).sync();
-//            Channel channel = f.channel();
-//
-//            //登录
-//            byte[] loginCommand = ConvertUtil.getBytes((short) Const.LoginCommand);
-//            channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(loginCommand),new InetSocketAddress(hostname,port)));
-//            Thread.sleep(1000);
-//            //获取所有位置
-//            byte[] positionListCommand = ConvertUtil.getBytes((short) Const.GameStartCommand);
-//            channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(positionListCommand),new InetSocketAddress(hostname,port)));
-//            for (int i = 0; i < 3; i++) {
-//                BaseCommand.PositionCommand.Builder builder = BaseCommand.PositionCommand.newBuilder();
-//                builder.setId(i);
-//                builder.setPositionX(i);
-//                builder.setPositionY(i);
-//                builder.setPositionZ(i);
-//                byte[] positionBytes = builder.build().toByteArray();
-//                byte[] positionCommand = ConvertUtil.getBytes((short) Const.PositionCommand);
-//                channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(positionCommand,positionBytes),new InetSocketAddress(hostname,port)));
-//                Thread.sleep(1000);
-//
-//            }
-//
-//            //等待服务器监听端口关闭
-//            channel.closeFuture().await();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }finally {
-//            //优雅退出，释放线程池资源
-//            workerGroup.shutdownGracefully();
-//        }
-//
-//
-//    }
-//
-//    public static void main(String[] args) throws Exception {
-//        int port = 6666;
-//        if(args!=null&&args.length>0){
-//            try{
-//                port = Integer.valueOf(args[0]);
-//            }catch (NumberFormatException e){
-//
-//            }
-//        }
-////        String hostname = "192.168.1.93";
+    public void bind(String hostname,int port) throws Exception{
+
+
+        //配置服务端的NIO线程组
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        try{
+            Bootstrap b = new Bootstrap();
+            b.group(workerGroup)
+                    .channel(NioDatagramChannel.class)
+                    .option(ChannelOption.SO_BROADCAST, true)   //支持广播
+                    .option(ChannelOption.SO_RCVBUF, 1024 * 1024)// 设置UDP读缓冲区为1M
+                    .option(ChannelOption.SO_SNDBUF, 1024 * 1024)// 设置UDP写缓冲区为1M
+                    .handler(new PositionUdpClientHandler());
+            //绑定端口，同步等待成功
+            ChannelFuture f= b.bind(0).sync();
+            Channel channel = f.channel();
+
+            //登录
+            byte[] loginCommand = ConvertUtil.getBytes((short) Const.LoginRequestCommand);
+            channel.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(loginCommand),new InetSocketAddress(hostname,port)));
+            Thread.sleep(1000);
+            //获取所有位置
+
+            //等待服务器监听端口关闭
+            channel.closeFuture().await();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            //优雅退出，释放线程池资源
+            workerGroup.shutdownGracefully();
+        }
+
+
+    }
+
+    public static void main(String[] args) throws Exception {
+        int port = 6666;
+        if(args!=null&&args.length>0){
+            try{
+                port = Integer.valueOf(args[0]);
+            }catch (NumberFormatException e){
+
+            }
+        }
+//        String hostname = "192.168.1.93";
 //        String hostname = "47.92.114.52";
-////        String hostname = "127.0.0.1";
-//
-//        new PositionUdpClient().bind(hostname,port);
-//
-//
-//    }
+        String hostname = "127.0.0.1";
+
+        new PositionUdpClient().bind(hostname,port);
+
+
+    }
 }

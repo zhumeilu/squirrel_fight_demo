@@ -17,6 +17,7 @@ public class PositionUdpClientHandler extends SimpleChannelInboundHandler<Datagr
 
 
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, DatagramPacket datagramPacket) throws Exception {
+        System.out.println("=============收到数据=============");
 //        InetSocketAddress sender = datagramPacket.sender();
 //        ByteBuf data = datagramPacket.content();
 //        //获取命令
