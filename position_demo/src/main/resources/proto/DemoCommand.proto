@@ -1,0 +1,25 @@
+syntax = "proto2";
+package message;
+option java_package = "com.zml.command";
+option java_outer_classname = "DemoCommand";
+
+message LoginRequestCommand {
+
+}
+
+message LoginResponseCommand {
+
+    optional UserInfoCommand UserInfoCommand = 1;
+}
+
+message UserInfoCommand {
+
+     optional string id = 1;
+     optional string username = 2;
+     optional float position_x = 3;
+     optional float position_z  = 4;
+}
+
+message UserInfoListCommand{
+    repeated UserInfoCommand UserInfoCommand = 1;
+}

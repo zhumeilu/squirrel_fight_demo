@@ -1,4 +1,4 @@
-package com.lemeng.common;
+package com.zml.command;
 
 import lombok.Getter;
 import lombok.Setter;

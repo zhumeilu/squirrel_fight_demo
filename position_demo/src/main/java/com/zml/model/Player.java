@@ -1,22 +1,18 @@
-package com.lemeng.model;
+package com.zml.model;
 
-import com.lemeng.common.BaseModel;
+import com.zml.command.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
  * Description:
  * User: zhumeilu
- * Date: 2017/9/13
- * Time: 14:57
+ * Date: 2017/10/16
+ * Time: 18:14
  */
 @Getter
 @Setter
-public class Role extends BaseModel{
-
-
+public class Player extends BaseModel{
     private Float position_x;       //位置
-    private Float position_y;
     private Float position_z;
-
 }

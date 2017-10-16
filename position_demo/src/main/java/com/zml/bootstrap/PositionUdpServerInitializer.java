@@ -1,4 +1,4 @@
-package com.lemeng.server.bootstrap;
+package com.zml.bootstrap;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
