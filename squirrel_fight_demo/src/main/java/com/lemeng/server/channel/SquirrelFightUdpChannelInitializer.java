@@ -17,7 +17,6 @@ import io.netty.handler.logging.LoggingHandler;
  */
 public class SquirrelFightUdpChannelInitializer extends ChannelInitializer<NioDatagramChannel> {
     protected void initChannel(NioDatagramChannel nioDatagramChannel) throws Exception {
-        System.out.println("-------当前channelInitializer:"+this);
         ChannelPipeline pipeline = nioDatagramChannel.pipeline();
         pipeline.addLast("decoder",new UdpMessageDecoder());
         pipeline.addLast("encoder",new UdpMessageEncoder());

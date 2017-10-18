@@ -35,6 +35,7 @@ public class SquirrelFightServer {
     void startUdpService(int port){
         //配置服务端的NIO线程组
         EventLoopGroup workerGroup = new NioEventLoopGroup();
+        SystemManager.getInstance().setUdpWorkerGroup(workerGroup);
         try{
             Bootstrap b = new Bootstrap();
             b.group(workerGroup)
@@ -60,6 +61,8 @@ public class SquirrelFightServer {
         //配置服务端的NIO线程组
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
+        SystemManager.getInstance().setTcpBossGroup(bossGroup);
+        SystemManager.getInstance().setTcpWorkerGroup(workerGroup);
         try{
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup,workerGroup)
